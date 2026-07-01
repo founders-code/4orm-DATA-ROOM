@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>03.2 End-to-End Lifecycle Architecture · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* person cards (team documents) */
+ .pcard { display: flex; gap: 18px; margin: 0 0 26px; }
+ .pphoto { width: 104px; height: 104px; flex-shrink: 0; background: var(--brand-50); border: 1px solid var(--hairline); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 1.35rem; font-weight: 700; color: var(--brand); overflow: hidden; }
+ .pphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .pbod h3 { font-size: 1.08rem; color: var(--text); margin: 0 0 2px; letter-spacing: -.01em; }
+ .prole { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); font-weight: 700; margin-bottom: 8px; }
+ .pbod p { font-size: .9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 8px; }
+ .pbod p:last-child { margin-bottom: 0; }
+ @media (max-width: 700px) { .pcard { flex-direction: column; } .pphoto { width: 84px; height: 84px; } }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">03.2 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">03.2</div>
+ <div class="blue-sq"></div>
+ <h1>End-to-End Lifecycle<br>Architecture</h1>
+ <p class="doc-sub">How a tokenized bank deposit moves through the platform, from fiat deposit and issuance through secondary trading, settlement, cross-chain movement, and redemption, and exactly which authorities never leave the regulated core.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">KCS Capital Research</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3M<br>Opens July 1, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">03 &middot; Product<br>Document 03.2</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">THE FULL<br>WORKFLOW</div></div>
+ <div class="bod">
+      <div class="callout"><span class="ct">What 4orm is, and is not</span><p><b>4orm is</b> the regulated record of title and rules layer for tokenized assets moving between Canadian institutions: it issues the ledger of record and token registry, and enforces identity, eligibility, sanctions, and jurisdiction rules on transfer so a transfer is final and legal across two institutions. <b>4orm is not</b> a deposit-taker, a bank, a custodian, a stablecoin issuer, or the AML officer of record. The cash-leg deposit token is issued and the liability held by the chartered bank. Custody is held by a licensed custodian. KYC and AML obligations sit with the regulated bank and the licensed custodian.</p></div>
+      
+ <h2>One deposit, end to end</h2>
+ <p class="lead">This document walks through the operational design for the platform's anchor use case: a regulated Canadian bank deposit, tokenized as DepositToken-CAD, moving through its full life. The architecture treats the KCS platform as the regulated control plane and any blockchain or interoperability provider as a bounded, swappable component underneath it. Eight stages, one canonical ledger, and a supervisory trail the whole way through.</p>
+ <div class="viz"><div class="vt">DEPOSIT TOKEN LIFECYCLE &middot; EIGHT STAGES, END TO END</div>
+ <div class="steps">
+ <div class="step"><div class="dot"></div><div class="sl">1 DEPOSIT</div><div class="sd2">Fiat deposited with a regulated FI</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">2 KYC / AML</div><div class="sd2">FI verifies; deposit recorded in core banking</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">3 ISSUANCE</div><div class="sd2">Token minted 1:1 against the off-chain deposit</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">4 LOCK &amp; MINT</div><div class="sd2">Tokens locked in platform escrow on the source chain</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">5 TRANSFER</div><div class="sd2">Provider moves message + value across chains</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">6 UNLOCK &amp; MINT</div><div class="sd2">Escrow verifies; equivalent amount minted on destination</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">7 UTILIZATION</div><div class="sd2">Used in lending, payments, or other onchain applications</div></div>
+ <div class="step open"><div class="dot"></div><div class="sl">8 REDEMPTION</div><div class="sd2">Tokens burned; FI releases fiat back to the user</div></div>
+ </div>
+ </div>
+ <p>Underneath those eight stages sit six architectural layers, and the order matters. KCS governance, compliance with the canonical ledger, and the canonical token registry sit on top and never move. Below them, an interoperability abstraction layer speaks to swappable chain adapters (Ethereum, Polygon, or any provider network), which in turn touch the underlying blockchains. The result is 1:1 backed regulated deposit representation, cross-chain usability through provider-agnostic interoperability, capital efficiency across ecosystems, and an end-to-end auditable trail.</p>
+ <p>The detailed capability inventory behind this lifecycle is document 03.1, and the build sequence that delivers it is documents 03.5 and 03.6.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">SECONDARY<br>TRADING</div></div>
+ <div class="bod">
+ <h2>Trading inside the perimeter</h2>
+ <p>After issuance, DepositToken-CAD may trade within the regulated exchange environment. The design point investors should notice is the deliberate separation at the end of the chain: market execution logic and compliance authority are architecturally distinct, so the compliance authority remains independent of market execution at all times.</p>
+ <table class="bench">
+ <thead><tr><th style="width:24%">STAGE</th><th style="width:56%">WHAT THE ARCHITECTURE DOES</th><th>POSTURE</th></tr></thead>
+ <tr><td>Platform validation</td><td>Before any trade executes, the platform validates participant eligibility, jurisdictional restrictions, custody mappings, transfer restrictions, concentration limits, and market participation rules. Trades execute only after compliance approval succeeds</td><td><span class="tag">GATED</span></td></tr>
+ <tr><td>Order types</td><td>Limit, market, IOC (immediate-or-cancel), FOK (fill-or-kill), iceberg, and stop orders are supported in the exchange design</td><td><span class="tag">SUPPORTED</span></td></tr>
+ <tr><td>Matching engine</td><td>Deterministic price/time priority with partial-fill support and supervisory auditability built into the match path</td><td><span class="tag">DETERMINISTIC</span></td></tr>
+ <tr><td>Architectural separation</td><td>Market execution logic is separated from the compliance authority, which stays independent of execution</td><td><span class="tag">SEPARATED</span></td></tr>
+ </table>
+ <p>The net effect at launch: primary issuance and bilateral delivery-versus-payment settlement, with eligibility, compliance, custody, and market controls enforced at every stage. 4orm does not operate a marketplace, exchange, or trading venue at launch. Any secondary trading or marketplace function is a later-phase capability contingent on recognition and registration under NI 21-101, NI 23-101, NI 24-102, and NI 31-103, and on exemptive relief where required. Sequencing is set out in the regulatory roadmap.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">SETTLEMENT<br>(DVP)</div></div>
+ <div class="bod">
+ <h2>Delivery versus payment, as a platform capability</h2>
+ <p class="lead">Settlement is treated as an embedded platform capability rather than an external service. The treasury and settlement workflow coordinates five things: cash-leg confirmation, token-leg confirmation, custody validation, reconciliation, and ledger commitment.</p>
+ <div class="viz"><div class="vt">SETTLEMENT SEQUENCE &middot; TRADE TO LEDGER</div>
+ <div class="steps">
+ <div class="step"><div class="dot"></div><div class="sl">TRADE</div><div class="sd2">Match confirmed</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">INSTRUCTION</div><div class="sd2">Settlement instruction issued</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">CASH CONF.</div><div class="sd2">Cash leg confirmed</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">TOKEN CONF.</div><div class="sd2">Token leg confirmed</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">COMMIT</div><div class="sd2">Both legs commit</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">LEDGER</div><div class="sd2">Canonical ledger updated</div></div>
+ </div>
+ </div>
+ <div class="entry"><span class="et">Where synchronized programmable settlement exists</span>
+ The platform may support delivery-versus-payment settlement: both legs settle in one synchronized operation, with no settlement risk window.</div>
+ <div class="entry"><span class="et">Where banking rails or external custody remain involved</span>
+ The platform supports staged institutional settlement using escrow coordination, exception handling, reconciliation, and supervisory controls. Same finality discipline, more moving parts.</div>
+ <div class="callout"><span class="ct">THE FINALITY RULE</span>
+ <p>Settlement finality occurs only after treasury confirmation, custody confirmation, and canonical ledger commitment, together. Blockchain confirmation alone does not represent institutional finality.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">CROSS-CHAIN<br>MOVEMENT</div></div>
+ <div class="bod">
+ <h2>Bounded interoperability, not a bridge ecosystem</h2>
+ <p>The platform supports future bounded interoperability while preserving institutional governance. Cross-chain movement is treated as a supervised extension of the platform, not an independent bridge ecosystem, and broader omnichain interoperability is intentionally deferred until later operational phases.</p>
+ <p>Before any cross-chain operation occurs, the platform validates destination-chain eligibility, custody mappings, jurisdictional rules, transfer restrictions, and compliance policies. Depending on the interoperability design, source-chain tokens are either locked or burned, and destination representations are then wrapped, mirrored, or canonically reissued under platform governance.</p>
+ <table class="bench">
+ <thead><tr><th style="width:44%">WHAT INTEROPERABILITY FRAMEWORKS NEVER BECOME</th><th>WHAT KCS RETAINS AUTHORITY OVER</th></tr></thead>
+ <tr><td>The ledger of record</td><td>Reconciliation</td></tr>
+ <tr><td>The compliance authority</td><td>Ownership state and compliance enforcement</td></tr>
+ <tr><td>The settlement authority</td><td>Treasury governance and supervisory auditability</td></tr>
+ </table>
+ <p>That is the whole posture in one table. Providers move messages and value between approved chains. They do not get to define what is true, who may hold what, or when settlement is final.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">5.0</div><div class="l">REDEMPTION<br>&amp; PAYOUT</div></div>
+ <div class="bod">
+ <h2>The reverse flow</h2>
+ <p>Redemption runs the lifecycle backward, with the same gates. The investor initiates redemption; if assets exist on a secondary chain, wrapped or mirrored representations are first burned or reconciled; treasury then verifies ownership, validates payout instructions, burns the redeemed source-chain assets, and coordinates fiat payout through banking rails. The redemption lifecycle concludes only after treasury confirmation, banking confirmation, reconciliation, and the canonical ledger update.</p>
+ <table class="bench">
+ <thead><tr><th style="width:30%">WHAT THIS PRESERVES</th><th>WHY IT MATTERS</th></tr></thead>
+ <tr><td>Supply integrity</td><td>Redeemed assets are properly extinguished and total supply remains accurate, so the 1:1 backing claim stays true</td></tr>
+ <tr><td>Ownership traceability</td><td>A clear, complete record of ownership from issuance to redemption</td></tr>
+ <tr><td>Supervisory auditability</td><td>A transparent audit trail for regulators and internal oversight</td></tr>
+ <tr><td>Regulated payout governance</td><td>Fiat payouts execute under institutional and regulatory requirements, not protocol convenience</td></tr>
+ </table>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">6.0</div><div class="l">OPERATIONAL<br>CONTROLS</div></div>
+ <div class="bod">
+ <h2>The controls layer</h2>
+ <p>The platform incorporates institutional operational controls in three groups, and together they define the operating environment for institutional digital asset lifecycle management.</p>
+ <table class="bench">
+ <thead><tr><th style="width:33%">CORE OPERATIONAL CONTROLS</th><th style="width:33%">ARCHITECTURE SUPPORT</th><th>REGULATORY &amp; INSTITUTIONAL ALIGNMENT</th></tr></thead>
+ <tr>
+ <td>Reconciliation; settlement exception handling; custody verification; smart-contract governance; operational runbooks; incident escalation; audit evidence preservation</td>
+ <td>Immutable audit trails; deterministic replayability; regulator-facing reporting; supervisory traceability</td>
+ <td>Canadian securities expectations; FINTRAC obligations; institutional custody standards; regulated market infrastructure principles</td>
+ </tr>
+ </table>
+ <p>Two of these deserve a sentence each. Deterministic replayability means any disputed state can be reconstructed step by step from the record, which is what turns an audit from an argument into a lookup. And audit evidence preservation is listed as a control in its own right, because in a regulated venue the evidence is part of the product.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">7.0</div><div class="l">ARCHITECTURE<br>POSITION</div></div>
+ <div class="bod">
+ <h2>What KCS owns, what it merely uses</h2>
+ <p class="lead">The tokenized bank-deposit workflow demonstrates the core strategic position of the platform: KCS owns and governs compliance, settlement orchestration, treasury coordination, issuer governance, token registry management, canonical ledger authority, and supervisory auditability. Everything else operates as a bounded integration domain under platform governance.</p>
+ <table class="bench">
+ <thead><tr><th style="width:33%">KCS OWNS AND GOVERNS</th><th style="width:33%">BOUNDED INTEGRATION DOMAINS</th><th>RESULTING ARCHITECTURE SUPPORTS</th></tr></thead>
+ <tr>
+ <td>Compliance; settlement orchestration; treasury coordination; issuer governance; token registry management; canonical ledger authority; supervisory auditability</td>
+ <td>Blockchain networks; interoperability providers; custodians; KYC vendors; banking rails; swappable interoperability-provider adapters</td>
+ <td>Regulated issuance; policy-controlled liquidity; institutional settlement discipline; bounded interoperability; supervisory auditability</td>
+ </tr>
+ </table>
+ <p>The middle column is the moat logic. Each external dependency operates as a bounded integration domain under platform governance rather than as an authoritative control environment, so any provider can be swapped without surrendering ownership of the regulated operational core. This is the same posture the room's competitive documents argue from; the head-to-head is Polymath Competitive Scope, document 02.5.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">8.0</div><div class="l">WHAT IS<br>STILL OPEN</div></div>
+ <div class="bod">
+ <h2>What the architecture does not yet specify, on purpose</h2>
+ <p class="lead">This room labels what is decided and what is not, and this document is no exception. The lifecycle mechanics above are designed. A set of product and policy definitions is deliberately unresolved, because they are legal and regulatory decisions to be made with counsel and regulators during the build, not engineering defaults to be assumed now.</p>
+ <div class="viz"><div class="vt">SPECIFICATION STATUS ACROSS THE DESIGN</div>
+ <div class="hrow"><div class="hlab">Lifecycle mechanics</div><div class="htrack"><div class="stk"><i class="sd" style="width:88%"></i><i class="sn" style="width:12%"></i></div></div><div class="hval">DESIGNED</div></div>
+ <div class="hrow"><div class="hlab">Operational controls</div><div class="htrack"><div class="stk"><i class="sd" style="width:80%"></i><i class="sn" style="width:20%"></i></div></div><div class="hval">DESIGNED</div></div>
+ <div class="hrow"><div class="hlab">Product definition</div><div class="htrack"><div class="stk"><i class="sd" style="width:25%"></i><i class="sn" style="width:75%"></i></div></div><div class="hval">OPEN &middot; WITH COUNSEL</div></div>
+ <div class="hrow"><div class="hlab">Policy specificity</div><div class="htrack"><div class="stk"><i class="sd" style="width:30%"></i><i class="sn" style="width:70%"></i></div></div><div class="hval">OPEN &middot; KYC/AML SET</div></div>
+ <div class="hrow"><div class="hlab">Interop mechanics</div><div class="htrack"><div class="stk"><i class="sd" style="width:35%"></i><i class="sn" style="width:65%"></i></div></div><div class="hval">OPEN &middot; LATER PHASE</div></div>
+ <div class="legend"><span><i style="background:#7BE3B0"></i>DESIGNED</span><span><i style="background:#F2DFA7"></i>UNSPECIFIED, GATED TO BUILD PHASE</span></div>
+ </div>
+ <table class="bench">
+ <thead><tr><th style="width:30%">UNRESOLVED QUESTION</th><th style="width:52%">WHAT HAS TO BE DECIDED</th><th>STATUS</th></tr></thead>
+ <tr><td>Legal wrapper &amp; claim structure</td><td>Is the token holder's right against a bank, a custodian, an SPV, a trust, or some other vehicle</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Instrument classification</td><td>Is the bank-deposit token an RWA claim, a tokenized security, a payment token, or a special class</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Minting trigger</td><td>Minting against pre-funded reserve balances, only against investor subscriptions, or both</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Redemption rights</td><td>On-demand, batched, windowed, or queue-based redemption</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Fee schedule</td><td>Exact issuance, trading, custody, settlement, bridge, and redemption amounts</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Bridge proof &amp; dispute model</td><td>Light-client proofs, attestation, multisig, or other design; challenge windows and reversal rules</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>Destination-chain policy mirroring</td><td>How whitelist status, identity attestations, freezes, and jurisdiction flags transport and revalidate cross-chain</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ <tr><td>AMM / DeFi eligibility</td><td>Controlled AMMs and DeFi adapters are allowed for eligible tokenized instruments; whether a bank-deposit token qualifies is unspecified</td><td><span class="tag open">UNSPECIFIED</span></td></tr>
+ </table>
+ <div class="entry"><span class="et">The working recommendations</span>
+ Define the bank-deposit product legally first, so design decisions crystallize against regulation. Keep a single source of supervisory truth in the canonical ledger. Use a regulated token standard with identity, compliance, transfer controls, and auditability built in, rather than plain fungibility. Default to staged DvP settlement unless the cash leg is natively programmable in the same controlled domain. And treat every cross-chain transfer as a compliance extension, with policy propagation, eligibility revalidation, and exception handling, never as a generic bridge feature.</div>
+ <p class="note">Source: KCS architecture working sessions, tokenized bank deposit use case (June 2026). The unresolved items above are design gates, not omissions; each is assigned to the regulatory and counsel workstreams tracked on the Path to Revenue page.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>

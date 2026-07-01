@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Structured Roadmap Matrix, 0-12 Months · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">03.6 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">03.6</div>
+ <div class="blue-sq"></div>
+ <h1>Structured Roadmap<br>Matrix, 0-12 Months</h1>
+ <p class="doc-sub">Foundation to production readiness in six phases: what gets built, who builds it, what each phase delivers, and when each institutional capability and regulatory control comes online.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance Holdings Inc.</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3M<br>Opens July 1, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">03 &middot; Product<br>Document 03.6</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">HOW TO<br>READ THIS</div></div>
+ <div class="bod">
+ <h2>One year, six phases, three lenses</h2>
+ <p class="lead">This is the build program for the RWA exchange and settlement platform, from architectural foundation to production readiness, organized phase by phase: timeline, theme, objectives, key activities, deliverables, and the incremental value each phase banks. It is written for architecture planning, program governance, and executive reporting all at once, which is why it ends with two cross-cutting matrices: when each capability comes online, and when each regulatory control becomes operational.</p>
+ <div class="viz"><div class="vt">THE TWELVE MONTHS, AS A TIMELINE &middot; CLOCK STARTS AT FIRST CLOSE</div>
+ <div class="grow"><span class="hlab">P1 Foundation</span><span class="gtrack"><span class="gbar" style="left:0;width:8.3%"></span></span><span class="hval">DAYS 1-30</span></div>
+ <div class="grow"><span class="hlab">P2 Prototype</span><span class="gtrack"><span class="gbar alt" style="left:8.3%;width:8.3%"></span></span><span class="hval">DAYS 31-60</span></div>
+ <div class="grow"><span class="hlab">P3 Pilot readiness</span><span class="gtrack"><span class="gbar" style="left:16.6%;width:8.3%"></span></span><span class="hval">DAYS 61-90</span></div>
+ <div class="grow"><span class="hlab">P4 MVP build</span><span class="gtrack"><span class="gbar alt" style="left:25%;width:25%"></span></span><span class="hval">MONTHS 4-6</span></div>
+ <div class="grow"><span class="hlab">P5 Sandbox pilot</span><span class="gtrack"><span class="gbar" style="left:50%;width:25%"></span></span><span class="hval">MONTHS 7-9</span></div>
+ <div class="grow"><span class="hlab">P6 Hardening</span><span class="gtrack"><span class="gbar alt" style="left:75%;width:25%"></span></span><span class="hval">MONTHS 10-12</span></div>
+ </div>
+ <p>Three reading notes. First, the clock starts at the first close of the $3M Pre-Seed (opening July 1, 2026); months 1 through 12 map roughly to Q3 2026 through Q3 2027. Second, Phases 1 through 3 (days 1 to 90) mirror the 30-60-90 Technical Plan (document 03.5), where a meaningful share of the discovery work is already marked complete; this matrix carries the program through what comes after. Third, the regulatory sandbox application is targeted for Q3 2026, ahead of the Phase 5 sandbox deployment window, so the paperwork leads the build rather than chasing it.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">THE SIX<br>PHASES</div></div>
+ <div class="bod wide">
+ <h2>Phase by phase, foundation to production</h2>
+ <table class="bench">
+ <thead><tr><th style="width:13%">PHASE</th><th style="width:21%">THEME &amp; OBJECTIVES</th><th style="width:26%">KEY ACTIVITIES</th><th style="width:20%">DELIVERABLES</th><th>INCREMENTAL VALUE</th></tr></thead>
+ <tr>
+ <td class="ph">PHASE 1<br>Days 1-30</td>
+ <td><strong>Foundation and truth-settling.</strong> Lock regulatory, institutional, and architectural truths; define domain boundaries and the core data model; stand up governance and the hiring engine</td>
+ <td>Requirements clarification with bank partners, regulators, and advisors; Architecture v1 (domains, ledger, trust boundaries); regulatory mapping (CSA, OSFI, FINTRAC); integration feasibility; organizational design and hiring plan</td>
+ <td>Architecture v1; Security Model v1; core data model; regulatory compliance map; requirements baseline; CI/CD scaffolding</td>
+ <td>A complete, defensible architectural and regulatory baseline that prevents misbuilds and enables prototype design</td>
+ </tr>
+ <tr>
+ <td class="ph">PHASE 2<br>Days 31-60</td>
+ <td><strong>Prototype and compliance proofing.</strong> Demonstrate technical viability; prove compliance logic and permissioning; establish the DevSecOps and security foundation</td>
+ <td>Settlement and tokenized-deposit prototype; permissioning and policy-as-code; ledger MVP with auditability; sandbox environment deployment; vendor evaluation (custody, AML/KYC, infrastructure)</td>
+ <td>MVP ledger prototype; settlement flow prototype; compliance rule engine prototype; CI/CD security controls; vendor shortlist</td>
+ <td>A working prototype demonstrating settlement, compliance enforcement, and ledger integrity for regulator review</td>
+ </tr>
+ <tr>
+ <td class="ph">PHASE 3<br>Days 61-90</td>
+ <td><strong>Pilot readiness and the execution engine.</strong> Lock MVP scope; prepare bank integration and legal architecture; formalize governance for the institutional pilot</td>
+ <td>MVP blueprint; bank-partner integration design; legal architecture for tokenized deposits and RWAs; identity and permission hardening; audit logging and admin portal design; delivery governance</td>
+ <td>MVP blueprint; integration architecture; compliance readiness plan; pilot specification; governance framework</td>
+ <td>A complete, implementable MVP specification ready for the pilot build with regulator-defensible architecture</td>
+ </tr>
+ <tr>
+ <td class="ph">PHASE 4<br>Months 4-6</td>
+ <td><strong>MVP build, internal pilot.</strong> Build production-ready core rails; validate functionality internally; strengthen security and DevOps automation</td>
+ <td>Settlement, compliance, ledger, and tokenization module build; internal pilot flows on restricted accounts and simple assets; infrastructure deployment and monitoring; initial custody and AML/KYC vendor integrations</td>
+ <td>Production-grade core services; asset lifecycle contracts; monitoring and observability stack; automated compliance tests; MVP operational workflows</td>
+ <td>A functioning MVP with internal users validating real transaction and compliance flows</td>
+ </tr>
+ <tr>
+ <td class="ph">PHASE 5<br>Months 7-9</td>
+ <td><strong>Sandbox and limited institutional pilot.</strong> Deploy the MVP in the regulator-aligned sandbox; run the pilot with the lead bank partner and controlled institutional participants; finalize governance and controls</td>
+ <td>Pilot asset issuance; tokenized-deposit settlement flows; bank-partner integration go-live; custody and AML/KYC integration; operational playbooks; security and performance testing</td>
+ <td>Regulator documentation; pilot modules; sandbox environment; observability framework; pilot KPIs</td>
+ <td>A regulator-aligned institutional pilot demonstrating real issuance, settlement, and compliance operations</td>
+ </tr>
+ <tr>
+ <td class="ph">PHASE 6<br>Months 10-12</td>
+ <td><strong>Production hardening and controlled expansion.</strong> Harden for production; onboard early institutional partners; expand the tokenization modules</td>
+ <td>Security audits and penetration testing; multi-bank governance design; RWA tokenization module expansion; custody federation planning; marketplace scaffolding</td>
+ <td>Production-ready platform modules; security audit results; multi-bank governance framework; RWA tokenization modules; marketplace architecture</td>
+ <td>A secure production platform with expansion paths for RWAs, marketplace trading, and multi-custodian federation</td>
+ </tr>
+ </table>
+ <div class="viz"><div class="vt">WHAT EACH PHASE BANKS</div>
+ <div class="steps">
+ <div class="step"><div class="dot"></div><div class="sl">P1</div><div class="sd2">Architectural &amp; regulatory baseline</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">P2</div><div class="sd2">Working settlement &amp; compliance prototype</div></div>
+ <div class="step"><div class="dot"></div><div class="sl">P3</div><div class="sd2">MVP blueprint, pilot-ready</div></div>
+ <div class="step open"><div class="dot"></div><div class="sl">P4</div><div class="sd2">Internal pilot on real workflows</div></div>
+ <div class="step open"><div class="dot"></div><div class="sl">P5</div><div class="sd2">Regulator-aligned institutional pilot</div></div>
+ <div class="step open"><div class="dot"></div><div class="sl">P6</div><div class="sd2">Production platform, expansion paths</div></div>
+ </div>
+ </div>
+ <div class="callout">
+ <span class="ct">THE VALUE LADDER</span>
+ <p>0-30 days: architectural and regulatory baseline. 31-60: functional prototype proving settlement and compliance feasibility. 61-90: complete MVP blueprint and pilot readiness. Months 4-6: internal pilot on real workflows. Months 7-9: regulator-aligned sandbox and institutional pilot. Months 10-12: production hardening and expansion capability.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">CAPABILITY<br>BUILD MATRIX</div></div>
+ <div class="bod wide">
+ <h2>When each institutional capability comes online</h2>
+ <table class="bench">
+ <thead><tr><th style="width:17%">CAPABILITY</th><th>P1 (0-30D)</th><th>P2 (31-60D)</th><th>P3 (61-90D)</th><th>P4 (4-6M)</th><th>P5 (7-9M)</th><th>P6 (10-12M)</th></tr></thead>
+ <tr><td>Identity &amp; access</td><td>Requirements and design</td><td>Policy engine prototype</td><td>Permission model hardened</td><td>Integrated into MVP</td><td>Institutional onboarding</td><td>Multi-bank identity federation</td></tr>
+ <tr><td>Compliance &amp; regulatory controls</td><td>Regulatory mapping</td><td>Policy-as-code prototype</td><td>Compliance readiness plan</td><td>Automated regulatory testing</td><td>Sandbox compliance reporting</td><td>Production supervision model</td></tr>
+ <tr><td>Tokenization engine</td><td>Domain model defined</td><td>Tokenized deposit primitive</td><td>RWA issuance blueprint</td><td>Asset lifecycle contracts</td><td>Pilot issuance</td><td>Expanded RWA tokenization</td></tr>
+ <tr><td>Settlement &amp; payments</td><td>Ledger model design</td><td>Settlement prototype</td><td>Bank integration design</td><td>Production settlement rails</td><td>Pilot settlement flows</td><td>Multi-bank settlement readiness</td></tr>
+ <tr><td>Custody integration</td><td>Vendor landscape review</td><td>Custody vendor shortlist</td><td>Integration architecture</td><td>Custody adapter implemented</td><td>Pilot custody operations</td><td>Federated custody model</td></tr>
+ <tr><td>Trading / marketplace layer</td><td>Concept definition</td><td>Feasibility review</td><td>Marketplace blueprint</td><td>Internal trading simulation</td><td>Pilot secondary flows</td><td>Marketplace infrastructure</td></tr>
+ <tr><td>Audit &amp; reporting</td><td>Compliance requirements</td><td>Ledger auditability</td><td>Audit framework design</td><td>Operational audit logging</td><td>Pilot reporting workflows</td><td>Regulatory reporting engine</td></tr>
+ <tr><td>Platform infrastructure</td><td>CI/CD scaffolding</td><td>DevSecOps baseline</td><td>Integration architecture</td><td>Production infrastructure</td><td>Sandbox environment</td><td>Production-grade infrastructure</td></tr>
+ </table>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">REGULATORY<br>READINESS</div></div>
+ <div class="bod wide">
+ <h2>The regulator-facing control maturity model</h2>
+ <p>The same twelve months, read through the supervisor's eyes: when each compliance layer becomes operational, framework by framework.</p>
+ <table class="bench">
+ <thead><tr><th style="width:17%">FRAMEWORK</th><th>P1 (0-30D)</th><th>P2 (31-60D)</th><th>P3 (61-90D)</th><th>P4 (4-6M)</th><th>P5 (7-9M)</th><th>P6 (10-12M)</th></tr></thead>
+ <tr><td>CSA securities (NI 45-106, 31-103, 21-101)</td><td>Regulatory mapping</td><td>Compliance logic prototype</td><td>Legal architecture defined</td><td>Automated rule enforcement</td><td>Sandbox regulatory oversight</td><td>Production compliance</td></tr>
+ <tr><td>FINTRAC AML/KYC</td><td>AML obligations identified</td><td>KYC workflow prototype</td><td>Identity verification design</td><td>KYC integration live</td><td>AML monitoring during pilot</td><td>Full AML reporting</td></tr>
+ <tr><td>OSFI banking controls</td><td>Banking interface requirements</td><td>Deposit token prototype</td><td>Bank integration architecture</td><td>Secure payment rails</td><td>Bank pilot integration</td><td>Multi-bank operational model</td></tr>
+ <tr><td>PIPEDA / privacy</td><td>Data residency and privacy rules</td><td>Privacy controls implemented</td><td>Identity security model</td><td>Data governance automation</td><td>Sandbox audit review</td><td>Production privacy compliance</td></tr>
+ <tr><td>PFMI settlement principles</td><td>Settlement model design</td><td>Ledger settlement prototype</td><td>Clearing architecture defined</td><td>Operational settlement rails</td><td>Pilot settlement operations</td><td>Production clearing readiness</td></tr>
+ <tr><td>ISO 27001 / security</td><td>Security framework design</td><td>Security controls baseline</td><td>Security architecture finalized</td><td>DevSecOps enforcement</td><td>Security testing</td><td>Certification readiness</td></tr>
+ </table>
+ <p class="note">Basis: the structured roadmap matrix prepared for program governance, June 2026 revision, anchored to the first close of the Pre-Seed. Phases 1 to 3 align with the 30-60-90 Technical Plan (document 03.5), where current completion status is tracked item by item. Bank-partner references reflect the lead design-partner relationships described in documents 02.4 and 10.4.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>

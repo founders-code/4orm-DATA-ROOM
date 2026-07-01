@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>00 What We Are Building · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ /* Q&A cards (reviewer questions / common asks) */
+ .qa { background: #F7FAFF; border: 1px solid var(--hairline); border-left: 3px solid var(--brand); border-radius: 12px; padding: 18px 22px; margin: 0 0 16px; }
+ .qa .q { position: relative; padding-left: 34px; font-weight: 700; color: var(--text); font-size: .95rem; line-height: 1.5; margin-bottom: 11px; }
+ .qa .q::before { content: "Q"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #fff; background: var(--brand); border-radius: 6px; padding: 2px 7px; }
+ .qa .a { position: relative; padding-left: 34px; color: var(--text-2); font-size: .9rem; line-height: 1.7; }
+ .qa .a::before { content: "A"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #0E8A5F; background: rgba(123,227,176,.22); border-radius: 6px; padding: 2px 7px; }
+ .qa .flag { display: inline-block; margin-top: 10px; margin-left: 36px; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.14); border: 1px solid rgba(231,199,108,.4); border-radius: 99px; padding: 4px 11px; }
+ /* vertical cards (expansion verticals) */
+ .vgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+ @media (max-width: 640px){ .vgrid { grid-template-columns: 1fr; } }
+ .vcard { background: #F7FAFF; border: 1px solid var(--hairline); border-left: 3px solid var(--brand); border-radius: 11px; padding: 15px 17px; }
+ .vcard.fwd { border-left-color: #9AB6FF; }
+ .vcard .vn { font-weight: 800; font-size: .96rem; color: var(--text); letter-spacing: -.01em; }
+ .vcard .vstat { font-family: var(--font-mono); font-size: 1.02rem; font-weight: 700; color: var(--brand); margin: 7px 0 6px; line-height: 1.2; }
+ .vcard .vfee { font-size: .82rem; color: var(--text-2); line-height: 1.5; }
+ .vcard .vchips { margin-top: 9px; display: flex; gap: 6px; flex-wrap: wrap; }
+ .vchip { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; border-radius: 99px; padding: 3px 9px; }
+ .vchip.v { color: #0E8A5F; background: rgba(123,227,176,.16); }
+ .vchip.e { color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.16); }
+ .vchip.now { color: var(--brand); background: var(--brand-50); }
+ .vchip.next { color: var(--text-3); background: rgba(94,110,136,.12); }
+ /* source link inside a vcard */
+ .vcard .vsrc { margin-top: 8px; }
+ .vcard .vsrc a, a.ref { color: var(--brand); text-decoration: none; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .04em; font-weight: 700; border-bottom: 1px solid rgba(46,107,242,.35); }
+ .vcard .vsrc a:hover, a.ref:hover { color: #1B4ABE; border-bottom-color: #1B4ABE; }
+ /* consolidated source list */
+ .srcs { margin: 14px 0 0; padding: 16px 18px; background: #F7FAFF; border: 1px solid var(--hairline); border-radius: 10px; }
+ .srcs .st { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--text-3); margin-bottom: 8px; }
+ .srcs ol { margin: 0; padding-left: 20px; }
+ .srcs li { font-size: .8rem; color: var(--text-2); line-height: 1.7; margin-bottom: 5px; }
+ .srcs li a { color: var(--brand); text-decoration: none; word-break: break-word; }
+ .srcs li a:hover { text-decoration: underline; }
+ /* pull quote (founder narrative) */
+ .pull { font-size: 1.3rem; line-height: 1.45; color: var(--text); font-weight: 600; border-left: 4px solid var(--gold-2, #C49A3A); padding: 4px 0 4px 20px; margin: 22px 0; }
+ /* signature block (CEO commitment) */
+ .sign { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--hairline); font-size: .92rem; color: var(--text-2); line-height: 2.4; }
+ /* numbered lists (mission anchor bars / decision protocol) */
+ ol.bars, ol.proto { margin: 12px 0 0 4px; padding-left: 22px; }
+ ol.bars li, ol.proto li { font-size: .96rem; color: var(--text-2); line-height: 1.7; margin-bottom: 12px; padding-left: 6px; }
+ ol.bars li::marker, ol.proto li::marker { color: var(--brand); font-weight: 700; font-family: var(--font-mono); }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* person cards (team documents) */
+ .pcard { display: flex; gap: 18px; margin: 0 0 26px; }
+ .pphoto { width: 104px; height: 104px; flex-shrink: 0; background: var(--brand-50); border: 1px solid var(--hairline); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 1.35rem; font-weight: 700; color: var(--brand); overflow: hidden; }
+ .pphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .pbod h3 { font-size: 1.08rem; color: var(--text); margin: 0 0 2px; letter-spacing: -.01em; }
+ .prole { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); font-weight: 700; margin-bottom: 8px; }
+ .pbod p { font-size: .9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 8px; }
+ .pbod p:last-child { margin-bottom: 0; }
+ @media (max-width: 700px) { .pcard { flex-direction: column; } .pphoto { width: 84px; height: 84px; } }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+
+  @page flow { size: letter; margin: 1.15in .65in 1.05in .65in;
+    @top-center { content: element(runhd); vertical-align: bottom; }
+    @bottom-center { content: element(runft); vertical-align: top; } }
+  .flow { page: flow; }
+  .runhd { position: running(runhd); width: 7.2in; border-bottom: 1.5pt solid #142036; padding-bottom: 8pt; margin-bottom: 14pt; }
+  .runft { position: running(runft); width: 7.2in; border-top: .5pt solid #142036; padding-top: 8pt; margin-top: 12pt; }
+  .runhd span, .runft span { font-family: 'JetBrains Mono', monospace; letter-spacing: .16em; }
+  .runhd span { font-size: 7.5pt; color: #142036; }
+  .runhd span.r, .runft span.r { float: right; color: #5E6E88; }
+  .runft span { font-size: 7pt; letter-spacing: .14em; color: #5E6E88; }
+  .runft .pg::after { content: counter(page) " \00B7 UPDATED JUN 2026"; }
+  .flow .sec + .sec { page-break-before: always; }
+  .lead { font-size: 10.5pt; line-height: 1.7; color: #142036; }
+  .note { font-size: 8pt; color: #5E6E88; font-style: italic; }
+  .cards3 { margin: 12pt 0 6pt; }
+  .c3 { display: inline-block; width: 32%; vertical-align: top; margin-right: 1.2%; border: .75pt solid #D7DEEA; border-top: 2pt solid #2E6BF2; border-radius: 7pt; padding: 10pt 12pt; page-break-inside: avoid; }
+  .c3 .k { font-family: 'JetBrains Mono', monospace; font-size: 6.2pt; letter-spacing: .14em; text-transform: uppercase; color: #2E6BF2; font-weight: 700; }
+  .c3 .t { font-weight: 700; color: #142036; font-size: 10pt; margin: 4pt 0 2pt; }
+  .c3 .d { font-size: 8pt; color: #46556E; line-height: 1.45; }
+  .dvp { margin: 8pt 0 4pt; background: #2E6BF2; color: #fff; border-radius: 7pt; padding: 9pt 14pt; text-align: center; page-break-inside: avoid; }
+  .dvp .k { font-family: 'JetBrains Mono', monospace; font-size: 6pt; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.8); font-weight: 700; }
+  .dvp .t { font-weight: 700; font-size: 11pt; margin-top: 2pt; }
+  .twocol { margin: 10pt 0 4pt; }
+  .col { display: inline-block; width: 48%; vertical-align: top; }
+  .col.r { margin-left: 3%; }
+  .col .h { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; margin-bottom: 5pt; }
+  .col.l .h { color: #0E8A5F; } .col.r .h { color: #B5651A; }
+  .col ul { margin: 0; padding-left: 14pt; } .col li { font-size: 9pt; color: #46556E; line-height: 1.5; margin-bottom: 4pt; }
+  .pull { font-size: 12.5pt; line-height: 1.4; color: #142036; font-weight: 600; border-left: 4pt solid #C49A3A; background: #FBF7EC; padding: 10pt 16pt; margin: 14pt 0 4pt; page-break-inside: avoid; }
+  .pull .k { font-family: 'JetBrains Mono', monospace; font-size: 6pt; letter-spacing: .16em; text-transform: uppercase; color: #B5651A; font-weight: 700; display: block; margin-bottom: 5pt; }
+
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">00 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">00</div>
+ <div class="blue-sq"></div>
+ <h1>What we are<br>building</h1>
+ <p class="doc-sub">The settlement layer that makes a transfer final and legal across two institutions. One product, two words: interoperability and settlement finality.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance Holdings Inc.</div></div><div class="dm"><div class="k">CATEGORY</div><div class="v">Concept Overview<br>Document 00</div></div><div class="dm"><div class="k">ROUND</div><div class="v">Pre-Seed $3M min<br>Closing Q2 2026</div></div><div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+  <div class="sec">
+    <div class="marg"><div class="n">1.0</div><div class="l">THE
+PROBLEM</div></div>
+    <div class="bod">
+      <h2>A transfer cannot become final across institutions</h2>
+      <p class="lead">When a tokenized asset moves from one institution to another, it cannot become final and legal today. Even tokenized money has this problem: a stablecoin can move on a chain, but it cannot be moved cleanly from one regulated institution to another and be custodied there with finality. Real-world assets cannot move from place to place at all. The token is not the hard part. The hard part is making the transfer final, legal, and recognized on the other side.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">2.0</div><div class="l">THE
+MODEL</div></div>
+    <div class="bod">
+      <h2>Three things travel with any asset</h2>
+      <p class="lead">For a transfer to be final across institutions, three things must move together. 4orm moves all three in one settlement.</p>
+      <div class="cards3">
+        <div class="c3"><div class="k">01 &middot; Title</div><div class="t">Record of ownership</div><div class="d">Ledger of record and registry.</div></div>
+        <div class="c3"><div class="k">02 &middot; Cash leg</div><div class="t">Tokenized deposit</div><div class="d">Issued by the bank as its own liability.</div></div>
+        <div class="c3"><div class="k">03 &middot; Rules</div><div class="t">Identity and eligibility</div><div class="d">Sanctions and jurisdiction, enforced on transfer.</div></div>
+      </div>
+      <div class="dvp"><div class="k">Delivery versus payment</div><div class="t">Settlement finality</div></div>
+      <p>When all three settle together, the transfer is final the moment it commits. 4orm issues the record of title, not the money. The bank issues the deposit as its own liability.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">3.0</div><div class="l">THE
+WEDGE</div></div>
+    <div class="bod">
+      <h2>Why bank deposits first</h2>
+      <p class="lead">Every settlement has a cash leg; you cannot swap an asset without money on the other side. A tokenized bank deposit is that cash leg, in regulated Canadian dollars institutions already trust. So the deposit is not the small first step before the real thing. It is the on-ramp that pulls everything else through. Own the cash leg and 4orm becomes the settlement asset every other transfer needs: bonds, receivables, real estate, and eventually stablecoins from other issuers.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">4.0</div><div class="l">THE
+BUILD</div></div>
+    <div class="bod">
+      <h2>Where this goes</h2>
+      <div class="steps">
+        <div class="step"><div class="dot"></div><div class="sl">Phase 1</div><div class="sd2">The cash leg. Stand up the tokenized bank deposit as the settling money.</div></div>
+        <div class="step"><div class="dot"></div><div class="sl">Phase 2</div><div class="sd2">Interoperability proof. Settle a second asset against the cash leg.</div></div>
+        <div class="step"><div class="dot"></div><div class="sl">Phase 3</div><div class="sd2">Conditional settlement. A verified milestone releases payment instantly.</div></div>
+        <div class="step open"><div class="dot"></div><div class="sl">Phase 4</div><div class="sd2">Open network. Other issuers plug in and settle through 4orm.</div></div>
+      </div>
+      <p>The direction is already proven abroad by the UK Regulated Liability Network and Fnality, and at home by the Bank of Canada Project Samara. None is building the neutral, bank-integrated, Canadian-dollar layer that connects them.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">5.0</div><div class="l">THE
+LINE</div></div>
+    <div class="bod">
+      <h2>What we are, and what we are not</h2>
+      <div class="twocol">
+        <div class="col l"><div class="h">4orm is</div><ul>
+          <li>The record of title for tokenized assets</li>
+          <li>The settlement layer that makes a transfer final across two institutions</li>
+          <li>The connector to a bank-issued cash leg</li>
+          <li>Neutral; no single bank owns it</li>
+        </ul></div>
+        <div class="col r"><div class="h">4orm is not</div><ul>
+          <li>A bank, and does not take deposits</li>
+          <li>A custodian of client assets</li>
+          <li>A stablecoin issuer</li>
+          <li>The AML officer of record</li>
+        </ul></div>
+      </div>
+      <div class="pull"><span class="k">The sentence to lead with</span>We settle a tokenized deposit with finality today. The same rails settle any tokenized asset tomorrow.</div>
+      <p class="note">Concept overview. Forward-looking; subject to change and to receipt of required regulatory approvals. Not an offer to sell securities. The cash-leg deposit liability is issued and held by the chartered bank; 4orm takes no deposits and is not a custodian.</p>
+    </div>
+  </div>
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>

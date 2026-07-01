@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>10.2 Indicative Responses to Common Asks · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ /* Q&A cards (reviewer questions / common asks) */
+ .qa { background: #F7FAFF; border: 1px solid var(--hairline); border-left: 3px solid var(--brand); border-radius: 12px; padding: 18px 22px; margin: 0 0 16px; }
+ .qa .q { position: relative; padding-left: 34px; font-weight: 700; color: var(--text); font-size: .95rem; line-height: 1.5; margin-bottom: 11px; }
+ .qa .q::before { content: "Q"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #fff; background: var(--brand); border-radius: 6px; padding: 2px 7px; }
+ .qa .a { position: relative; padding-left: 34px; color: var(--text-2); font-size: .9rem; line-height: 1.7; }
+ .qa .a::before { content: "A"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #0E8A5F; background: rgba(123,227,176,.22); border-radius: 6px; padding: 2px 7px; }
+ .qa .flag { display: inline-block; margin-top: 10px; margin-left: 36px; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.14); border: 1px solid rgba(231,199,108,.4); border-radius: 99px; padding: 4px 11px; }
+ /* pull quote (founder narrative) */
+ .pull { font-size: 1.3rem; line-height: 1.45; color: var(--text); font-weight: 600; border-left: 4px solid var(--gold-2, #C49A3A); padding: 4px 0 4px 20px; margin: 22px 0; }
+ /* signature block (CEO commitment) */
+ .sign { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--hairline); font-size: .92rem; color: var(--text-2); line-height: 2.4; }
+ /* numbered lists (mission anchor bars / decision protocol) */
+ ol.bars, ol.proto { margin: 12px 0 0 4px; padding-left: 22px; }
+ ol.bars li, ol.proto li { font-size: .96rem; color: var(--text-2); line-height: 1.7; margin-bottom: 12px; padding-left: 6px; }
+ ol.bars li::marker, ol.proto li::marker { color: var(--brand); font-weight: 700; font-family: var(--font-mono); }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* person cards (team documents) */
+ .pcard { display: flex; gap: 18px; margin: 0 0 26px; }
+ .pphoto { width: 104px; height: 104px; flex-shrink: 0; background: var(--brand-50); border: 1px solid var(--hairline); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 1.35rem; font-weight: 700; color: var(--brand); overflow: hidden; }
+ .pphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .pbod h3 { font-size: 1.08rem; color: var(--text); margin: 0 0 2px; letter-spacing: -.01em; }
+ .prole { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); font-weight: 700; margin-bottom: 8px; }
+ .pbod p { font-size: .9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 8px; }
+ .pbod p:last-child { margin-bottom: 0; }
+ @media (max-width: 700px) { .pcard { flex-direction: column; } .pphoto { width: 84px; height: 84px; } }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">10.2 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">10.2</div>
+ <div class="blue-sq"></div>
+ <h1>Indicative Responses<br>to Common Asks</h1>
+ <p class="doc-sub">Short, direct answers to the questions that come up in nearly every investor conversation: terms, timeline, structure, eligibility, and what happens next.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance &middot; Founders</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3M<br>Opens July 1, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">10 &middot; Diligence<br>Document 10.2</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">THE ROUND<br>AT A GLANCE</div></div>
+ <div class="bod">
+ <p class="lead">These are indicative responses, written to answer quickly and consistently. Anything here that bears on a decision should be confirmed against the definitive documents in the 09 Fundraise and 08 Corporate folders, which govern.</p>
+ <table class="bench">
+ <thead><tr><th style="width:38%">ASK</th><th>INDICATIVE RESPONSE</th></tr></thead>
+ <tr><td>What are you raising?</td><td class="num">$3M pre-seed, $10M pre-money</td></tr>
+ <tr><td>When does it open?</td><td>July 1, 2026</td></tr>
+ <tr><td>Minimum raise?</td><td class="num">$3M minimum</td></tr>
+ <tr><td>What is the instrument?</td><td>Priced unit offering: each $1,000 unit = 1 redeemable preferred ($500 face) + 1,000 common ($500 at $0.50) + a half warrant at $1.50</td></tr>
+ <tr><td>Already committed?</td><td class="num">$70K secured; $500K signed LOI (not yet funded)</td></tr>
+ <tr><td>Investor protections?</td><td>NVCA-aligned: 1x non-participating preference, broad-based weighted-average anti-dilution, pro-rata, information rights</td></tr>
+ <tr><td>Tax treatment?</td><td>BC EBC 30% tax credit; structured for TFSA / RRSP eligibility</td></tr>
+ </table>
+ <div class="callout"><span class="ct">WHERE THIS IS GOVERNED</span><p>The definitive round terms, unit composition, and redemption schedule are in the Capital Structure Memorandum (document 08.1) and the 09 Fundraise documents. This page is a convenience summary, not an offer; the subscription documents prepared with Capiche govern any investment.</p></div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">STRUCTURE
+&amp; TERMS</div></div>
+ <div class="bod">
+ <div class="qa"><div class="q">Why a unit offering instead of a plain preferred round?</div><div class="a">Because the round is being placed through the Canadian resource and capital-markets network, where the unit structure (preferred + common + warrant) is the conventional instrument. It gives investors a quasi-debt redeemable component, a common-equity slice, and a warrant kicker in one package.</div></div>
+ <div class="qa"><div class="q">How does the preferred redeem?</div><div class="a">Out of company revenues beginning in Year 2, at 10% of revenues per year, with a 3% premium accruing per year on the unpaid balance. It is a real ongoing claim on cash flow, and the five-year model (document 05.1) is built to service it without starving the build.</div></div>
+ <div class="qa"><div class="q">What is the valuation based on?</div><div class="a">$10M pre-money sits in the upper tier of Canadian pre-seed. It is justified by the regulated-infrastructure category, the operating-grade product (the 4ormEx exchange and institutional demo), the multi-entity structure required by CIRO, and alignment to Bank of Canada Project Samara, and it is a number we are prepared to defend in conversation, not assert. Benchmarks are in document 08.1.</div></div>
+ <div class="qa"><div class="q">How much dilution to existing holders?</div><div class="a">13.04% common dilution at close, 15.79% fully diluted if warrants are exercised. The founder bloc holds roughly 95% of votes post-raise via the tiered structure. Full cap table is document 08.2.</div></div>
+ <div class="qa"><div class="q">Is there a board seat?</div><div class="a">Investor governance follows the Shareholders' Agreement and the protective provisions noted above; the Investment Committee is created at the pre-seed close. Specific board composition is set in the definitive documents.</div></div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">USE OF
+PROCEEDS
+&amp; TIMELINE</div></div>
+ <div class="bod">
+ <div class="qa"><div class="q">What does the money do?</div><div class="a">It funds the build window: senior engineering and compliance leadership, the regulator-aligned sandbox pilot, the first institutional integrations, and the legal and regulatory process. The build is deliberately sequenced behind the first close. Detailed use of proceeds and milestone gates are in the 09 Fundraise documents.</div></div>
+ <div class="qa"><div class="q">What is the timeline to revenue?</div><div class="a">The model books zero revenue in the 2026 build half-year, then revenue begins as ATB and Bow Valley onboard in 2027 and compounds as Vancity and Servus join in 2028. The clock starts at first close. The 30-60-90 plan (document 03.5) and the roadmap (document 03.6) detail the sequence.</div></div>
+ <div class="qa"><div class="q">What is the next round, and when?</div><div class="a">A seed round is contemplated for 2027, "seed-strapping" in the $15M to $25M range, likely via a US entity, with terms announced following MOU conversion and a lead-investor process. The post-seed dilution shown in the cap table is illustrative, not a term sheet.</div></div>
+ <div class="qa"><div class="q">Is there non-dilutive capital in the plan?</div><div class="a">Yes. $2.23M of scheduled non-dilutive capital is mapped across 170-plus programs (IRAP, SR&amp;ED, Alberta Innovates, PrairiesCan, Digital Supercluster, Mitacs and others), roughly 74% of the size of the round itself. It is in the five-year model and reduces dependence on any single financing.</div></div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">ELIGIBILITY
+&amp; PROCESS</div></div>
+ <div class="bod">
+ <div class="qa"><div class="q">Who can invest?</div><div class="a">The round is placed under Canadian exempt-market rules (NI 45-106). Eligibility, including accredited-investor and other exemptions, is confirmed through the subscription process prepared with Capiche. The BC EBC structure is designed to deliver a 30% tax credit and TFSA / RRSP eligibility to qualifying BC investors.</div></div>
+ <div class="qa"><div class="q">How do I actually subscribe?</div><div class="a">Through the subscription documents and financing platform managed by Capiche. The data room is the diligence layer; the subscription package is the legal layer. The fastest path is to email the founders directly to begin the process.</div></div>
+ <div class="qa"><div class="q">What is the minimum cheque?</div><div class="a">Minimum subscription is set in the subscription documents. The unit price is $1,000 per unit; cheque-size minimums and any per-investor limits follow the exempt-market framework and are confirmed during onboarding.</div></div>
+ <div class="qa"><div class="q">Can I do additional diligence beyond this room?</div><div class="a">Yes, and we encourage it. This room is built to be argued with: the model is fully visible (document 05.1), the SWOT names its own risks (document 10.4), and the hard questions are answered directly in document 10.1. Management calls, reference checks on the advisory bench, and counsel-to-counsel review are all welcomed.</div></div>
+ <div class="callout"><span class="ct">NEXT STEP</span><p>The founders read every access request and every introduction personally. To begin a subscription, request a management call, or raise a question this room does not answer, email <b>founders@kcs-capital.com</b>. The round opens July 1, 2026.</p></div>
+ <p class="note">Indicative responses prepared by the founders as of June 2026 for convenience only. They do not constitute an offer to sell or a solicitation to buy securities; any investment is made solely through the definitive subscription documents, which govern. Forward-looking statements are subject to material change.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>
