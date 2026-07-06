@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Market Sizing: TAM, SAM, SOM · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+a.ref{color:#2E6BF2;text-decoration:none;border-bottom:1px solid rgba(46,107,242,.45);font-weight:600;}a.ref:hover{background:#EAF1FE;}
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">02.1 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">02.1</div>
+ <div class="blue-sq"></div>
+ <h1>Market Sizing<br>TAM &middot; SAM &middot; SOM</h1>
+ <p class="doc-sub">Canada's institutional RWA infrastructure opportunity, sized the way an operator would size it: fee line by fee line, with verified facts kept separate from management estimates.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3.5M target<br>Opens July 15, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">02 &middot; Market<br>Document 02.1</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">PURPOSE &amp;<br>DEFINITIONS</div></div>
+ <div class="bod">
+ <h2>What this document does, and what the three letters mean here</h2>
+ <p class="lead">Most market-sizing documents in this space quote a very large global number and work backwards. This one is built the other way. It starts with what a regulated infrastructure platform can actually charge for in Canada, shows the arithmetic, and tells you plainly which numbers are verified facts and which are management estimates.</p>
+ <p><strong>TAM</strong> is the total annual infrastructure revenue pool available in Canada for compliant tokenized real-world asset issuance, settlement, trading, custody and administration, and institutional software services. It is deliberately not the total value of assets that could eventually be tokenized. Asset value is not fee revenue, and confusing the two is the single most common error in tokenization pitch materials.</p>
+ <p><strong>SAM</strong> is the portion of that Canadian revenue pool 4orm can realistically serve given its initial regulatory path, geographic rollout, product scope, institutional distribution, and supported asset classes.</p>
+ <p><strong>SOM</strong> is the portion of SAM 4orm could plausibly capture within a defined period using conservative adoption assumptions: actual partner onboarding, implementation timelines, compliance constraints, and real pricing. It is presented here as a bottom-up operating case, never as a percentage carved off a large number.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">VERIFIED<br>CONTEXT</div></div>
+ <div class="bod wide">
+ <h2>The Canadian facts this thesis rests on</h2>
+ <p>Three things about Canada can be stated as verified facts rather than projections, and they are worth separating from everything else in this document because they hold regardless of how any model performs.</p>
+ <p>Canada's residential mortgage debt exceeded $2.4 trillion in December 2025, per CMHC's Residential Mortgage Industry reporting. Canadian mutual fund assets totaled $2.258 trillion at March 31, 2025, per SIMA's monthly investment fund statistics. And the Canadian Securities Administrators launched Project Tokenization in March 2026, with a stakeholder workshop in Toronto in June 2026, which means tokenized financial products are now a live regulatory workstream in Canada rather than a hypothetical one.</p>
+ <table class="bench">
+ <thead><tr><th style="width:28%">REFERENCE POINT</th><th style="width:24%">VALUE</th><th style="width:30%">SOURCE</th><th>STATUS</th></tr></thead>
+ <tr><td>Canadian residential mortgage debt</td><td class="num">&gt;$2.4T &middot; Dec 2025</td><td>CMHC, Residential Mortgage Industry Report</td><td><span class="tag">VERIFIED</span></td></tr>
+ <tr><td>Canadian mutual fund assets</td><td class="num">$2.258T &middot; Mar 31, 2025</td><td>SIMA, Monthly Investment Fund Statistics</td><td><span class="tag">VERIFIED</span></td></tr>
+ <tr><td>CSA Project Tokenization</td><td class="num">Launched Mar 2026</td><td>CSA news release; Toronto workshop June 2026</td><td><span class="tag">VERIFIED</span></td></tr>
+ <tr><td>BoC Project Samara settlement trial</td><td class="num">C$100M &middot; Mar 6, 2026</td><td>Bank of Canada; RBC, TD, EDC participants</td><td><span class="tag">VERIFIED</span></td></tr>
+ <tr><td>Live Canadian tokenized issuance</td><td class="num">C$13.7B + C$2.5B</td><td>Pineapple Financial (mortgages); AuCan Gold (bullion)</td><td><span class="tag">VERIFIED</span></td></tr>
+ </table>
+ <div class="viz"><div class="vt">THE UNDERLYING CANADIAN ASSET POOLS &middot; C$T &middot; VERIFIED</div>
+ <div class="hrow"><span class="hlab">Residential mortgages</span><span class="htrack"><span class="hfill" style="width:100%"></span></span><span class="hval">&gt;2.4 &middot; DEC 2025</span></div>
+ <div class="hrow"><span class="hlab">Mutual fund assets</span><span class="htrack"><span class="hfill" style="width:94%"></span></span><span class="hval">2.258 &middot; MAR 2025</span></div>
+ </div>
+ <p>What these facts establish is straightforward: Canada has deep, institutionally intermediated asset pools that already live inside regulated servicing, custody, and reporting environments, and the regulator is actively at the table. What they do not establish, on their own, is any specific revenue number for 4orm. That distinction runs through the rest of this document.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">TWO<br>LENSES</div></div>
+ <div class="bod">
+ <h2>Asset pools and fee pools are different numbers</h2>
+ <p>Two market views need to be kept apart, and most drafts in this industry blur them.</p>
+ <p>The first is the <strong>asset-value opportunity</strong>: the stock of Canadian assets that could become relevant to regulated tokenization over time. For a Canada-first institutional platform, the strongest near-term pools are mortgage-related assets and Canadian investment funds, because both are enormous, both are institutionally intermediated, and both already carry the registry, collateral, servicing, and reporting workflows that tokenized infrastructure improves. This lens proves the market is large enough to matter. It does not tell you what anyone gets paid.</p>
+ <p>The second is the <strong>infrastructure-revenue opportunity</strong>: the annual fee pools available to the operator that enables compliant issuance, settlement, administration, custody, and the institutional software underneath them. A tokenized fund holding a billion dollars of NAV pays its rails a small fraction of one percent each year. For a market-infrastructure company, this second lens is the only honest TAM, and it is the one this document models.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">TAM<br>METHODOLOGY</div></div>
+ <div class="bod wide">
+ <h2>The five-layer fee stack behind C$350M to C$1.9B</h2>
+ <p>The TAM range is a management scenario range from the 4orm Master Pro Forma and the KCS Capital research program, and it is presented here with the formula visible. Every regulated RWA platform monetizes some combination of five fee lines. Each has a distinct base, a distinct rate, and a public anchor in the Canadian record.</p>
+ <table class="bench">
+ <thead><tr><th style="width:15%">LAYER</th><th style="width:26%">ASSUMED BASE (2030)</th><th style="width:16%">FEE ASSUMPTION</th><th style="width:27%">CANADIAN ANCHOR</th><th>ANNUAL POOL</th></tr></thead>
+ <tr><td>Settlement</td><td>10% to 30% of Canadian tokenized institutional flows routed</td><td class="num">1-3 bps per side</td><td>BoC Project Samara (C$100M, full lifecycle); Kinexys fee tiers as reference</td><td class="num">C$95-520M</td></tr>
+ <tr><td>Issuance</td><td>C$15B to C$45B annual gross Canadian tokenized issuance</td><td class="num">15-35 bps blended</td><td>Pineapple C$13.7B live; AuCan C$2.5B; Ocree and T-RIZE structured offerings</td><td class="num">C$45-160M</td></tr>
+ <tr><td>Custody &amp; administration</td><td>C$30B to C$120B tokenized assets under custody</td><td class="num">10-40 bps per year</td><td>CIRO Custody Framework; Tetra, Balance, Brane as qualified custodians</td><td class="num">C$60-380M</td></tr>
+ <tr><td>Marketplace &amp; transfer</td><td>Secondary turnover on the institutional venue</td><td class="num">0.5-2 bps per side, plus data and listing</td><td>No Canadian institutional secondary venue exists at scale; greenfield layer</td><td class="num">C$25-220M</td></tr>
+ <tr><td>Repatriation</td><td>C$20B to C$40B of Canadian flow currently routed offshore</td><td class="num">20-50% capture of leaked fees</td><td>Master Pro Forma reconstruction of Canadian flows on foreign rails</td><td class="num">C$125-620M</td></tr>
+ <tr class="total"><td>Total annual pool, 2030</td><td></td><td></td><td></td><td class="num">C$350M-1.9B</td></tr>
+ <tr class="total"><td>Cumulative, 2026-2030</td><td></td><td></td><td></td><td class="num">C$1.33B-8.3B</td></tr>
+ </table>
+ <div class="viz"><div class="vt">ANNUAL REVENUE POOL BY LAYER, 2030 &middot; LOW TO HIGH RANGE &middot; C$M</div>
+ <div class="hrow"><span class="hlab">Repatriation</span><span class="htrack"><span class="hfill gold" style="left:20%;width:80%"></span></span><span class="hval">125-620</span></div>
+ <div class="hrow"><span class="hlab">Settlement</span><span class="htrack"><span class="hfill" style="left:15.3%;width:68.5%"></span></span><span class="hval">95-520</span></div>
+ <div class="hrow"><span class="hlab">Custody &amp; admin</span><span class="htrack"><span class="hfill" style="left:9.7%;width:51.6%"></span></span><span class="hval">60-380</span></div>
+ <div class="hrow"><span class="hlab">Marketplace</span><span class="htrack"><span class="hfill lt" style="left:4%;width:31.5%"></span></span><span class="hval">25-220</span></div>
+ <div class="hrow"><span class="hlab">Issuance</span><span class="htrack"><span class="hfill lt" style="left:7.3%;width:18.5%"></span></span><span class="hval">45-160</span></div>
+ </div>
+ <p>Two notes on reading the table honestly. First, the layers are not double-counted: custody is a stock measure, issuance and settlement and marketplace are flow measures, and repatriation is a categorical recovery of fees already leaving the country. The same security legitimately pays a message fee, a custody fee, and a trade fee today; this stack applies that existing logic to tokenized payment systems. Second, the range is wide on purpose. The low end assumes Canada captures only the institutional flows already migrating to tokenized payment systems. The high end assumes a credible domestic platform also reverses the offshore leakage. The width is the honest representation of that conditionality.</p>
+ <div class="callout">
+ <span class="ct">LABELING</span>
+ <p>The C$350M to C$1.9B range, and the C$1.33B to C$8.3B cumulative figure, are management scenario ranges built on the assumptions above. They are defended in the public KCS research report "Canada's $1.9B RWA Infrastructure TAM: Sized and Defended" (March 2026) and should always travel with this methodology table, never alone.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">5.0</div><div class="l">SAM</div></div>
+ <div class="bod">
+ <h2>The part of the market we can actually serve first</h2>
+ <p>The near-term SAM is deliberately narrower than the full Canadian TAM, and it should be. A disciplined Canada-first SAM focuses on the institutions and workflows most compatible with current market structure and regulation, which means three filters.</p>
+ <p><strong>Institutions:</strong> Canadian banks, provincially significant institutions, credit unions, trust companies, and regulated investment managers. 4orm has no partnerships in place today. The pre-seed plan targets two memoranda of understanding with reference institutions such as ATB Financial and Bow Valley Credit Union; these are modeled targets used to structure the go-to-market sequence, not confirmed relationships.</p>
+ <p><strong>Assets:</strong> tokenized CAD deposits, mortgage-related assets, and fund interests; administratively tractable claims where registry, transfer, collateral, servicing, and settlement workflows matter more than consumer trading activity.</p>
+ <p><strong>Modules:</strong> compliance-first product surfaces such as issuance workflows, holder records, settlement rails, administration, reporting, and custody integration, all of which can proceed under existing legal structures or within well-defined exemptive, dealer, marketplace, trust, or banking frameworks.</p>
+ <p>Applying those filters to the five-layer stack produces phased management scenario ranges: roughly <strong>C$80M to C$150M</strong> of serviceable annual revenue pool in the first operating phase (deposit and mortgage workflows with target institutions), expanding toward <strong>C$200M to C$400M</strong> as fund structures and additional issuers come into scope, and <strong>C$500M to C$1.2B+</strong> only in the phase where secondary marketplace activity and repatriated flows are live. These phase values are scenario ranges, not externally validated figures, and they inherit every assumption in the Section 4 table.</p>
+ <p>One gating factor deserves its own sentence: regulation sets the speed limit. The CSA's Project Tokenization confirms the topic is live, but adoption pace will depend on product structure, legal classification, custody design, transfer restrictions, and the shape of any marketplace functionality. The SAM phases above assume that sequencing, not a shortcut around it.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">6.0</div><div class="l">SOM</div></div>
+ <div class="bod wide">
+ <h2>Year 1, built from the bottom up</h2>
+ <p>The Year 1 SOM is not a percentage carved off the TAM; it is the first full revenue year (calendar 2027) of the five-year financial model (v10 pro forma), line by line. The build phase (H2 2026) generates no revenue by design. The bridge below is the model's own arithmetic, and the workbook in Category 05 of this data room recalculates it live.</p>
+ <table class="bench">
+ <thead><tr><th style="width:30%">REVENUE LINE</th><th style="width:38%">MODEL ASSUMPTION</th><th>YEAR 1 (CY2027)</th></tr></thead>
+ <tr><td>SaaS and API platform fees</td><td>$25K per institution per month, partners going live through the year</td><td class="num">C$4.14M</td></tr>
+ <tr><td>Issuance fees</td><td>0.5% on gross issuance brought onto the platform</td><td class="num">C$1.04M</td></tr>
+ <tr><td>Custody and administration fees</td><td>30 bps on tokenized assets under custody</td><td class="num">C$0.53M</td></tr>
+ <tr><td>Settlement fees</td><td>1.5 bps on routed settlement volume</td><td class="num">C$0.08M</td></tr>
+ <tr><td>Trading fees</td><td>5 bps on secondary turnover</td><td class="num">C$0.07M</td></tr>
+ <tr class="total"><td>Year 1 revenue, base case</td><td></td><td class="num">C$5.85M</td></tr>
+ <tr><td>Non-dilutive grants (toggled)</td><td>SR&amp;ED, IRAP, and program grants recognized in year</td><td class="num">C$0.36M</td></tr>
+ <tr class="total"><td>Year 1 including grants</td><td></td><td class="num">C$6.21M</td></tr>
+ </table>
+ <div class="viz"><div class="vt">THE YEAR 1 BRIDGE, AS BARS &middot; C$M</div>
+ <div class="hrow"><span class="hlab">SaaS + APIs</span><span class="htrack"><span class="hfill" style="width:100%"></span></span><span class="hval">4.14</span></div>
+ <div class="hrow"><span class="hlab">Issuance</span><span class="htrack"><span class="hfill" style="width:25%"></span></span><span class="hval">1.04</span></div>
+ <div class="hrow"><span class="hlab">Custody &amp; admin</span><span class="htrack"><span class="hfill lt" style="width:12.8%"></span></span><span class="hval">0.53</span></div>
+ <div class="hrow"><span class="hlab">Settlement</span><span class="htrack"><span class="hfill lt" style="width:1.9%"></span></span><span class="hval">0.08</span></div>
+ <div class="hrow"><span class="hlab">Trading</span><span class="htrack"><span class="hfill lt" style="width:1.7%"></span></span><span class="hval">0.07</span></div>
+ <div class="hrow"><span class="hlab">Grants (toggled)</span><span class="htrack"><span class="hfill gold" style="width:8.7%"></span></span><span class="hval">0.36</span></div>
+ </div>
+ <p>The bridge is deliberately fragile in visible ways, because that is what makes it credible. Revenue starts at zero in the build half-year, SaaS dominates early while the volume-based lines (settlement, trading, custody) are still small, and if regulatory approvals or procurement cycles push a partner's go-live into the following year, the realistic outcome compresses toward <strong>C$2M to C$4M</strong>. The downside cases are part of the model, not a footnote to it. The full workbook, including the Lean-build versus traditional-build comparison and the half-year phasing through 2031, is document 05.1.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">7.0</div><div class="l">DISCIPLINE<br>&amp; SOURCES</div></div>
+ <div class="bod">
+ <h2>What is verified, what is estimated, and where it all comes from</h2>
+ <p>The rule this document follows, and that every market figure in this data room should follow, is simple. Canadian mortgage debt, fund assets, Project Samara, live Canadian issuance, and the CSA's tokenization workstream are verified facts with public sources. The TAM stack, the SAM phases, and the SOM bridge are management estimates, labeled as such, shown with their assumptions, and never quoted as validated market facts. Institutional readers will trust a wide, transparent range over precise, unsupported figures every time, so unsupported precision has been removed.</p>
+ <p class="note">Sources: <a class="ref" href="https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report" target="_blank" rel="noopener"><a class="ref" href="https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/housing-research/research-reports/housing-finance/residential-mortgage-industry-report" target="_blank" rel="noopener">CMHC</a></a>, Residential Mortgage Industry Report (residential mortgage debt over $2.4T, December 2025); SIMA, Monthly Investment Fund Statistics, March 2025 (mutual fund assets of $2.258T); <a class="ref" href="https://www.securities-administrators.ca/news/csa-invites-stakeholders-to-participate-in-tokenization-initiative/" target="_blank" rel="noopener">CSA</a>, "CSA invites stakeholders to participate in tokenization initiative" (Project Tokenization, March 2026) and the Toronto tokenization workshop notice (June 2026); <a class="ref" href="https://www.bankofcanada.ca/2026/03/bank-canada-export-development-canada-rbc-td-successfully-complete-bond-issuance-experiment-distributed-ledger-technology/" target="_blank" rel="noopener">Bank of Canada</a>, Project Samara (C$100M tokenized bond trial, March 6, 2026); <a class="ref" href="https://www.ciro.ca/newsroom/publications/notice-ciros-digital-asset-custody-framework" target="_blank" rel="noopener">CIRO</a> Digital Asset Custody Framework (February 2026); KCS Capital Research, "Canada's $1.9B RWA Infrastructure TAM: Sized and Defended" (March 2026) and "The Cost of Friction" (May 2026); the 4orm Master Pro Forma (internal model, May 2026); public issuance disclosures from Pineapple Financial, AuCan Gold, Ocree Capital, and T-RIZE.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance is an Alberta corporation (ABCA) that operates the platform; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>

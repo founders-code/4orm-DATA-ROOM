@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>04.1 Team, Advisory & Legal Counsel · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* person cards (team documents) */
+ .pcard { display: flex; gap: 18px; margin: 0 0 26px; }
+ .pphoto { width: 104px; height: 104px; flex-shrink: 0; background: var(--brand-50); border: 1px solid var(--hairline); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 1.35rem; font-weight: 700; color: var(--brand); overflow: hidden; }
+ .pphoto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ .pbod h3 { font-size: 1.08rem; color: var(--text); margin: 0 0 2px; letter-spacing: -.01em; }
+ .prole { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); font-weight: 700; margin-bottom: 8px; }
+ .pbod p { font-size: .9rem; color: var(--text-2); line-height: 1.7; margin-bottom: 8px; }
+ .pbod p:last-child { margin-bottom: 0; }
+ @media (max-width: 700px) { .pcard { flex-direction: column; } .pphoto { width: 84px; height: 84px; } }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">04.1 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">04.1</div>
+ <div class="blue-sq"></div>
+ <h1>Team, Advisory<br>&amp; Legal Counsel</h1>
+ <p class="doc-sub">The founders, legal counsel, and advisory bench behind the 4orm build. Who they are, what they have actually done, and why this particular mix was recruited on purpose.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">KCS Capital Research</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3.5M<br>Opens July 15, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">04 &middot; Team<br>Document 04.1</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">THE SHAPE<br>OF THE TEAM</div></div>
+ <div class="bod">
+ <h2>Built the way you build infrastructure</h2>
+ <p class="lead">This is not a team of nine employees. It is three founders, two securities law firms on retainer, and four domain advisors, assembled around one build. The recruiting filter has been consistent from the first hire: institutional discipline first, technical depth second, conviction third. Every person on this page was brought in because the 4orm build has a specific regulated problem their career has already solved.</p>
+ <div class="viz"><div class="vt">TEAM COMPOSITION &middot; NINE PEOPLE, THREE LAYERS</div>
+ <div class="hrow"><div class="hlab">Founders</div><div class="htrack"><div class="hfill" style="left:0;width:27%"></div></div><div class="hval">3 &middot; FULL-TIME BUILD</div></div>
+ <div class="hrow"><div class="hlab">Legal counsel</div><div class="htrack"><div class="hfill gold" style="left:0;width:18%"></div></div><div class="hval">3 &middot; CAPICHE + FASKEN + OSLER</div></div>
+ <div class="hrow"><div class="hlab">Advisory bench</div><div class="htrack"><div class="hfill lt" style="left:0;width:44%"></div></div><div class="hval">4 &middot; DOMAIN ADVISORS</div></div>
+ </div>
+ <p>A structural note investors should hold onto while reading: KCS Capital is the independent technology and research firm developing the infrastructure. 4orm Finance is the single regulated entity that operates it, incorporated in Alberta under the ABCA. The people below are the shared bench behind both, and the bios state plainly which side of that line each person works on.</p>
+ <p>The advisory bench is not ornamental. Each advisor carries an active workstream in the roadmap, from Miika Makela's compliance architecture for the raise itself to Zed Sandeela's ownership of the target-state systems design. Where a name appears in this room's other documents, the work is theirs.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">THE<br>FOUNDERS</div></div>
+ <div class="bod">
+ <h2>Founders</h2>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-chad.jpg" alt="Chad R. Johnston"></div>
+ <div class="pbod">
+ <h3>Chad R. Johnston</h3>
+ <div class="prole">FOUNDER &amp; CEO &middot; KCS CAPITAL &amp; 4ORM FINANCE</div>
+ <p>Chad's path to financial infrastructure runs through Canada's industrial economy, not a bank tower. He came up through oil and gas leading large field teams in high-risk, mission-critical environments, including a senior leadership role in the final phase of the multi-billion-dollar CNRL Horizon Coker Upgrade with care and control of more than 100 workers. For part of that career he was a certified High Angle Rope Rescue Technician, responsible for life-critical decisions under pressure. That is where the risk discipline in this data room comes from.</p>
+ <p>He moved into entrepreneurship in 2013, building a specialized mobile oil services company and engineering a custom oil regeneration system from the ground up, then expanding into multi-industry service businesses focused on scalable sales models and retention. As Innovation Lead at IEP Energy Economics he restructured sales operations and presented on renewable infrastructure across Western Canada, most recently as a keynote presenter at the Clean Energy BC Summit.</p>
+ <p>Several years of structured study of monetary history and capital markets led to one conclusion: settlement speed, capital efficiency, and asset liquidity will evolve through digital architecture, and the durable position is to build the compliant, regulated version inside institutional frameworks. He and the team have since run structured analysis on more than 46 companies across digital asset infrastructure, tokenization platforms, exchanges, and custodians. 4orm Finance is the product of that work.</p>
+ </div>
+ </div>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-kevin.jpg" alt="Kevin Wong"></div>
+ <div class="pbod">
+ <h3>Kevin Wong</h3>
+ <div class="prole">CO-FOUNDER &middot; STRATEGY ADVISOR</div>
+ <p>Kevin is a serial entrepreneur and Fractional CMO with 22-plus years building and advising companies, and seven years running his agency Evolve One Digital as Chief Growth Strategist. From 2019 to 2025 he served as Senior Brand Strategist at Carbeeza, a Canadian automotive SaaS platform, repositioning its marketing around consumer trust and personalization. At KCS he owns strategic growth, brand positioning, and market expansion, working from a stated people-first philosophy: impact precedes income. A former competitive athlete with a Bachelor of Physical Education from the University of Alberta, his leadership style is disciplined, team-oriented, and performance-driven.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">LEGAL<br>COUNSEL</div></div>
+ <div class="bod">
+ <h2>Legal counsel</h2>
+ <p>Three firms, deliberately split by function. Capiche handles the corporate and exempt-market machinery of the raise. Fasken (lead lawyer Michael Stevens) and Osler sit on the securities and regulatory framework underneath the regulated build. The legal structure (Capiche for corporate, the CFA-led trust work, and Fasken and Osler for securities) was locked in May 2026 and is tracked on the Path to Revenue page.</p>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-james.jpg" alt="James Atherton"></div>
+ <div class="pbod">
+ <h3>James Atherton</h3>
+ <div class="prole">ADVISOR &middot; LEGAL &amp; CAPITAL MARKETS INFRASTRUCTURE &middot; PARTNER, CAPICHE LEGAL LLP</div>
+ <p>James is a Canadian securities lawyer and capital markets entrepreneur with 25-plus years building compliance-first capital infrastructure. He is founder and CEO of the Capiche Group: Capiche Capital Technologies (digitizing the private placement process for TSX-V and CSE companies), Capiche Crowdfunding (Canada's only nationwide exempt crowdfunding portal), and Capiche Legal LLP. He sits on the boards of Golden Sky Minerals and Marrelli Trust Company, and is a member of the BCSC Corporate Finance Stakeholder Forum.</p>
+ <p>For 4orm he advises on corporate organization, founder and governance structuring, financing architecture, and exempt market strategy. The subscription documents and financing platform for the pre-seed run through Capiche, under a $10K retainer.</p>
+ </div>
+ </div>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-mike.jpg" alt="Michael Stevens"></div>
+ <div class="pbod">
+ <h3>Michael Stevens</h3>
+ <div class="prole">ADVISOR &middot; LEGAL COUNSEL &middot; PARTNER, FASKEN (VANCOUVER)</div>
+ <p>Mike is an information technology law Partner in the Vancouver office of Fasken and a recognized leader in the British Columbia technology ecosystem. An experienced M&amp;A and securities lawyer, he counsels founders, executives, and boards on corporate strategy, fundraising, governance, and strategic transactions from formation through to IPO or exit. At KCS he advises on the corporate and securities framework underpinning the regulated digital asset infrastructure work.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">ADVISORY<br>BENCH</div></div>
+ <div class="bod">
+ <h2>Advisory bench</h2>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-miika.jpg" alt="Miika Makela"></div>
+ <div class="pbod">
+ <h3>Miika Makela</h3>
+ <div class="prole">ADVISOR &middot; SECURITIES COMPLIANCE &middot; CFA</div>
+ <p>Miika is a CFA charter holder with 22-plus years across Canadian capital markets: institutional research, corporate finance, investor relations, and dealer compliance. He has served as Chief Compliance Officer at multiple Canadian registered firms (Equifaira, Robson Capital Markets, Ascendo Financial) and chaired the Investment Review Committee at FrontFundr, Canada's largest equity crowdfunding platform, from 2015 to 2018. His structuring specialty is precisely what this raise needs: TFSA- and RRSP-eligible vehicles, exempt-market financings, and warrant and milestone structures that align early investors with later rounds. The five-year model in this room was built with and audited by him.</p>
+ </div>
+ </div>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-zed.jpg" alt="Zahiruddin Sandeela"></div>
+ <div class="pbod">
+ <h3>Zahiruddin "Zed" Sandeela</h3>
+ <div class="prole">ADVISOR &middot; SYSTEMS ARCHITECTURE &middot; TOGAF 9.1 &middot; ITIL V3</div>
+ <p>Zed is the Senior Enterprise Architect for the 4orm build, with 20-plus years designing and modernizing systems in regulated environments. At Vancity he led payments modernization and AML compliance enhancements; at ICBC he introduced Business Capability Planning inside Enterprise Architecture; engagements span UBC, WorkSafeBC, Safeway, BC Housing, and TransLink. He owns 4orm's target-state architecture, the identity and asset-lifecycle model, and the institution-facing control framework. His framing of the build is the most quotable line in the room: an institutional settlement layer is banking architecture plus a digital custody layer, and he has architected banking-systems and payments-modernization programs in regulated environments.</p>
+ </div>
+ </div>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-bruce.jpg" alt="Bruce Fair"></div>
+ <div class="pbod">
+ <h3>Bruce Fair</h3>
+ <div class="prole">ADVISOR &middot; CAPITAL MARKETS &middot; PRESIDENT, MENCH CAPITAL CORP.</div>
+ <p>Bruce is a merchant banker with 25-plus years structuring private and public equity transactions. Mench Capital, which he founded in 1999, has participated in or originated more than $500 million in transactions (Mench Capital figure; company estimate) across Canadian resources, structured products, and alternative investments, including tax-efficient flow-through vehicles. He has held senior roles at Qwest Bancorp, Maple Leaf Funds, Next Edge Capital, and Harbourfront Wealth Management, and serves as an independent director on public company boards. At KCS he advises on capital formation, investor positioning, and institutional market access.</p>
+ </div>
+ </div>
+
+ <div class="pcard">
+ <div class="pphoto"><img src="../assets/team/team-don.jpg" alt="Don H"></div>
+ <div class="pbod">
+ <h3>Don H</h3>
+ <div class="prole">ANGEL INVESTOR &middot; STRATEGIC ADVISOR</div>
+ <p>Don is the founding cheque and the independent sounding board. A seasoned operator with 17-plus years of executive leadership, he has been Founder and President of a large development company since 2009, with a reputation built on disciplined project execution and construction management. He has been actively engaged in blockchain and decentralized finance markets for years, which is part of what drew him to back KCS early. He is not an employee or officer of the company; his contribution is perspective, testing strategy against decades of hands-on operating experience.</p>
+ </div>
+ </div>
+
+ 
+
+ 
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">5.0</div><div class="l">COVERAGE<br>&amp; GAPS</div></div>
+ <div class="bod">
+ <h2>What this bench covers, and what it does not yet</h2>
+ <p class="lead">Read as a coverage map, the team answers the questions a regulated tokenization build actually raises. Securities law and exempt-market mechanics are covered twice over. Compliance has a former multi-firm CCO. Architecture has someone who has already built the banking side of the stack. Capital markets, real assets, and growth each have a named owner.</p>
+ <div class="viz"><div class="vt">DOMAIN COVERAGE &middot; YEARS OF DIRECTLY RELEVANT EXPERIENCE</div>
+ <div class="hrow"><div class="hlab">Securities law</div><div class="htrack"><div class="hfill" style="left:0;width:90%"></div></div><div class="hval">45+ COMBINED &middot; 2 FIRMS</div></div>
+ <div class="hrow"><div class="hlab">Compliance</div><div class="htrack"><div class="hfill" style="left:0;width:44%"></div></div><div class="hval">22 YRS &middot; MULTI-FIRM CCO</div></div>
+ <div class="hrow"><div class="hlab">Systems architecture</div><div class="htrack"><div class="hfill" style="left:0;width:40%"></div></div><div class="hval">20 YRS &middot; REGULATED ONLY</div></div>
+ <div class="hrow"><div class="hlab">Capital markets</div><div class="htrack"><div class="hfill" style="left:0;width:50%"></div></div><div class="hval">25 YRS &middot; $500M+ ORIGINATED</div></div>
+ <div class="hrow"><div class="hlab">Real assets</div><div class="htrack"><div class="hfill lt" style="left:0;width:36%"></div></div><div class="hval">18 YRS &middot; ENERGY INFRASTRUCTURE</div></div>
+ <div class="hrow"><div class="hlab">Growth &amp; brand</div><div class="htrack"><div class="hfill lt" style="left:0;width:44%"></div></div><div class="hval">22 YRS &middot; MULTI-SECTOR</div></div>
+ </div>
+ <p>The honest gap is the one the hiring plan exists to close: the build needs senior engineering and compliance leadership in full-time seats, not advisory ones. That recruiting is live, it is funded as a use of proceeds of the pre-seed, and senior introductions are welcomed through the founders.</p>
+ <div class="callout"><span class="ct">WHERE TO VERIFY</span>
+ <p>Full bios for every person on this page are published at kcs-capital.com/team, with LinkedIn profiles linked from each. The legal structure, advisor workstreams, and week-by-week progress are tracked live on this room's Path to Revenue page.</p>
+ </div>
+ <p class="note">Photography and individual LinkedIn references are maintained on the KCS Capital site; this document is the data room's condensed record. Don H is identified here as published on the KCS Capital team page.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance is a single regulated entity incorporated in Alberta under the ABCA; technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>

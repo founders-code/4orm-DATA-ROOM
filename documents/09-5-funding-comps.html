@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Funding Comps and Valuation Benchmarks · 4orm Finance Data Room</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+ /* =====================================================================
+ 4ORM DATA ROOM - EMBEDDED DOCUMENT PAGE (Swiss master template, web)
+ Locked style: white canvas, monochrome grid, thin rules, sparse blue.
+ ===================================================================== */
+ :root {
+ --brand: #2E6BF2; --brand-50: #EAF1FE;
+ --text: #142036; --text-2: #46556E; --text-3: #5E6E88;
+ --rule: #142036; --hairline: #D7DEEA;
+ --font-sans: 'Inter', system-ui, sans-serif;
+ --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; }
+ body { font-family: var(--font-sans); color: var(--text); background: #fff; }
+
+ /* ----- black site nav ----- */
+ .docnav { background: #000; border-bottom: 1px solid rgba(255,255,255,.10); position: sticky; top: 0; z-index: 50; }
+ .docnav-inner { max-width: 1200px; margin: 0 auto; min-height: 56px; padding: 6px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+ .docnav a { text-decoration: none; }
+ .docnav .back { color: rgba(255,255,255,.78); font-size: .95rem; font-weight: 600; padding: 7px 9px; border-radius: 8px; }
+ .docnav .back:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .docnav .dl { background: #fff; color: #000; font-size: .95rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; border: 1px solid #fff; }
+ .docnav .dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .docnav .mid { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .16em; color: rgba(255,255,255,.5); text-transform: uppercase; }
+ @media (max-width: 700px) { .docnav .mid { display: none; } }
+
+ /* ----- document canvas ----- */
+ .canvas { max-width: 920px; margin: 0 auto; padding: 56px 32px 80px; }
+ @media (max-width: 700px) { .canvas { padding: 36px 20px 60px; } }
+
+ /* head */
+ .doc-rule { border-top: 3px solid var(--rule); }
+ .doc-headrow { display: flex; justify-content: space-between; padding-top: 12px; margin-bottom: 56px; }
+ .doc-headrow div { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .18em; color: var(--text); }
+ .doc-headrow .r { color: var(--text-3); text-align: right; }
+ .conf { color: #C49A3A; }
+ .docnav .conf { color: #E7C76C; }
+ .doc-id { position: relative; }
+ .docnum { position: absolute; top: -40px; right: -8px; font-size: clamp(64px, 14vw, 130px); font-weight: 800; letter-spacing: -.04em; color: var(--brand-50); line-height: 1; pointer-events: none; }
+ .blue-sq { width: 26px; height: 26px; background: var(--brand); margin-bottom: 28px; }
+ h1 { font-size: clamp(2.1rem, 5.4vw, 3.4rem); font-weight: 700; letter-spacing: -.025em; line-height: 1.04; position: relative; max-width: 11em; }
+ .doc-sub { margin-top: 22px; font-size: 1.02rem; color: var(--text-2); line-height: 1.65; max-width: 38em; position: relative; }
+ .doc-meta { margin-top: 44px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; }
+ .dm { flex: 1 1 160px; padding: 14px 18px 0 0; border-right: 1px solid var(--hairline); margin-right: 18px; margin-bottom: 12px; }
+ .dm:last-child { border-right: none; margin-right: 0; }
+ .dm .k { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .18em; color: var(--text-3); margin-bottom: 6px; }
+ .dm .v { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+ .doc-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+ .btn-pdf { display: inline-flex; align-items: center; gap: 8px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; padding: 11px 22px; border-radius: 8px; transition: background .15s; }
+ .btn-pdf:hover { background: #1B4ABE; }
+ .doc-actions .hint { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .12em; color: var(--text-3); }
+
+ /* sections */
+ .doc-body { margin-top: 64px; }
+ .sec { display: flex; gap: 28px; padding-top: 34px; margin-top: 34px; border-top: 1px solid var(--rule); }
+ .sec:first-child { margin-top: 0; }
+ .sec .marg { width: 120px; flex-shrink: 0; }
+ .sec .marg .n { font-family: var(--font-mono); font-size: .85rem; font-weight: 700; color: var(--brand); }
+ .sec .marg .l { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; color: var(--text-3); margin-top: 5px; line-height: 1.6; }
+ .sec .bod { flex: 1; min-width: 0; max-width: 660px; }
+ .sec h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.01em; margin-bottom: 18px; }
+ .sec h3 { font-size: 1.02rem; font-weight: 700; margin: 26px 0 10px; }
+ .sec p { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 14px; }
+ .sec p strong { color: var(--text); font-weight: 600; }
+ .sec ul { margin: 0 0 14px 18px; }
+ .sec li { font-size: .95rem; line-height: 1.75; color: var(--text-2); margin-bottom: 6px; }
+ .lead { font-size: 1.02rem !important; color: var(--text) !important; }
+ .note { font-size: .8rem !important; color: var(--text-3) !important; font-style: italic; }
+ .entry { margin-bottom: 20px; }
+ .entry .et { display: block; font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: 5px; }
+ .entry p { margin-bottom: 0; }
+ @media (max-width: 700px) {
+ .sec { flex-direction: column; gap: 10px; }
+ .sec .marg { width: auto; display: flex; gap: 10px; align-items: baseline; }
+ }
+
+ /* stat strip */
+ .stats { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-wrap: wrap; margin: 18px 0 8px; }
+ .stat { flex: 1 1 130px; padding: 14px 16px 14px 0; border-right: 1px solid var(--hairline); margin-right: 16px; }
+ .stat:last-child { border-right: none; margin-right: 0; }
+ .stat .n { font-size: 1.3rem; font-weight: 700; letter-spacing: -.015em; }
+ .stat .d { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .06em; color: var(--text-3); margin-top: 6px; line-height: 1.55; text-transform: uppercase; }
+ .stat.acc .n { color: var(--brand); }
+
+ /* swot grid */
+ .swot-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); margin: 14px 0; }
+ @media (max-width: 700px) { .swot-grid { grid-template-columns: 1fr; } }
+ .quad { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 14px 16px; }
+ .quad .ql { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .18em; font-weight: 700; margin-bottom: 8px; }
+ .quad.s .ql, .quad.o .ql { color: var(--brand); }
+ .quad.w .ql, .quad.t .ql { color: var(--text); }
+ .quad ul { margin: 0 0 0 14px; }
+ .quad li { font-size: .8rem; line-height: 1.6; color: var(--text-2); margin-bottom: 4px; }
+
+ /* weakness / threat tables */
+ table.wt { width: 100%; border-collapse: collapse; margin: 12px 0; }
+ table.wt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 12px 8px 0; }
+ table.wt td { font-size: .82rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 12px 14px 12px 0; line-height: 1.6; vertical-align: top; }
+ table.wt td .wt-t { font-weight: 700; color: var(--text); font-size: .88rem; display: block; margin-bottom: 4px; }
+ table.wt td .wt-why { display: block; color: var(--text-3); font-size: .76rem; }
+ table.wt td.ctl b { color: var(--brand); font-weight: 700; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .12em; }
+ table.wt .c1 { width: 42%; }
+ @media (max-width: 700px) {
+ table.wt, table.wt tbody, table.wt tr, table.wt td { display: block; width: 100%; }
+ table.wt thead { display: none; }
+ table.wt td { border-bottom: none; padding-right: 0; }
+ table.wt tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ table.wt .c1 { width: 100%; }
+ }
+
+ /* data tables */
+ table.dt { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.dt th { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.dt td { font-size: .85rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.55; vertical-align: top; }
+ table.dt td:first-child { color: var(--text); font-weight: 600; }
+ table.rm td.pct { font-family: var(--font-mono); font-weight: 700; color: var(--brand); }
+ table.rm td.bench { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: var(--text); }
+
+ /* benchmark tables (scorecard-style docs) */
+ table.bench { width: 100%; border-collapse: collapse; margin: 14px 0; }
+ table.bench th { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); text-align: left; border-bottom: 1px solid var(--rule); padding: 0 10px 8px 0; }
+ table.bench td { font-size: .8rem; color: var(--text-2); border-bottom: 1px solid var(--hairline); padding: 10px 10px 10px 0; line-height: 1.6; vertical-align: top; }
+ table.bench td:first-child { color: var(--text); font-weight: 600; font-size: .84rem; }
+ table.bench td.layer { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .18em; font-weight: 700; color: var(--brand); border-bottom: 1px solid var(--rule); padding-top: 18px; }
+ .tag { font-family: var(--font-mono); font-size: .58rem; letter-spacing: .1em; font-weight: 700; color: var(--brand); white-space: nowrap; }
+ .tag.open { color: var(--text); }
+ .tag.mid { color: var(--text-3); }
+ .callout { border-left: 4px solid var(--brand); background: var(--brand-50); padding: 14px 18px; margin: 16px 0; }
+ .callout p { margin-bottom: 0; font-size: .9rem; color: var(--text); }
+ .callout .ct { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+ @media (max-width: 700px) {
+ table.bench, table.bench tbody, table.bench tr, table.bench td { display: block; width: 100% !important; }
+ table.bench thead { display: none; }
+ table.bench td { border-bottom: none; padding: 3px 0; }
+ table.bench tr { border-bottom: 1px solid var(--hairline); padding: 10px 0; }
+ }
+
+ /* shared chart components */
+ .viz { margin: 20px 0; }
+ .viz .vt { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); font-weight: 700; margin-bottom: 10px; }
+ .hrow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .hlab { width: 150px; font-size: .78rem; color: var(--text); font-weight: 600; flex-shrink: 0; text-align: right; line-height: 1.3; }
+ .htrack { flex: 1; height: 13px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .hfill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--brand); }
+ .hfill.lt { background: #9AB6FF; } .hfill.gold { background: #C49A3A; } .hfill.green { background: #7BE3B0; }
+ .hmark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+ .hval { width: 96px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-2); flex-shrink: 0; }
+ .stk { flex: 1; height: 13px; border-radius: 4px; overflow: hidden; display: flex; background: #EFF3FA; }
+ .stk i { display: block; height: 100%; }
+ .stk .sd { background: #7BE3B0; } .stk .sa { background: #9AB6FF; } .stk .sn { background: #F2DFA7; }
+ .legend { display: flex; gap: 16px; margin-top: 8px; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; color: var(--text-3); }
+ .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+ .steps { display: flex; margin: 16px 0 6px; }
+ .step { flex: 1; position: relative; padding-right: 8px; }
+ .step::before { content: ''; position: absolute; top: 5px; left: 14px; right: 0; height: 2px; background: var(--hairline); }
+ .step:last-child::before { display: none; }
+ .step .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--brand); position: relative; z-index: 1; margin-bottom: 8px; }
+ .step.open .dot { background: #fff; border: 2px solid #C49A3A; }
+ .step .sl { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; color: var(--brand); font-weight: 700; text-transform: uppercase; }
+ .step.open .sl { color: #C49A3A; }
+ .step .sd2 { font-size: .72rem; color: var(--text-2); line-height: 1.45; margin-top: 3px; padding-right: 8px; }
+ .gantt { margin: 16px 0; }
+ .grow { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+ .gtrack { flex: 1; height: 14px; background: #EFF3FA; border-radius: 4px; position: relative; }
+ .gbar { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; background: var(--brand); }
+ .gbar.alt { background: #9AB6FF; }
+
+ /* footer */
+ .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+ .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
+ .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+a.ref{color:#2E6BF2;text-decoration:none;border-bottom:1px solid rgba(46,107,242,.45);font-weight:600;}a.ref:hover{background:#EAF1FE;}
+</style>
+</head>
+<body>
+
+<script>if (window.self !== window.top) { document.documentElement.classList.add('embedded'); }</script>
+<style>.embedded .docnav { display: none; }</style>
+<nav class="docnav">
+ <div class="docnav-inner">
+ <a class="back" href="../data-room.html">&larr; Data Room</a>
+ <div class="mid">09.5 &middot; 4orm Finance &middot; <span class="conf">Confidential</span></div>
+ <div class="mid">VIEW ONLY</div>
+ </div>
+</nav>
+
+<div class="canvas">
+ <div class="doc-rule"></div>
+ <div class="doc-headrow">
+ <div>4ORM FINANCE</div>
+ <div class="r">PRE-SEED DATA ROOM &middot; <span class="conf">CONFIDENTIAL</span></div>
+ </div>
+
+ <div class="doc-id">
+ <div class="docnum">09.5</div>
+ <div class="blue-sq"></div>
+ <h1>Funding Comps &amp;<br>Valuation Benchmarks</h1>
+ <p class="doc-sub">What regulated settlement and digital capital markets infrastructure companies and Canadian fintech infrastructure companies have actually raised, at what valuations, and where a $3.5M Canadian pre-seed for an institutional settlement layer sits inside that record.</p>
+ </div>
+
+ <div class="doc-meta">
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">4orm Finance</div></div>
+ <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3.5M ($3M min)<br>Opens July 15, 2026</div></div>
+ <div class="dm"><div class="k">CATEGORY</div><div class="v">09 &middot; Fundraise<br>Document 09.5</div></div>
+ <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ </div>
+
+ <div class="doc-body">
+ 
+ <div class="sec">
+ <div class="marg"><div class="n">1.0</div><div class="l">PURPOSE &amp;<br>FRAMING</div></div>
+ <div class="bod">
+ <h2>How to read these comps</h2>
+ <p class="lead">This document consolidates global and Canadian funding benchmarks for fintech, blockchain, and settlement infrastructure companies, to anchor valuation and round sizing for an institutional settlement layer. It is written for the reader who will check the numbers, so each comp is labeled by what it is: a baseline, an anchor, or a ceiling.</p>
+ <p>One framing matters more than any single data point. Regulated digital securities and settlement platforms are funded and valued as <strong>digital capital markets infrastructure</strong>, not as trading apps. Licensing, ledger and registry build, custody integration, and compliance frameworks push capital needs and valuations above generic consumer fintech at the same stage. That is the comp set 4orm belongs to, and the record below shows it consistently.</p>
+ <p>All figures come from public reporting and company disclosures. Round sizes and valuations are as reported at the time of each round; older rounds (Coinsquare's 2017 Series A, for example) are included for pattern, not as current pricing.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">2.0</div><div class="l">GLOBAL SETTLEMENT<br>INFRASTRUCTURE</div></div>
+ <div class="bod wide">
+ <h2>What regulated settlement and digital capital markets infrastructure has raised globally</h2>
+ <p>The closest structural comps to 4orm are the regulated digital securities and settlement platforms that have already been through this funding path. Three are well documented, and the wider set (INX, MERJ Exchange, Assetera, SDX, DigiFT, Dinari, Centrifuge) follows the same pattern.</p>
+ <table class="bench">
+ <thead><tr><th style="width:18%">PLATFORM</th><th style="width:20%">JURISDICTION</th><th style="width:40%">REPORTED ROUNDS</th><th>READ AS</th></tr></thead>
+ <tr><td>Archax</td><td>United Kingdom (FCA-regulated)</td><td>US$8M seed; US$28.5M Series A</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>ADDX</td><td>Singapore (MAS-regulated)</td><td>~US$20M early funding; ~US$50M Series A</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Securitize</td><td>United States</td><td>~US$12M early VC; US$47M strategic round, 2024</td><td><span class="tag">ANCHOR</span></td></tr>
+ </table>
+ <div class="viz"><div class="vt">TYPICAL RAISE SIZE BY STAGE &middot; US$M &middot; MARKER = 4ORM $3.5M PRE-SEED</div>
+ <div class="hrow"><span class="hlab">Pre-seed</span><span class="htrack"><span class="hfill" style="left:1.25%;width:6.25%"></span><span class="hmark" style="left:7.5%"></span></span><span class="hval">0.5-3</span></div>
+ <div class="hrow"><span class="hlab">Seed</span><span class="htrack"><span class="hfill lt" style="left:12.5%;width:12.5%"></span></span><span class="hval">5-10</span></div>
+ <div class="hrow"><span class="hlab">Series A</span><span class="htrack"><span class="hfill lt" style="left:37.5%;width:62.5%"></span></span><span class="hval">15-40</span></div>
+ </div>
+ <h3>The pattern the global record produces</h3>
+ <table class="bench">
+ <thead><tr><th style="width:18%">STAGE</th><th style="width:30%">TYPICAL RAISE</th><th style="width:30%">TYPICAL VALUATION</th><th>WHAT IT FUNDS</th></tr></thead>
+ <tr><td>Pre-seed</td><td class="num">US$0.5-3M</td><td class="num">US$5-15M</td><td>Regulatory pathway, founding team, architecture</td></tr>
+ <tr><td>Seed</td><td class="num">US$5-10M</td><td class="num">US$15-40M</td><td>Licensing, ledger and registry build, custody integration</td></tr>
+ <tr><td>Series A</td><td class="num">US$15-40M</td><td class="num">US$50-200M</td><td>Production scale, institutional onboarding, compliance depth</td></tr>
+ </table>
+ <div class="viz"><div class="vt">VALUATION BANDS BY STAGE &middot; US$M &middot; MARKER = 4ORM PRE-SEED AT $10M</div>
+ <div class="hrow"><span class="hlab">Pre-seed</span><span class="htrack"><span class="hfill" style="left:2.5%;width:5%"></span><span class="hmark" style="left:5%"></span></span><span class="hval">5-15</span></div>
+ <div class="hrow"><span class="hlab">Seed</span><span class="htrack"><span class="hfill lt" style="left:7.5%;width:12.5%"></span></span><span class="hval">15-40</span></div>
+ <div class="hrow"><span class="hlab">Series A</span><span class="htrack"><span class="hfill lt" style="left:25%;width:75%"></span></span><span class="hval">50-200</span></div>
+ </div>
+ <p>The premium over generic fintech at each stage is not enthusiasm; it is cost structure. A regulated settlement platform has to fund licensing, infrastructure, and legal and compliance frameworks before meaningful revenue, and investors price the rounds accordingly.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">3.0</div><div class="l">CANADIAN<br>BENCHMARKS</div></div>
+ <div class="bod wide">
+ <h2>The Canadian record, in three tiers</h2>
+ <p>Canadian data sorts cleanly into three tiers, and keeping them apart is what makes the comp set honest. Market medians set the floor. Regulated and near-regulated fintech and crypto platforms set the relevant anchor band. The unicorns are ceilings, useful for showing what Canadian investors will fund at scale, and not templates for a new platform's pricing.</p>
+ <table class="bench">
+ <thead><tr><th style="width:20%">COMPANY / SOURCE</th><th style="width:42%">REPORTED ROUND</th><th style="width:20%">VALUATION</th><th>TIER</th></tr></thead>
+ <tr><td>Osler Deal Points 2024</td><td>Median Canadian pre-money valuations across venture rounds</td><td class="num">~US$16M seed; US$43.4M Series A</td><td><span class="tag mid">BASELINE</span></td></tr>
+ <tr><td>CVCA, H1 2025</td><td>Average Canadian seed round size, all sectors</td><td class="num">~C$3M raise</td><td><span class="tag mid">BASELINE</span></td></tr>
+ <tr><td>Coinsquare</td><td>C$10.5M Series A, 2017</td><td class="num">C$110.5M post</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Shakepay</td><td>C$44M Series A</td><td class="num">C$313M post</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Ledn</td><td>US$30M Series A</td><td class="num">US$230M</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Hiive</td><td>C$5.7M Series A, private share marketplace</td><td class="num">C$77M post</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Overbond</td><td>US$7.5M seed, digital bond issuance</td><td class="num">Not disclosed</td><td><span class="tag">ANCHOR</span></td></tr>
+ <tr><td>Wealthsimple</td><td>C$750M growth financing, 2025</td><td class="num">C$10B post</td><td><span class="tag open">CEILING</span></td></tr>
+ <tr><td>Neo Financial</td><td>C$185M Series C</td><td class="num">&gt;C$1B</td><td><span class="tag open">CEILING</span></td></tr>
+ <tr><td>Figment</td><td>US$110M Series C</td><td class="num">US$1.4B</td><td><span class="tag open">CEILING</span></td></tr>
+ <tr><td>LayerZero Labs</td><td>US$135M Series A; US$120M Series B</td><td class="num">US$1B &rarr; US$3B</td><td><span class="tag open">CEILING</span></td></tr>
+ </table>
+ <p>The anchor tier is the one that matters for 4orm's pricing conversation. Coinsquare, Shakepay, Ledn, and Hiive show that Canadian platforms with regulatory standing or a credible path to it command substantial valuations at early stages, well above the cross-sector medians. The ceilings show the depth of Canadian and global capital for infrastructure-grade winners; they are context, not comps.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">4.0</div><div class="l">CANADIAN<br>RWA PEERS</div></div>
+ <div class="bod wide">
+ <h2>What early-stage Canadian RWA companies are raising right now</h2>
+ <p>The most recent and most directly comparable tier is Canada's own early-stage RWA and tokenization cohort. These are the rounds happening in 4orm's market, at 4orm's stage, in 4orm's cycle.</p>
+ <table class="bench">
+ <thead><tr><th style="width:18%">COMPANY</th><th style="width:44%">WHAT THEY DO / REPORTED ROUND</th><th>STAGE</th></tr></thead>
+ <tr><td>Loon (Calgary)</td><td>CAD stablecoin infrastructure; C$3M pre-seed, October 2025, plus acquisition of the CADC stablecoin from Paytrie</td><td><span class="tag">PRE-SEED</span></td></tr>
+ <tr><td>TransCrypts</td><td>Blockchain verification of records; US$2.4M pre-seed and US$15M seed, 2025</td><td><span class="tag">PRE-SEED &rarr; SEED</span></td></tr>
+ <tr><td>Stablecorp</td><td>QCAD, Canada's first approved CAD stablecoin; C$1.9M pre-Series A and a ~C$5M strategic round, September 2025</td><td><span class="tag">EARLY</span></td></tr>
+ <tr><td>Real Finance</td><td>RWA tokenization infrastructure; US$29M raise</td><td><span class="tag">GROWTH</span></td></tr>
+ <tr><td>AuCan Gold</td><td>C$2.5B tokenized gold program (program size, not a funding round)</td><td><span class="tag mid">PROGRAM</span></td></tr>
+ </table>
+ <p>Two observations from this cohort. First, Canadian pre-seeds for regulated-rail infrastructure are clustering right around C$3M, which is close to where Loon priced and where the CVCA cross-sector average sits. Second, none of these companies is building the full institutional settlement layer; they are rails, records, and instruments. The comp set confirms both the price of entry and the open lane.</p>
+ </div>
+ </div>
+
+ <div class="sec">
+ <div class="marg"><div class="n">5.0</div><div class="l">WHERE 4ORM<br>SITS</div></div>
+ <div class="bod">
+ <h2>The implied path, and where this round prices</h2>
+ <p>Put the global pattern and the Canadian record together and the funding trajectory for a credible institutional settlement layer reads as follows: a pre-seed of roughly US$1M to US$3M equivalent, a seed of US$5M to US$10M equivalent, and a Series A in the US$20M to US$50M range, each gated on regulatory progress, product build-out, and institutional relationships rather than on calendar time.</p>
+ <div class="callout">
+ <span class="ct">WHERE THIS ROUND PRICES</span>
+ <p>4orm's $3.5M pre-seed ($3M minimum), opening July 15, 2026 at a $10M pre-money valuation, sits inside the comp band on both sides: the raise sits close to the C$3M Canadian pre-seed cluster (Loon, CVCA average), and the valuation sits in the middle of the US$5M to US$15M global pre-seed band for regulated settlement infrastructure. The round is priced off the record, not off the ceiling comps.</p>
+ </div>
+ <p>The honest conditions attach here, as everywhere in this data room. The anchor-tier valuations were earned with regulatory standing, live products, or both. 4orm's claim on the higher end of the early-stage band rests on demonstrating regulatory credibility (the sandbox path and CIRO-aligned custody design in documents 10.4 and 10.5), institution-grade infrastructure, and a clear capital markets use case. The comps say the band is real. Execution decides where in the band the next round prices.</p>
+ <p class="note">Sources: public funding disclosures and contemporaneous reporting for Archax, ADDX, Securitize, INX, MERJ Exchange, Assetera, SDX, DigiFT, Dinari, and Centrifuge; Canadian round reporting for Wealthsimple (2025), Neo Financial, KOHO, Coinsquare (2017), Shakepay, Ledn, Hiive, Overbond, Figment, and LayerZero Labs; <a class="ref" href="https://www.osler.com/en/insights/reports/2024-deal-points-report-venture-capital-financings/" target="_blank" rel="noopener"><a class="ref" href="https://www.osler.com/en/insights/reports/2024-deal-points-report-venture-capital-financings/" target="_blank" rel="noopener">Osler</a></a> Deal Points Report 2024 (median Canadian pre-money valuations); <a class="ref" href="https://www.cvca.ca/insights/market-reports/h1-2025/" target="_blank" rel="noopener">CVCA</a> H1 2025 market data (average Canadian seed round); Canadian RWA cohort reporting for Loon (October 2025), TransCrypts (2025), Stablecorp (September 2025), Real Finance, and AuCan Gold; KCS Capital comp compilations, June 2026. Figures are as reported at the time of each round and have not been restated.</p>
+ </div>
+ </div>
+
+
+ </div>
+
+ <div class="doc-foot">
+ <div>DATA.4ORMFINANCE.COM</div>
+ <div>NOT FOR DISTRIBUTION</div>
+ </div>
+ <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance is a single operating entity to be incorporated in Alberta (ABCA); technology is developed by KCS Capital, an independent research and development firm.</p>
+</div>
+
+<script src="../assets/doc-xref.js" defer></script>
+</body>
+</html>
