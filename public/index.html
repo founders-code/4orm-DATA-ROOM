@@ -11,163 +11,159 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
  :root{
-  --ink:#142036; --ink-2:#2A3A57; --steel:#46556E; --slate:#5E6E88;
-  --blue:#2E6BF2; --blue-d:#1B4ABE; --blue-tint:#EAF1FE; --mist:#D7DEEA; --cloud:#EFF3FA; --paper:#F7FAFF;
-  --gold:#C49A3A; --green:#0E8A5F;
-  --line:#E2E8F2; --white:#fff;
-  --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
-  --maxw:1160px;
+  --bg:#0B1220; --navy:#15233F;
+  --card:rgba(255,255,255,.06); --cardh:rgba(255,255,255,.10); --line:rgba(255,255,255,.12); --hair:rgba(255,255,255,.16);
+  --t1:#fff; --t2:rgba(255,255,255,.82); --t3:rgba(255,255,255,.55);
+  --blue:#2E6BF2; --blued:#1B4ABE; --lt:#9AB6FF; --green:#7BE3B0; --gold:#E7C76C; --peach:#FFD9A8; --purple:#C8B0EF; --coral:#FF8095;
+  --sans:'Inter',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; --maxw:1160px;
  }
  *{margin:0;padding:0;box-sizing:border-box;}
  html{scroll-behavior:smooth;}
- body{font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5;}
+ body{font-family:var(--sans);background:var(--bg);color:var(--t2);-webkit-font-smoothing:antialiased;line-height:1.5;}
  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
  a{color:inherit;}
- .mono{font-family:var(--mono);}
 
- /* ---------- nav ---------- */
- .nav{background:rgba(255,255,255,.92);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:60;}
- .nav-inner{max-width:var(--maxw);margin:0 auto;min-height:64px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;}
+ /* ---------- nav (white, matches data room) ---------- */
+ .nav{background:#fff;border-bottom:1px solid #E3E9F2;position:sticky;top:0;z-index:60;}
+ .nav-inner{max-width:var(--maxw);margin:0 auto;min-height:64px;padding:0 32px;display:flex;align-items:center;justify-content:space-between;overflow:visible;}
  .brand-logo{height:94px;margin:-16px 0;display:block;transform:translateY(8px);}
  @media (max-width:760px){.brand-logo{height:76px;margin:-12px 0;transform:translateY(6px);}}
- /* pre-seed tag to the right of sign-in */
- .preseed-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.03em;color:var(--ink);background:#FFF8E6;border:1px solid #F0DFA8;border-radius:99px;padding:7px 13px;margin-left:12px;white-space:nowrap;}
+ .nav-links{display:flex;align-items:center;gap:8px;}
+ .nav-links a{color:#46556E;font-size:.9rem;font-weight:600;padding:8px 13px;text-decoration:none;border-radius:8px;white-space:nowrap;}
+ .nav-links a:hover{background:#EAF1FE;color:#142036;}
+ .nav-links a.auth{background:#0B1220;color:#fff;padding:9px 20px;border-radius:99px;margin-left:8px;}
+ .nav-links a.auth:hover{background:var(--blue);}
+ @media (max-width:820px){.nav-links a.hideable{display:none;}}
+ .preseed-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.03em;color:#142036;background:#FFF8E6;border:1px solid #F0DFA8;border-radius:99px;padding:7px 13px;margin-left:12px;white-space:nowrap;}
  .preseed-tag .ps-dot{width:8px;height:8px;border-radius:50%;background:#E7B008;animation:ps-blink 1.4s ease-in-out infinite;}
  @keyframes ps-blink{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(231,176,8,.55);}50%{opacity:.4;box-shadow:0 0 0 6px rgba(231,176,8,0);}}
  @media (max-width:820px){.preseed-tag{display:none;}}
- /* accredited pill near the hero CTAs */
- .acc-pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--steel);background:#fff;border:1px solid var(--mist);border-radius:99px;padding:9px 14px;}
- .acc-pill .acc-dot{width:7px;height:7px;border-radius:2px;background:var(--blue);transform:rotate(45deg);}
- .nav-links{display:flex;align-items:center;gap:8px;}
- .nav-links a{color:var(--steel);font-size:.9rem;font-weight:600;padding:8px 13px;text-decoration:none;border-radius:8px;white-space:nowrap;}
- .nav-links a:hover{background:var(--cloud);color:var(--ink);}
- .nav-links a.auth{background:var(--ink);color:#fff;padding:9px 20px;border-radius:99px;margin-left:8px;}
- .nav-links a.auth:hover{background:var(--blue);}
- @media (max-width:820px){.nav-links a.hideable{display:none;}}
 
- /* ---------- shared eyebrow / headings ---------- */
- .kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:12px;}
- .kicker::before{content:'';width:26px;height:2px;background:var(--blue);}
- .sec{padding:96px 0;border-top:1px solid var(--line);}
- .sec.alt{background:var(--white);}
- .sec-num{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--slate);margin-bottom:16px;}
- h2{font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.02em;color:var(--ink);max-width:20em;margin-bottom:18px;font-weight:800;}
- .lead{font-size:1.05rem;line-height:1.75;color:var(--steel);max-width:50em;}
- .lead b{color:var(--ink);font-weight:700;}
+ /* ---------- headings / sections ---------- */
+ .kicker{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--peach);display:inline-flex;align-items:center;gap:12px;}
+ .kicker::before{content:'';width:26px;height:2px;background:var(--peach);}
+ .sec{padding:96px 0;border-top:1px solid var(--line);background:var(--bg);}
+ .sec.alt{background:var(--bg);}
+ .sec.blue{background:linear-gradient(180deg,#182B60 0%, #0E1A38 38%, #0B1220 88%);}
+ .sec-num{font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--lt);margin-bottom:16px;}
+ h2{font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;letter-spacing:-.02em;color:var(--t1);max-width:20em;margin-bottom:18px;font-weight:800;}
+ .lead{font-size:1.05rem;line-height:1.75;color:var(--t2);max-width:50em;}
+ .lead b{color:var(--t1);}
 
- /* ---------- hero ---------- */
- .hero{position:relative;overflow:hidden;background:
-   radial-gradient(1200px 520px at 82% -10%, rgba(46,107,242,.10), transparent 60%),
-   radial-gradient(900px 420px at 6% 8%, rgba(196,154,58,.07), transparent 60%),
-   linear-gradient(180deg,#fff 0%, var(--paper) 100%);
-   border-bottom:1px solid var(--line);padding:74px 0 60px;}
- .hero .kicker{color:var(--blue);}
- .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;color:var(--ink);max-width:15.5em;margin:20px 0 20px;}
- .hero h1 .hl{background:linear-gradient(120deg,var(--blue),#5E8BFF);-webkit-background-clip:text;background-clip:text;color:transparent;}
- .hero-lead{font-size:1.12rem;line-height:1.7;color:var(--steel);max-width:44em;margin-bottom:14px;}
- .hero-lead b{color:var(--ink);font-weight:700;}
- .hero-sub{font-size:.92rem;color:var(--slate);max-width:46em;margin-bottom:30px;line-height:1.65;}
+ /* ---------- hero (exact data-room blue) ---------- */
+ .hero{position:relative;overflow:hidden;color:#fff;background:
+   radial-gradient(780px 780px at 88% -22%, rgba(247,196,102,.16), transparent 60%),
+   radial-gradient(640px 640px at 2% 112%, rgba(46,107,242,.28), transparent 60%),
+   linear-gradient(180deg,#1F3CA8 0%, #15233F 18%, #0B1220 100%);
+   border-bottom:1px solid var(--line);padding:74px 0 62px;}
+ .hero h1{font-size:clamp(2.4rem,5.2vw,4.4rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;color:#fff;max-width:15.5em;margin:20px 0 20px;}
+ .hero h1 .hl{color:var(--peach);}
+ .hero-lead{font-size:1.12rem;line-height:1.7;color:rgba(255,255,255,.86);max-width:44em;margin-bottom:14px;}
+ .hero-lead b{color:var(--peach);}
+ .hero-sub{font-size:.92rem;color:rgba(255,255,255,.6);max-width:46em;margin-bottom:30px;line-height:1.65;}
 
- /* three-things trio */
- .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 30px;position:relative;}
+ .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 26px;}
  @media (max-width:760px){.trio{grid-template-columns:1fr;}}
- .tcard{background:var(--white);border:1px solid var(--mist);border-radius:16px;padding:22px 22px 20px;position:relative;overflow:hidden;box-shadow:0 1px 0 rgba(20,32,54,.03),0 12px 34px -22px rgba(20,32,54,.22);}
+ .tcard{background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:24px 22px 20px;position:relative;overflow:hidden;}
  .tcard::before{content:'';position:absolute;inset:0 auto 0 0;width:4px;background:var(--tc,var(--blue));}
  .tcard .tn{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--tc,var(--blue));margin-bottom:8px;}
- .tcard h4{font-size:1.12rem;color:var(--ink);margin-bottom:6px;font-weight:700;}
- .tcard p{font-size:.86rem;color:var(--steel);line-height:1.55;}
- .trio-foot{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--slate);text-align:center;margin-top:4px;}
- .trio-foot b{color:var(--blue);}
+ .tcard h4{font-size:1.12rem;color:#fff;margin-bottom:6px;font-weight:700;}
+ .tcard p{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.55;}
+ .trio-foot{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:rgba(255,255,255,.6);text-align:center;margin-top:4px;}
+ .trio-foot b{color:var(--peach);}
 
  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
- .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.02rem;padding:15px 26px;border-radius:12px;transition:transform .14s,background .14s,box-shadow .14s;}
- .btn.primary{background:var(--blue);color:#fff;box-shadow:0 12px 26px -12px rgba(46,107,242,.7);}
- .btn.primary:hover{background:var(--blue-d);transform:translateY(-2px);}
- .btn.ghost{background:#fff;border:1px solid var(--mist);color:var(--ink);}
- .btn.ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
- .cta-note{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);}
+ .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.02rem;padding:15px 26px;border-radius:12px;transition:transform .14s,background .14s;}
+ .btn.primary{background:var(--blue);color:#fff;box-shadow:0 14px 30px -14px rgba(46,107,242,.8);}
+ .btn.primary:hover{background:var(--blued);transform:translateY(-2px);}
+ .btn.ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;}
+ .btn.ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
+ .acc-pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:9px 14px;}
+ .acc-pill .acc-dot{width:7px;height:7px;border-radius:2px;background:var(--blue);transform:rotate(45deg);}
 
  /* ---------- stat cards ---------- */
  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px;}
  @media (max-width:900px){.stats{grid-template-columns:1fr 1fr;}}
  @media (max-width:520px){.stats{grid-template-columns:1fr;}}
- .stat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;position:relative;}
- .stat::before{content:'';position:absolute;top:0;left:20px;right:20px;height:3px;border-radius:0 0 3px 3px;background:var(--blue);}
- .stat .n{font-family:var(--mono);font-size:1.7rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
- .stat .l{font-size:.84rem;color:var(--steel);line-height:1.5;margin-top:10px;}
- .stat .s{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-top:12px;display:block;}
+ .stat{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:24px 20px;position:relative;overflow:hidden;}
+ .stat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);}
+ .stats .stat:nth-child(1)::before{background:var(--peach);}
+ .stats .stat:nth-child(2)::before{background:var(--blue);}
+ .stats .stat:nth-child(3)::before{background:var(--green);}
+ .stats .stat:nth-child(4)::before{background:var(--purple);}
+ .stat .n{font-family:var(--mono);font-size:1.7rem;font-weight:700;color:#fff;letter-spacing:-.01em;}
+ .stat .l{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:10px;}
+ .stat .s{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:12px;display:block;}
 
- /* ---------- pain / contrast cards ---------- */
+ /* ---------- mini / pain cards ---------- */
  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
  @media (max-width:780px){.grid2{grid-template-columns:1fr;}}
- .mini{background:var(--cloud);border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
- .mini h3{font-size:1.02rem;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;gap:10px;font-weight:700;}
- .mini h3::before{content:'';width:7px;height:7px;border-radius:2px;background:var(--blue);transform:rotate(45deg);flex-shrink:0;}
- .mini p{font-size:.9rem;color:var(--steel);line-height:1.6;}
+ .mini{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
+ .mini h3{font-size:1.02rem;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:10px;font-weight:700;}
+ .mini h3::before{content:'';width:7px;height:7px;border-radius:2px;background:var(--coral);transform:rotate(45deg);flex-shrink:0;}
+ .mini p{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.6;}
 
  /* ---------- is / is-not ---------- */
  .isnot{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;}
  @media (max-width:780px){.isnot{grid-template-columns:1fr;}}
- .isnot .col{border-radius:16px;padding:26px 26px;border:1px solid var(--line);}
- .isnot .is{background:linear-gradient(180deg,var(--blue-tint),#fff);border-color:#CFE0FF;}
- .isnot .isnt{background:var(--cloud);}
+ .isnot .col{border-radius:16px;padding:26px;border:1px solid var(--line);}
+ .isnot .is{background:rgba(46,107,242,.12);border-color:rgba(46,107,242,.38);}
+ .isnot .isnt{background:var(--card);}
  .isnot .h{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:12px;}
- .isnot .is .h{color:var(--blue);} .isnot .isnt .h{color:var(--slate);}
+ .isnot .is .h{color:var(--lt);} .isnot .isnt .h{color:rgba(255,255,255,.55);}
  .isnot ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
- .isnot li{font-size:.92rem;color:var(--steel);line-height:1.5;padding-left:22px;position:relative;}
- .isnot .is li::before{content:'+';position:absolute;left:0;color:var(--blue);font-weight:800;}
- .isnot .isnt li::before{content:'\2013';position:absolute;left:0;color:var(--slate);font-weight:800;}
- .isnot li b{color:var(--ink);}
+ .isnot li{font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.5;padding-left:22px;position:relative;}
+ .isnot .is li::before{content:'+';position:absolute;left:0;color:var(--lt);font-weight:800;}
+ .isnot .isnt li::before{content:'\2013';position:absolute;left:0;color:rgba(255,255,255,.4);font-weight:800;}
+ .isnot li b{color:#fff;}
 
  /* ---------- proof ---------- */
- .samara{margin-top:30px;background:var(--ink);color:#fff;border-radius:18px;padding:30px 30px;display:grid;grid-template-columns:1.1fr 1fr;gap:26px;overflow:hidden;position:relative;}
+ .samara{margin-top:30px;background:#0A1120;border:1px solid var(--hair);color:#fff;border-radius:18px;padding:30px;display:grid;grid-template-columns:1.1fr 1fr;gap:26px;}
  @media (max-width:780px){.samara{grid-template-columns:1fr;}}
- .samara .big{font-family:var(--mono);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;}
- .samara .cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#9AB6FF;margin-bottom:8px;}
+ .samara .big{font-family:var(--mono);font-size:2.4rem;font-weight:700;letter-spacing:-.02em;color:var(--peach);}
+ .sm-lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lt);margin-bottom:8px;}
  .samara p{font-size:.9rem;line-height:1.65;color:rgba(255,255,255,.82);}
- .samara .disc{font-size:.74rem;color:rgba(255,255,255,.55);margin-top:12px;line-height:1.55;}
+ .samara .disc{font-size:.74rem;color:rgba(255,255,255,.5);margin-top:12px;line-height:1.55;}
  .tl{margin-top:16px;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
  .tl-row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line);}
  .tl-row:last-child{border-bottom:none;}
- .tl-row .w{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--green);font-weight:700;padding:18px 20px;background:var(--cloud);border-right:1px solid var(--line);display:flex;align-items:center;}
- .tl-row .d{padding:18px 22px;font-size:.9rem;line-height:1.6;color:var(--steel);}
- .tl-row .d b{color:var(--ink);}
+ .tl-row .w{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--green);font-weight:700;padding:18px 20px;background:rgba(255,255,255,.03);border-right:1px solid var(--line);display:flex;align-items:center;}
+ .tl-row .d{padding:18px 22px;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.8);}
+ .tl-row .d b{color:#fff;}
  @media (max-width:640px){.tl-row{grid-template-columns:1fr;} .tl-row .w{border-right:none;}}
- .pull{margin-top:22px;border-left:3px solid var(--blue);background:var(--blue-tint);border-radius:0 12px 12px 0;padding:18px 22px;max-width:56em;font-size:.98rem;line-height:1.7;color:var(--ink-2);}
- .pull b{color:var(--ink);}
+ .pull{margin-top:22px;border-left:3px solid var(--blue);background:rgba(46,107,242,.12);border-radius:0 12px 12px 0;padding:18px 22px;max-width:56em;font-size:.98rem;line-height:1.7;color:rgba(255,255,255,.85);}
+ .pull b{color:#fff;}
 
  /* ---------- capabilities ---------- */
  .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
  @media (max-width:900px){.caps{grid-template-columns:1fr 1fr;}}
  @media (max-width:560px){.caps{grid-template-columns:1fr;}}
- .cap{position:relative;overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px 22px 24px;transition:border-color .15s,transform .15s,box-shadow .15s;}
- .cap.acc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ca,var(--blue));}
- .cap.acc{border-color:color-mix(in srgb, var(--ca) 30%, var(--line));}
- .sec.blue-fade{background:linear-gradient(180deg,var(--paper) 0%, #E6F0FF 52%, var(--paper) 100%);}
- .sec.blue-soft{background:linear-gradient(180deg,#EEF4FF 0%, #E1ECFF 100%);}
- .cap:hover{border-color:#BFD3FF;transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(20,32,54,.4);}
- .cap .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;font-weight:700;color:var(--blue);margin-bottom:12px;}
- .cap h3{font-size:1.04rem;color:var(--ink);margin-bottom:8px;font-weight:700;}
- .cap p{font-size:.86rem;color:var(--steel);line-height:1.6;}
+ .cap{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:26px 22px 24px;position:relative;overflow:hidden;transition:border-color .15s,transform .15s,background .15s;}
+ .cap:hover{border-color:rgba(154,182,255,.5);transform:translateY(-3px);background:var(--cardh);}
+ .cap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ca,var(--blue));}
+ .cap .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;font-weight:700;color:var(--lt);margin-bottom:12px;}
+ .cap h3{font-size:1.04rem;color:#fff;margin-bottom:8px;font-weight:700;}
+ .cap p{font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.6;}
  .keeps{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;}
- .keep{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;font-weight:600;color:var(--ink-2);background:#fff;border:1px solid var(--mist);border-radius:99px;padding:8px 14px;}
- .distinct{margin-top:26px;font-size:1.02rem;line-height:1.7;color:var(--steel);max-width:52em;}
- .distinct b{color:var(--ink);}
+ .keep{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;font-weight:600;color:rgba(255,255,255,.82);background:rgba(255,255,255,.05);border:1px solid var(--hair);border-radius:99px;padding:8px 14px;}
+ .distinct{margin-top:26px;font-size:1.02rem;line-height:1.7;color:rgba(255,255,255,.78);max-width:52em;}
+ .distinct b{color:#fff;}
 
  /* ---------- room ---------- */
  .room{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
  @media (max-width:900px){.room{grid-template-columns:1fr;}}
- .rcard{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px;}
- .rcard .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;font-weight:700;color:var(--gold);margin-bottom:12px;}
- .rcard h3{font-size:1.04rem;color:var(--ink);margin-bottom:8px;font-weight:700;}
- .rcard p{font-size:.86rem;color:var(--steel);line-height:1.62;}
- .round{margin-top:32px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 28px;display:flex;gap:28px;flex-wrap:wrap;align-items:center;justify-content:space-between;box-shadow:0 14px 36px -26px rgba(20,32,54,.3);}
- .round .item .n{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:var(--ink);}
- .round .item .l{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-top:5px;}
- .foot-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;color:var(--slate);margin-top:16px;line-height:1.7;max-width:60em;}
- .final{margin-top:44px;text-align:center;padding:52px 30px;background:radial-gradient(700px 300px at 50% 0%, rgba(46,107,242,.10), transparent 70%),var(--white);border:1px solid var(--line);border-radius:22px;}
+ .rcard{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:26px 24px 24px;position:relative;overflow:hidden;}
+ .rcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ca,var(--blue));}
+ .rcard .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;font-weight:700;color:var(--ca,var(--gold));margin-bottom:12px;}
+ .rcard h3{font-size:1.04rem;color:#fff;margin-bottom:8px;font-weight:700;}
+ .rcard p{font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.62;}
+ .round{margin-top:32px;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:26px 28px;display:flex;gap:28px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+ .round .item .n{font-family:var(--mono);font-size:1.5rem;font-weight:700;color:#fff;}
+ .round .item .l{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:5px;}
+ .foot-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;color:rgba(255,255,255,.5);margin-top:16px;line-height:1.7;max-width:60em;}
+ .final{margin-top:44px;text-align:center;padding:52px 30px;background:radial-gradient(700px 300px at 50% 0%, rgba(46,107,242,.18), transparent 70%),var(--card);border:1px solid var(--hair);border-radius:22px;}
  .final h2{margin:0 auto 12px;}
- .final p{max-width:44em;margin:0 auto 26px;color:var(--steel);font-size:1rem;line-height:1.7;}
+ .final p{max-width:44em;margin:0 auto 26px;color:rgba(255,255,255,.78);font-size:1rem;line-height:1.7;}
 </style>
 <link rel="stylesheet" href="assets/compliance.css" />
 </head>
@@ -198,9 +194,9 @@
  <p class="hero-sub">Projects get liquidity and real end users; institutions get faster access and capital that is not left waiting. 4orm issues the record of title and connects to the bank deposit for the cash leg. We are not a bank, a custodian, or a stablecoin issuer. Built in Canada, under Canadian rules, owned here.</p>
 
  <div class="trio">
-  <div class="tcard" style="--tc:#2E6BF2"><div class="tn">01 &middot; The title</div><h4>The record of ownership</h4><p>4orm operates the ledger of record and the token registry, so ownership changes hands cleanly and is recognized.</p></div>
-  <div class="tcard" style="--tc:#0E8A5F"><div class="tn">02 &middot; The cash leg</div><h4>A tokenized bank deposit</h4><p>Issued and held by a regulated Canadian bank as its own liability. 4orm connects to it; 4orm does not issue it.</p></div>
-  <div class="tcard" style="--tc:#C49A3A"><div class="tn">03 &middot; The rules</div><h4>Identity, eligibility, sanctions</h4><p>Checked pre-transfer and embedded in the settlement, not bolted on after the fact. A transfer that should not happen cannot complete.</p></div>
+  <div class="tcard" style="--tc:#9AB6FF"><div class="tn">01 &middot; The title</div><h4>The record of ownership</h4><p>4orm operates the ledger of record and the token registry, so ownership changes hands cleanly and is recognized.</p></div>
+  <div class="tcard" style="--tc:#7BE3B0"><div class="tn">02 &middot; The cash leg</div><h4>A tokenized bank deposit</h4><p>Issued and held by a regulated Canadian bank as its own liability. 4orm connects to it; 4orm does not issue it.</p></div>
+  <div class="tcard" style="--tc:#FFD9A8"><div class="tn">03 &middot; The rules</div><h4>Identity, eligibility, sanctions</h4><p>Checked pre-transfer and embedded in the settlement, not bolted on after the fact. A transfer that should not happen cannot complete.</p></div>
  </div>
  <div class="trio-foot">When all three settle together, delivery-versus-payment, <b>the transfer is final the moment it commits.</b></div>
 
@@ -213,7 +209,7 @@
 </section>
 
 <!-- ============ THE GAP ============ -->
-<section class="sec blue-fade" id="gap">
+<section class="sec alt" id="gap">
  <div class="wrap">
  <div class="sec-num">01 &middot; The Gap</div>
  <h2>Moving a tokenized asset between two regulated institutions in Canada today is slow, manual, and legally uncertain.</h2>
@@ -236,7 +232,7 @@
 </section>
 
 <!-- ============ THE PROOF ============ -->
-<section class="sec alt" id="proof">
+<section class="sec blue" id="proof">
  <div class="wrap">
  <div class="sec-num">02 &middot; The Proof</div>
  <h2>The settlement model is proven in principle. The open question is who operates it for Canadian institutions.</h2>
@@ -244,13 +240,13 @@
 
  <div class="samara">
   <div>
-   <div class="cap">Bank of Canada &middot; Project Samara &middot; Mar 6, 2026</div>
+   <div class="sm-lab">Bank of Canada &middot; Project Samara &middot; Mar 6, 2026</div>
    <div class="big">$100M</div>
    <p style="margin-top:8px">A tokenized bond issued by Export Development Canada, with RBC and TD, settled end to end in Bank of Canada wholesale central-bank money (W-CAD). Full lifecycle: issuance, bidding, coupon payments, secondary trading, redemption.</p>
    <div class="disc">Samara settled against central-bank money, not a commercial-bank deposit token; 4orm's model uses a tokenized commercial-bank deposit as the cash leg. Directional support only. 4orm is not affiliated with the Bank of Canada or the Samara consortium. Bank of Canada Staff Analytical Paper 2026-8.</div>
   </div>
   <div>
-   <div class="cap">Why it matters to 4orm</div>
+   <div class="sm-lab">Why it matters to 4orm</div>
    <p style="margin-top:8px">Samara established the architectural patterns 4orm builds against: title and cash settling together, inside the regulatory perimeter, with real institutions. It is directional support that settlement finality for tokenized assets works in Canada. What it does not answer is who operates the neutral layer for commercial-bank settlement day to day. That is the company.</p>
   </div>
  </div>
@@ -265,7 +261,7 @@
 </section>
 
 <!-- ============ THE PLATFORM ============ -->
-<section class="sec blue-soft" id="platform">
+<section class="sec alt" id="platform">
  <div class="wrap">
  <div class="sec-num">03 &middot; The Platform</div>
  <h2>4orm Finance: the neutral settlement layer for Canadian tokenized real-world assets.</h2>
@@ -287,12 +283,12 @@
  </div>
 
  <div class="caps">
-  <div class="cap acc" style="--ca:#2E6BF2"><div class="k">01 &middot; ISSUANCE</div><h3>Tokenized asset issuance</h3><p>Native infrastructure for tokenizing real-world assets: on-chain registry, legal-economic binding, full audit trail. Bonds, deposits, real estate, private credit, energy royalties, precious metals.</p></div>
-  <div class="cap acc" style="--ca:#0E8A5F"><div class="k">02 &middot; TRADING</div><h3>4ormEx, the institutional venue</h3><p>The planned regulated trading layer, built as 4ormEx, a Phase 3 capability subject to CIRO marketplace authorization. Order book, RFQ, secondary liquidity, multi-bank settlement corridors.</p></div>
-  <div class="cap acc" style="--ca:#C49A3A"><div class="k">03 &middot; SETTLEMENT</div><h3>Delivery versus payment, T+0</h3><p>Title and cash leg settle in the same step, or neither settles. One supervised settlement replaces the multi-day deferred-net cycle and removes the gap where one side has paid and the other has not delivered.</p></div>
-  <div class="cap"><div class="k">04 &middot; CUSTODY</div><h3>4orm Trust Co (proposed)</h3><p>A separate proposed regulated entity, subject to OSFI letters patent or Alberta provincial trust authorization, structured apart from the marketplace and dealer functions.</p></div>
-  <div class="cap"><div class="k">05 &middot; REPORTING</div><h3>Regulator-aligned reporting</h3><p>OSFI, CSA, FINTRAC, and CIRO reporting embedded at the settlement layer and derived from the ledger, not bolted on and not reconciled after the fact.</p></div>
-  <div class="cap"><div class="k">06 &middot; SUPERVISION</div><h3>Embedded supervisory controls</h3><p>Read-only, privacy-preserving supervisory feeds: pre-trade screens, post-trade attestation, AML rule engines, and reusable KYC credentials.</p></div>
+  <div class="cap" style="--ca:#2E6BF2"><div class="k">01 &middot; ISSUANCE</div><h3>Tokenized asset issuance</h3><p>Native infrastructure for tokenizing real-world assets: on-chain registry, legal-economic binding, full audit trail. Bonds, deposits, real estate, private credit, energy royalties, precious metals.</p></div>
+  <div class="cap" style="--ca:#7BE3B0"><div class="k">02 &middot; TRADING</div><h3>4ormEx, the institutional venue</h3><p>The planned regulated trading layer, built as 4ormEx, a Phase 3 capability subject to CIRO marketplace authorization. Order book, RFQ, secondary liquidity, multi-bank settlement corridors.</p></div>
+  <div class="cap" style="--ca:#FFD9A8"><div class="k">03 &middot; SETTLEMENT</div><h3>Delivery versus payment, T+0</h3><p>Title and cash leg settle in the same step, or neither settles. One supervised settlement replaces the multi-day deferred-net cycle and removes the gap where one side has paid and the other has not delivered.</p></div>
+  <div class="cap" style="--ca:#C8B0EF"><div class="k">04 &middot; CUSTODY</div><h3>4orm Trust Co (proposed)</h3><p>A separate proposed regulated entity, subject to OSFI letters patent or Alberta provincial trust authorization, structured apart from the marketplace and dealer functions.</p></div>
+  <div class="cap" style="--ca:#9AB6FF"><div class="k">05 &middot; REPORTING</div><h3>Regulator-aligned reporting</h3><p>OSFI, CSA, FINTRAC, and CIRO reporting embedded at the settlement layer and derived from the ledger, not bolted on and not reconciled after the fact.</p></div>
+  <div class="cap" style="--ca:#E7C76C"><div class="k">06 &middot; SUPERVISION</div><h3>Embedded supervisory controls</h3><p>Read-only, privacy-preserving supervisory feeds: pre-trade screens, post-trade attestation, AML rule engines, and reusable KYC credentials.</p></div>
  </div>
 
  <div class="keeps">
@@ -307,16 +303,16 @@
 </section>
 
 <!-- ============ THE ROOM ============ -->
-<section class="sec alt" id="room">
+<section class="sec blue" id="room">
  <div class="wrap">
  <div class="sec-num">04 &middot; Why This Room Is Worth Your Time</div>
  <h2>Most data rooms assert. This one shows its work.</h2>
  <p class="lead">Every claim on this page has a document behind that door: sourced, cross-referenced, and labeled honestly as verified fact or management estimate. The room is view-only, organized for diligence, and built to be argued with.</p>
 
  <div class="room">
-  <div class="rcard"><div class="k">THE NUMBERS</div><h3>A model you can interrogate</h3><p>The five-year financial model, rendered sheet by sheet: every assumption, toggle, and source visible. Modeled revenue across four targeted Canadian financial institution profiles, with the downside cases in the model, not a footnote. Phased build: Phase 1 pre-seed proof of architecture; Phase 2 seed full CIRO stack; Phase 3 Series A in market.</p></div>
-  <div class="rcard"><div class="k">THE MACHINE</div><h3>Architecture, end to end</h3><p>The full lifecycle of a tokenized settlement, issuance through redemption, across the six capabilities, in writing and in diagrams, including the design decisions deliberately gated to regulators and counsel. The unresolved questions are listed, on purpose.</p></div>
-  <div class="rcard"><div class="k">THE PEOPLE</div><h3>A bench with receipts</h3><p>Founders, Alberta and BC securities counsel split by function, and domain advisors covering compliance, capital markets, and bank-grade systems architecture. Advisory Council includes four named seats formalized through the v11 corp structure; Founding Capital Markets Advisor role held by Bruce Fair via Mench Capital.</p></div>
+  <div class="rcard" style="--ca:#2E6BF2"><div class="k">THE NUMBERS</div><h3>A model you can interrogate</h3><p>The five-year financial model, rendered sheet by sheet: every assumption, toggle, and source visible. Modeled revenue across four targeted Canadian financial institution profiles, with the downside cases in the model, not a footnote. Phased build: Phase 1 pre-seed proof of architecture; Phase 2 seed full CIRO stack; Phase 3 Series A in market.</p></div>
+  <div class="rcard" style="--ca:#7BE3B0"><div class="k">THE MACHINE</div><h3>Architecture, end to end</h3><p>The full lifecycle of a tokenized settlement, issuance through redemption, across the six capabilities, in writing and in diagrams, including the design decisions deliberately gated to regulators and counsel. The unresolved questions are listed, on purpose.</p></div>
+  <div class="rcard" style="--ca:#FFD9A8"><div class="k">THE PEOPLE</div><h3>A bench with receipts</h3><p>Founders, Alberta and BC securities counsel split by function, and domain advisors covering compliance, capital markets, and bank-grade systems architecture. Advisory Council includes four named seats formalized through the v11 corp structure; Founding Capital Markets Advisor role held by Bruce Fair via Mench Capital.</p></div>
  </div>
 
  <div class="round">
