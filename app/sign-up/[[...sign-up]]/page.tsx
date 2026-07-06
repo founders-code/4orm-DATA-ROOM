@@ -1,8 +1,9 @@
 import { SignUp } from '@clerk/nextjs';
+
 export default function Page() {
   return (
-    <main style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: 24 }}>
-      <SignUp />
-    </main>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: '#0B1220' }}>
+      <SignUp afterSignInUrl="/data-room.html" afterSignUpUrl="/data-room.html" />
+    </div>
   );
 }

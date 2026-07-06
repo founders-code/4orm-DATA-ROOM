@@ -9,6 +9,7 @@
   var DOCS = {
     '00': { f: '00-what-we-are-building.html', t: 'What We Are Building' },
     '01.0': { f: '01-0-two-pager.html',               t: 'Two-Pager' },
+    '01.2': { f: '01-2-progress-to-date.html', t: 'Progress to Date' },
     '01.5': { f: '01-5-executive-overview.html',      t: 'Executive Overview' },
     '02.1': { f: '02-1-market-sizing.html',           t: 'Market Sizing (TAM · SAM · SOM)' },
     '02.2': { f: '02-2-mckinsey-base-case.html',      t: 'McKinsey Base Case' },
