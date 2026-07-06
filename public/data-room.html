@@ -24,8 +24,10 @@
  .brand { color: #142036; position: relative; z-index: 5; }
  .brand:hover { color: #142036; }
  /* Logo 3× the original 34px; nav bar height stays at 56px (logo overflows visually). */
- .brand-logo { height: 122px; margin-top: -38px; margin-bottom: -38px; }
- @media (max-width: 760px){ .brand-logo { height: 100px; margin-top: -27px; margin-bottom: -27px; } }
+ .brand-logo { height: 94px; margin-top: -18px; margin-bottom: -18px; transform: translateY(6px); }
+ @media (max-width: 760px){ .brand-logo { height: 76px; margin-top: -12px; margin-bottom: -12px; transform: translateY(4px); } }
+ .mh-pill .ps-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#E7B008; margin-right:8px; vertical-align:middle; animation:ps-blink 1.4s ease-in-out infinite; }
+ @keyframes ps-blink { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(231,176,8,.55);} 50%{opacity:.4;box-shadow:0 0 0 6px rgba(231,176,8,0);} }
  .nav-links { display: flex; align-items: center; gap: 40px; margin-left: auto; flex-wrap: nowrap; width: auto; }
  .nav-links a {
  color: #46556E;
@@ -300,13 +302,6 @@
 
 
 
-<!-- Raise status banner (locked dual-light pattern) -->
-<div class="sbx-banner gold" role="status" aria-label="Pre-seed raise: opening July 1, 2026, 90-day window"><span class="raise-status"><span class="status-dots" aria-hidden="true"><span class="status-dot dot-amber-lit"></span><span class="status-dot dot-green-dim"></span></span><span><b>Pre-Seed</b> &middot; Opening July 1, 2026 &middot; 90-day window</span></span></div>
-<!-- Accredited-investor legend (NI 45-106 s.2.3 + CP 45-106CP s.1.9) -->
-<div class="ai-legend" role="region" aria-label="Accredited investor legend">
-<strong>For accredited investors only.</strong> Information on this website is for accredited investors as defined in National Instrument 45-106. It is not an offer to sell or solicitation of an offer to buy securities. No securities regulatory authority has assessed the merits of any securities described herein. See <a href="terms.html">Terms</a> and the legal information below.
-</div>
-
 <header class="nav">
  <div class="nav-inner">
  <a class="brand" href="data-room.html"><img class="brand-logo" src="assets/4orm-logo.png" alt="4orm Finance" /></a>
@@ -318,17 +313,18 @@
  </nav>
  </div>
 </header>
+<div id="news-anchor"></div>
 
 <!-- ============================================ HERO -->
 <section class="meth-hero">
  <div class="meth-hero-inner">
  <div class="meth-hero-eyebrow">Welcome back</div>
  <h1><span class="accent">Data Room.</span></h1>
- <p class="lead">Member access to the materials behind the 4orm Finance control plane: <b>pitch, market, product, team, financials, regulatory positioning, partnerships, corporate structure, and the active fundraise</b>. All documents below are live. Click any file to open it in a new tab; every document opens for reading right here. The room is view-only; nothing is downloadable.</p>
+ <p class="lead">Member access to the materials behind the 4orm Finance settlement layer: <b>pitch, market, product, team, financials, regulatory positioning, partnerships, corporate structure, and the active fundraise</b>. All documents below are live. Click any file to open it in a new tab; every document opens for reading right here. The room is view-only; nothing is downloadable.</p>
  <div class="mh-pills">
  <span class="mh-pill ca">&#10003; Approved member</span>
  <span class="mh-pill global">Confidential</span>
- <span class="mh-pill">$3M Pre-Seed &middot; Opens July 1, 2026</span>
+ <span class="mh-pill"><span class="ps-dot"></span>$3.5M Pre-Seed &middot; Opens July 15th</span>
  </div>
 
  <div class="mh-stats">
