@@ -5,7 +5,7 @@
 (function () {
   if (window.__x4xref) return; window.__x4xref = true;
 
-  /* live documents only — placeholders stay plain text */
+  /* live documents only - placeholders stay plain text */
   var DOCS = {
     '00': { f: '00-what-we-are-building.html', t: 'What We Are Building' },
     '01.0': { f: '01-0-two-pager.html',               t: 'Two-Pager' },

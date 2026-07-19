@@ -1,4 +1,4 @@
-/* 4orm Finance Data Room — UI interactions
+/* 4orm Finance Data Room - UI interactions
    ============================================
    PHASE 1 (THIS FILE): Auth disabled. Clicking sign-in or submitting the
    request access form just navigates to data-room.html.
