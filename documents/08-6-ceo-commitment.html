@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>08.6 Founder & CEO Commitment Statement · 4orm Finance Data Room</title>
+<title>Founder & CEO Commitment Statement · 4orm Finance Data Room</title>
 <meta name="robots" content="noindex, nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -82,11 +82,36 @@
  .entry p { margin-bottom: 0; }
  /* Q&A cards (reviewer questions / common asks) */
  .qa { background: #F7FAFF; border: 1px solid var(--hairline); border-left: 3px solid var(--brand); border-radius: 12px; padding: 18px 22px; margin: 0 0 16px; }
- .qa .q { font-weight: 700; color: var(--text); font-size: 1.04rem; line-height: 1.5; margin-bottom: 12px; display: flex; gap: 11px; align-items: flex-start; }
- .qa .q::before { content: "Q"; flex-shrink: 0; font-family: var(--font-mono); font-size: .72rem; font-weight: 700; color: #fff; background: var(--brand); border-radius: 6px; padding: 3px 8px; margin-top: 1px; }
- .qa .a { color: var(--text-2); font-size: .98rem; line-height: 1.72; display: flex; gap: 11px; align-items: flex-start; }
- .qa .a::before { content: "A"; flex-shrink: 0; font-family: var(--font-mono); font-size: .72rem; font-weight: 700; color: #0E8A5F; background: rgba(123,227,176,.22); border-radius: 6px; padding: 3px 8px; margin-top: 1px; }
- .qa .flag { display: inline-block; margin-top: 10px; margin-left: 33px; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.14); border: 1px solid rgba(231,199,108,.4); border-radius: 99px; padding: 4px 11px; }
+ .qa .q { position: relative; padding-left: 34px; font-weight: 700; color: var(--text); font-size: .95rem; line-height: 1.5; margin-bottom: 11px; }
+ .qa .q::before { content: "Q"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #fff; background: var(--brand); border-radius: 6px; padding: 2px 7px; }
+ .qa .a { position: relative; padding-left: 34px; color: var(--text-2); font-size: .9rem; line-height: 1.7; }
+ .qa .a::before { content: "A"; position: absolute; left: 0; top: 1px; font-family: var(--font-mono); font-size: .68rem; font-weight: 700; color: #0E8A5F; background: rgba(123,227,176,.22); border-radius: 6px; padding: 2px 7px; }
+ .qa .flag { display: inline-block; margin-top: 10px; margin-left: 36px; font-family: var(--font-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.14); border: 1px solid rgba(231,199,108,.4); border-radius: 99px; padding: 4px 11px; }
+ /* vertical cards (expansion verticals) */
+ .vgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+ @media (max-width: 640px){ .vgrid { grid-template-columns: 1fr; } }
+ .vcard { background: #F7FAFF; border: 1px solid var(--hairline); border-left: 3px solid var(--brand); border-radius: 11px; padding: 15px 17px; }
+ .vcard.fwd { border-left-color: #9AB6FF; }
+ .vcard .vn { font-weight: 800; font-size: .96rem; color: var(--text); letter-spacing: -.01em; }
+ .vcard .vstat { font-family: var(--font-mono); font-size: 1.02rem; font-weight: 700; color: var(--brand); margin: 7px 0 6px; line-height: 1.2; }
+ .vcard .vfee { font-size: .82rem; color: var(--text-2); line-height: 1.5; }
+ .vcard .vchips { margin-top: 9px; display: flex; gap: 6px; flex-wrap: wrap; }
+ .vchip { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; border-radius: 99px; padding: 3px 9px; }
+ .vchip.v { color: #0E8A5F; background: rgba(123,227,176,.16); }
+ .vchip.e { color: var(--gold-2, #C49A3A); background: rgba(231,199,108,.16); }
+ .vchip.now { color: var(--brand); background: var(--brand-50); }
+ .vchip.next { color: var(--text-3); background: rgba(94,110,136,.12); }
+ /* source link inside a vcard */
+ .vcard .vsrc { margin-top: 8px; }
+ .vcard .vsrc a, a.ref { color: var(--brand); text-decoration: none; font-family: var(--font-mono); font-size: .6rem; letter-spacing: .04em; font-weight: 700; border-bottom: 1px solid rgba(46,107,242,.35); }
+ .vcard .vsrc a:hover, a.ref:hover { color: #1B4ABE; border-bottom-color: #1B4ABE; }
+ /* consolidated source list */
+ .srcs { margin: 14px 0 0; padding: 16px 18px; background: #F7FAFF; border: 1px solid var(--hairline); border-radius: 10px; }
+ .srcs .st { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--text-3); margin-bottom: 8px; }
+ .srcs ol { margin: 0; padding-left: 20px; }
+ .srcs li { font-size: .8rem; color: var(--text-2); line-height: 1.7; margin-bottom: 5px; }
+ .srcs li a { color: var(--brand); text-decoration: none; word-break: break-word; }
+ .srcs li a:hover { text-decoration: underline; }
  /* pull quote (founder narrative) */
  .pull { font-size: 1.3rem; line-height: 1.45; color: var(--text); font-weight: 600; border-left: 4px solid var(--gold-2, #C49A3A); padding: 4px 0 4px 20px; margin: 22px 0; }
  /* signature block (CEO commitment) */
@@ -205,6 +230,31 @@
  .doc-foot { margin-top: 70px; border-top: 1px solid var(--rule); padding-top: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
  .doc-foot div { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; color: var(--text-3); }
  .doc-legal { margin-top: 26px; font-size: .72rem; color: var(--text-3); line-height: 1.7; max-width: 56em; }
+
+  @page flow { size: letter; margin: 1.15in .65in 1.05in .65in;
+    @top-center { content: element(runhd); vertical-align: bottom; }
+    @bottom-center { content: element(runft); vertical-align: top; } }
+  .flow { page: flow; }
+  .runhd { position: running(runhd); width: 7.2in; border-bottom: 1.5pt solid #142036; padding-bottom: 8pt; margin-bottom: 14pt; }
+  .runft { position: running(runft); width: 7.2in; border-top: .5pt solid #142036; padding-top: 8pt; margin-top: 12pt; }
+  .runhd span, .runft span { font-family: 'JetBrains Mono', monospace; letter-spacing: .16em; }
+  .runhd span { font-size: 7.5pt; color: #142036; }
+  .runhd span.r, .runft span.r { float: right; color: #5E6E88; }
+  .runft span { font-size: 7pt; letter-spacing: .14em; color: #5E6E88; }
+  .runft .pg::after { content: counter(page) " \00B7 AS OF JULY 4, 2026"; }
+  .flow .sec + .sec { page-break-before: always; }
+  .lead { font-size: 10.5pt; line-height: 1.7; color: #142036; }
+  .note { font-size: 8pt; color: #5E6E88; font-style: italic; }
+  .grp { font-family: 'JetBrains Mono', monospace; font-size: 7pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #2E6BF2; margin: 14pt 0 6pt; }
+  ul.done { margin: 0 0 6pt 0; padding-left: 16pt; }
+  ul.done li { font-size: 9.5pt; color: #46556E; line-height: 1.55; margin-bottom: 5pt; }
+  ul.done li b { color: #142036; font-weight: 600; }
+  .callout { border-left: 3pt solid #2E6BF2; background: #EAF1FE; padding: 10pt 14pt; margin: 12pt 0; page-break-inside: avoid; }
+  .callout p { margin-bottom: 0; font-size: 9.5pt; color: #142036; }
+  .callout .ct { font-family: 'JetBrains Mono', monospace; font-size: 6.5pt; letter-spacing: .16em; font-weight: 700; color: #2E6BF2; display: block; margin-bottom: 5pt; }
+
+  .bar { font-size:.95rem; line-height:1.72; color:var(--text-2); margin-bottom:10px; }
+  .bar strong { color:var(--brand); font-family:var(--font-mono); font-size:.8rem; margin-right:9px; }
 </style>
 </head>
 <body>
@@ -229,59 +279,130 @@
  <div class="doc-id">
  <div class="docnum">08.6</div>
  <div class="blue-sq"></div>
- <h1>Founder &amp; CEO<br>Commitment Statement</h1>
- <p class="doc-sub">Chad R. Johnston&#39;s personal, durable commitment to 4orm Finance Holdings Inc.: the mission, full-time exclusivity, capital and risk borne, and personal adherence to every Mission Anchor bar.</p>
+ <h1>Founder &amp; CEO Commitment Statement</h1>
+ <p class="doc-sub">Chad R. Johnston &middot; 4orm Finance &middot; The personal commitment of the Founder and Chief Executive Officer to the mission, the standards, and the Absolute Bars.</p>
  </div>
 
  <div class="doc-meta">
- <div class="dm"><div class="k">PREPARED BY</div><div class="v">Chad R. Johnston &middot; Founder &amp; CEO</div></div>
- <div class="dm"><div class="k">ROUND STATUS</div><div class="v">Pre-Seed $3M<br>Opens July 1, 2026</div></div>
- <div class="dm"><div class="k">CATEGORY</div><div class="v">08 &middot; Corporate<br>Document 08.6</div></div>
- <div class="dm"><div class="k">UPDATED</div><div class="v">June 2026</div></div>
+ <div class="dm"><div class="k">PREPARED BY</div><div class="v">Chad R. Johnston &middot; Founder, CEO, President, Chairman</div></div><div class="dm"><div class="k">STATUS</div><div class="v">Version 14 &middot; Internal</div></div><div class="dm"><div class="k">CATEGORY</div><div class="v">08 &middot; Corporate<br>Document 08.6</div></div><div class="dm"><div class="k">UPDATED</div><div class="v">July 4, 2026</div></div>
  </div>
 
  <div class="doc-body">
- 
- <div class="sec">
- <div class="marg"><div class="n">1.0</div><div class="l">THE<br>COMMITMENT</div></div>
- <div class="bod">
- <h2>What the CEO commits to, personally</h2>
- <p class="lead">This statement records my personal commitment to 4orm Finance Holdings Inc., the company I am incorporating in British Columbia and intend to lead as Founder and Chief Executive Officer. It is intended to make my commitments explicit and durable, to my co-founders, the Mission Stewardship Trustee, the Company's investors and partners, the Advisory Council, and the team we will build. The terms here apply to me alone, and impose on me a standard at least as high as any other member of the founding team.</p>
- <div class="entry"><span class="et">The mission I am committing to.</span> 4orm exists to help the Canadian financial system become independent and sovereign, to protect Canadians from inflationary asset erosion and currency debasement, and to build the regulated infrastructure that lets Canadians buy, sell, move, store, and verify assets without political interference, arbitrary gatekeeping, or rent-seeking intermediaries. The Mission Anchor in the Articles binds the Company. This statement binds me to it personally.</div>
- <div class="entry"><span class="et">Full-time, exclusive engagement.</span> 4orm is and will be my sole operating commitment. I have wound down or stepped back from every other operating role I previously held. For the duration of my service as CEO I will not take on any other operating role, consulting engagement, or competing professional commitment except as expressly disclosed to and approved by the Advisory Council and the board. There is no other plate behind this. There is only this.</div>
- <div class="entry"><span class="et">Capital and risk borne.</span> I have funded the Company's pre-incorporation work personally and brought in its first outside capital. I commit to continuing to bear personal financial risk where appropriate and within reason, including by absorbing dilution to keep my co-founders' economic positions clean, and by maintaining founder economics that reflect the origination, capital, and risk I have undertaken.</div>
- <div class="entry"><span class="et">Fiduciary standards.</span> I commit to the standards of care, loyalty, candour, and good faith owed by a director and officer under applicable law. On incorporation as a benefit company under Part 2.3 of the BCBCA, I commit to the modified director duty under section 51.993 to balance the public benefits in the benefit provision with my general fiduciary duty, and to a higher personal standard of transparency than the law strictly requires.</div>
- <div class="entry"><span class="et">Accountability on the same terms.</span> I subject my own equity to the same reverse-vesting framework that governs the rest of the founding team, four-year vest with a one-year cliff, with the secured carve-out and time-served credit documented in the cap table (document 08.1). I subject my own performance to the Advisory Council's ongoing review on the same basis as my partners. I do not exempt myself from the structures I am asking others to live by.</div>
- </div>
- </div>
 
- <div class="sec">
- <div class="marg"><div class="n">2.0</div><div class="l">MISSION ANCHOR<br>ADHERENCE</div></div>
- <div class="bod">
- <h2>The bars, in the first person</h2>
- <p>I commit, personally and explicitly, to every commitment of the Mission Anchor (document 08.4), including each Absolute Bar: no participation in politically or faith-motivated account closures or extra-judicial freezes; no sharing of customer data absent a final court order with judicial review available; no participation in debanking coalitions, shared blacklists, or de-risking outside legal process; no programmable-restriction infrastructure; no surveillance or data monetization for advertising, profiling, social credit, or ideological assessment; no social-credit or ideological gatekeeping; no deplatforming for protected expression or belief; no commingling, rehypothecation, or pledging of customer assets; no quarterly earnings targets used as a primary directional input; no retaliation against any person for the principled exercise of refusal; and no surrender or weakening of any Mission Anchor provision under political, commercial, regulatory, or shareholder pressure outside of law.</p>
- <div class="callout"><span class="ct">WHAT I COMMIT NOT TO DO</span><p>I will not take on competing commitments during my service as CEO. I will not compromise the Mission Anchor for capital, partnerships, or expediency. I will not prioritize personal economic interest over the Company's long-term integrity. I will not avoid the difficult conversations the role requires. And I will not ask of any co-founder, employee, or advisor a standard of commitment I am not first prepared to hold myself.</p></div>
- <div class="entry"><span class="et">Horizon.</span> My commitment is multi-year and runs through the full arc of the Company's growth, from incorporation through pre-seed, seed, Series A, and beyond. I am not building this for the next milestone or the next round. I am building it for what it is meant to become, on a horizon measured in decades.</div>
- <div class="sign">
- Signed and committed:<br>
- _______________________________________<br>
- Chad R. Johnston &middot; Founder &amp; Chief Executive Officer &middot; 4orm Finance Holdings Inc. &middot; Date: _____________<br><br>
- Acknowledged:<br>
- _______________________________________<br>
- Chair, Advisory Council &middot; 4orm Finance Holdings Inc. &middot; Date: _____________
- </div>
- <p class="note">Statement dated May 2026. Reproduced for the data room; the executed original is held by the Company.</p>
- </div>
- </div>
+  <div class="sec">
+    <div class="marg"><div class="n">1.0</div><div class="l">MISSION</div></div>
+    <div class="bod">
+      <p class="lead">This statement records my personal commitment to 4orm Finance, the company I am incorporating in Alberta and intend to lead as Founder and Chief Executive Officer. It is intended to make my commitments explicit and durable to my co-founders, to the Advisory Council, to incoming pre-seed investors, and to the team that will build the Company alongside me.</p>
+      <h2>The mission I am committing to</h2>
+      <p>4orm Finance exists to help the Canadian financial system become independent and sovereign in its own self, to protect Canadians from inflationary asset erosion and currency debasement, and to build the regulated infrastructure that allows Canadians to hold, transact in, and settle against tokenized bank deposits and, in due course, other tokenized real-world assets.</p>
+      <p>I commit to that mission as the organizing principle of my role, and as the standard against which my decisions, my time, and my economic interest in the Company should be measured. The Mission Anchor in the Articles of Incorporation binds the Company; this statement binds me personally to the same standard.</p>
+    </div>
+  </div>
 
+  <div class="sec">
+    <div class="marg"><div class="n">2.0</div><div class="l">EXCLUSIVITY</div></div>
+    <div class="bod">
+      <h2>Full-time, exclusive engagement</h2>
+      <p>4orm Finance is and will be my sole operating commitment. I have wound down or stepped back from every other operating role I previously held in order to dedicate my full professional capacity to this Company. For the duration of my service as Chief Executive Officer, I will not take on other operating roles or competing commitments.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">3.0</div><div class="l">TIME &amp;
+CAPACITY</div></div>
+    <div class="bod">
+      <h2>Time and capacity</h2>
+      <p>This is my full-time work, in every meaningful sense of the term. The day-to-day, the weekly cadence, and the long-horizon work, all of it. I commit to availability and presence sufficient to discharge the responsibilities of the Chief Executive Officer of a regulated Canadian enterprise.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">4.0</div><div class="l">CAPITAL
+&amp; RISK</div></div>
+    <div class="bod">
+      <h2>Capital and risk borne</h2>
+      <p>I have funded the Company's pre-incorporation work personally and brought in its first outside capital. I commit to continuing to bear personal financial risk on the Company's behalf where appropriate and within reason, including by absorbing dilution and by continuing to align my compensation to Company outcomes rather than to short-cycle personal returns.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">5.0</div><div class="l">FIDUCIARY</div></div>
+    <div class="bod">
+      <h2>Fiduciary standards</h2>
+      <p>I commit to the standards of care, loyalty, candour, and good faith owed by a director and officer to the Company and its shareholders under applicable law. On incorporation of the Company under the Business Corporations Act (Alberta), I commit to the specific fiduciary duties of directors and officers under that statute.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">6.0</div><div class="l">ACCOUNT-
+ABILITY</div></div>
+    <div class="bod">
+      <h2>Accountability on the same terms as my co-founders</h2>
+      <p>I subject my own equity to the same reverse-vesting framework that governs the rest of the founding team, four-year quarterly vest with a one-year cliff, quarterly KPIs, with the secured carve-out and time-served credit documented in the capital structure workbook. My 69.70% (13,940,000 Class A common shares) is not exempt from the same accountability standard I ask of others.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">7.0</div><div class="l">CONTROL</div></div>
+    <div class="bod">
+      <h2>Control on the same class as my co-founders</h2>
+      <p>In Version 14 of the capital structure, I hold my 69.70% as Class A common with a 1:1 voting mechanic, the same class and vote as every other shareholder. I do not hold a differential voting class. The Control Preservation Framework (Founder Consent Rights, Board Composition Rights, CEO Tenure Protection, the Voting Alignment Covenant (Founders' Voting Agreement v14), Supermajority Thresholds, and contractual Mission Anchor incorporation) protects the mission of the Company through contract and governance, not through a differential voting class.</p>
+      <p>I commit to exercising the authority granted by the Control Preservation Framework in service of the Mission Anchor, and not for personal control unmoored from the mission or the Company's long-term integrity.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">8.0</div><div class="l">THE BARS</div></div>
+    <div class="bod">
+      <h2>Mission Anchor adherence</h2>
+      <p>I commit, personally and explicitly, to every commitment of the Mission Anchor as set out in the Articles of Incorporation, including each of the following Absolute Bars:</p>
+      <p class="bar"><strong>8.1</strong> No participation in account closures, freezes, restrictions, or service denials directed against any Canadian for lawful political expression, faith, belief, association, or affiliation, and no action on extra-judicial freeze instructions absent a final court order with judicial review available.</p>
+      <p class="bar"><strong>8.2</strong> No sharing of customer data, content, metadata, or transaction information with any government, regulator, agency, or non-judicial body absent a final court order with judicial review available.</p>
+      <p class="bar"><strong>8.3</strong> No participation in industry-wide debanking coalitions, shared blacklists, or informal coordination among financial institutions to deny service outside of legal process.</p>
+      <p class="bar"><strong>8.4</strong> No participation in programmable-restriction infrastructure that enables third-party conditional control over a Canadian's own assets, accounts, or transactions.</p>
+      <p class="bar"><strong>8.5</strong> No surveillance of customer activity for non-legal purposes, and no collection, retention, or use of customer data beyond what is operationally necessary or strictly required by law.</p>
+      <p class="bar"><strong>8.6</strong> No sale, monetization, licensing, or sharing of customer data for advertising, profiling, behavioural conditioning, social credit, or ideological assessment of any kind.</p>
+      <p class="bar"><strong>8.7</strong> No participation in social-credit, behavioural-conditioning, or ideological gatekeeping systems sponsored by government, industry, or private actors.</p>
+      <p class="bar"><strong>8.8</strong> No deplatforming, denial of service, or adverse action against any Canadian for protected expression, sincerely held belief, faith, or lawful affiliation.</p>
+      <p class="bar"><strong>8.9</strong> No commingling, rehypothecation, pledging, or use of customer assets as collateral for Company operations or third-party financing.</p>
+      <p class="bar"><strong>8.10</strong> No quarterly earnings targets, quarterly growth projections, or any short-cycle financial metric used as a primary directional input for strategy, hiring, product, or capital decisions.</p>
+      <p class="bar"><strong>8.11</strong> No retaliation against any person for the principled exercise of refusal under the Mission Anchor.</p>
+      <p class="bar"><strong>8.12</strong> No surrender, waiver, suspension, or weakening of any provision of the Mission Anchor under political, commercial, regulatory, or shareholder pressure outside of law.</p>
+      <p>These are not aspirations. They are the operating standard of the Company, and they apply to me as plainly as they apply to any officer, director, employee, or agent of the Company. I will refuse to direct, vote for, or authorize any action inconsistent with any of them, and I will exercise my refusal right under the Founders' Voting Agreement and my Founder Consent Rights to that end.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">9.0</div><div class="l">HORIZON</div></div>
+    <div class="bod">
+      <h2>Horizon</h2>
+      <p>My commitment is multi-year and runs through the full arc of the Company's growth, from incorporation through pre-seed, seed, Series A, and beyond. I am not building this for the next milestone or the next round.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="marg"><div class="n">10.0</div><div class="l">WHAT I
+WON'T DO</div></div>
+    <div class="bod">
+      <h2>What I commit not to do</h2>
+      <ul>
+        <li>I will not take on other operating roles or competing commitments during my service as Chief Executive Officer.</li>
+        <li>I will not compromise the Mission Anchor for capital, partnerships, or expediency.</li>
+        <li>I will not act in ways that prioritize personal economic interest over the Company's long-term integrity.</li>
+        <li>I will not avoid the difficult conversations, with co-founders, investors, regulators, partners, or the team, that the role requires.</li>
+        <li>I will not ask of any co-founder, employee, or advisor a standard of commitment I am not first prepared to hold myself.</li>
+      </ul>
+      <div class="sign">Signed and committed:<br><br>_______________________________________<br><strong>Chad R. Johnston</strong><br>Founder, Chief Executive Officer, President &amp; Chairman &middot; 4orm Finance<br>Date: _____________________<br><br>Acknowledged:<br><br>_______________________________________<br>Chair, Advisory Council &middot; 4orm Finance</div>
+    </div>
+  </div>
 
  </div>
 
  <div class="doc-foot">
- <div>DATA.4ORMFINANCE.COM</div>
- <div>NOT FOR DISTRIBUTION</div>
+ <div>4ORM FINANCE &middot; CALGARY</div>
+ <div>VERSION 11 &middot; INTERNAL</div>
  </div>
- <p class="doc-legal">Prepared for approved data room members. This document does not constitute an offer to sell securities or a solicitation of an offer to buy securities. 4orm Finance Holdings Inc. is the parent entity of 4orm OpCo, 4ormEx OpCo, and 4orm Trust Co (proposed); technology is developed by KCS Capital, an independent research and development firm.</p>
+ <p class="doc-legal">Unit 400, 718 8 Ave SW, Calgary, AB T2P 1H3 &middot; compliance@4ormfinance.com. Prepared for approved data room members. This document does not constitute an offer to sell securities. It records the personal commitment of the Founder and CEO; the Company's binding legal terms live in its Articles of Incorporation, share structure, and shareholders' agreement.</p>
 </div>
 
 <script src="../assets/doc-xref.js" defer></script>
