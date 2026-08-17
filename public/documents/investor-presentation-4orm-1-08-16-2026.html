@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>The Investor Presentation · 4orm Finance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2E6BF2;--blued:#1B4ABE;--navy:#142036;--panel:#131F36;--body:#46556E;--cap:#5E6E88;
+--wash:#F4F7FB;--wash2:#EAEFF6;--pale:#EAF1FE;--card:#F6F9FF;--border:#CFE0FD;--hair:#E3E9F2;
+--gold:#C49A3A;--pass:#0E8A5F;--fail:#D6334E;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--body);background:var(--wash);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.docnav{background:#000;position:sticky;top:0;z-index:50;}
+.docnav-in{max-width:900px;margin:0 auto;min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.docnav a.back{color:rgba(255,255,255,.82);font-weight:600;font-size:.92rem;text-decoration:none;padding:7px 10px;border-radius:8px;}
+.docnav a.back:hover{background:rgba(255,255,255,.1);color:#fff;}
+.docnav .mid{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+.docnav .mid .c{color:#E7C76C;}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 90px;}
+.sheet{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(20,32,54,.05);padding:40px 44px 38px;margin-bottom:22px;}
+@media(max-width:640px){.sheet{padding:28px 22px;}}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;border-bottom:1.5px solid var(--navy);padding-bottom:9px;margin-bottom:20px;}
+.hrow .cls{color:var(--gold);}
+.pagetag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-bottom:14px;}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
+h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.1;margin-bottom:14px;}
+@media(max-width:640px){h1{font-size:1.55rem;}}
+.lead{font-size:1.06rem;color:var(--body);line-height:1.62;max-width:60ch;margin-bottom:22px;}
+.lead b{color:var(--navy);font-weight:700;}
+.brule{height:2px;background:var(--blue);border:none;margin:6px 0 16px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px;}
+.stat .v{font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.05;}
+.stat .v.blue{color:var(--blue);}
+.stat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-top:6px;line-height:1.4;}
+.panel{background:var(--pale);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:26px;}
+.panel h3{font-size:.72rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blued);font-weight:700;margin-bottom:10px;}
+.panel ul{list-style:none;display:grid;gap:8px;}
+.panel li{position:relative;padding-left:22px;font-size:.96rem;color:var(--navy);line-height:1.5;}
+.panel li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--blue);border-radius:2px;}
+.secs{display:grid;gap:14px;}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;border-top:2px solid var(--blue);padding:16px 20px;}
+.sec h4{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.01em;}
+.sec p{font-size:.96rem;color:var(--body);line-height:1.58;}
+.readbox{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:12px;padding:16px 22px;margin-top:26px;}
+.readbox .t{color:#fff;font-weight:700;font-size:1rem;}
+.readbox .s{color:#CFE0FD;font-size:.82rem;margin-top:2px;}
+.readbtn{background:var(--blue);color:#fff;border:none;border-radius:9px;padding:11px 20px;font-family:var(--sans);font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;}
+.readbtn:hover{background:var(--blued);}
+.srcs{display:grid;gap:0;}
+.src{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:13px 0;border-bottom:1px solid var(--hair);}
+.src:last-child{border-bottom:none;}
+.src .n{font-weight:700;color:var(--navy);font-size:.98rem;}
+.src .d{grid-column:1/-1;font-size:.9rem;color:var(--body);}
+.src a{color:var(--blue);font-weight:600;text-decoration:none;font-size:.86rem;white-space:nowrap;}
+.src a:hover{text-decoration:underline;}
+.foot{max-width:900px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--cap);text-transform:uppercase;}
+.fpill{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--blue);color:#fff;border:none;border-radius:99px;padding:12px 20px;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 8px 24px rgba(46,107,242,.35);}
+.fpill:hover{background:var(--blued);}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(11,18,32,.86);display:none;flex-direction:column;padding:18px;}
+.modal.open{display:flex;}
+.modal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px;color:#fff;}
+.modal-bar .mt{font-weight:700;font-size:.95rem;}
+.modal-bar .mc{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.modal-bar .mc:hover{background:rgba(255,255,255,.26);}
+.modal iframe{flex:1;width:100%;border:none;border-radius:10px;background:#fff;}
+</style></head><body>
+<nav class="docnav"><div class="docnav-in"><a class="back" href="../data-room.html">&#8592; Back to the data room</a><div class="mid">4ORM FINANCE <span class="c">· CONFIDENTIAL</span></div></div></nav>
+<div class="wrap">
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; THE INVESTOR PRESENTATION</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page one · The summary</div>
+ <div class="kicker">Master pitch</div>
+ <h1>The Investor Presentation</h1>
+ <p class="lead">This is the full 37 slide pitch, the master document that carries the whole story in order. It moves from the two Canadian regimes that changed inside seven months, through who is affected and what the software does, to the market, the pricing, the team, the financial plan and the investor returns. If a reader opens one thing in the room, this is it.</p>
+ <hr class="brule"><div class="stats"><div class="stat"><div class="v blue">$105.3M</div><div class="l">revenue in 2031</div></div><div class="stat"><div class="v ">$840M</div><div class="l">Canada recurring addressable market</div></div><div class="stat"><div class="v ">18,254</div><div class="l">regulated entities on the register</div></div><div class="stat"><div class="v ">15.5x</div><div class="l">cash back to investors by 2038</div></div></div>
+ <div class="panel"><h3>What you are looking to know</h3><ul><li>What changed in the law and why now</li><li>Who is affected and what it costs them to get it wrong</li><li>What the software does and what it never does</li><li>How big the market is and how it is measured four ways</li><li>How the company makes money, what it charges each tier, and who the team is</li><li>The financial plan, when it turns profitable, and what investors get back</li></ul></div>
+ <div class="secs"><div class="sec"><h4>The challenge and who it hits</h4><p>Two federal regimes changed inside seven months, and money laundering penalties rose to a ceiling of $20,000,000 on 26 March 2026, with a programme that does not work now a violation in itself. The duty lands on the same shape of firm everywhere, from payment providers to law firms, real estate brokerages and lenders.</p></div><div class="sec"><h4>What we build</h4><p>The software keeps a sealed record of what was held, when, and who confirmed it, that can be proven later to have gone unchanged, across six features on one subscription. The company reads the money and never touches it: it holds no client funds, signs no filing, and decides nothing for the customer.</p></div><div class="sec"><h4>The market and the price</h4><p>A register of 18,254 regulated entities is sized four ways, and the figure the company works to is $840M of recurring market. Prices run from $29,450 a year for a small firm to $687,000 for a bank or processor, and a firm keeps the price it signed at for as long as it stays.</p></div><div class="sec"><h4>The plan and the return</h4><p>Revenue reaches $105.3M in 2031 with a 77.6 per cent gross margin on 47 people, and the company turns profitable in 2028. Every dollar of capital is back in cash during 2029, reaching 15.5 times by 2038, with founders paid nothing until investors have four times their money back.</p></div></div>
+ <div class="readbox"><div><div class="t">Want the detail?</div><div class="s">Open the full document, exactly as written. Close it to come back here.</div></div><button class="readbtn" onclick="openDoc()">Read the full document</button></div>
+</div>
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; THE INVESTOR PRESENTATION</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page two · Where the facts come from</div>
+ <div class="kicker">Sources and validation</div>
+ <h1 style="font-size:1.5rem;margin-bottom:16px">Every claim, and where it is backed up</h1>
+ <div class="srcs"><div class="src"><div class="n">Law firm notes from Miller Thomson, McCarthy Tetrault and DLA Piper</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">What the 26 March 2026 money laundering amendments changed</div></div><div class="src"><div class="n">FINTRAC, Canada&#x27;s money-laundering watchdog</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The penalties issued, examinations run, the register and the enrolment duty</div></div><div class="src"><div class="n">Bank of Canada</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The safeguarding duty, the payment provider register and the trust rules</div></div><div class="src"><div class="n">Statistics Canada</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The value of money sent abroad by Canadians each year</div></div><div class="src"><div class="n">Ontario Securities Commission and The Globe and Mail</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The QuadrigaCX and Bridging Finance collapses</div></div><div class="src"><div class="n">Ombudsman for Banking Services and Investments</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The rise in consumer inquiries and investigations</div></div><div class="src"><div class="n">Office of the Privacy Commissioner of Canada</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">That financial information is part of a person&#x27;s biographical core</div></div><div class="src"><div class="n">Provincial financial services registers and Innovation, Science and Economic Development Canada</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The count of regulated entities behind the market size</div></div><div class="src"><div class="n">The company&#x27;s master financial model</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The revenue plan, pricing, unit economics and investor returns, from the company&#x27;s own records</div></div></div>
+</div>
+</div>
+<div class="foot"><span>4ORM FINANCE &middot; CONFIDENTIAL &middot; NOT FOR DISTRIBUTION</span><span>01 START HERE</span></div>
+<button class="fpill" onclick="openDoc()">Read full document</button>
+<div class="modal" id="docModal"><div class="modal-bar"><span class="mt">The Investor Presentation · full document</span><button class="mc" onclick="closeDoc()">Close &#10005;</button></div><iframe id="docFrame" title="Full document"></iframe></div>
+<script>
+var PDF="../assets/docs/start/investor-presentation-4orm-1-08-16-2026.pdf";
+function openDoc(){var f=document.getElementById('docFrame');if(!f.src)f.src=PDF;document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeDoc(){document.getElementById('docModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDoc();});
+</script>
+</body></html>

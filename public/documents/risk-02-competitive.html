@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Competition Risk · 4orm Finance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2E6BF2;--blued:#1B4ABE;--navy:#142036;--panel:#131F36;--body:#46556E;--cap:#5E6E88;
+--wash:#F4F7FB;--wash2:#EAEFF6;--pale:#EAF1FE;--card:#F6F9FF;--border:#CFE0FD;--hair:#E3E9F2;
+--gold:#C49A3A;--pass:#0E8A5F;--fail:#D6334E;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--body);background:var(--wash);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.docnav{background:#000;position:sticky;top:0;z-index:50;}
+.docnav-in{max-width:900px;margin:0 auto;min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.docnav a.back{color:rgba(255,255,255,.82);font-weight:600;font-size:.92rem;text-decoration:none;padding:7px 10px;border-radius:8px;}
+.docnav a.back:hover{background:rgba(255,255,255,.1);color:#fff;}
+.docnav .mid{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+.docnav .mid .c{color:#E7C76C;}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 90px;}
+.sheet{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(20,32,54,.05);padding:40px 44px 38px;margin-bottom:22px;}
+@media(max-width:640px){.sheet{padding:28px 22px;}}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;border-bottom:1.5px solid var(--navy);padding-bottom:9px;margin-bottom:20px;}
+.hrow .cls{color:var(--gold);}
+.pagetag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-bottom:14px;}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
+h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.1;margin-bottom:14px;}
+@media(max-width:640px){h1{font-size:1.55rem;}}
+.lead{font-size:1.06rem;color:var(--body);line-height:1.62;max-width:60ch;margin-bottom:22px;}
+.lead b{color:var(--navy);font-weight:700;}
+.brule{height:2px;background:var(--blue);border:none;margin:6px 0 16px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px;}
+.stat .v{font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.05;}
+.stat .v.blue{color:var(--blue);}
+.stat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-top:6px;line-height:1.4;}
+.panel{background:var(--pale);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:26px;}
+.panel h3{font-size:.72rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blued);font-weight:700;margin-bottom:10px;}
+.panel ul{list-style:none;display:grid;gap:8px;}
+.panel li{position:relative;padding-left:22px;font-size:.96rem;color:var(--navy);line-height:1.5;}
+.panel li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--blue);border-radius:2px;}
+.secs{display:grid;gap:14px;}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;border-top:2px solid var(--blue);padding:16px 20px;}
+.sec h4{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.01em;}
+.sec p{font-size:.96rem;color:var(--body);line-height:1.58;}
+.readbox{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:12px;padding:16px 22px;margin-top:26px;}
+.readbox .t{color:#fff;font-weight:700;font-size:1rem;}
+.readbox .s{color:#CFE0FD;font-size:.82rem;margin-top:2px;}
+.readbtn{background:var(--blue);color:#fff;border:none;border-radius:9px;padding:11px 20px;font-family:var(--sans);font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;}
+.readbtn:hover{background:var(--blued);}
+.srcs{display:grid;gap:0;}
+.src{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:13px 0;border-bottom:1px solid var(--hair);}
+.src:last-child{border-bottom:none;}
+.src .n{font-weight:700;color:var(--navy);font-size:.98rem;}
+.src .d{grid-column:1/-1;font-size:.9rem;color:var(--body);}
+.src a{color:var(--blue);font-weight:600;text-decoration:none;font-size:.86rem;white-space:nowrap;}
+.src a:hover{text-decoration:underline;}
+.foot{max-width:900px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--cap);text-transform:uppercase;}
+.fpill{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--blue);color:#fff;border:none;border-radius:99px;padding:12px 20px;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 8px 24px rgba(46,107,242,.35);}
+.fpill:hover{background:var(--blued);}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(11,18,32,.86);display:none;flex-direction:column;padding:18px;}
+.modal.open{display:flex;}
+.modal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px;color:#fff;}
+.modal-bar .mt{font-weight:700;font-size:.95rem;}
+.modal-bar .mc{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.modal-bar .mc:hover{background:rgba(255,255,255,.26);}
+.modal iframe{flex:1;width:100%;border:none;border-radius:10px;background:#fff;}
+</style></head><body>
+<nav class="docnav"><div class="docnav-in"><a class="back" href="../data-room.html">&#8592; Back to the data room</a><div class="mid">4ORM FINANCE <span class="c">· CONFIDENTIAL</span></div></div></nav>
+<div class="wrap">
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; COMPETITION RISK</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page one · The summary</div>
+ <div class="kicker">Competitive risk</div>
+ <h1>Competition Risk</h1>
+ <p class="lead">This asks who else could reach the same buyers, what each would have to build first, and how long the opening stays open. Twenty three products were checked on their own public material in August 2026. The market splits cleanly: every vendor with a real Canadian presence watches for money laundering or moves data and never touches customer money, and every vendor that computes a daily position on money held for customers is British. None carries the Canadian rule, proves a record is unaltered, or rebuilds history it was not connected for.</p>
+ <hr class="brule"><div class="stats"><div class="stat"><div class="v blue">23</div><div class="l">competing products reviewed</div></div><div class="stat"><div class="v ">0</div><div class="l">that carry the Canadian safeguarding duty</div></div><div class="stat"><div class="v ">7</div><div class="l">scored scenarios in this area</div></div><div class="stat"><div class="v ">4</div><div class="l">rivals computing a daily position, all British</div></div></div>
+ <div class="panel"><h3>What you are looking to know</h3><ul><li>Who could actually reach these buyers?</li><li>What would each rival have to build before it competes?</li><li>How long is the opening, and who controls its length?</li><li>What single thing would settle the competition question?</li><li>How can an investor check the competitive claims themselves?</li></ul></div>
+ <div class="secs"><div class="sec"><h4>The one name to watch</h4><p>AutoRek already computes a daily position on money held for customers and already writes Canada on its coverage with nothing Canadian behind it. What it lacks is the Canadian rule content and a North American sales presence, which is localisation on an existing engine rather than new building.</p></div><div class="sec"><h4>The cheapest threat needs no software</h4><p>A Canadian adviser could put a fixed price on the yearly report pack tomorrow, because that is a pricing decision, not a build. The answer is to make the adviser a paid channel before one of them becomes a competitor.</p></div><div class="sec"><h4>What actually settles it</h4><p>Two things retire the whole board: three signed Canadian enterprise customers and one completed outside review that used the evidence pack. Until those exist, every competitive claim is a position held by argument.</p></div><div class="sec"><h4>A window, carried as a window</h4><p>No vendor holds a Canadian safeguarding customer today, and the strongest rivals are pointed at the United States and Europe. That is an opening, not a moat, and its length is nobody&#x27;s to set.</p></div></div>
+ <div class="readbox"><div><div class="t">Want the detail?</div><div class="s">Open the full document, exactly as written. Close it to come back here.</div></div><button class="readbtn" onclick="openDoc()">Read the full document</button></div>
+</div>
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; COMPETITION RISK</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page two · Where the facts come from</div>
+ <div class="kicker">Sources and validation</div>
+ <h1 style="font-size:1.5rem;margin-bottom:16px">Every claim, and where it is backed up</h1>
+ <div class="srcs"><div class="src"><div class="n">4orm Finance vendor comparison, 17 August 2026</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Twenty three products read on their own published material, with the five gaps none of them closes.</div></div><div class="src"><div class="n">AutoRek&#x27;s own material</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">A daily customer-money computation with the Bank of England and Lloyds named, and Canada on the coverage line with no Canadian content behind it.</div></div><div class="src"><div class="n">Business Wire, on Synctera acquiring Cable (April 2026)</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">A control-testing tool joined to a live Canadian platform with a Canadian sponsor bank, but still with no funds position.</div></div><div class="src"><div class="n">Accountancy Daily, on Xero after the UK mandate</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Revenue and customers each grew 51 per cent, driven by the accountant channel.</div></div><div class="src"><div class="n">Workiva investor releases</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">6,750 customers on US$236M of quarterly subscription revenue, but no bank or ledger connection.</div></div><div class="src"><div class="n">Traders Magazine, on SteelEye</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">A funded, early entrant reached only about 0.33 per cent of a named population, showing capital alone did not convert.</div></div><div class="src"><div class="n">Clio, Lone Wolf, NexOne and Actionstep</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Adjacent Canadian software near trust accounts, and how slowly an incumbent converts an installed base.</div></div><div class="src"><div class="n">Diligent and Galvanize, and Duco</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Two capable engines pointed elsewhere; Duco names Scotiabank as a client and has declined this market twice.</div></div><div class="src"><div class="n">Platino Consulting, AML Incubator and Outlier Compliance Group</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Canadian advisers who sell services near this work and none of whom publishes a price.</div></div></div>
+</div>
+</div>
+<div class="foot"><span>4ORM FINANCE &middot; CONFIDENTIAL &middot; NOT FOR DISTRIBUTION</span><span>05 RISK MITIGATION</span></div>
+<button class="fpill" onclick="openDoc()">Read full document</button>
+<div class="modal" id="docModal"><div class="modal-bar"><span class="mt">Competition Risk · full document</span><button class="mc" onclick="closeDoc()">Close &#10005;</button></div><iframe id="docFrame" title="Full document"></iframe></div>
+<script>
+var PDF="../assets/docs/risk/risk-02-competitive.pdf";
+function openDoc(){var f=document.getElementById('docFrame');if(!f.src)f.src=PDF;document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeDoc(){document.getElementById('docModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDoc();});
+</script>
+</body></html>

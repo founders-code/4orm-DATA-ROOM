@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>How Big the Market Is · 4orm Finance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2E6BF2;--blued:#1B4ABE;--navy:#142036;--panel:#131F36;--body:#46556E;--cap:#5E6E88;
+--wash:#F4F7FB;--wash2:#EAEFF6;--pale:#EAF1FE;--card:#F6F9FF;--border:#CFE0FD;--hair:#E3E9F2;
+--gold:#C49A3A;--pass:#0E8A5F;--fail:#D6334E;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--body);background:var(--wash);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.docnav{background:#000;position:sticky;top:0;z-index:50;}
+.docnav-in{max-width:900px;margin:0 auto;min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.docnav a.back{color:rgba(255,255,255,.82);font-weight:600;font-size:.92rem;text-decoration:none;padding:7px 10px;border-radius:8px;}
+.docnav a.back:hover{background:rgba(255,255,255,.1);color:#fff;}
+.docnav .mid{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+.docnav .mid .c{color:#E7C76C;}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 90px;}
+.sheet{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(20,32,54,.05);padding:40px 44px 38px;margin-bottom:22px;}
+@media(max-width:640px){.sheet{padding:28px 22px;}}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;border-bottom:1.5px solid var(--navy);padding-bottom:9px;margin-bottom:20px;}
+.hrow .cls{color:var(--gold);}
+.pagetag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-bottom:14px;}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
+h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.1;margin-bottom:14px;}
+@media(max-width:640px){h1{font-size:1.55rem;}}
+.lead{font-size:1.06rem;color:var(--body);line-height:1.62;max-width:60ch;margin-bottom:22px;}
+.lead b{color:var(--navy);font-weight:700;}
+.brule{height:2px;background:var(--blue);border:none;margin:6px 0 16px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px;}
+.stat .v{font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.05;}
+.stat .v.blue{color:var(--blue);}
+.stat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-top:6px;line-height:1.4;}
+.panel{background:var(--pale);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:26px;}
+.panel h3{font-size:.72rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blued);font-weight:700;margin-bottom:10px;}
+.panel ul{list-style:none;display:grid;gap:8px;}
+.panel li{position:relative;padding-left:22px;font-size:.96rem;color:var(--navy);line-height:1.5;}
+.panel li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--blue);border-radius:2px;}
+.secs{display:grid;gap:14px;}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;border-top:2px solid var(--blue);padding:16px 20px;}
+.sec h4{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.01em;}
+.sec p{font-size:.96rem;color:var(--body);line-height:1.58;}
+.readbox{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:12px;padding:16px 22px;margin-top:26px;}
+.readbox .t{color:#fff;font-weight:700;font-size:1rem;}
+.readbox .s{color:#CFE0FD;font-size:.82rem;margin-top:2px;}
+.readbtn{background:var(--blue);color:#fff;border:none;border-radius:9px;padding:11px 20px;font-family:var(--sans);font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;}
+.readbtn:hover{background:var(--blued);}
+.srcs{display:grid;gap:0;}
+.src{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:13px 0;border-bottom:1px solid var(--hair);}
+.src:last-child{border-bottom:none;}
+.src .n{font-weight:700;color:var(--navy);font-size:.98rem;}
+.src .d{grid-column:1/-1;font-size:.9rem;color:var(--body);}
+.src a{color:var(--blue);font-weight:600;text-decoration:none;font-size:.86rem;white-space:nowrap;}
+.src a:hover{text-decoration:underline;}
+.foot{max-width:900px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--cap);text-transform:uppercase;}
+.fpill{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--blue);color:#fff;border:none;border-radius:99px;padding:12px 20px;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 8px 24px rgba(46,107,242,.35);}
+.fpill:hover{background:var(--blued);}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(11,18,32,.86);display:none;flex-direction:column;padding:18px;}
+.modal.open{display:flex;}
+.modal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px;color:#fff;}
+.modal-bar .mt{font-weight:700;font-size:.95rem;}
+.modal-bar .mc{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.modal-bar .mc:hover{background:rgba(255,255,255,.26);}
+.modal iframe{flex:1;width:100%;border:none;border-radius:10px;background:#fff;}
+</style></head><body>
+<nav class="docnav"><div class="docnav-in"><a class="back" href="../data-room.html">&#8592; Back to the data room</a><div class="mid">4ORM FINANCE <span class="c">· CONFIDENTIAL</span></div></div></nav>
+<div class="wrap">
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; HOW BIG THE MARKET IS</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page one · The summary</div>
+ <div class="kicker">Market size</div>
+ <h1>How Big the Market Is</h1>
+ <p class="lead">This paper measures the market three ways and shows the maths between them, so an investor can see which number is a real claim and which is just a boundary. All the Canadian firms that hold money for other people are worth about $840.5M a year at list prices. Of those, about $490.6M sit with firms that already have money set aside to spend today. The plan aims to bill about $105.3M of that in 2031, which is one dollar in eight of the whole market.</p>
+ <hr class="brule"><div class="stats"><div class="stat"><div class="v blue">$840.5M</div><div class="l">the whole market, at list prices</div></div><div class="stat"><div class="v ">$490.6M</div><div class="l">the share with a budget today</div></div><div class="stat"><div class="v ">$105.3M</div><div class="l">what the plan bills in 2031</div></div><div class="stat"><div class="v ">18,254</div><div class="l">firms that owe the duty</div></div></div>
+ <div class="panel"><h3>What you are looking to know</h3><ul><li>Which of the three market figures is a real claim about this company and which is just an outer limit</li><li>How the biggest number is cut down, step by step, to the smallest</li><li>How many of the firms are actually counted from a public list versus estimated</li><li>What single assumption the plan leans on hardest, and what would settle it</li><li>What share of the market the plan is truly claiming, by money and by number of firms</li><li>How the price gets to $105.3M when the plan wins only a fifth of the paying firms</li></ul></div>
+ <div class="secs"><div class="sec"><h4>Three numbers, not three markets</h4><p>The whole market, the part with a budget today, and the part the plan actually wins are one market filtered twice, not three markets to add together. The paper draws each one inside the one above it so the shape narrows the way the argument does.</p></div><div class="sec"><h4>Every cut is shown</h4><p>The paper walks from a top figure of about $1,770.7M down to the $105.3M the plan bills, showing each deduction: pricing each firm to its size, removing firms counted twice, removing firms with no budget, and the four in five who buy from somebody else.</p></div><div class="sec"><h4>The assumption to argue with first</h4><p>The weakest number is the guess that 35 in every 100 of the smallest firms have money set aside today. It governs more of the gap than the other four bands combined, and twenty conversations with small firms would turn that guess into evidence.</p></div><div class="sec"><h4>A counted list, not an estimate</h4><p>About 60 per cent of the firms are counted from a published government register, and the 745 payment firms the plan sells to first sit entirely inside that counted part.</p></div></div>
+ <div class="readbox"><div><div class="t">Want the detail?</div><div class="s">Open the full document, exactly as written. Close it to come back here.</div></div><button class="readbtn" onclick="openDoc()">Read the full document</button></div>
+</div>
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; HOW BIG THE MARKET IS</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page two · Where the facts come from</div>
+ <div class="kicker">Sources and validation</div>
+ <h1 style="font-size:1.5rem;margin-bottom:16px">Every claim, and where it is backed up</h1>
+ <div class="srcs"><div class="src"><div class="n">4orm Finance master pro forma, 17 August 2026</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Every firm count, price and derived figure, on the Population Register and market layer tabs</div></div><div class="src"><div class="n">Bank of Canada payment firms register</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The count of 745 payment firms that hold customer money</div></div><div class="src"><div class="n">Federal payments safeguarding regulation, SOR/2023-229, section 15</div><a href="https://laws-lois.justice.gc.ca/eng/regulations/SOR-2023-229/" target="_blank" rel="noopener">View source &#8599;</a><div class="d">The daily duty that binds those payment firms</div></div><div class="src"><div class="n">Ontario mortgage administrator register</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Part of the counted firm total for the housing segments</div></div><div class="src"><div class="n">Cryptocurrency trading platform list</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The count of regulated trading platforms in the market</div></div><div class="src"><div class="n">Federal business counts</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Law firm and real estate brokerage numbers by staff size</div></div><div class="src"><div class="n">Capture precedent paper 02.3 (companion document)</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The record that a named list beats an estimated market by about twenty times in share won</div></div></div>
+</div>
+</div>
+<div class="foot"><span>4ORM FINANCE &middot; CONFIDENTIAL &middot; NOT FOR DISTRIBUTION</span><span>02 MARKET</span></div>
+<button class="fpill" onclick="openDoc()">Read full document</button>
+<div class="modal" id="docModal"><div class="modal-bar"><span class="mt">How Big the Market Is · full document</span><button class="mc" onclick="closeDoc()">Close &#10005;</button></div><iframe id="docFrame" title="Full document"></iframe></div>
+<script>
+var PDF="../assets/docs/market/02-1-market-size.pdf";
+function openDoc(){var f=document.getElementById('docFrame');if(!f.src)f.src=PDF;document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeDoc(){document.getElementById('docModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDoc();});
+</script>
+</body></html>

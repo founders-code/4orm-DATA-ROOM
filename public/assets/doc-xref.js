@@ -6,43 +6,7 @@
   if (window.__x4xref) return; window.__x4xref = true;
 
   /* live documents only - placeholders stay plain text */
-  var DOCS = {
-    '00': { f: '00-what-we-are-building.html', t: 'What We Are Building' },
-    '01.0': { f: '01-0-two-pager.html',               t: 'Two-Pager' },
-    '01.2': { f: '01-2-progress-to-date.html', t: 'Progress to Date' },
-    '01.5': { f: '01-5-executive-overview.html',      t: 'Executive Overview' },
-    '02.1': { f: '02-1-market-sizing.html',           t: 'Market Sizing (TAM · SAM · SOM)' },
-    '02.2': { f: '02-2-mckinsey-base-case.html',      t: 'McKinsey Base Case' },
-    '02.3': { f: '02-3-project-samara.html',          t: 'Project Samara' },
-    '02.4': { f: '02-4-canadian-rwa-landscape.html',  t: 'Canadian RWA Landscape' },
-    '02.5': { f: '02-5-polymath-competitive-scope.html', t: 'Polymath Competitive Scope' },
-    '02.6': { f: '02-6-expansion-revenue-verticals.html', t: 'Expansion Revenue Verticals' },
-    '02.8': { f: '02-8-global-tokenization-proof-points.html', t: 'Global Tokenization Proof Points' },
-    '03.1': { f: '03-1-control-plane-capabilities.html', t: 'Control Plane Capabilities' },
-    '03.2': { f: '03-2-lifecycle-architecture.html',  t: 'End-to-End Lifecycle Architecture' },
-    '03.3': { f: '03-3-lifecycle-architecture-visual.html', t: 'Lifecycle Architecture (Visual)' },
-    '03.5': { f: '03-5-30-60-90-technical-plan.html', t: '30-60-90 Technical Plan' },
-    '03.6': { f: '03-6-structured-roadmap-matrix.html', t: 'Structured Roadmap Matrix' },
-    '03.7': { f: '03-7-reference-architecture.html', t: 'Reference Architecture & Control Matrix' },
-    '03.8': { f: '03-8-procurement-readiness.html', t: 'Procurement Readiness' },
-    '04.1': { f: '04-1-team-advisory.html',           t: 'Team, Advisory & Legal Counsel' },
-    '04.2': { f: '04-2-organizational-chart.html',     t: 'Organizational Chart' },
-    '04.3': { f: '04-3-phase-one-hiring-plan.html',  t: 'Phase-One Hiring Plan' },
-    '05.1': { f: '05-1-five-year-model.html',         t: 'Five-Year Financial Model' },
-    '05.2': { f: '05-2-education-gtm-revenue-bridge.html', t: '4orm Education: GTM Revenue Bridge' },
-    '05.3': { f: '05-3-revenue-drivers.html',          t: 'Revenue Drivers' },
-    '07.2': { f: '07-2-partnership-pipeline.html',    t: 'Partnership Pipeline' },
-    '08.2': { f: '08-2-capital-structure-workbook.html', t: 'Capital Structure Workbook' },
-    '08.3': { f: '08-3-corporate-structure-chart.html', t: 'Corporate Structure Chart' },
-    '08.4': { f: '08-4-mission-anchor.html',          t: 'The Mission Anchor' },
-    '08.6': { f: '08-6-ceo-commitment.html',          t: 'Founder & CEO Commitment Statement' },
-    '08.7': { f: '08-7-entity-status.html',          t: 'Entity Status' },
-    '09.5': { f: '09-5-funding-comps.html',           t: 'Funding Comps' },
-    '10.1': { f: '10-1-reviewer-questions-founder-responses.html', t: 'Reviewer Questions & Founder Responses' },
-    '10.2': { f: '10-2-indicative-responses-common-asks.html', t: 'Indicative Responses to Common Asks' },
-    '10.4': { f: '10-4-swot-controls.html',           t: 'SWOT & Controls' },
-    '10.5': { f: '10-5-tokenization-scorecard.html',  t: 'Tokenization Scorecard' }
-  };
+  var DOCS = {};
 
   var KEY_STACK = 'x4xrefStack';
   var KEY_RESTORE = 'x4xrefRestore';
