@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Reliance on Key People · 4orm Finance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2E6BF2;--blued:#1B4ABE;--navy:#142036;--panel:#131F36;--body:#46556E;--cap:#5E6E88;
+--wash:#F4F7FB;--wash2:#EAEFF6;--pale:#EAF1FE;--card:#F6F9FF;--border:#CFE0FD;--hair:#E3E9F2;
+--gold:#C49A3A;--pass:#0E8A5F;--fail:#D6334E;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--body);background:var(--wash);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.docnav{background:#000;position:sticky;top:0;z-index:50;}
+.docnav-in{max-width:900px;margin:0 auto;min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.docnav a.back{color:rgba(255,255,255,.82);font-weight:600;font-size:.92rem;text-decoration:none;padding:7px 10px;border-radius:8px;}
+.docnav a.back:hover{background:rgba(255,255,255,.1);color:#fff;}
+.docnav .mid{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase;}
+.docnav .mid .c{color:#E7C76C;}
+.wrap{max-width:900px;margin:0 auto;padding:26px 20px 90px;}
+.sheet{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(20,32,54,.05);padding:40px 44px 38px;margin-bottom:22px;}
+@media(max-width:640px){.sheet{padding:28px 22px;}}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;border-bottom:1.5px solid var(--navy);padding-bottom:9px;margin-bottom:20px;}
+.hrow .cls{color:var(--gold);}
+.pagetag{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-bottom:14px;}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px;}
+h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);line-height:1.1;margin-bottom:14px;}
+@media(max-width:640px){h1{font-size:1.55rem;}}
+.lead{font-size:1.06rem;color:var(--body);line-height:1.62;max-width:60ch;margin-bottom:22px;}
+.lead b{color:var(--navy);font-weight:700;}
+.brule{height:2px;background:var(--blue);border:none;margin:6px 0 16px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:26px;}
+.stat .v{font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.05;}
+.stat .v.blue{color:var(--blue);}
+.stat .l{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cap);font-weight:700;margin-top:6px;line-height:1.4;}
+.panel{background:var(--pale);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:26px;}
+.panel h3{font-size:.72rem;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--blued);font-weight:700;margin-bottom:10px;}
+.panel ul{list-style:none;display:grid;gap:8px;}
+.panel li{position:relative;padding-left:22px;font-size:.96rem;color:var(--navy);line-height:1.5;}
+.panel li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--blue);border-radius:2px;}
+.secs{display:grid;gap:14px;}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:12px;border-top:2px solid var(--blue);padding:16px 20px;}
+.sec h4{font-size:1.02rem;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.01em;}
+.sec p{font-size:.96rem;color:var(--body);line-height:1.58;}
+.readbox{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);border-radius:12px;padding:16px 22px;margin-top:26px;}
+.readbox .t{color:#fff;font-weight:700;font-size:1rem;}
+.readbox .s{color:#CFE0FD;font-size:.82rem;margin-top:2px;}
+.readbtn{background:var(--blue);color:#fff;border:none;border-radius:9px;padding:11px 20px;font-family:var(--sans);font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap;text-decoration:none;display:inline-block;}
+.readbtn:hover{background:var(--blued);}
+.srcs{display:grid;gap:0;}
+.src{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:13px 0;border-bottom:1px solid var(--hair);}
+.src:last-child{border-bottom:none;}
+.src .n{font-weight:700;color:var(--navy);font-size:.98rem;}
+.src .d{grid-column:1/-1;font-size:.9rem;color:var(--body);}
+.src a{color:var(--blue);font-weight:600;text-decoration:none;font-size:.86rem;white-space:nowrap;}
+.src a:hover{text-decoration:underline;}
+.foot{max-width:900px;margin:0 auto;padding:0 20px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--cap);text-transform:uppercase;}
+.fpill{position:fixed;right:20px;bottom:20px;z-index:40;background:var(--blue);color:#fff;border:none;border-radius:99px;padding:12px 20px;font-weight:700;font-size:.9rem;cursor:pointer;box-shadow:0 8px 24px rgba(46,107,242,.35);}
+.fpill:hover{background:var(--blued);}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(11,18,32,.86);display:none;flex-direction:column;padding:18px;}
+.modal.open{display:flex;}
+.modal-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px;color:#fff;}
+.modal-bar .mt{font-weight:700;font-size:.95rem;}
+.modal-bar .mc{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:.9rem;}
+.modal-bar .mc:hover{background:rgba(255,255,255,.26);}
+.modal iframe{flex:1;width:100%;border:none;border-radius:10px;background:#fff;}
+</style></head><body>
+<nav class="docnav"><div class="docnav-in"><a class="back" href="../data-room.html">&#8592; Back to the data room</a><div class="mid">4ORM FINANCE <span class="c">· CONFIDENTIAL</span></div></div></nav>
+<div class="wrap">
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; RELIANCE ON KEY PEOPLE</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page one · The summary</div>
+ <div class="kicker">Key-person risk</div>
+ <h1>Reliance on Key People</h1>
+ <p class="lead">This asks whether a three person company that contracts out most of its delivery is a single point of failure, and whether the rules it sets for itself survive its own growth. Every role is defined twice: by what it owns and by what it may not do. Those separations are the product as much as the software is, because a record signed by whoever was available is not evidence. The risk is that three people hold these lines in 2026 and forty seven hold them in 2031, against seventy nine contracted.</p>
+ <hr class="brule"><div class="stats"><div class="stat"><div class="v blue">3 to 47</div><div class="l">employees, 2026 to 2031</div></div><div class="stat"><div class="v ">79</div><div class="l">contracted delivery people by 2031</div></div><div class="stat"><div class="v ">1</div><div class="l">senior engineer holding the core until 2028</div></div><div class="stat"><div class="v ">$142,000</div><div class="l">blended cost per person, above every Canadian benchmark</div></div></div>
+ <div class="panel"><h3>What you are looking to know</h3><ul><li>Is this too few people to depend on?</li><li>What holds the company together if a key person leaves?</li><li>Can the separation-of-duties rules survive fast growth?</li><li>Is the company underpaying, and does that create hiring risk?</li><li>What is the early warning sign for each people risk?</li></ul></div>
+ <div class="secs"><div class="sec"><h4>More contracted people than employees</h4><p>Employees reach 47 by 2031 while contracted delivery reaches 79. Four things are never handed to an outside partner: the add-only record store, the two dates, the filing packs and the rules. Everything built belongs to the company the day it is made.</p></div><div class="sec"><h4>One senior engineer until 2028</h4><p>A single senior engineer owns two of the layers nobody else may build through 2026 and 2027. The control is a written architecture note that moves the design out of one head, plus a named backup reviewer so acceptance is never one person&#x27;s signature.</p></div><div class="sec"><h4>Rules that cost nothing now, everything later</h4><p>No one holds a standing login to live data, and no one is ever both preparer and approver on a release or filing. A rule that cannot be enforced at three people will not be enforced at forty seven, so the discipline is built while it costs nothing.</p></div><div class="sec"><h4>Paid above the market, on purpose</h4><p>The blended cost is $142,000 a person against Canadian benchmarks of $66,955 to $97,000. So there is no cost lever left in the team line, and the real control is time to fill: any senior role open longer than a quarter during the scale-up is escalated.</p></div></div>
+ <div class="readbox"><div><div class="t">Want the detail?</div><div class="s">Open the full document, exactly as written. Close it to come back here.</div></div><button class="readbtn" onclick="openDoc()">Read the full document</button></div>
+</div>
+<div class="sheet">
+ <div class="hrow"><span>4ORM FINANCE &middot; RELIANCE ON KEY PEOPLE</span><span class="cls">CONFIDENTIAL · AUGUST 2026</span></div>
+ <div class="pagetag">Page two · Where the facts come from</div>
+ <div class="kicker">Sources and validation</div>
+ <h1 style="font-size:1.5rem;margin-bottom:16px">Every claim, and where it is backed up</h1>
+ <div class="srcs"><div class="src"><div class="n">4orm Finance financial model, 16 August 2026 (base case)</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Headcount from 3 to 47, contracted delivery to 79, the role list and the blended cost per person.</div></div><div class="src"><div class="n">4orm Finance technical architecture, 17 August 2026</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The permission table by component and the separation-of-duties list.</div></div><div class="src"><div class="n">Canada&#x27;s payments safeguarding regulation (SOR/2023-229), reviewer independence</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The reviewer must not have helped build the framework being reviewed.</div></div><div class="src"><div class="n">FSRA, RECO and the Law Society of Ontario</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The four differing trust-account rule sets one rules lead must cover.</div></div><div class="src"><div class="n">KeyBanc Capital Markets and Fraxtional</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Revenue per employee, and money-laundering compliance cost at a mid-size bank.</div></div><div class="src"><div class="n">Kani Payments and Guardexia</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Two small teams that took this category, showing headcount is not the barrier.</div></div><div class="src"><div class="n">PayScale, Talent.com and Indeed</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">Canadian compliance-officer pay of roughly $66,955 to $97,000, below what the plan carries.</div></div><div class="src"><div class="n">Bank of Canada safeguarding guideline</div><span style="font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--cap);text-transform:uppercase">On file</span><div class="d">The customer&#x27;s own compliance officer signs every reconciliation and filing; the company signs nothing.</div></div></div>
+</div>
+</div>
+<div class="foot"><span>4ORM FINANCE &middot; CONFIDENTIAL &middot; NOT FOR DISTRIBUTION</span><span>05 RISK MITIGATION</span></div>
+<button class="fpill" onclick="openDoc()">Read full document</button>
+<div class="modal" id="docModal"><div class="modal-bar"><span class="mt">Reliance on Key People · full document</span><button class="mc" onclick="closeDoc()">Close &#10005;</button></div><iframe id="docFrame" title="Full document"></iframe></div>
+<script>
+var PDF="../assets/docs/risk/risk-06-keyperson-team.pdf";
+function openDoc(){var f=document.getElementById('docFrame');if(!f.src)f.src=PDF;document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeDoc(){document.getElementById('docModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDoc();});
+</script>
+</body></html>
