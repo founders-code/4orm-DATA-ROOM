@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Document</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;background:#1f1f1f;color:#e8e8e8;font-family:system-ui,sans-serif;overflow:hidden;}
+body{display:flex;}
+#thumbs{
+  width:148px;flex-shrink:0;background:#2b2b2b;overflow-y:auto;padding:12px 10px 24px;
+  border-right:1px solid #111;
+}
+#thumbs button{
+  display:block;width:100%;background:transparent;border:2px solid transparent;border-radius:6px;
+  padding:6px 6px 4px;margin:0 0 10px;cursor:pointer;color:#c8c8c8;
+}
+#thumbs button.on,#thumbs button:hover{border-color:#8ab4f8;background:#3a3a3a;}
+#thumbs canvas{width:100%;height:auto;display:block;background:#fff;border-radius:2px;}
+#thumbs .n{display:block;text-align:center;font-size:11px;margin-top:4px;letter-spacing:.04em;}
+#pages{
+  flex:1;overflow:auto;padding:18px 22px 40px;background:#525659;
+}
+#pages .pg{
+  margin:0 auto 18px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.35);
+  line-height:0;
+}
+#pages canvas{width:100%;height:auto;display:block;}
+.err{padding:40px 24px;color:#f0c0c0;}
+@media print{html,body{display:none!important;}}
+</style>
+</head>
+<body oncontextmenu="return false;">
+<div id="thumbs"></div>
+<div id="pages"></div>
+<script src="pdfjs/pdf.min.js"></script>
+<script>
+(function () {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.min.js';
+
+  function allowed(path) {
+    try {
+      var u = new URL(path, location.origin);
+      if (u.origin !== location.origin) return null;
+      if (!u.pathname.startsWith('/assets/docs/') || !u.pathname.toLowerCase().endsWith('.pdf')) return null;
+      return u.pathname;
+    } catch (e) { return null; }
+  }
+
+  var params = new URLSearchParams(location.search);
+  var file = allowed(params.get('file') || '');
+  var thumbsEl = document.getElementById('thumbs');
+  var pagesEl = document.getElementById('pages');
+  if (!file) {
+    pagesEl.innerHTML = '<div class="err">This document is not available.</div>';
+    return;
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 's' || e.key === 'P' || e.key === 'S')) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+  window.addEventListener('beforeprint', function (e) { e.preventDefault(); });
+
+  var pageEls = [];
+  var thumbBtns = [];
+
+  pdfjsLib.getDocument({ url: file, withCredentials: false }).promise.then(function (pdf) {
+    var count = pdf.numPages;
+    var chain = Promise.resolve();
+    for (var n = 1; n <= count; n++) {
+      (function (num) {
+        chain = chain.then(function () { return pdf.getPage(num); }).then(function (page) {
+          var base = page.getViewport({ scale: 1 });
+          var mainW = Math.max(320, pagesEl.clientWidth - 44);
+          var scale = Math.min(1.6, mainW / base.width);
+          var vp = page.getViewport({ scale: scale });
+          var wrap = document.createElement('div');
+          wrap.className = 'pg';
+          wrap.dataset.page = String(num);
+          wrap.style.width = vp.width + 'px';
+          var canvas = document.createElement('canvas');
+          canvas.width = vp.width;
+          canvas.height = vp.height;
+          wrap.appendChild(canvas);
+          pagesEl.appendChild(wrap);
+          pageEls.push(wrap);
+          page.render({ canvasContext: canvas.getContext('2d', { alpha: false }), viewport: vp });
+
+          var tvp = page.getViewport({ scale: 110 / base.width });
+          var tCan = document.createElement('canvas');
+          tCan.width = tvp.width;
+          tCan.height = tvp.height;
+          page.render({ canvasContext: tCan.getContext('2d', { alpha: false }), viewport: tvp });
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.appendChild(tCan);
+          var lab = document.createElement('span');
+          lab.className = 'n';
+          lab.textContent = String(num);
+          btn.appendChild(lab);
+          btn.addEventListener('click', function () {
+            wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+          thumbsEl.appendChild(btn);
+          thumbBtns.push(btn);
+        });
+      })(n);
+    }
+    return chain;
+  }).then(function () {
+    if (thumbBtns[0]) thumbBtns[0].classList.add('on');
+    pagesEl.addEventListener('scroll', function () {
+      var mid = pagesEl.scrollTop + 80;
+      var active = 0;
+      for (var i = 0; i < pageEls.length; i++) {
+        if (pageEls[i].offsetTop - pagesEl.offsetTop <= mid) active = i;
+      }
+      thumbBtns.forEach(function (b, i) { b.classList.toggle('on', i === active); });
+    });
+  }).catch(function () {
+    pagesEl.innerHTML = '<div class="err">This document could not be opened.</div>';
+  });
+})();
+</script>
+</body>
+</html>
