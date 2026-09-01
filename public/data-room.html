@@ -25,8 +25,8 @@
  /* match the 1200px nav width used on Path to Revenue / Visual Data
  (base styles.css stretches .nav-inner to 1560px, which threw the
  logo left and the sign-out chip right on wide screens) */
- :root { --maxw: 1280px; --navw: 1440px; } /* content 1280; header a touch wider */
- .nav-inner { max-width: var(--navw); padding: 8px 36px; min-height: 56px; overflow: visible; }
+ :root { --maxw: 1280px; } /* data room: document rows/boxes a touch wider */
+ .nav-inner { max-width: var(--maxw); padding: 3px 28px; min-height: 46px; overflow: visible; }
  .brand { color: #142036; position: relative; z-index: 5; }
  .brand:hover { color: #142036; }
  /* Logo 3× the original 34px; nav bar height stays at 56px (logo overflows visually). */
@@ -114,8 +114,8 @@
  .mh-stat .mhs-body { padding: 16px 20px 0; display: flex; flex-direction: column; gap: 6px; flex: 1; }
  .mh-stat.c1 .mh-stat-thumb { background-image: url('assets/thumb-kcs-capital.png'); background-color: rgba(255,217,168,.06); }
  .mh-stat.c2 .mh-stat-thumb { background-image: url('assets/thumb-4orm-finance.png'); background-color: rgba(46,107,242,.10); }
- .mh-stat.c3 .mh-stat-thumb { background-image: url('assets/thumb-4ormex.png'); background-color: rgba(123,227,176,.08); }
- .mh-stat.c4 .mh-stat-thumb { background-image: url('assets/thumb-demo-exchange.png'); background-color: rgba(200,176,239,.08); }
+ .mh-stat.c3 .mh-stat-thumb { background-image: url(''); background-color: rgba(123,227,176,.08); }
+ .mh-stat.c4 .mh-stat-thumb { background-image: url(''); background-color: rgba(200,176,239,.08); }
  .mh-stat.c1 .mh-stat-thumb::after,
  .mh-stat.c2 .mh-stat-thumb::after,
  .mh-stat.c3 .mh-stat-thumb::after,
@@ -141,14 +141,6 @@
  .signed-bar a { color: rgba(255,255,255,.78); text-decoration: none; border-left: 1px solid rgba(123,227,176,.35); padding-left: 14px; font-weight: 700; transition: color .15s; }
  .signed-bar a:hover { color: #fff; }
 
- /* ----- STICKY TOC ----- */
- .meth-toc-band { background: rgba(11,18,32,.92); border-bottom: 1px solid rgba(255,255,255,.08); position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px); }
- .meth-toc { max-width: var(--maxw); margin: 0 auto; padding: 12px 28px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
- .meth-toc-label { font-size:.64rem; text-transform:uppercase; letter-spacing:.14em; color: rgba(255,255,255,.45); font-weight: 800; margin-right: 8px; flex: none; }
- .meth-toc a { font-size:.78rem; font-weight: 700; color: rgba(255,255,255,.72); padding: 7px 11px; border-radius: 8px; text-decoration: none; transition: background .15s, color .15s; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
- .meth-toc a .toc-n { font-family: var(--font-mono); font-size:.66rem; color: rgba(255,255,255,.45); font-weight: 800; }
- .meth-toc a:hover { background: rgba(255,255,255,.08); color: #fff; }
- .meth-toc a:hover .toc-n { color: #FFD9A8; }
 
  /* ----- SECTIONS ----- */
  .meth-sec { padding: 70px 0; position: relative; overflow: hidden; }
@@ -190,33 +182,6 @@
  @keyframes race-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
  .race-vs { display: flex; align-items: center; justify-content: center; padding: 16px 0 8px; }
  .race-vs-lab { background: linear-gradient(135deg, #FFD9A8 0%, #C49A3A 100%); color: #0B1220; padding: 6px 18px; border-radius: 99px; font-weight: 800; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
-
- /* ----- DOCUMENT CARDS inside original folder boxes ----- */
- .race-track .cat-desc { color: rgba(255,255,255,.55); font-size: .86rem; margin: 0 0 12px; max-width: 60ch; line-height: 1.5; }
- .race-track .cat-scroll {
- display: flex; flex-direction: column; gap: 10px; margin-top: 16px; padding: 0 6px 0 0;
- position: relative; overflow-y: auto; overflow-x: hidden;
- scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color .15s;
- -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent);
- mask-image: linear-gradient(180deg, #000 88%, transparent);
- }
- .race-track .cat-scroll::-webkit-scrollbar { width: 6px; }
- .race-track .cat-scroll::-webkit-scrollbar-track { background: transparent; border-radius: 99px; }
- .race-track .cat-scroll::-webkit-scrollbar-thumb { background: transparent; border-radius: 99px; }
- .race-track:hover .cat-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.30); }
- .race-track:hover .cat-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,.06); }
- .race-track:hover .cat-scroll { scrollbar-color: rgba(255,255,255,.35) rgba(255,255,255,.06); }
- .dcard { display: flex; flex-direction: column; gap: 6px; width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 12px 14px 11px; text-decoration: none; transition: transform .15s, border-color .15s, background .15s; }
- .dcard:hover { border-color: #2E6BF2; background: rgba(46,107,242,.12); transform: translateY(-1px); }
- .dcard .dk { font-family: var(--font-mono); font-size: .56rem; letter-spacing: .12em; text-transform: uppercase; color: #7FA8FF; font-weight: 700; }
- .race-track.good .dcard .dk { color: #7BE3B0; }
- .dcard.spread .dk { color: #E7C76C; }
- .dcard .dt { color: #fff; font-weight: 700; font-size: .95rem; line-height: 1.25; letter-spacing: -.01em; }
- .dcard .dd { color: rgba(255,255,255,.6); font-size: .8rem; line-height: 1.42; }
- .dcard .dgo { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: #7FA8FF; font-weight: 700; }
- .dcard.ds-hide, .dcard.hide { display: none; }
- .cat-scroll .ds-empty { padding: 12px 0; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; color: rgba(255,255,255,.35); }
-
 
  /* ----- FILE ROWS (replace bullets) ----- */
  .rt-files {
@@ -328,7 +293,28 @@
  table.fl tr.fl-live:hover td { background: rgba(255,255,255,.05); }
  table.fl tr.fl-live:hover td.name { color: #9AB6FF; }
 
+/* --- folder-scroll document library (dark interior, locked palette) --- */
+.cat-band{margin:30px 0 6px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);}
+.cat-band:first-of-type{border-top:none;padding-top:4px;}
+.cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px;}
+.cat-head .num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;color:#7FA8FF;font-weight:700;}
+.cat-head h3{color:#fff;font-size:1.18rem;letter-spacing:-.01em;}
+.cat-head .n{margin-left:auto;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;color:rgba(255,255,255,.42);text-transform:uppercase;}
+.cat-desc{color:rgba(255,255,255,.55);font-size:.86rem;margin:0 0 14px;max-width:60ch;line-height:1.5;}
+.cat-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(236px,1fr);gap:14px;overflow-x:auto;padding:2px 2px 16px;scroll-snap-type:x proximity;}
+.cat-scroll::-webkit-scrollbar{height:8px;}
+.cat-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px;}
+.dcard{scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;min-height:158px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 16px 14px;text-decoration:none;transition:transform .15s,border-color .15s,background .15s;}
+.dcard:hover{border-color:#2E6BF2;background:rgba(46,107,242,.12);transform:translateY(-2px);}
+.dcard .dk{font-family:var(--font-mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#7FA8FF;font-weight:700;}
+.dcard.spread .dk{color:#E7C76C;}
+.dcard .dt{color:#fff;font-weight:700;font-size:1.02rem;line-height:1.25;letter-spacing:-.01em;}
+.dcard .dd{color:rgba(255,255,255,.6);font-size:.82rem;line-height:1.46;flex:1;}
+.dcard .dgo{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#7FA8FF;font-weight:700;}
+.cat-band.hide,.dcard.hide{display:none;}
 
+
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
 </style>
 <link rel="stylesheet" href="assets/compliance.css" />
 </head>
@@ -355,7 +341,7 @@
  <div class="meth-hero-inner">
  <div class="meth-hero-eyebrow">Welcome back</div>
  <h1><span class="accent">Data Room.</span></h1>
- <p class="lead">Member access to the materials behind 4orm Finance: <b>pitch, market, product, team, financials, regulatory positioning, partnerships, corporate structure, and the active fundraise</b>. All documents below are live. Click any file to open it in a new tab; every document opens for reading right here. The room is view-only; nothing is downloadable.</p>
+ <p class="lead">Member access to the current 4orm Finance materials. Start with the overview and the one-pagers, see the numbers, then meet the team. Each document opens to a short plain-English summary, with the full document one click behind it. The room is view-only.</p>
  <div class="mh-pills">
  <span class="mh-pill ca">&#10003; Approved member</span>
  <span class="mh-pill global">Confidential</span>
@@ -387,16 +373,7 @@
 
 
 <!-- ============================================ STICKY TOC -->
-<div class="meth-toc-band">
- <div class="meth-toc">
- <span class="meth-toc-label">Open a category</span>
- <a href="#pitch-market"><span class="toc-n">01</span> Pitch &amp; market</a>
- <a href="#product-regulatory"><span class="toc-n">02</span> Product &amp; regulatory</a>
- <a href="#financials-team"><span class="toc-n">03</span> Financials &amp; team</a>
- <a href="#partnership-corporate"><span class="toc-n">04</span> Partnership &amp; corporate</a>
- <a href="#fundraise-qa"><span class="toc-n">05</span> Fundraise &amp; Q&amp;A</a>
- </div>
-</div>
+
 
 <!-- ============================================ DOCUMENTS (DARK) -->
 <section class="meth-sec dark">
@@ -412,99 +389,17 @@
 
  <div class="doc-search">
  <input id="docSearch" type="search" placeholder="SEARCH DOCUMENTS&hellip;" autocomplete="off" />
- <span class="ds-count" id="dsCount"></span>
+ <span class="ds-count" id="dsCount">9 documents</span>
  <button class="filelist-pill" id="fileListBtn">Press for file list</button>
  </div>
 
  <div class="ms-viz">
- <div class="ms-viz-title">Ten categories, paired by diligence track</div>
- <!-- PAIR 1 -->
- <div class="race-mini" id="pitch-market">
- <div class="race-track bad" id="cat-start">
- <div class="rt-tag">Learn about us</div>
- <span class="rt-pill"><span class="rt-pill-n">01</span><span class="rt-pill-u">Start Here</span></span>
- <div class="cat-desc">Read these first. What the company is and why now.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="How the Data Room Is Organized" class="dcard rt-live" href="documents/00-data-room-map.html" data-t="how the data room is organized room guide start here"><span class="dk">Room guide</span><span class="dt">How the Data Room Is Organized</span><span class="dd">This page explains how the data room is arranged so an investor can find any claim and check it fast.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Vision" class="dcard rt-live" href="documents/01-vision.html" data-t="the vision company vision start here"><span class="dk">Company vision</span><span class="dt">The Vision</span><span class="dd">This is the full case for the company, told from the people it protects first and the money second.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Plan in One Table" class="dcard rt-live" href="documents/02-the-plan-in-one-table.html" data-t="the plan in one table the numbers start here"><span class="dk">The numbers</span><span class="dt">The Plan in One Table</span><span class="dd">This is the whole six year plan on one page, with every figure calculated from the customers the plan signs rather than typed in.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Where the Company Stands Today" class="dcard rt-live" href="documents/03-progress-to-date.html" data-t="where the company stands today progress so far start here"><span class="dk">Progress so far</span><span class="dt">Where the Company Stands Today</span><span class="dd">This is a plain status check at 17 August 2026.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Next 90 Days" class="dcard rt-live" href="documents/04-day-look-out.html" data-t="the next 90 days near-term outlook start here"><span class="dk">Near-term outlook</span><span class="dt">The Next 90 Days</span><span class="dd">This is a month by month cash map for 17 August to 15 November 2026.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What We Are Building" class="dcard rt-live" href="documents/05-what-we-are-building.html" data-t="what we are building the product start here"><span class="dk">The product</span><span class="dt">What We Are Building</span><span class="dd">This is a plain description of the software.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Investor Presentation" class="dcard rt-live" href="documents/investor-presentation-4orm-1-08-16-2026.html" data-t="the investor presentation master pitch start here"><span class="dk">Master pitch</span><span class="dt">The Investor Presentation</span><span class="dd">This is the full 37 slide pitch, the master document that carries the whole story in order.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Short Version for Investors" class="dcard rt-live" href="documents/investor-teaser.html" data-t="the short version for investors quick pitch start here"><span class="dk">Quick pitch</span><span class="dt">The Short Version for Investors</span><span class="dd">This is the short pitch.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Dates That Drive the Business" class="dcard rt-live" href="documents/regulatory-clock.html" data-t="the dates that drive the business key dates start here"><span class="dk">Key dates</span><span class="dt">The Dates That Drive the Business</span><span class="dd">This is a dated list of every law and rule the business depends on, each read at its official source.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- <div class="race-track good" id="cat-market">
- <div class="rt-tag">Where we fit</div>
- <span class="rt-pill"><span class="rt-pill-n">02</span><span class="rt-pill-u">Market</span></span>
- <div class="cat-desc">How big the opportunity is, and who else is in it.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="How Big the Market Is" class="dcard rt-live" href="documents/02-1-market-size.html" data-t="how big the market is market size market"><span class="dk">Market size</span><span class="dt">How Big the Market Is</span><span class="dd">This paper measures the market three ways and shows the maths between them, so an investor can see which number is a real claim and which is just a boundary.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What Similar Software Companies Actually Captured" class="dcard rt-live" href="documents/02-4-disruption-benchmark.html" data-t="what similar software companies actually captured track record test market"><span class="dk">Track record test</span><span class="dt">What Similar Software Companies Actually Captured</span><span class="dd">This paper places the plan against twenty software companies that arrived behind a new rule, to test whether its target is realistic.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Everyone Who Must Prove the Money Is There" class="dcard rt-live" href="documents/02-6-business-landscape.html" data-t="everyone who must prove the money is there who owes the duty market"><span class="dk">Who owes the duty</span><span class="dt">Everyone Who Must Prove the Money Is There</span><span class="dd">This paper maps every kind of Canadian business that holds money belonging to other people and must prove, on a schedule, that the money is all there.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Closest Competitor, AutoRek" class="dcard rt-live" href="documents/autorek-summary.html" data-t="the closest competitor, autorek closest competitor market"><span class="dk">Closest competitor</span><span class="dt">The Closest Competitor, AutoRek</span><span class="dd">AutoRek is the nearest thing in the world to what 4orm is building, so this three-page paper studies how it won and where it has left doors open.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Who Is Already Here, and Who Could Arrive" class="dcard rt-live" href="documents/comparables-and-benchmarks.html" data-t="who is already here, and who could arrive competitive landscape market"><span class="dk">Competitive landscape</span><span class="dt">Who Is Already Here, and Who Could Arrive</span><span class="dd">This paper reads 23 competing products on their own published material and finds the market splits cleanly in two, which is the heart of the case.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What Each Price Is Worth, and the Evidence Behind It" class="dcard rt-live" href="documents/price-evidence-all-tiers.html" data-t="what each price is worth, and the evidence behind it pricing evidence market"><span class="dk">Pricing evidence</span><span class="dt">What Each Price Is Worth, and the Evidence Behind It</span><span class="dd">This paper tests all five of 4orm's prices against what firms of the same size actually pay for comparable software elsewhere.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Ten Things We Sell, and Who Else Sells Them" class="dcard rt-live" href="documents/service-and-price-comparison.html" data-t="ten things we sell, and who else sells them service comparison market"><span class="dk">Service comparison</span><span class="dt">Ten Things We Sell, and Who Else Sells Them</span><span class="dd">This paper prices 23 competing products against the ten separate things 4orm charges for, so an investor can see exactly where each revenue line has a rival and where it stands alone.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- </div>
- <!-- PAIR 2 -->
- <div class="race-mini" id="product-regulatory">
- <div class="race-track bad" id="cat-product">
- <div class="rt-tag">What we're building</div>
- <span class="rt-pill"><span class="rt-pill-n">03</span><span class="rt-pill-u">Product</span></span>
- <div class="cat-desc">What we built, in plain terms.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="What We Can Say About the Technology, and Where" class="dcard rt-live" href="documents/03-0-disclosure-control.html" data-t="what we can say about the technology, and where disclosure rules product"><span class="dk">Disclosure rules</span><span class="dt">What We Can Say About the Technology, and Where</span><span class="dd">This is the company's own rule sheet for what it may say about how the product is built, and to whom.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How the Product Works, in Plain Terms" class="dcard rt-live" href="documents/03-1-technology-overview.html" data-t="how the product works, in plain terms product overview product"><span class="dk">Product overview</span><span class="dt">How the Product Works, in Plain Terms</span><span class="dd">4orm Finance does the daily check a business must do when it holds money that belongs to other people, and it keeps unchangeable proof that the money was all there.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How the Product Is Built" class="dcard rt-live" href="documents/03-2-technical-architecture.html" data-t="how the product is built build detail product"><span class="dk">Build detail</span><span class="dt">How the Product Is Built</span><span class="dd">This is the deeper build document, shown only to a build partner or a buyer's security reviewer after they sign a confidentiality agreement.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Record of What We Invented" class="dcard rt-live" href="documents/ip-invention-record.html" data-t="the record of what we invented invention record product"><span class="dk">Invention record</span><span class="dt">The Record of What We Invented</span><span class="dd">This is the private file prepared for the company's patent lawyers, never placed in the data room.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- <div class="race-track good" id="cat-finance">
- <div class="rt-tag">How the money works</div>
- <span class="rt-pill"><span class="rt-pill-n">04</span><span class="rt-pill-u">Financials</span></span>
- <div class="cat-desc">The money: revenue, costs, cash and the plan.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="A Reader&#x27;s Guide to the Financials" class="dcard rt-live" href="documents/05-0-readers-guide.html" data-t="a reader's guide to the financials how to read the folder financials"><span class="dk">How to read the folder</span><span class="dt">A Reader's Guide to the Financials</span><span class="dd">This is the map to the folder.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Whole Plan on One Page" class="dcard rt-live" href="documents/05-1-the-plan-in-one-table.html" data-t="the whole plan on one page the plan at a glance financials"><span class="dk">The plan at a glance</span><span class="dt">The Whole Plan on One Page</span><span class="dd">Every other document in this folder expands one row of a single table shown here: money in, customers, revenue, margin, earnings, cash, runway and staff across six years.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Where the Revenue Comes From" class="dcard rt-live" href="documents/05-2-the-revenue-build.html" data-t="where the revenue comes from revenue build financials"><span class="dk">Revenue build</span><span class="dt">Where the Revenue Comes From</span><span class="dd">All of the revenue in the plan comes from six product lines plus services sold alongside them, and each line has its own price, its own take-up ramp and its own on/off switch.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How Big the Market Is" class="dcard rt-live" href="documents/05-3-market-card-denominator.html" data-t="how big the market is market size financials"><span class="dk">Market size</span><span class="dt">How Big the Market Is</span><span class="dd">The market is counted firm by firm from public registers, priced on one published price list, and every share is measured against a named group of firms rather than a blended average.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Customers, Counted" class="dcard rt-live" href="documents/05-4-customers-and-cohorts.html" data-t="the customers, counted customers and retention financials"><span class="dk">Customers and retention</span><span class="dt">The Customers, Counted</span><span class="dd">New customers are typed in by size band and by year, and everything else in the plan, every dollar of revenue, cost and cash, is calculated from them.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What One Customer Is Worth" class="dcard rt-live" href="documents/05-5-unit-economics.html" data-t="what one customer is worth value of a customer financials"><span class="dk">Value of a customer</span><span class="dt">What One Customer Is Worth</span><span class="dd">This document works out what a single customer is worth against what a single customer costs to win, and sets each figure against the published benchmark for a company at this stage.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Where Every Dollar of Cost Goes" class="dcard rt-live" href="documents/05-6-the-cost-base.html" data-t="where every dollar of cost goes the cost base financials"><span class="dk">The cost base</span><span class="dt">Where Every Dollar of Cost Goes</span><span class="dd">Running costs are built from five parts and the cost of serving customers from eight components, and almost nothing is set as a flat percentage of revenue.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Profit, Cash and How Long the Money Lasts" class="dcard rt-live" href="documents/05-7-profit-cash-and-runway.html" data-t="profit, cash and how long the money lasts profit and cash financials"><span class="dk">Profit and cash</span><span class="dt">Profit, Cash and How Long the Money Lasts</span><span class="dd">Two questions, answered from the same arithmetic: does the business make money, and does each funding round reach the next.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Road to the 2028 Round" class="dcard rt-live" href="documents/05-8-the-road-to-the-seed.html" data-t="the road to the 2028 round month-by-month cash financials"><span class="dk">Month-by-month cash</span><span class="dt">The Road to the 2028 Round</span><span class="dd">A year that adds up can still contain a month with nothing in the account, so this document runs the plan month by month from the first cheque to two months past the 2028 round.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Money Being Raised" class="dcard rt-live" href="documents/05-9-capital-and-the-round.html" data-t="the money being raised the raise financials"><span class="dk">The raise</span><span class="dt">The Money Being Raised</span><span class="dd">The first $2,050,000 comes in five instalments, and each is released only when a specific thing has happened rather than on a set date.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What Investors Get Back" class="dcard rt-live" href="documents/05-10-investor-returns.html" data-t="what investors get back investor returns financials"><span class="dk">Investor returns</span><span class="dt">What Investors Get Back</span><span class="dd">Money comes back to investors two ways, and both are shown.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How the Plan Checks Itself" class="dcard rt-live" href="documents/05-11-how-the-model-checks-itself.html" data-t="how the plan checks itself model integrity financials"><span class="dk">Model integrity</span><span class="dt">How the Plan Checks Itself</span><span class="dd">A model that only works one way has not been tested.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How We Reach Customers" class="dcard rt-live" href="documents/outreach-and-contact-plan.html" data-t="how we reach customers outreach plan financials"><span class="dk">Outreach plan</span><span class="dt">How We Reach Customers</span><span class="dd">This sets out who the company can reach, the filter to apply before a single call, the five ways in, and what a real answer looks like at the end of each.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Full Financial Model" class="dcard spread rt-live" href="documents/pro-forma-model.html" data-t="the full financial model the whole model financials"><span class="dk">The whole model</span><span class="dt">The Full Financial Model</span><span class="dd">The complete workbook behind every number, every sheet, calculated live.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="What the Price Is, and What Would Make It Wrong" class="dcard rt-live" href="documents/valuation-review.html" data-t="what the price is, and what would make it wrong valuation review financials"><span class="dk">Valuation review</span><span class="dt">What the Price Is, and What Would Make It Wrong</span><span class="dd">Two share prices are on offer, and this paper sets out the arithmetic behind both, tests each against what Canadian money paid at this stage, and names the five things that would make the price wrong.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- </div>
- <!-- PAIR 3 -->
- <div class="race-mini" id="financials-team">
- <div class="race-track bad" id="cat-risk">
- <div class="rt-tag">The honest risks</div>
- <span class="rt-pill"><span class="rt-pill-n">05</span><span class="rt-pill-u">Risk Mitigation</span></span>
- <div class="cat-desc">The honest risks, and how each one is handled.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="When a Rule Fails to Create a Market" class="dcard rt-live" href="documents/03-4-regulatory-risk.html" data-t="when a rule fails to create a market regulatory risk risk mitigation"><span class="dk">Regulatory risk</span><span class="dt">When a Rule Fails to Create a Market</span><span class="dd">A rule only creates a market when it is in force, the group of firms it names is countable, and nobody can simply wait it out.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Risks at a Glance, and the Calendar" class="dcard rt-live" href="documents/risk-00-overview-and-calendar.html" data-t="the risks at a glance, and the calendar risk overview risk mitigation"><span class="dk">Risk overview</span><span class="dt">The Risks at a Glance, and the Calendar</span><span class="dd">This is the map to the whole risk set: six areas, thirty seven ways the plan could go wrong, each one scored and paired with a real company that lived through something similar and a planned response.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Rules and Policy Risk" class="dcard rt-live" href="documents/risk-01-regulatory-policy.html" data-t="rules and policy risk regulatory risk risk mitigation"><span class="dk">Regulatory risk</span><span class="dt">Rules and Policy Risk</span><span class="dd">This looks at whether the rules 4orm is built on will hold long enough and behave the way the plan assumes.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Competition Risk" class="dcard rt-live" href="documents/risk-02-competitive.html" data-t="competition risk competitive risk risk mitigation"><span class="dk">Competitive risk</span><span class="dt">Competition Risk</span><span class="dd">This asks who else could reach the same buyers, what each would have to build first, and how long the opening stays open.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Will Customers Adopt in Time" class="dcard rt-live" href="documents/risk-03-customer-adoption-timing.html" data-t="will customers adopt in time adoption and timing risk risk mitigation"><span class="dk">Adoption and timing risk</span><span class="dt">Will Customers Adopt in Time</span><span class="dd">This asks whether buyers sign, go live and pay on the schedule the funding plan assumes, and whether anyone is measuring the one number that decides the profit margin.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Building the Software" class="dcard rt-live" href="documents/risk-04-execution-platform.html" data-t="building the software execution risk risk mitigation"><span class="dk">Execution risk</span><span class="dt">Building the Software</span><span class="dd">This asks whether the plan's single engine survives real bank feeds, a second regulator and a delivery deadline.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Funding and Cash Runway" class="dcard rt-live" href="documents/risk-05-funding-runway.html" data-t="funding and cash runway funding risk risk mitigation"><span class="dk">Funding risk</span><span class="dt">Funding and Cash Runway</span><span class="dd">This is where the plan attacks its own numbers hardest.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Reliance on Key People" class="dcard rt-live" href="documents/risk-06-keyperson-team.html" data-t="reliance on key people key-person risk risk mitigation"><span class="dk">Key-person risk</span><span class="dt">Reliance on Key People</span><span class="dd">This asks whether a three person company that contracts out most of its delivery is a single point of failure, and whether the rules it sets for itself survive its own growth.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- <div class="race-track good" id="cat-team">
- <div class="rt-tag">Who's behind it</div>
- <span class="rt-pill"><span class="rt-pill-n">06</span><span class="rt-pill-u">Team</span></span>
- <div class="cat-desc">The people building it and the advisors behind them.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="The Team and Partners" class="dcard rt-live" href="documents/13-team-and-partners.html" data-t="the team and partners who is building this team"><span class="dk">Who is building this</span><span class="dt">The Team and Partners</span><span class="dd">This document introduces the people building 4orm Finance and explains why they come first.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Team at a Glance" class="dcard rt-live" href="documents/the-team-at-a-glance.html" data-t="the team at a glance everyone on one page team"><span class="dk">Everyone on one page</span><span class="dt">The Team at a Glance</span><span class="dd">This is the whole team on a single page.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- </div>
- <!-- PAIR 4 -->
- <div class="race-mini" id="partnership-corporate">
- <div class="race-track bad" id="cat-partnership">
- <div class="rt-tag">Who we build with</div>
- <span class="rt-pill"><span class="rt-pill-n">07</span><span class="rt-pill-u">Partnerships</span></span>
- <div class="cat-desc">Who we build with.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="The Build Partner" class="dcard rt-live" href="documents/partner-speer-technologies.html" data-t="the build partner software build partner partnerships"><span class="dk">Software build partner</span><span class="dt">The Build Partner</span><span class="dd">4orm Finance does not employ its own engineers.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Build Partner&#x27;s Track Record" class="dcard rt-live" href="documents/speer-portfolio-and-clients-portfolio-copy.html" data-t="the build partner's track record build partner track record partnerships"><span class="dk">Build partner track record</span><span class="dt">The Build Partner's Track Record</span><span class="dd">This is Speer Technologies' own portfolio, the record of work the build partner has already shipped.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- <div class="race-track good" id="cat-corporate">
- <div class="rt-tag">How we're structured</div>
- <span class="rt-pill"><span class="rt-pill-n">08</span><span class="rt-pill-u">Corporate</span></span>
- <div class="cat-desc">How the company is owned and what anchors it.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="Who Owns the Company" class="dcard spread rt-live" href="documents/cap-table.html" data-t="who owns the company ownership corporate"><span class="dk">Ownership</span><span class="dt">Who Owns the Company</span><span class="dd">Every share, who holds it, and how ownership carries through the raises.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Founder&#x27;s Commitment" class="dcard rt-live" href="documents/ceo-commitment.html" data-t="the founder's commitment founder's word corporate"><span class="dk">Founder's word</span><span class="dt">The Founder's Commitment</span><span class="dd">This is the founder's personal commitment, and it holds to the same one line the company is built on: protect the people whose money is being held.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Mission Anchor" class="dcard rt-live" href="documents/mission-anchor.html" data-t="the mission anchor the promise corporate"><span class="dk">The promise</span><span class="dt">The Mission Anchor</span><span class="dd">The company is built on one line: protect the people whose money is being held inside the system.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- </div>
- <!-- PAIR 5 -->
- <div class="race-mini" id="fundraise-qa">
- <div class="race-track bad" id="cat-fundraise">
- <div class="rt-tag">What we're raising</div>
- <span class="rt-pill"><span class="rt-pill-n">09</span><span class="rt-pill-u">Fundraise</span></span>
- <div class="cat-desc">The terms of this round and where the money goes.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="How This Compares" class="dcard rt-live" href="documents/funding-comps.html" data-t="how this compares against the market fundraise"><span class="dk">Against the market</span><span class="dt">How This Compares</span><span class="dd">This raise sits between what similar Canadian companies raised at the same stage.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="How the Investment Works" class="dcard rt-live" href="documents/how-the-investment-works.html" data-t="how the investment works the agreement fundraise"><span class="dk">The agreement</span><span class="dt">How the Investment Works</span><span class="dd">Most of the money in this round comes in as an agreement to invest now and set the share price later, at the next priced round.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="The Terms of This Round" class="dcard rt-live" href="documents/preseed-round-terms.html" data-t="the terms of this round the raise fundraise"><span class="dk">The raise</span><span class="dt">The Terms of This Round</span><span class="dd">4orm Finance is raising $2,050,000 now, in five cheques: one first cheque of $50,000 and four cheques of $500,000 each.</span><span class="dgo">Open &#8599;</span></a><a target="_blank" rel="noopener" data-title="Where the Money Goes" class="dcard rt-live" href="documents/use-of-proceeds.html" data-t="where the money goes use of the money fundraise"><span class="dk">Use of the money</span><span class="dt">Where the Money Goes</span><span class="dd">The money raised pays to build the software and to serve the first customers by hand before the work is turned into a repeatable product.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- <div class="race-track good" id="cat-diligence">
- <div class="rt-tag">The hard questions</div>
- <span class="rt-pill"><span class="rt-pill-n">10</span><span class="rt-pill-u">Diligence Q&amp;A</span></span>
- <div class="cat-desc">The hard questions, answered.</div>
- <div class="race-coins"><div class="race-coins-fill"></div></div>
- <div class="cat-scroll"><a target="_blank" rel="noopener" data-title="Questions and Answers" class="dcard rt-live" href="documents/diligence-qa.html" data-t="questions and answers hard questions diligence q&amp;a"><span class="dk">Hard questions</span><span class="dt">Questions and Answers</span><span class="dd">These are the hard questions an investor should ask, with short honest answers.</span><span class="dgo">Open &#8599;</span></a></div>
- </div>
- </div>
+<div class="ms-viz-title">Three folders. Open any document for a short summary, with the full document one click behind it.</div>
+<div class="cat-band" data-cat="start"><div class="cat-head"><span class="num">01</span><h3>Start Here</h3><span class="n">5 documents</span></div><div class="cat-desc">The overview, the one-pagers, and the full business plan. Begin here.</div><div class="cat-grid"><a class="dcard" href="documents/what-we-do.html" data-t="what we do one engine, four ways to sell it start here"><span class="dk">One engine, four ways to sell it</span><span class="dt">What We Do</span><span class="dd">4orm builds the record of what happened when a person makes a big financial decision, such as a mortgage, a car loan or an investment.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-investor.html" data-t="one page, for the investor a dated duty, a named buyer list, one engine underneath start here"><span class="dk">A dated duty, a named buyer list, one engine underneath</span><span class="dt">One Page, for the Investor</span><span class="dd">The way in is a legal duty that is already in force, and the buyers already sit on a public list.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-business.html" data-t="one page, for a business prove the work was done, from the systems you already run start here"><span class="dk">Prove the work was done, from the systems you already run</span><span class="dt">One Page, for a Business</span><span class="dd">Your people carry the duty and your firm carries the liability.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-consumer.html" data-t="one page, for people know what you are agreeing to, before you agree to it start here"><span class="dk">Know what you are agreeing to, before you agree to it</span><span class="dt">One Page, for People</span><span class="dd">A mortgage, a car loan or an investment is decided in a few conversations, and then you live with it for years.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/business-plan.html" data-t="the business plan infrastructure for a duty that already exists start here"><span class="dk">Infrastructure for a duty that already exists</span><span class="dt">The Business Plan</span><span class="dd">4orm sells one engine four ways: a free check for everyday people, a paid seat for professionals, accounts for organizations, and a safeguarding record for payment firms that must meet a new federal duty.</span><span class="dgo">Open &#8599;</span></a></div></div>
+<div class="cat-band" data-cat="numbers"><div class="cat-head"><span class="num">02</span><h3>The Numbers</h3><span class="n">2 documents</span></div><div class="cat-desc">The full financial model and the pre-seed summary, calculated live.</div><div class="cat-grid"><a class="dcard spread" href="documents/pro-forma-v5.html" data-t="the full financial model the whole model the numbers"><span class="dk">The whole model</span><span class="dt">The Full Financial Model</span><span class="dd">Every number, every sheet, three cases side by side, calculated live.</span><span class="dgo">Open &#8599;</span></a><a class="dcard spread" href="documents/pre-seed-summary.html" data-t="the pre-seed, on five pages the raise the numbers"><span class="dk">The raise</span><span class="dt">The Pre-Seed, on Five Pages</span><span class="dd">The terms, where the money goes, the four year plan, and who must comply.</span><span class="dgo">Open &#8599;</span></a></div></div>
+<div class="cat-band" data-cat="team"><div class="cat-head"><span class="num">03</span><h3>The Team</h3><span class="n">2 documents</span></div><div class="cat-desc">The people building it and the partners behind them.</div><div class="cat-grid"><a class="dcard" href="documents/team-and-partners.html" data-t="the team and partners compliance software is bought on credibility first the team"><span class="dk">Compliance software is bought on credibility first</span><span class="dt">The Team and Partners</span><span class="dd">Two founders, a systems architect, a technology chief from the build partner, six advisors and a named engineering bench of ten people.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/team-at-a-glance.html" data-t="the team at a glance everybody, on one page the team"><span class="dk">Everybody, on one page</span><span class="dt">The Team at a Glance</span><span class="dd">Twelve seats at 4orm Finance, ten of them filled, plus the ten named engineers at the build partner underneath.</span><span class="dgo">Open &#8599;</span></a></div></div>
 </div>
- <div class="race-vs"><span class="race-vs-lab">10 folders &middot; 55 documents &middot; member access</span></div>
+ <div class="race-vs"><span class="race-vs-lab">3 folders &middot; 9 documents &middot; member access</span></div>
  <div class="founders-cta">
  <div class="ctas">
  <a class="invest" href="tel:+16048386060">Capital Markets &middot; 604-838-6060</a>
@@ -609,25 +504,25 @@
  var input = document.getElementById('docSearch');
  var count = document.getElementById('dsCount');
  if (!input) return;
- var lists = Array.prototype.slice.call(document.querySelectorAll('.cat-scroll'));
- var rows = Array.prototype.slice.call(document.querySelectorAll('.dcard'));
+ var lists = Array.prototype.slice.call(document.querySelectorAll('.rt-files'));
+ var rows = Array.prototype.slice.call(document.querySelectorAll('.rt-files li'));
  var total = rows.length;
- count.textContent = total + ' DOCUMENTS';
+ if (!rows.length) return;
  function filter() {
  var q = input.value.trim().toLowerCase();
  var visible = 0;
- rows.forEach(function (card) {
- var hay = (card.getAttribute('data-t') || card.textContent || '').toLowerCase();
- var hit = !q || hay.indexOf(q) !== -1;
- card.classList.toggle('ds-hide', !hit);
+ rows.forEach(function (li) {
+ if (li.classList.contains('ds-empty')) return;
+ var hit = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+ li.classList.toggle('ds-hide', !hit);
  if (hit) visible++;
  });
  lists.forEach(function (ul) {
- var any = ul.querySelector('.dcard:not(.ds-hide)');
+ var any = ul.querySelector('li:not(.ds-hide):not(.ds-empty)');
  var empty = ul.querySelector('.ds-empty');
  if (!any && q) {
  if (!empty) {
- empty = document.createElement('div');
+ empty = document.createElement('li');
  empty.className = 'ds-empty';
  empty.textContent = 'NO MATCHES IN THIS CATEGORY';
  ul.appendChild(empty);
@@ -665,20 +560,19 @@
  if (!btn) return;
  function build() {
  var items = [];
- document.querySelectorAll('.race-track').forEach(function (card) {
- var pn = card.querySelector('.rt-pill-n');
- var h = card.querySelector('.rt-pill-u');
- var folder = (pn ? pn.textContent.trim() : '') + (h ? ' \u00B7 ' + h.textContent.trim() : '');
- card.querySelectorAll('a.dcard').forEach(function (a) {
- if (a.classList.contains('ds-hide')) return;
+ document.querySelectorAll('.cat-band').forEach(function (band) {
+ var num = band.querySelector('.cat-head .num');
+ var h = band.querySelector('.cat-head h3');
+ var folder = (num ? num.textContent.trim() : '') + (h ? ' \u00B7 ' + h.textContent.trim() : '');
+ band.querySelectorAll('.dcard').forEach(function (a) {
  var name = a.querySelector('.dt');
- var sub = a.querySelector('.dk');
+ var sub = a.querySelector('.dd');
  if (!name) return;
  items.push({
  name: name.textContent.trim(),
  where: sub ? sub.textContent.trim() : '',
  folder: folder,
- live: a.classList.contains('rt-live'),
+ live: true,
  anchor: a
  });
  });
@@ -708,18 +602,20 @@
 <script>
 (function () {
  function clamp() {
- document.querySelectorAll('.cat-scroll').forEach(function (ul) {
+ document.querySelectorAll('.rt-files').forEach(function (ul) {
+ var sp = ul.querySelector('.ds-spacer');
+ if (!sp) { sp = document.createElement('li'); sp.className = 'ds-spacer'; ul.appendChild(sp); }
  ul.style.maxHeight = 'none';
- var cards = Array.prototype.filter.call(ul.querySelectorAll('.dcard'), function (c) {
- return !c.classList.contains('ds-hide');
+ var lis = Array.prototype.filter.call(ul.querySelectorAll('li'), function (li) {
+ return !li.classList.contains('ds-spacer') && !li.classList.contains('ds-empty') && !li.classList.contains('ds-hide');
  });
  var h;
- if (cards.length > 2) {
- h = cards[2].offsetTop - cards[0].offsetTop + 10; /* two cards plus a sliver of the third */
+ if (lis.length > 4) {
+ h = lis[4].offsetTop - lis[0].offsetTop + 16; /* four rows plus the top sliver of the fifth */
  } else {
- h = ul.scrollHeight;
+ h = ul.scrollHeight - 18; /* full content; spacer leaves a hint of overflow */
  }
- ul.style.maxHeight = Math.max(h, 80) + 'px';
+ ul.style.maxHeight = h + 'px';
  });
  }
  window.reclampLists = clamp;
@@ -791,6 +687,11 @@
 })();
 </script>
 
-
+<script>
+(function(){var q=document.getElementById('docSearch');if(!q)return;
+q.addEventListener('input',function(){var v=this.value.trim().toLowerCase();
+document.querySelectorAll('.dcard').forEach(function(c){c.classList.toggle('hide', v && c.getAttribute('data-t').indexOf(v)<0);});
+document.querySelectorAll('.cat-band').forEach(function(b){var any=b.querySelectorAll('.dcard:not(.hide)').length;b.classList.toggle('hide',v && any===0);});});})();
+</script>
 </body>
 </html>
