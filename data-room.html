@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inside the Data Room, 4orm Finance</title>
+<meta name="description" content="The 4orm Finance data room, member access. Pitch, market, product, team, financials, regulatory positioning, partnerships, corporate structure, fundraise." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css?v=4" />
+<style>
+ /* =====================================================================
+ DATA ROOM, MEMBER VIEW
+ Same template as the landing page; bullets become clickable PDF rows.
+ ===================================================================== */
+
+ /* ----- COMPACT BLACK TOP NAV (matches landing) ----- */
+ .nav { background: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 1px solid #E3E9F2; overflow: visible; }
+ /* match the 1200px nav width used on Path to Revenue / Visual Data
+ (base styles.css stretches .nav-inner to 1560px, which threw the
+ logo left and the sign-out chip right on wide screens) */
+ :root { --maxw: 1280px; } /* data room: document rows/boxes a touch wider */
+ .nav-inner { max-width: var(--maxw); padding: 3px 28px; min-height: 46px; overflow: visible; }
+ .brand { color: #142036; position: relative; z-index: 5; }
+ .brand:hover { color: #142036; }
+ /* Logo 3× the original 34px; nav bar height stays at 56px (logo overflows visually). */
+ .brand-logo { height: 94px; margin-top: -18px; margin-bottom: -18px; transform: translateY(6px); }
+ @media (max-width: 760px){ .brand-logo { height: 76px; margin-top: -12px; margin-bottom: -12px; transform: translateY(4px); } }
+ .mh-pill .ps-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#E7B008; margin-right:8px; vertical-align:middle; animation:ps-blink 1.4s ease-in-out infinite; }
+ @keyframes ps-blink { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(231,176,8,.55);} 50%{opacity:.4;box-shadow:0 0 0 6px rgba(231,176,8,0);} }
+ .nav-links { display: flex; align-items: center; gap: 40px; margin-left: auto; flex-wrap: nowrap; width: auto; }
+ .nav-links a {
+ color: #46556E;
+ font-size: .95rem; font-weight: 600;
+ padding: 7px 11px;
+ white-space: nowrap; flex-shrink: 0;
+ }
+ .nav-links a:hover { background: #EAF1FE; color: #142036; }
+ .nav-links a.nav-auth {
+ background: #000; color: #fff; border-color: #000;
+ font-size: .95rem; padding: 7px 16px;
+ }
+ .nav-links a.nav-auth:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+ /* signed-in chip in the nav (replaces the black Sign out button) */
+ .nav-signed { display: inline-flex; align-items: center; gap: 11px; padding: 7px 15px; border-radius: 99px; background: rgba(123,227,176,.16); border: 1px solid rgba(14,138,95,.35); color: #0E8A5F; font-size: .82rem; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+ .nav-signed .dot { width: 7px; height: 7px; border-radius: 50%; background: #19B57E; box-shadow: 0 0 0 0 rgba(25,181,126,.55); animation: signed-pulse 2s ease-in-out infinite; }
+ .nav-links .nav-signed a { color: #142036; text-decoration: none; border-left: 1px solid rgba(14,138,95,.3); padding: 0 0 0 12px; border-radius: 0; font-weight: 700; font-size: .82rem; }
+ .nav-links .nav-signed a:hover { background: none; color: var(--brand); }
+
+
+ /* ----- HERO ----- */
+ .meth-hero { background: linear-gradient(180deg, #1F3CA8 0%, #15233F 18%, #0B1220 100%); color:#fff; padding: 54px 0 40px; position:relative; overflow:hidden; }
+ .meth-hero::before { content:''; position:absolute; top:-30%; right:-12%; width:60vw; height:60vw; max-width:780px; max-height:780px; background: radial-gradient(circle, rgba(247,196,102,.18) 0%, transparent 60%); pointer-events:none; }
+ .meth-hero::after { content:''; position:absolute; bottom:-30%; left:-10%; width:50vw; height:50vw; max-width:640px; max-height:640px; background: radial-gradient(circle, rgba(46,107,242,.25) 0%, transparent 60%); pointer-events:none; }
+ .meth-hero-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; position:relative; z-index:1; }
+ .meth-hero-eyebrow { font-size:.76rem; text-transform:uppercase; letter-spacing:.18em; color:#FFD9A8; font-weight:800; margin-bottom: 10px; display:inline-flex; align-items:center; gap:10px; }
+ .meth-hero-eyebrow::before { content:''; width:32px; height:2px; background:#FFD9A8; }
+ .meth-hero h1 { color:#fff; margin: 0 0 14px; font-size: 4.8rem; line-height:1.05; letter-spacing:-.02em; max-width: 18em; }
+ @media (max-width: 760px) { .meth-hero h1 { font-size: 2.8rem; } }
+ .meth-hero h1 .accent { color:#FFD9A8; }
+ .meth-hero p.lead { color: rgba(255,255,255,.84); font-size: 1.05rem; line-height: 1.55; max-width: 54em; margin: 0 0 22px; }
+ .meth-hero p.lead b { color: #FFD9A8; }
+ .mh-pills { display:flex; gap:8px; flex-wrap:wrap; margin-bottom: 28px; }
+ .mh-pill { display:inline-flex; align-items:center; gap:6px; padding:6px 12px; border-radius:99px; font-size:.78rem; font-weight:700;
+ background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.20); color: rgba(255,255,255,.88); }
+ .mh-pill.ca { color:#7BE3B0; background:rgba(123,227,176,.10); border-color: rgba(123,227,176,.35); }
+ .mh-pill.global { color:#9AB6FF; background:rgba(154,182,255,.10); border-color: rgba(154,182,255,.35); }
+
+ /* Same doubled-height hero boxes as landing */
+ .mh-stats { display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 6px; }
+ @media (max-width: 980px){ .mh-stats { grid-template-columns: 1fr 1fr; } }
+ @media (max-width: 520px){ .mh-stats { grid-template-columns: 1fr; } }
+ .mh-stat {
+ background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 14px;
+ padding: 0 0 18px; position:relative; overflow:hidden;
+ transition: transform .25s, background .25s, border-color .25s;
+ display: flex; flex-direction: column; gap: 4px;
+ min-height: 340px;
+ text-decoration: none; color: inherit;
+ }
+ .mh-stat:hover { transform: translateY(-3px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.28); }
+ .mh-stat::before { content:''; position:absolute; top:0; left:0; right:0; height: 3px; background: var(--mh-c, #2E6BF2); z-index: 2; }
+ .mh-stat.c1 { --mh-c: #FFD9A8; }
+ .mh-stat.c2 { --mh-c: #2E6BF2; }
+ .mh-stat.c3 { --mh-c: #7BE3B0; }
+ .mh-stat.c4 { --mh-c: #C8B0EF; }
+ .mh-stat-thumb {
+ height: 160px; width: 100%;
+ background-color: rgba(255,255,255,.03);
+ background-size: cover; background-position: top center; background-repeat: no-repeat;
+ border-bottom: 1px solid rgba(255,255,255,.10);
+ position: relative;
+ }
+ /* KCS hero is wider than the card - fit full width so both "Where" and the KCS logo are visible */
+ .mh-stat.c1 .mh-stat-thumb {
+ background-size: 100% auto !important;
+ background-position: top center !important;
+ }
+ .mh-stat-thumb::after {
+ content: 'Thumbnail'; position: absolute; inset: 0;
+ display: grid; place-items: center;
+ font-family: var(--font-mono); font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+ color: rgba(255,255,255,.22);
+ background-image: linear-gradient(135deg, transparent 48%, rgba(255,255,255,.05) 48%, rgba(255,255,255,.05) 52%, transparent 52%);
+ background-size: 14px 14px;
+ }
+ .mh-stat .mhs-body { padding: 16px 20px 0; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+ .mh-stat.c1 .mh-stat-thumb { background-image: url('assets/thumb-kcs-capital.png'); background-color: rgba(255,217,168,.06); }
+ .mh-stat.c2 .mh-stat-thumb { background-image: url('assets/thumb-4orm-finance.png'); background-color: rgba(46,107,242,.10); }
+ .mh-stat.c3 .mh-stat-thumb { background-image: url(''); background-color: rgba(123,227,176,.08); }
+ .mh-stat.c4 .mh-stat-thumb { background-image: url(''); background-color: rgba(200,176,239,.08); }
+ .mh-stat.c1 .mh-stat-thumb::after,
+ .mh-stat.c2 .mh-stat-thumb::after,
+ .mh-stat.c3 .mh-stat-thumb::after,
+ .mh-stat.c4 .mh-stat-thumb::after { display: none; }
+ .mh-stat .mhs-lab { font-size:.66rem; text-transform:uppercase; letter-spacing:.12em; color: rgba(255,255,255,.62); font-weight: 800; margin-bottom: 4px; }
+ .mh-stat .mhs-n { font-size: 1.55rem; font-weight: 800; color: #fff; letter-spacing: -.01em; line-height: 1.1; }
+ .mh-stat.c1 .mhs-n { color: #FFD9A8; }
+ .mh-stat.c2 .mhs-n { color: #9AB6FF; }
+ .mh-stat.c3 .mhs-n { color: #7BE3B0; }
+ .mh-stat.c4 .mhs-n { color: #C8B0EF; }
+ .mh-stat .mhs-sub { font-size:.82rem; color: rgba(255,255,255,.72); line-height: 1.5; }
+ /* link sits ABOVE the thumbnail so it's the first thing seen */
+ .mh-stat .mhs-link {
+ padding: 14px 20px 11px;
+ font-family: var(--font-mono); font-size:.92rem; font-weight: 800; letter-spacing: .04em;
+ color: var(--mh-c); display: inline-flex; align-items: center; gap: 6px; word-break: break-all;
+ }
+
+ /* Signed-in bar */
+ .signed-bar { display: inline-flex; align-items: center; gap: 14px; padding: 8px 16px; border-radius: 99px; background: rgba(123,227,176,.10); border: 1px solid rgba(123,227,176,.35); color: #7BE3B0; font-size:.78rem; font-weight: 700; margin-bottom: 18px; }
+ .signed-bar .dot { width: 7px; height: 7px; border-radius: 50%; background: #7BE3B0; box-shadow: 0 0 0 0 rgba(123,227,176,.6); animation: signed-pulse 2s ease-in-out infinite; }
+ @keyframes signed-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(123,227,176,.6); } 50% { box-shadow: 0 0 0 8px rgba(123,227,176,0); } }
+ .signed-bar a { color: rgba(255,255,255,.78); text-decoration: none; border-left: 1px solid rgba(123,227,176,.35); padding-left: 14px; font-weight: 700; transition: color .15s; }
+ .signed-bar a:hover { color: #fff; }
+
+ /* ----- STICKY TOC ----- */
+ .meth-toc-band { background: rgba(11,18,32,.92); border-bottom: 1px solid rgba(255,255,255,.08); position: sticky; top: 0; z-index: 40; backdrop-filter: blur(10px); }
+ .meth-toc { max-width: var(--maxw); margin: 0 auto; padding: 12px 28px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+ .meth-toc-label { font-size:.64rem; text-transform:uppercase; letter-spacing:.14em; color: rgba(255,255,255,.45); font-weight: 800; margin-right: 8px; flex: none; }
+ .meth-toc a { font-size:.78rem; font-weight: 700; color: rgba(255,255,255,.72); padding: 7px 11px; border-radius: 8px; text-decoration: none; transition: background .15s, color .15s; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+ .meth-toc a .toc-n { font-family: var(--font-mono); font-size:.66rem; color: rgba(255,255,255,.45); font-weight: 800; }
+ .meth-toc a:hover { background: rgba(255,255,255,.08); color: #fff; }
+ .meth-toc a:hover .toc-n { color: #FFD9A8; }
+
+ /* ----- SECTIONS ----- */
+ .meth-sec { padding: 70px 0; position: relative; overflow: hidden; }
+ .meth-sec.dark { background: linear-gradient(180deg, #0B1220 0%, #15233F 100%); color: #fff; }
+ .meth-sec.dark.alt { background: linear-gradient(180deg, #15233F 0%, #1B2B52 100%); }
+ .meth-sec-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+ .ms-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 32px; flex-wrap: wrap; }
+ .ms-num { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; font-family: var(--font-mono); font-weight: 800; font-size: 1.1rem; letter-spacing: .04em; flex: none; background: rgba(255,217,168,.14); border: 1px solid rgba(255,217,168,.42); color: #FFD9A8; }
+ .ms-headtext { flex: 1; min-width: 0; }
+ .ms-eyebrow { font-size: .72rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; margin-bottom: 4px; color: #9AB6FF; }
+ .ms-head h2 { margin: 0 0 4px; font-size: 1.7rem; letter-spacing: -.01em; color: #fff; }
+ .ms-head h2 .h-key { color: #FFD9A8; }
+ .ms-tag { font-size: .82rem; color: rgba(255,255,255,.65); }
+
+ /* ----- VISUAL FRAMES ----- */
+ .ms-viz { border-radius: 18px; padding: 30px 32px; margin-bottom: 30px; position: relative; overflow: hidden; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); }
+ .ms-viz-title { font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; margin-bottom: 14px; color: rgba(255,255,255,.55); }
+
+ /* ----- RACE-TRACK 2-UP CARDS ----- */
+ .race-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+ @media (max-width: 760px){ .race-mini { grid-template-columns: 1fr; } }
+ .race-track { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 22px 24px; }
+ .race-track.bad { border-left: 4px solid #9AB6FF; }
+ .race-track.good { border-left: 4px solid #7BE3B0; }
+ .race-track .rt-lab { font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+ .race-track .rt-tag { margin-bottom: 9px; font-size: .95rem; color: rgba(255,255,255,.55); font-weight: 500; letter-spacing: .01em; }
+ .race-track.bad .rt-lab { color: #9AB6FF; }
+ .race-track.good .rt-lab { color: #7BE3B0; }
+ .race-track .rt-h { font-size: 1.1rem; font-weight: 800; color: #fff; margin: 6px 0 16px; }
+ .race-track .rt-pill { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 18px; border-radius: 99px; font-family: var(--font-mono); font-weight: 800; margin: 8px 0 16px; }
+ .race-track.bad .rt-pill { background: rgba(154,182,255,.16); color: #9AB6FF; border: 1px solid rgba(154,182,255,.42); }
+ .race-track.good .rt-pill { background: rgba(123,227,176,.18); color: #7BE3B0; border: 1px solid rgba(123,227,176,.42); }
+ .race-track .rt-pill .rt-pill-n { font-size: 1.6rem; line-height: 1; }
+ .race-track .rt-pill .rt-pill-u { font-size: 1rem; color: #fff; letter-spacing: .02em; }
+ .race-coins { position: relative; height: 6px; background: rgba(255,255,255,.10); border-radius: 99px; margin-top: 18px; overflow: hidden; }
+ .race-coins-fill { height: 100%; border-radius: 99px; }
+ .race-track.bad .race-coins-fill { width: 100%; background: linear-gradient(90deg, #9AB6FF, #2E6BF2); animation: race-pulse 2.4s ease-in-out infinite; }
+ .race-track.good .race-coins-fill { width: 100%; background: linear-gradient(90deg, #7BE3B0, #0E8A5F); animation: race-pulse 2.4s ease-in-out infinite; }
+ @keyframes race-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+ .race-vs { display: flex; align-items: center; justify-content: center; padding: 16px 0 8px; }
+ .race-vs-lab { background: linear-gradient(135deg, #FFD9A8 0%, #C49A3A 100%); color: #0B1220; padding: 6px 18px; border-radius: 99px; font-weight: 800; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+
+ /* ----- FILE ROWS (replace bullets) ----- */
+ .rt-files {
+ list-style: none; margin: 16px 0 0; padding: 0 6px 0 0;
+ position: relative; overflow-y: auto;
+ scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color .15s;
+ -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent);
+ mask-image: linear-gradient(180deg, #000 88%, transparent);
+ }
+ .rt-files::-webkit-scrollbar { width: 6px; }
+ .rt-files::-webkit-scrollbar-track { background: transparent; border-radius: 99px; }
+ .rt-files::-webkit-scrollbar-thumb { background: transparent; border-radius: 99px; }
+ .race-track:hover .rt-files::-webkit-scrollbar-thumb { background: rgba(255,255,255,.30); }
+ .race-track:hover .rt-files::-webkit-scrollbar-track { background: rgba(255,255,255,.06); }
+ .race-track:hover .rt-files { scrollbar-color: rgba(255,255,255,.35) rgba(255,255,255,.06); }
+ .rt-files li { padding: 0; border-top: 1px dashed rgba(255,255,255,.10); }
+ .rt-files li:first-child { border-top: none; }
+ .rt-files a {
+ display: grid; grid-template-columns: 1fr auto;
+ align-items: center; gap: 10px;
+ padding: 9px 8px; margin: 0 -8px;
+ color: rgba(255,255,255,.86); text-decoration: none;
+ border-radius: 8px; transition: background .15s, transform .15s;
+ }
+ .rt-files a:hover { background: rgba(255,255,255,.06); }
+ .rt-files a:hover .rt-go { transform: translateX(3px); color: #fff; }
+ .rt-file-ico {
+ width: 28px; height: 28px; border-radius: 6px;
+ display: grid; place-items: center;
+ font-family: var(--font-mono); font-size: .56rem; font-weight: 800; letter-spacing: .04em;
+ background: rgba(154,182,255,.18); color: #9AB6FF; border: 1px solid rgba(154,182,255,.42);
+ }
+ .race-track.good .rt-files .rt-file-ico { background: rgba(123,227,176,.18); color: #7BE3B0; border-color: rgba(123,227,176,.42); }
+ .rt-file-ico.docx { background: rgba(255,217,168,.14); color: #FFD9A8; border-color: rgba(255,217,168,.42); }
+ .rt-file-ico.xlsx { background: rgba(255,217,168,.14); color: #FFD9A8; border-color: rgba(255,217,168,.42); }
+ .rt-file-meta { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+ .rt-file-name { font-size: .86rem; font-weight: 700; color: #fff; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ .rt-file-sub { font-size: .68rem; color: rgba(255,255,255,.5); font-family: var(--font-mono); letter-spacing: .04em; }
+ .rt-go { font-size: 1rem; color: rgba(255,255,255,.5); transition: transform .15s, color .15s; }
+
+ /* Placeholder rows: visible but inert until the real document lands */
+ .rt-ph { opacity: .38; filter: saturate(.4); }
+ .rt-ph a { pointer-events: none; cursor: default; }
+
+ /* ----- DOCUMENT VIEWER (centered dialog) ----- */
+ .doc-modal { position: fixed; inset: 0; z-index: 2000; background: rgba(4,8,18,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 3vh 3vw; }
+ .doc-modal.open { display: flex; }
+ .doc-modal.wide { padding: 2vh 1vw; }
+ .doc-modal.wide .dm-dialog { width: min(1680px, 100%); height: min(96vh, 100%); }
+ .dm-dialog { width: min(1100px, 100%); height: min(92vh, 100%); display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.14); }
+ .dm-bar { background: #000; border-bottom: 1px solid rgba(255,255,255,.12); min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 6px 20px; flex-shrink: 0; }
+ .dm-title { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .1em; color: rgba(255,255,255,.85); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ .dm-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+ .dm-dl { background: #fff; color: #000; font-size: .88rem; font-weight: 700; padding: 7px 16px; border-radius: 8px; text-decoration: none; border: 1px solid #fff; transition: background .15s, color .15s; }
+ .dm-dl:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+ .dm-x { background: rgba(255,255,255,.10); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; font-size: 1.05rem; line-height: 1; padding: 8px 13px; cursor: pointer; transition: background .15s; }
+ .dm-x:hover { background: rgba(255,255,255,.22); }
+ .doc-modal iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+
+ .founders-cta { text-align: center; margin-top: 18px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+ .founders-cta .ctas { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+ .founders-cta a { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.35); border-radius: 99px; padding: 9px 22px; font-weight: 700; font-size: .85rem; text-decoration: none; transition: background .15s, border-color .15s, color .15s; }
+ .founders-cta a:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
+ .founders-cta a.invest { background: rgba(231,199,108,.12); border-color: rgba(231,199,108,.5); color: #E7C76C; }
+ .founders-cta a.invest:hover { background: var(--gold, #C49A3A); border-color: var(--gold, #C49A3A); color: #142036; }
+ .founders-cta .routing { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .06em; color: rgba(255,255,255,.5); line-height: 1.6; max-width: 40em; }
+ .founders-cta .routing b { color: rgba(255,255,255,.78); }
+
+
+ /* compact footer */
+ .foot-contact .wrap { padding: 10px 28px; font-size: .85rem; }
+ .footer { margin-top: 0; }
+ .footer .wrap { padding-top: 12px; padding-bottom: 16px; }
+
+ /* ----- DOCUMENT SEARCH ----- */
+ .doc-search { display: flex; align-items: center; gap: 14px; margin: -6px 0 26px; }
+ .doc-search input {
+ flex: 0 1 520px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18);
+ border-radius: 10px; padding: 11px 16px; color: #fff; font-size: .92rem; font-family: var(--font-sans);
+ outline: none; transition: border-color .15s, background .15s;
+ }
+ .doc-search input::placeholder { color: rgba(255,255,255,.45); font-family: var(--font-mono); font-size: .8rem; letter-spacing: .06em; }
+ .doc-search input:focus { border-color: var(--brand); background: rgba(255,255,255,.09); }
+ .ds-count { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em; color: rgba(255,255,255,.5); white-space: nowrap; }
+ .rt-files li.ds-hide { display: none; }
+ .rt-files li.ds-spacer { height: 18px; border-top: none; pointer-events: none; }
+ .rt-files li.ds-empty { padding: 12px 0; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; color: rgba(255,255,255,.35); border-top: none; }
+
+ /* ----- FILE LIST PILL + INDEX MODAL ----- */
+ .filelist-pill { margin-left: auto; background: linear-gradient(135deg, #FFD9A8 0%, #C49A3A 100%); color: #0B1220; border: none; border-radius: 99px; padding: 10px 20px; font-weight: 800; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+ .filelist-pill:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(196,154,58,.35); }
+ .fl-modal { position: fixed; inset: 0; z-index: 2100; background: rgba(4,8,18,.78); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 4vh 4vw; }
+ .fl-modal.open { display: flex; }
+ .fl-dialog { width: min(980px, 100%); height: min(86vh, 100%); display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #0E1626; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+ .fl-bar { background: #000; border-bottom: 1px solid rgba(255,255,255,.12); min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 6px 20px; flex-shrink: 0; }
+ .fl-title { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .12em; color: rgba(255,255,255,.85); text-transform: uppercase; }
+ .fl-x { background: rgba(255,255,255,.10); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; font-size: 1.05rem; line-height: 1; padding: 8px 13px; cursor: pointer; }
+ .fl-x:hover { background: rgba(255,255,255,.22); }
+ .fl-body { overflow-y: auto; padding: 0 20px 20px; scrollbar-width: thin; scrollbar-color: transparent transparent; transition: scrollbar-color .15s; }
+ .fl-body::-webkit-scrollbar { width: 6px; }
+ .fl-body::-webkit-scrollbar-thumb { background: rgba(154,182,255,.45); border-radius: 99px; }
+ table.fl { width: 100%; border-collapse: collapse; }
+ table.fl th { position: sticky; top: 0; background: #0E1626; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: #9AB6FF; text-align: left; padding: 16px 12px 10px 0; border-bottom: 1px solid rgba(255,255,255,.25); }
+ table.fl td { font-size: .85rem; color: rgba(255,255,255,.85); padding: 10px 12px 10px 0; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+ table.fl td.name { font-weight: 700; color: #fff; }
+ table.fl td.loc { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em; color: rgba(255,255,255,.55); }
+ table.fl td.loc .live { color: #7BE3B0; }
+ table.fl tr.fl-live { cursor: pointer; }
+ table.fl tr.fl-live:hover td { background: rgba(255,255,255,.05); }
+ table.fl tr.fl-live:hover td.name { color: #9AB6FF; }
+
+/* --- folder-scroll document library (dark interior, locked palette) --- */
+.cat-band{margin:30px 0 6px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);}
+.cat-band:first-of-type{border-top:none;padding-top:4px;}
+.cat-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px;}
+.cat-head .num{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;color:#7FA8FF;font-weight:700;}
+.cat-head h3{color:#fff;font-size:1.18rem;letter-spacing:-.01em;}
+.cat-head .n{margin-left:auto;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;color:rgba(255,255,255,.42);text-transform:uppercase;}
+.cat-desc{color:rgba(255,255,255,.55);font-size:.86rem;margin:0 0 14px;max-width:60ch;line-height:1.5;}
+.cat-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(236px,1fr);gap:14px;overflow-x:auto;padding:2px 2px 16px;scroll-snap-type:x proximity;}
+.cat-scroll::-webkit-scrollbar{height:8px;}
+.cat-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border-radius:99px;}
+.dcard{scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;min-height:158px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 16px 14px;text-decoration:none;transition:transform .15s,border-color .15s,background .15s;}
+.dcard:hover{border-color:#2E6BF2;background:rgba(46,107,242,.12);transform:translateY(-2px);}
+.dcard .dk{font-family:var(--font-mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:#7FA8FF;font-weight:700;}
+.dcard.spread .dk{color:#E7C76C;}
+.dcard .dt{color:#fff;font-weight:700;font-size:1.02rem;line-height:1.25;letter-spacing:-.01em;}
+.dcard .dd{color:rgba(255,255,255,.6);font-size:.82rem;line-height:1.46;flex:1;}
+.dcard .dgo{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#7FA8FF;font-weight:700;}
+.cat-band.hide,.dcard.hide{display:none;}
+
+
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+</style>
+<link rel="stylesheet" href="assets/compliance.css" />
+</head>
+<body>
+<script src="assets/news-ticker.js" defer></script>
+
+
+
+<header class="nav">
+ <div class="nav-inner">
+ <a class="brand" href="data-room.html"><img class="brand-logo" src="assets/4orm-logo.png" alt="4orm Finance" /></a>
+ <nav class="nav-links">
+ <a href="#pitch-market">Documents</a>
+ <a href="roadmap.html">Path to Revenue</a>
+ <a href="visual-data.html">Visual Data</a>
+ <span class="nav-signed"><span class="dot"></span>Signed in &middot; Member access<a href="index.html">Sign out</a></span>
+ </nav>
+ </div>
+</header>
+<div id="news-anchor"></div>
+
+<!-- ============================================ HERO -->
+<section class="meth-hero">
+ <div class="meth-hero-inner">
+ <div class="meth-hero-eyebrow">Welcome back</div>
+ <h1><span class="accent">Data Room.</span></h1>
+ <p class="lead">Member access to the current 4orm Finance materials. Start with the overview and the one-pagers, see the numbers, then meet the team. Each document opens to a short plain-English summary, with the full document one click behind it. The room is view-only.</p>
+ <div class="mh-pills">
+ <span class="mh-pill ca">&#10003; Approved member</span>
+ <span class="mh-pill global">Confidential</span>
+ <span class="mh-pill"><span class="ps-dot"></span>$3M Pre-Seed &middot; Opens August 1st</span>
+ </div>
+
+ <div class="mh-stats">
+ <a href="https://kcs-capital.com" target="_blank" rel="noopener" class="mh-stat c1">
+ <div class="mhs-link">kcs-capital.com &#8599;</div>
+ <div class="mh-stat-thumb"></div>
+ <div class="mhs-body">
+ <div class="mhs-n">KCS Capital</div>
+ <div class="mhs-sub">Independent technology and research firm developing the 4orm Finance infrastructure.</div>
+ </div>
+ </a>
+ <a href="https://4ormfinance.com" target="_blank" rel="noopener" class="mh-stat c2">
+ <div class="mhs-link">4ormfinance.com &#8599;</div>
+ <div class="mh-stat-thumb"></div>
+ <div class="mhs-body">
+ <div class="mhs-n">4orm Finance</div>
+ <div class="mhs-sub">The daily proof a business owes when it holds money that belongs to other people.</div>
+ </div>
+ </a>
+ 
+ 
+ </div>
+ </div>
+</section>
+
+
+<!-- ============================================ STICKY TOC -->
+<div class="meth-toc-band">
+ <div class="meth-toc">
+ <span class="meth-toc-label">Open a category</span>
+ <a href="#pitch-market"><span class="toc-n">01</span> Pitch &amp; market</a>
+ <a href="#product-regulatory"><span class="toc-n">02</span> Product &amp; regulatory</a>
+ <a href="#financials-team"><span class="toc-n">03</span> Financials &amp; team</a>
+ <a href="#partnership-corporate"><span class="toc-n">04</span> Partnership &amp; corporate</a>
+ <a href="#fundraise-qa"><span class="toc-n">05</span> Fundraise &amp; Q&amp;A</a>
+ </div>
+</div>
+
+<!-- ============================================ DOCUMENTS (DARK) -->
+<section class="meth-sec dark">
+ <div class="meth-sec-inner">
+ <div class="ms-head">
+ <div class="ms-num">01</div>
+ <div class="ms-headtext">
+ <div class="ms-eyebrow">Documents</div>
+ <h2>The full picture, <span class="h-key">organized for diligence.</span></h2>
+ <div class="ms-tag">Click any file to open. Search across every category, or browse folder by folder. Updated regularly; all documents are confidential to the recipient.</div>
+ </div>
+ </div>
+
+ <div class="doc-search">
+ <input id="docSearch" type="search" placeholder="SEARCH DOCUMENTS&hellip;" autocomplete="off" />
+ <span class="ds-count" id="dsCount"></span>
+ <button class="filelist-pill" id="fileListBtn">Press for file list</button>
+ </div>
+
+ <div class="ms-viz">
+<div class="ms-viz-title">Three folders. Open any document for a short summary, with the full document one click behind it.</div>
+<div class="cat-band" data-cat="start"><div class="cat-head"><span class="num">01</span><h3>Start Here</h3><span class="n">5 documents</span></div><div class="cat-desc">The overview, the one-pagers, and the full business plan. Begin here.</div><div class="cat-grid"><a class="dcard" href="documents/what-we-do.html" data-t="what we do one engine, four ways to sell it start here"><span class="dk">One engine, four ways to sell it</span><span class="dt">What We Do</span><span class="dd">4orm builds the record of what happened when a person makes a big financial decision, such as a mortgage, a car loan or an investment.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-investor.html" data-t="one page, for the investor a dated duty, a named buyer list, one engine underneath start here"><span class="dk">A dated duty, a named buyer list, one engine underneath</span><span class="dt">One Page, for the Investor</span><span class="dd">The way in is a legal duty that is already in force, and the buyers already sit on a public list.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-business.html" data-t="one page, for a business prove the work was done, from the systems you already run start here"><span class="dk">Prove the work was done, from the systems you already run</span><span class="dt">One Page, for a Business</span><span class="dd">Your people carry the duty and your firm carries the liability.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/one-pager-consumer.html" data-t="one page, for people know what you are agreeing to, before you agree to it start here"><span class="dk">Know what you are agreeing to, before you agree to it</span><span class="dt">One Page, for People</span><span class="dd">A mortgage, a car loan or an investment is decided in a few conversations, and then you live with it for years.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/business-plan.html" data-t="the business plan infrastructure for a duty that already exists start here"><span class="dk">Infrastructure for a duty that already exists</span><span class="dt">The Business Plan</span><span class="dd">4orm sells one engine four ways: a free check for everyday people, a paid seat for professionals, accounts for organizations, and a safeguarding record for payment firms that must meet a new federal duty.</span><span class="dgo">Open &#8599;</span></a></div></div>
+<div class="cat-band" data-cat="numbers"><div class="cat-head"><span class="num">02</span><h3>The Numbers</h3><span class="n">2 documents</span></div><div class="cat-desc">The full financial model and the pre-seed summary, calculated live.</div><div class="cat-grid"><a class="dcard spread" href="documents/pro-forma-v5.html" data-t="the full financial model the whole model the numbers"><span class="dk">The whole model</span><span class="dt">The Full Financial Model</span><span class="dd">Every number, every sheet, three cases side by side, calculated live.</span><span class="dgo">Open &#8599;</span></a><a class="dcard spread" href="documents/pre-seed-summary.html" data-t="the pre-seed, on five pages the raise the numbers"><span class="dk">The raise</span><span class="dt">The Pre-Seed, on Five Pages</span><span class="dd">The terms, where the money goes, the four year plan, and who must comply.</span><span class="dgo">Open &#8599;</span></a></div></div>
+<div class="cat-band" data-cat="team"><div class="cat-head"><span class="num">03</span><h3>The Team</h3><span class="n">2 documents</span></div><div class="cat-desc">The people building it and the partners behind them.</div><div class="cat-grid"><a class="dcard" href="documents/team-and-partners.html" data-t="the team and partners compliance software is bought on credibility first the team"><span class="dk">Compliance software is bought on credibility first</span><span class="dt">The Team and Partners</span><span class="dd">Two founders, a systems architect, a technology chief from the build partner, six advisors and a named engineering bench of ten people.</span><span class="dgo">Open &#8599;</span></a><a class="dcard" href="documents/team-at-a-glance.html" data-t="the team at a glance everybody, on one page the team"><span class="dk">Everybody, on one page</span><span class="dt">The Team at a Glance</span><span class="dd">Twelve seats at 4orm Finance, ten of them filled, plus the ten named engineers at the build partner underneath.</span><span class="dgo">Open &#8599;</span></a></div></div>
+</div>
+ <div class="race-vs"><span class="race-vs-lab">3 folders &middot; 9 documents &middot; member access</span></div>
+ <div class="founders-cta">
+ <div class="ctas">
+ <a class="invest" href="tel:+16048386060">Capital Markets &middot; 604-838-6060</a>
+ <a href="mailto:compliance@4ormfinance.com">Everything else &middot; email the founders &rarr;</a>
+ </div>
+ <div class="routing"><b>Capital markets and investment</b> inquiries go to Capital Markets, who coordinates diligence and arranges meetings with the CEO. <b>All other</b> inquiries reach the founders directly.</div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- ===== Quiet global contact line ===== -->
+<!-- ============================================ FAMILY FOOTER + LEGAL -->
+<section class="famfooter">
+ <div class="famfooter-in">
+ <div class="famfooter-head"><div><div class="famfooter-eye">4orm Finance</div><h3>One company, <span class="key">one job.</span></h3></div></div>
+ <div class="famfooter-grid">
+ <a href="https://4ormfinance.com" target="_blank" rel="noopener" class="famtile f1"><span class="lab">Company</span><span class="name">4orm Finance</span><span class="desc">The daily proof for regulated Canadian business that holds money belonging to other people.</span><span class="link">4ormfinance.com &#8599;</span></a>
+ <a href="https://kcs-capital.com" target="_blank" rel="noopener" class="famtile f5"><span class="lab">Developer</span><span class="name">KCS Capital</span><span class="desc">Independent technology and research firm.</span><span class="link">kcs-capital.com &#8599;</span></a>
+ </div>
+ <div class="legal-block">
+<h4>Important legal information</h4>
+<p><em>Accredited investors only.</em> The securities referenced on this website are offered only to accredited investors as defined in National Instrument 45-106. This is not an offer to sell or a solicitation of an offer to buy securities. No securities regulatory authority has assessed the merits of any securities described.</p>
+<p><em>Forward-looking statements.</em> This website contains forward-looking statements based on assumptions current as of the date stated and subject to material risks and uncertainties, including the receipt of required regulatory approvals. Actual results may differ materially.</p>
+<p><em>No affiliation.</em> 4orm Finance is not affiliated with the Bank of Canada or any federal or provincial regulator, and no regulator has reviewed, endorsed or approved 4orm Finance or any securities described. 4orm Finance will register with the federal financial-crime regulator as required before beginning any regulated activity.</p>
+ </div>
+ <div class="famfooter-legal">
+ <span>&copy; 2026 4orm Finance &middot; Calgary, AB &middot; compliance@4ormfinance.com</span>
+ <span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:compliance@4ormfinance.com">compliance@4ormfinance.com</a></span>
+ </div>
+ </div>
+</section>
+
+<div class="foot-contact">
+ <div class="wrap">
+ <strong>4orm Finance Data Room</strong> &middot; compliance@4ormfinance.com &middot; Calgary &middot; Vancouver &middot; Edmonton
+ </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+ <div class="wrap">
+ <span class="small">&copy; 2026 4orm Finance. All rights reserved. Confidential.</span>
+ <span class="small">
+ <a href="https://4ormfinance.com/privacy">Privacy</a> &middot;
+ <a href="https://4ormfinance.com/terms">Terms</a> &middot;
+ <a href="index.html">Sign out</a>
+ </span>
+ </div>
+</footer>
+
+<script src="assets/dataroom.js?v=4"></script>
+
+<!-- Full-screen document viewer -->
+<div class="doc-modal" id="docModal" role="dialog" aria-modal="true">
+ <div class="dm-dialog">
+ <div class="dm-bar">
+ <div class="dm-title" id="dmTitle"></div>
+ <div class="dm-actions">
+ <button class="dm-x" id="dmX" aria-label="Close document">&#10005;</button>
+ </div>
+ </div>
+ <iframe id="dmFrame" title="Document viewer"></iframe>
+ </div>
+</div>
+<script>
+(function () {
+ var modal = document.getElementById('docModal');
+ var frame = document.getElementById('dmFrame');
+ var title = document.getElementById('dmTitle');
+ function openDoc(a) {
+ try { sessionStorage.removeItem('x4xrefStack'); sessionStorage.removeItem('x4xrefRestore'); } catch (err) {}
+ frame.src = a.getAttribute('href');
+ title.textContent = a.getAttribute('data-title') || '';
+ modal.classList.toggle('wide', a.getAttribute('data-wide') === '1');
+ modal.classList.add('open');
+ document.body.style.overflow = 'hidden';
+ }
+ /* keep modal header + width in sync when the framed doc cross-navigates */
+ var WIDE = { '01.0': 1, '01.2': 1, '01.5': 1, '03.3': 1, '04.2': 1, '05.1': 1, '08.2': 1, '08.3': 1 };
+ window.addEventListener('message', function (e) {
+ if (!e.data || !e.data.x4title || !modal.classList.contains('open')) return;
+ title.textContent = e.data.x4title;
+ if (e.data.x4id) modal.classList.toggle('wide', !!WIDE[e.data.x4id]);
+ });
+ function closeDoc() {
+ modal.classList.remove('open');
+ frame.src = 'about:blank';
+ document.body.style.overflow = '';
+ }
+ document.querySelectorAll('a.rt-live').forEach(function (a) {
+ a.addEventListener('click', function (e) { e.preventDefault(); openDoc(a); });
+ });
+ document.getElementById('dmX').addEventListener('click', closeDoc);
+ modal.addEventListener('click', function (e) { if (e.target === modal) closeDoc(); });
+ document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) closeDoc(); });
+})();
+</script>
+
+<script>
+(function () {
+ var input = document.getElementById('docSearch');
+ var count = document.getElementById('dsCount');
+ if (!input) return;
+ var lists = Array.prototype.slice.call(document.querySelectorAll('.rt-files'));
+ var rows = Array.prototype.slice.call(document.querySelectorAll('.rt-files li'));
+ var total = rows.length;
+ count.textContent = total + ' DOCUMENTS';
+ function filter() {
+ var q = input.value.trim().toLowerCase();
+ var visible = 0;
+ rows.forEach(function (li) {
+ if (li.classList.contains('ds-empty')) return;
+ var hit = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+ li.classList.toggle('ds-hide', !hit);
+ if (hit) visible++;
+ });
+ lists.forEach(function (ul) {
+ var any = ul.querySelector('li:not(.ds-hide):not(.ds-empty)');
+ var empty = ul.querySelector('.ds-empty');
+ if (!any && q) {
+ if (!empty) {
+ empty = document.createElement('li');
+ empty.className = 'ds-empty';
+ empty.textContent = 'NO MATCHES IN THIS CATEGORY';
+ ul.appendChild(empty);
+ }
+ } else if (empty) {
+ empty.remove();
+ }
+ });
+ count.textContent = q ? (visible + ' MATCH' + (visible === 1 ? '' : 'ES')) : (total + ' DOCUMENTS');
+ }
+ input.addEventListener('input', function () { filter(); if (window.reclampLists) window.reclampLists(); });
+})();
+</script>
+
+<!-- Alphabetical file index -->
+<div class="fl-modal" id="flModal" role="dialog" aria-modal="true">
+ <div class="fl-dialog">
+ <div class="fl-bar">
+ <div class="fl-title">Complete file list &middot; A-Z</div>
+ <button class="fl-x" id="flX" aria-label="Close file list">&#10005;</button>
+ </div>
+ <div class="fl-body">
+ <table class="fl">
+ <thead><tr><th style="width:42%">File name</th><th style="width:30%">Where it is</th><th>Folder</th></tr></thead>
+ <tbody id="flRows"></tbody>
+ </table>
+ </div>
+ </div>
+</div>
+<script>
+(function () {
+ var modal = document.getElementById('flModal');
+ var btn = document.getElementById('fileListBtn');
+ var rowsEl = document.getElementById('flRows');
+ if (!btn) return;
+ function build() {
+ var items = [];
+ document.querySelectorAll('.race-track').forEach(function (card) {
+ var pn = card.querySelector('.rt-pill-n');
+ var h = card.querySelector('.rt-pill-u');
+ var folder = (pn ? pn.textContent.trim() : '') + (h ? ' \u00B7 ' + h.textContent.trim() : '');
+ card.querySelectorAll('.rt-files li').forEach(function (li) {
+ if (li.classList.contains('ds-empty')) return;
+ var a = li.querySelector('a');
+ var name = li.querySelector('.rt-file-name');
+ var sub = li.querySelector('.rt-file-sub');
+ if (!a || !name) return;
+ items.push({
+ name: name.textContent.trim(),
+ where: sub ? sub.textContent.trim() : '',
+ folder: folder,
+ live: a.classList.contains('rt-live'),
+ anchor: a
+ });
+ });
+ });
+ items.sort(function (x, y) { return x.name.toLowerCase().localeCompare(y.name.toLowerCase()); });
+ rowsEl.innerHTML = '';
+ items.forEach(function (it) {
+ var tr = document.createElement('tr');
+ var where = it.live ? '<span class="live">LIVE</span> \u00B7 opens in the viewer' : 'Placeholder \u00B7 coming soon';
+ tr.innerHTML = '<td class="name">' + it.name + '</td><td class="loc">' + where + '</td><td class="loc">' + it.folder + '</td>';
+ if (it.live) {
+ tr.className = 'fl-live';
+ tr.addEventListener('click', function () { close(); it.anchor.click(); });
+ }
+ rowsEl.appendChild(tr);
+ });
+ }
+ function open() { build(); modal.classList.add('open'); document.body.style.overflow = 'hidden'; }
+ function close() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+ btn.addEventListener('click', open);
+ document.getElementById('flX').addEventListener('click', close);
+ modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+ document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+})();
+</script>
+
+<script>
+(function () {
+ function clamp() {
+ document.querySelectorAll('.rt-files').forEach(function (ul) {
+ var sp = ul.querySelector('.ds-spacer');
+ if (!sp) { sp = document.createElement('li'); sp.className = 'ds-spacer'; ul.appendChild(sp); }
+ ul.style.maxHeight = 'none';
+ var lis = Array.prototype.filter.call(ul.querySelectorAll('li'), function (li) {
+ return !li.classList.contains('ds-spacer') && !li.classList.contains('ds-empty') && !li.classList.contains('ds-hide');
+ });
+ var h;
+ if (lis.length > 4) {
+ h = lis[4].offsetTop - lis[0].offsetTop + 16; /* four rows plus the top sliver of the fifth */
+ } else {
+ h = ul.scrollHeight - 18; /* full content; spacer leaves a hint of overflow */
+ }
+ ul.style.maxHeight = h + 'px';
+ });
+ }
+ window.reclampLists = clamp;
+ clamp();
+ window.addEventListener('resize', clamp);
+ window.addEventListener('load', clamp);
+
+})();
+</script>
+<!-- ============================================ COOKIE CONSENT (Quebec Law 25) -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+<div class="cookie-banner-in">
+<div class="cookie-text"><strong>Cookies and tracking.</strong> 4orm Finance uses cookies and similar technologies. Essential cookies are required for the site to function. Analytics and marketing cookies are off by default and only enabled with your consent. See our <a href="privacy.html">Privacy Policy</a>.</div>
+<div class="cookie-acts">
+<button class="cookie-btn reject" id="cookieReject" type="button">Reject all</button>
+<button class="cookie-btn custom" id="cookieCustom" type="button">Customize</button>
+<button class="cookie-btn accept" id="cookieAccept" type="button">Accept all</button>
+</div>
+</div>
+<div class="cookie-customize" id="cookieCustomize">
+<div class="cookie-pref"><input type="checkbox" id="prefEssential" checked disabled aria-describedby="prefEssentialDesc"><label for="prefEssential"><strong>Essential</strong><span id="prefEssentialDesc">Required for the site to function (session, security, preferences). Always on.</span></label></div>
+<div class="cookie-pref"><input type="checkbox" id="prefAnalytics" aria-describedby="prefAnalyticsDesc"><label for="prefAnalytics"><strong>Analytics</strong><span id="prefAnalyticsDesc">First-party analytics to understand site usage. No personal data shared externally.</span></label></div>
+<div class="cookie-pref"><input type="checkbox" id="prefMarketing" aria-describedby="prefMarketingDesc"><label for="prefMarketing"><strong>Marketing</strong><span id="prefMarketingDesc">Third-party marketing trackers. Off until you opt in.</span></label></div>
+<div style="margin-top:12px;text-align:right"><button class="cookie-btn accept" id="cookieSavePrefs" type="button">Save my preferences</button></div>
+</div>
+</div>
+<script>
+(function(){
+ var KEY='fourm_cookie_consent_v1';
+ var banner=document.getElementById('cookieBanner');
+ var bA=document.getElementById('cookieAccept'),bR=document.getElementById('cookieReject'),bC=document.getElementById('cookieCustom'),bS=document.getElementById('cookieSavePrefs');
+ var panel=document.getElementById('cookieCustomize'),pA=document.getElementById('prefAnalytics'),pM=document.getElementById('prefMarketing');
+ function save(c){try{localStorage.setItem(KEY,JSON.stringify(Object.assign({ts:Date.now()},c)));}catch(e){} if(banner)banner.classList.remove('show');
+ /* Phase 2: load analytics/marketing scripts conditionally on c.analytics / c.marketing here. */}
+ function existing(){try{return JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){return null;}}
+ if(!existing()&&banner){banner.classList.add('show');}
+ if(bA)bA.addEventListener('click',function(){save({essential:true,analytics:true,marketing:true});});
+ if(bR)bR.addEventListener('click',function(){save({essential:true,analytics:false,marketing:false});});
+ if(bC)bC.addEventListener('click',function(){panel.classList.toggle('show');});
+ if(bS)bS.addEventListener('click',function(){save({essential:true,analytics:pA.checked,marketing:pM.checked});});
+})();
+</script>
+
+<!-- ============================================ ACCREDITED-INVESTOR SELF-CERTIFICATION (Phase 1 static) -->
+<div class="selfcert-overlay" id="selfCert" role="dialog" aria-modal="true" aria-label="Accredited investor self-certification">
+ <div class="selfcert-card">
+ <div class="sc-eye">Accredited investor verification</div>
+ <h2>Confirm your eligibility to view this room</h2>
+ <p class="sc-sub">Access is restricted to accredited investors as defined in National Instrument 45-106. Please confirm the following before entering. This is a self-certification step; 4orm Finance may request supporting documentation (Form 45-106F9 Risk Acknowledgement or an institutional equivalent) before any subscription.</p>
+ <div class="selfcert-check"><input type="checkbox" id="scAccredited"><label for="scAccredited">I confirm I am an <b>accredited investor</b> as defined in NI 45-106, or an authorized representative of an entity that qualifies.</label></div>
+ <div class="selfcert-check"><input type="checkbox" id="scRisk"><label for="scRisk">I acknowledge that an investment in 4orm Finance is <b>speculative and high-risk</b>, that I could lose my entire investment, that no securities regulator has assessed the merits, and that the materials in this room are confidential and not an offer to sell securities.</label></div>
+ <div class="selfcert-acts">
+ <button class="selfcert-btn go" id="scEnter" type="button" disabled>Enter the data room</button>
+ <a class="selfcert-btn leave" href="index.html">Leave</a>
+ </div>
+ <p class="selfcert-fine">By entering you consent to 4orm Finance recording this acknowledgement. A full Form 45-106F9 Risk Acknowledgement and identity verification will be required prior to any investment. Questions: compliance@4ormfinance.com.</p>
+ </div>
+</div>
+<script>
+(function(){
+ var KEY='fourm_selfcert_v1', ov=document.getElementById('selfCert');
+ if(!ov) return;
+ var a=document.getElementById('scAccredited'),r=document.getElementById('scRisk'),go=document.getElementById('scEnter');
+ function ok(){try{return localStorage.getItem(KEY)==='1';}catch(e){return false;}}
+ if(!ok()) ov.classList.add('show');
+ function upd(){ go.disabled=!(a.checked&&r.checked); }
+ if(a)a.addEventListener('change',upd); if(r)r.addEventListener('change',upd);
+ if(go)go.addEventListener('click',function(){ try{localStorage.setItem(KEY,'1');}catch(e){} ov.classList.remove('show'); });
+})();
+</script>
+
+<script>
+(function(){var q=document.getElementById('docSearch');if(!q)return;
+q.addEventListener('input',function(){var v=this.value.trim().toLowerCase();
+document.querySelectorAll('.dcard').forEach(function(c){c.classList.toggle('hide', v && c.getAttribute('data-t').indexOf(v)<0);});
+document.querySelectorAll('.cat-band').forEach(function(b){var any=b.querySelectorAll('.dcard:not(.hide)').length;b.classList.toggle('hide',v && any===0);});});})();
+</script>
+</body>
+</html>
