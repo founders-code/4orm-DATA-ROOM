@@ -38,7 +38,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 @media(max-width:640px){.nav-links a.hide-sm{display:none;}}
 /* hero */
 .hero{padding:150px 0 26px;}
-.eyebrow{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dp);margin-bottom:18px;}
+.eyebrow{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;}
 .hero h1{font-weight:800;letter-spacing:-.04em;line-height:1.04;font-size:clamp(2.4rem,5.4vw,4.1rem);text-wrap:balance;max-width:16ch;}
 .hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:52ch;line-height:1.55;}
 /* product tiles */
@@ -57,10 +57,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .tile .thumb-fb img{width:52px;height:52px;display:block;}
 .tile .thumb-fb b{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
 .tile .body{display:flex;flex-direction:column;padding:22px 24px 20px;flex:1;}
-.tile .k{display:block;font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dp);}
+.tile .k{display:block;font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);}
 .tile .nm{display:block;font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin:10px 0 8px;}
 .tile .ds{display:block;color:var(--tx-2);font-size:.92rem;line-height:1.5;flex:1;}
-.tile .go{margin-top:16px;font-weight:700;font-size:.9rem;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
+.tile .go{margin-top:16px;font-weight:700;font-size:.9rem;color:var(--gold-dp);display:inline-flex;align-items:center;gap:6px;}
 .tile .badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(20,32,54,.72);backdrop-filter:blur(6px);border-radius:999px;padding:5px 10px;}
 .tile.active .badge{color:#fff;background:var(--blue);}
 .docs{padding:70px 0 40px;}
@@ -77,11 +77,11 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .card{display:flex;flex-direction:column;gap:9px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
  padding:20px 20px 18px;text-decoration:none;color:inherit;box-shadow:var(--sh-sm);transition:transform .45s var(--spring),box-shadow .45s var(--ease),border-color .3s;min-height:172px;}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--blue-100);}
-.card .k{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dp);}
+.card .k{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);}
 .card.data .k{color:var(--blue-dp);}
 .card .t{font-size:1.06rem;font-weight:700;letter-spacing:-.01em;line-height:1.25;}
 .card .dd{color:var(--tx-2);font-size:.86rem;line-height:1.48;flex:1;}
-.card .go{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);}
+.card .go{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dp);}
 /* footer */
 .foot{border-top:1px solid var(--border);margin-top:70px;}
 .foot .wrap{padding:26px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);}
@@ -97,7 +97,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  background:radial-gradient(circle at 30% 30%, rgba(91,140,255,.55), transparent 62%);pointer-events:none;}
 .howit:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
 .howit-l{position:relative;z-index:1;}
-.howit-k{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.howit-k{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#7FA8FF;margin-bottom:10px;}
 .howit-h{font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.08;}
 .howit-d{margin-top:8px;color:rgba(255,255,255,.72);font-size:.96rem;max-width:56ch;line-height:1.5;}
 .howit-btn{position:relative;z-index:1;flex-shrink:0;background:#fff;color:var(--tx);font-weight:700;font-size:.95rem;border-radius:999px;padding:13px 22px;display:inline-flex;align-items:center;gap:9px;box-shadow:var(--sh-sm);}
@@ -114,14 +114,14 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 
 
 .wwd{padding:66px 0 8px;}
-.wwd-k{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dp);margin-bottom:16px;}
+.wwd-k{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
 .wwd-h{font-size:clamp(1.7rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;text-wrap:balance;max-width:22ch;}
 .wwd-p{margin-top:16px;color:var(--tx-2);font-size:clamp(1rem,1.4vw,1.14rem);line-height:1.55;max-width:60ch;}
-.wwd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:40px 0 0;}
-@media(max-width:760px){.wwd-stats{grid-template-columns:1fr 1fr;}}
-.wwd-stats .n{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--tx);font-variant-numeric:tabular-nums;}
+.wwd-stats{display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0;}
+.wwd-stats .s{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px 11px 18px;box-shadow:var(--sh-sm);}
+.wwd-stats .n{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--tx);font-variant-numeric:tabular-nums;white-space:nowrap;}
 .wwd-stats .n.blue{color:var(--blue);} .wwd-stats .n.ok{color:var(--ok);} .wwd-stats .n.bad{color:var(--bad);}
-.wwd-stats .l{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--tx-3);margin-top:11px;line-height:1.5;}
+.wwd-stats .l{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tx-3);margin-top:0;line-height:1.35;max-width:24ch;}
 .wwd-note{margin-top:34px;background:var(--blue-50);border-left:3px solid var(--blue);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;color:var(--tx-2);font-size:.98rem;line-height:1.55;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}.wwd-more{flex-shrink:0;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;border-radius:999px;padding:11px 20px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}.wwd-more:hover{background:var(--blue-dp);} .wwd-more .ar{transition:transform .35s var(--spring);} .wwd-more:hover .ar{transform:translateX(4px);}
 
 
@@ -186,24 +186,22 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <h2 class="wwd-h">A recommendation can be right, and still be impossible to prove.</h2>
  <p class="wwd-p">4orm keeps the record of how a financial decision was made, so the person, the business and the regulator can all see what was known, discussed and agreed. A right call that cannot be shown is a record failure, and it is the one we solve.</p>
  <div class="wwd-stats">
-  <div class="s"><div class="n bad">100%</div><div class="l">Mortgage files with no documented suitability assessment</div></div>
-  <div class="s"><div class="n bad">73%</div><div class="l">Missing or inadequate on material-risk disclosure</div></div>
-  <div class="s"><div class="n bad">65%</div><div class="l">Missing on relationship and conflict disclosure</div></div>
-  <div class="s"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress, across 12.1M agreements</div></div>
+  <div class="s"><div class="n bad">100%</div><div class="l">No documented suitability, FSRA review</div></div>
+  <div class="s"><div class="n bad">73%</div><div class="l">Missing material-risk disclosure</div></div>
+  <div class="s"><div class="n bad">65%</div><div class="l">Missing conflict disclosure</div></div>
+  <div class="s"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress</div></div>
  </div>
- <div class="wwd-note"><span>4ormIQ is free for the consumer. The commercial platform sells to the regulated business, and mortgage brokering is the first paid market. The consumer is never charged.</span>
- <a class="wwd-more" href="#" onclick="openPdf('assets/docs/start/what-we-do.pdf','What we do · full document');return false;">See the full page <span class="ar">&#8594;</span></a></div>
 </section>
 
-<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('assets/docs/start/why-4orm.pdf','Why 4orm, and Why Now');return false;">
- <div class="howit-l"><div class="howit-k">Why now</div>
-  <div class="howit-h">Why 4orm, and why now.</div>
-  <div class="howit-d">The obligations are decades old. What changed is the standard of proof, and in one market it changed on a day, in writing, with a penalty attached. How the record went missing, what it costs, and why the window is open now.</div></div>
- <div class="howit-btn">Read it <span class="ar">&#8594;</span></div>
+<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('roadmap.html','The 12-Month Road');return false;">
+ <div class="howit-l"><div class="howit-k">The roadmap</div>
+  <div class="howit-h">The 12-month road.</div>
+  <div class="howit-d">From the pre-seed to a closed seed and a self-funding record. See the whole journey: every checkpoint, mark and milestone across product, distribution, the regulated consumer and the financials.</div></div>
+ <div class="howit-btn">Open the roadmap <span class="ar">&#8594;</span></div>
 </a></section>
 
 <main class="docs" id="documents"><div class="wrap">
- <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">13 documents · view only</span></div>
+ <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">14 documents · view only</span></div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The overview, the one-pagers, and the full business plan.</span></div>
@@ -212,7 +210,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
    <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-investor.pdf','One Page, for the Investor');return false;"><span class="k">For the investor</span><span class="t">One Page, for the Investor</span><span class="dd">The wedge, the numbers and the raise, on a single page.</span><span class="go">Open PDF &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-business.pdf','One Page, for a Business');return false;"><span class="k">For a business</span><span class="t">One Page, for a Business</span><span class="dd">What a firm that holds client money gets from 4orm.</span><span class="go">Open PDF &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-consumer.pdf','One Page, for People');return false;"><span class="k">For people</span><span class="t">One Page, for People</span><span class="dd">The everyday check, in a person's own words.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/business-plan.pdf','The Business Plan');return false;"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a><a class="card" href="#" onclick="openPdf('customer-adoption.html','Customer Adoption and Distribution');return false;"><span class="k">How it is won</span><span class="t">Customer Adoption &amp; Distribution</span><span class="dd">How the seats and firms are won: mortgage-first, networks, the penetration math and retention.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('one-clear-path.html','One Clear Path');return false;"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('assets/docs/4ormiq-core-architecture.pdf','The Technology, in Full');return false;"><span class="k">The technology</span><span class="t">The Technology, in Full</span><span class="dd">The 4ormIQ core system architecture.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/business-plan.pdf','The Business Plan');return false;"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a><a class="card" href="#" onclick="openPdf('customer-adoption.html','Customer Adoption and Distribution');return false;"><span class="k">How it is won</span><span class="t">Customer Adoption &amp; Distribution</span><span class="dd">How the seats and firms are won: mortgage-first, networks, the penetration math and retention.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('roadmap.html','The 12-Month Road');return false;"><span class="k">The roadmap</span><span class="t">The 12-Month Road</span><span class="dd">The visual plan: every checkpoint and milestone from the pre-seed to a closed seed.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('one-clear-path.html','One Clear Path');return false;"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('assets/docs/4ormiq-core-architecture.pdf','The Technology, in Full');return false;"><span class="k">The technology</span><span class="t">The Technology, in Full</span><span class="dd">The 4ormIQ core system architecture.</span><span class="go">Open PDF &#8599;</span></a>
   </div>
  </div>
 

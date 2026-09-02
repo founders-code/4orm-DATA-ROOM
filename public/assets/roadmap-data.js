@@ -1,350 +1,212 @@
+/* 4orm Finance · Path to Revenue · adoption-led plan, Sep 2026 -> Sep 2027 and beyond.
+   States: done = complete groundwork · active = underway now · todo = planned.
+   Percentages are a founder's self-assessment of an early-stage plan, not a claim of shipped product. */
 const DATA = {
-  updated: "June 7, 2026",
-  overallPct: 37,
-  overallNote: "Roughly a third of the way to an operating, regulated exchange - and moving every week. Capital-efficient by design: a $44K founding cheque has already produced an estimated $111K-$264K of finished, secured value (2.6-6.3× per $1). Well ahead of a typical pre-seed on product proof, web presence, advisory bench, and institutional pipeline; on-par-to-early on closing capital and on regulatory filings. The list below is the receipts: what's done, what's underway now, and what's next, in every workstream.",
+  updated: "September 1, 2026",
+  overallPct: 18,
+  overallNote: "The arc is simple: 4ormIQ earns trust for free, 4orm sells the record to the regulated business, and the same engine widens into a moat one industry at a time. The groundwork is done, the pre-seed is open, and the build, the first customers and the free consumer check are sequenced behind the close. The workstreams below carry the whole plan: what is done, what is underway now, and what is next.",
 
-  /* ███ CAPITAL IN, VALUE OUT ███ - shown under the pipelines on the overview page. */
   capitalValue: {
-    asOf: "May 2026",
-    lead: "A founding investor committed $50,000; $44,000 is in to date. Against roughly $42,000 deployed, we have produced and secured an estimated $111,000 - and as much as $264,000 - in finished assets and professional value.",
+    asOf: "September 2026",
+    lead: "The pre-seed is $2.05 million across five tranches, of which $1.5 million is open now and closes in May 2027. A $3.55 million seed follows at a $30 million valuation. Below are the tranches, and where the first year of money goes.",
     stats: [
-      { k:"$44K",      l:"Founding capital received to date (of $50K committed)" },
-      { k:"~$42K",     l:"Capital deployed" },
-      { k:"$111-264K", l:"Value delivered & secured" },
-      { k:"2.6-6.3×",  l:"Value per $1 deployed" }
+      { k:"$2.05M", l:"Pre-seed, five tranches" },
+      { k:"$1.5M",  l:"Open now, closes May 2027" },
+      { k:"$3.55M", l:"Seed to follow, at $30M" },
+      { k:"$71.1M", l:"Base-case revenue in 2031" }
     ],
     groups: [
-      { title:"Built in-house - cost avoided", rows:[
-        { item:"Websites - 3 sites", detail:"~80-100 pages across kcs-capital.com, 4ormfinance.com & 4ormex.com; 250+ design iterations.", cons:"$30,000", head:"$96,000" },
-        { item:"Pitch deck", detail:"Finalized investor pitch deck, designed and built in-house.", cons:"$3,000", head:"$8,000" },
-        { item:"Financial model, pro forma & cap table", detail:"Finalized cap table and financial models.", cons:"$5,000", head:"$15,000" },
-        { item:"Market & regulatory research", detail:"16-page Runway Briefing, case studies, RWA market & Canadian regulatory research.", cons:"$8,000", head:"$25,000" },
-        { item:"Sourcing data & pipeline", detail:"442 verified records - 191 institutional CEO direct contacts, 81 VC contacts, 170 grants.", cons:"$9,000", head:"$25,000" }
-      ], subtotal:{ label:"Subtotal - built in-house", cons:"$55,000", head:"$169,000" } },
-      { title:"Professional services secured - pro bono / in-kind", rows:[
-        { item:"Capital-markets advisory", detail:"Bruce - embedded advisor (~4 months); sourced both law firms. $8,000/mo.", cons:"$32,000", head:"$50,000" },
-        { item:"Technical architecture", detail:"Zed Zendila - 80+ hrs; 3 architecture overviews + 30/60/90-day roadmap.", cons:"$16,000", head:"$28,000" },
-        { item:"Securities counsel", detail:"Osler + Fasken - 4+ hrs senior counsel, $0 billed; equity offer outstanding.", cons:"$2,800", head:"$4,800" },
-        { item:"CFA audit", detail:"Miika - audited pro forma, models & case studies; eligible CCO.", cons:"$5,000", head:"$12,000" }
-      ], subtotal:{ label:"Subtotal - pro bono / in-kind", cons:"$55,800", head:"$94,800" } }
+      { title:"The pre-seed, tranche by tranche", rows:[
+        { item:"Angel, at close", detail:"First cheque, priced.", cons:"$50,000", head:"$0.25 a share" },
+        { item:"First subscription", detail:"Priced equity.", cons:"$500,000", head:"$0.50 a share" },
+        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$15M ceiling" },
+        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$18M ceiling" },
+        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$20M ceiling" }
+      ], subtotal:{ label:"Subtotal - the pre-seed", cons:"$2,050,000", head:"" } },
+      { title:"Where the first year of money goes", rows:[
+        { item:"The team", detail:"13 months of payroll, founder pay below market.", cons:"$784,945", head:"38%" },
+        { item:"Reaching first customers", detail:"Sales and marketing, mortgage-first.", cons:"$502,667", head:"25%" },
+        { item:"Building the software", detail:"The engine and 4ormIQ, with Speer.", cons:"$466,667", head:"23%" },
+        { item:"Legal and audit", detail:"Counsel, audit and review readiness.", cons:"$149,500", head:"7%" },
+        { item:"Delivering the service", detail:"Hosting, security and operations.", cons:"$102,871", head:"5%" }
+      ], subtotal:{ label:"Subtotal - use of the pre-seed", cons:"$2,006,650", head:"98%" } }
     ],
-    total: { label:"Total value delivered & secured", cons:"$110,800", head:"$263,800" },
-    foot: "The one-line version for the board: we took $44K and turned it into a finished, credible company - websites, a deck, an audited model, an embedded advisor, an architect, two top-tier law firms and two banks at the table - conservatively worth about 2.6× the cheque, and plausibly more than 6×. Value estimates are illustrative judgment calls based on quotes received and standard market rates (website ~$1,200/page; Bruce $8,000/mo; Zed fractional-CTO rates $200-$350/hr; sourcing data at ZoomInfo-class rates) - not invoiced amounts. Source: KCS finance tracker, May 2026."
+    total: { label:"Pre-seed total", cons:"$2,050,000", head:"" },
+    foot: "The one-line version: five tranches totalling $2.05M fund thirteen months of build and first sales, after which the company turns its first profit in 2029 and funds itself. The $3.55M seed at a $30M valuation shortens the climb rather than keeping the company alive. Source: 4orm Finance master pro forma and capital structure, September 2026, in Canadian dollars."
   },
 
-  /* ███ WEEKLY WINS ███  - add one line each week. Newest first.
-     date "YYYY-MM-DD". vertical = a vertical id (for the colored tag). */
+  /* Planned milestones, newest target first. date = target quarter. vertical = a workstream id. */
   wins: [
-    { date:"2026-06-07", vertical:"bd",        text:"Education go-to-market adopted: a build-phase revenue bridge that warms the same institutional pipeline the exchange needs, stress-tested with the founding team and held out of the base-case model as upside and OpEx relief." },
-    { date:"2026-06-07", vertical:"product",   text:"Expansion revenue surface mapped: eleven tokenizable asset classes the exchange is built to list (stablecoins, sovereign and sub-sovereign debt, gold and commodities, real estate, private credit, carbon, infrastructure, equities, technology-linked, education), each with sourced market sizing and fee mechanics." },
-    { date:"2026-06-07", vertical:"legal",     text:"Corporate structure papered: multi-entity HoldCo / Marketplace / Exchange / Trust Co designed to the CIRO custody-separation requirement, with the Mission Anchor drafted into the constating documents for Alberta (ABCA) incorporation." },
-    { date:"2026-06-07", vertical:"capital",   text:"Capital Structure Memorandum finalized: $10M pre-money / $3M unit offering, single-class Class A cap table coordinated by a Voting Alignment Covenant, reverse-vesting and clawback framework, benchmarked to Osler 2025 and Canadian founder-control precedent." },
-    { date:"2026-06-07", vertical:"legal",     text:"Governance set: Decision Matrix mapping every material decision across five tiers, a Mission Stewardship Trustee role defined in the Mission Anchor, and a CEO Commitment Statement binding the founder to the Mission Anchor personally." },
-    { date:"2026-06-07", vertical:"marketing", text:"Investor collateral completed: 31-page white paper, 9-page executive summary, and an investor 2-pager; full institutional data room live and organized for diligence." },
-    { date:"2026-06-03", vertical:"capital",   text:"Pre-seed round set at $3M, opening August 1, 2026." },
-    { date:"2026-06-03", vertical:"product",   text:"Architect (Zed) onboarded into ClickUp + Drive; architecture review advanced toward the execution-ready pack." },
-    { date:"2026-06-02", vertical:"team",      text:"First discovery meeting with Martin Hack - Silicon Valley CTO and machine-learning expert - who mentioned he already has a team ready to assemble." },
-    { date:"2026-06-02", vertical:"legal",     text:"Initial Coin Offering (ICO) strategy development in place." },
-    { date:"2026-06-02", vertical:"investors", text:"Neo Financial cultivation in progress; Digital Commodities meeting being set up." },
-    { date:"2026-06-02", vertical:"capital",   text:"Cap table finalized with the CFO - $10M valuation, 20M founding common shares, $0.50 unit price, ~13% dilution at close; two raise scenarios modeled." },
-    { date:"2026-06-01", vertical:"bd",        text:"Go-to-market strategy completed; institutional outreach first batch of 10 launched." },
-    { date:"2026-06-01", vertical:"investors", text:"Accredited-investor network identified - up to 12,000 international accredited investors." },
-    { date:"2026-06-01", vertical:"product",   text:"LayerZero Phase-3 interoperability reviewed (80% cross-chain share, mint-and-burn OFT model) - confirmed as an optional adapter, not a dependency." },
-    { date:"2026-05-31", vertical:"capital",   text:"\"Capital In, Value Out\" board summary produced - $44K in → $111K-$264K value delivered & secured (2.6-6.3× per $1)." },
-    { date:"2026-05-31", vertical:"marketing", text:"16-page Runway Briefing produced for founding investors." },
-    { date:"2026-05-30", vertical:"capital",   text:"Raise revised upward - valuation reset to $10M, target increased." },
-    { date:"2026-05-29", vertical:"product",   text:"Institutional architecture validated - 7.5/10 architecture fit, 8.5/10 strategic fit (Zed review)." },
-    { date:"2026-05-27", vertical:"marketing", text:"SEO program kicked off with Ming for 4orm Finance and the Canadian go-to-market strategy." },
-    { date:"2026-05-25", vertical:"product",   text:"Major upgrade to the institutional demo - compliance workflow, transaction simulator, savings breakdown." },
-    { date:"2026-05-19", vertical:"bd",        text:"ATB Financial relationship opened - primary contacts established; 4orm flagged internally as a client of interest." },
-    { date:"2026-05-08", vertical:"legal",     text:"Three-firm legal structure locked - Capiche (corporate), CFA (TFSA/RRSP trust), Fasken (securities)." },
-    { date:"2026-05-07", vertical:"capital",   text:"Angel investor's $50K finalized into 200,000 shares (1%); our first pre-seed investor's $250K will be the first tranche of the $3M pre-seed raise." },
-    { date:"2026-05-04", vertical:"legal",     text:"Selected Capiche over Osler for corporate setup - ~$85K (≈70%) legal-cost reduction while keeping TFSA/RRSP eligibility." },
-    { date:"2026-05-04", vertical:"investors", text:"Neo Financial founders (Skip the Dishes exit) added to the pre-seed pipeline via a warm intro." },
-    { date:"2026-04-27", vertical:"team",      text:"Advisory council assembled - Bruce Fair (30-yr VC), Mike Andrews (ex-SWIFT/Morgan Stanley), Michael Stevens (Fasken), Zed (architect)." },
-    { date:"2026-04-27", vertical:"grants",    text:"170+ grant programs identified (16 Canada-specific) - sourced directly rather than paying a facilitation fee." },
-    { date:"2026-04-27", vertical:"bd",        text:"Institutional database built - 191 contacts across ~100 institutions; BD pipeline stages defined." },
-    { date:"2026-04-27", vertical:"investors", text:"VC pipeline compiled - 81 Canadian + international VC contacts with check sizes and decision-makers." },
-    { date:"2026-04-24", vertical:"capital",   text:"Financial pro forma completed and CFA-audited; pipeline/timeline tracking system built across all workstreams." },
-    { date:"2026-04-24", vertical:"product",   text:"ClickUp + Google Drive rebuilt to scale for a 66-person org, with multi-agent automation deployed across operations." },
-    { date:"2026-04-22", vertical:"product",   text:"Four high-end websites deployed." },
-    { date:"2026-04-22", vertical:"team",      text:"Mike Andrews (original dev lead for the SWIFT network) joined as advisor after a rigorous vetting session." },
-    { date:"2026-04-08", vertical:"capital",   text:"Legal + financial modeling session with Miika & Bruce - early cap structure and pro forma groundwork." },
-    { date:"2026-03-30", vertical:"team",      text:"Three KCS Advisory Council calls held - monthly cadence established." },
-    { date:"2026-03-26", vertical:"product",   text:"Build partner vetted - Spear Technologies intro (netcoins / SIX Digital exchange experience); $211K-317K phased, full IP ownership." },
-    { date:"2026-03-23", vertical:"legal",     text:"Securities framework scoped with counsel - $3M pre-seed, single-class Class A governance with a Voting Alignment Covenant, Alberta (ABCA) jurisdiction confirmed." },
-    { date:"2026-03-21", vertical:"capital",   text:"Earliest documented strategy working session - the foundation the raise and structure were built on." }
+    { date:"2028+",   vertical:"moat",        text:"Investments and insurance turn paid; the same engine, a fifth and sixth rule set." },
+    { date:"2029",    vertical:"moat",        text:"Real estate trust accounts turn paid as monthly reconciliation lands." },
+    { date:"Q3 2027", vertical:"regulator",   text:"Independent review readiness proven end to end, aligned to the RPAA review." },
+    { date:"Q3 2027", vertical:"capital",     text:"Seed closed at $3.55M on a $30M valuation, against five customer references." },
+    { date:"Q3 2027", vertical:"iq",          text:"Seventy-five thousand consumers on the free 4ormIQ layer." },
+    { date:"Q2 2027", vertical:"capital",     text:"Pre-seed completes at $1.5M; the three price-later tranches close." },
+    { date:"Q2 2027", vertical:"distribution",text:"First network partner signed, reaching many firms at once." },
+    { date:"Q2 2027", vertical:"form",        text:"$10,000 a month recurring; reconciliation and the evidence record shipping." },
+    { date:"Q1 2027", vertical:"moat",        text:"Regulated payments and automotive open as the second and third markets." },
+    { date:"Q1 2027", vertical:"iq",          text:"4ormIQ goes live, free for the consumer." },
+    { date:"Q1 2027", vertical:"form",        text:"First two mortgage broker firms live; the first paying customer." },
+    { date:"Q1 2027", vertical:"distribution",text:"Design partner live: a lighthouse firm co-proving the record." },
+    { date:"Q4 2026", vertical:"product",     text:"Tier two of the Speer build: the core evidence engine and the 4ormIQ check." },
+    { date:"Q4 2026", vertical:"capital",     text:"First $500,000 subscription in; non-dilutive applications filed." },
+    { date:"Q4 2026", vertical:"regulator",   text:"Regulator cultivation: first engagements on review readiness." },
+    { date:"Q4 2026", vertical:"distribution",text:"First franchisor and network conversations opened." },
+    { date:"Q3 2026", vertical:"product",     text:"Tier one of the Speer build: architecture accepted, IP assigned." },
+    { date:"Q3 2026", vertical:"capital",     text:"Pre-seed opens; angel cheque and first subscription set." },
+    { date:"Q3 2026", vertical:"distribution",text:"Discovery underway, twenty firm conversations opened." },
+    { date:"Q3 2026", vertical:"team",        text:"Incorporated in Alberta; Speer Technologies engaged as build partner." }
   ],
 
   verticals: [
-    /* 1 ---------------------------------------------------------- */
     {
-      id:"product", name:"Product & Engineering", short:"Product",
-      pct:24, stage:"Architecture & Discovery · Phase 1→2 of 6",
-      benchmark:{level:"ahead", note:"<b>Ahead of the typical pre-seed on artifacts, behind on shipped code.</b> Most pre-seed teams have neither a full institutional architecture nor a working interactive demo - 4orm has both, plus a scaled ops backend. The production MVP build has not started, so the platform itself is still early - by design, it's sequenced behind the pre-seed close."},
+      id:"iq", name:"4ormIQ - the free wedge", short:"4ormIQ",
+      pct:12, stage:"The free consumer check · in build",
+      benchmark:{level:"onpar", note:"<b>4ormIQ earns trust before anyone pays.</b> A free check a person runs before they move money. The consumer is never charged; the business pays. A firm a consumer has checked is already pulled toward the record, so the free layer is the top of the funnel."},
       checkpoints:[
-        {state:"done", t:"30/60/90 technical discovery + 12-month plan", d:"End-to-end architecture aligned to settlement, issuance, custody, compliance; phased delivery model."},
-        {state:"done", t:"Institutional architecture v1 (Zed)", d:"Layered model: canonical ledger of record, compliance engine, token registry, treasury controls, atomic DvP, interoperability abstraction layer; ~7 modules."},
-        {state:"done", t:"40 user stories defined", d:"Agile backbone: requirements → test cases → user guide."},
-        {state:"done", t:"Architecture validated", d:"Scored 7.5/10 architecture fit and 8.5/10 strategic fit (Zed review, May 29)."},
-        {state:"done", t:"Interactive institutional demo live", d:"Simulates 191 institutions on real public financials; KYC/AML/settlement sim + savings calculator (~3.3s atomic vs ~1.3-day legacy)."},
-        {state:"done", t:"Four high-end websites deployed", d:"KCS, 4orm Finance, and 4ormEx - built in-house for a few hundred dollars of credits."},
-        {state:"done", t:"Ops backend rebuilt to scale", d:"ClickUp + Google Drive restructured for a 66-person org with automated document routing; CRM, Sales Navigator, ZoomInfo deployed."},
-        {state:"done", t:"Build partner shortlisted", d:"Spear Technologies (~$211K-317K quote; netcoins / SIX Digital exchange experience) preferred over ChainUp; Finhaven (holds BCSC exemptive relief) a partner candidate."},
-        {state:"active", t:"Architecture finalization", d:"~90-day target to an execution-ready pack for partners, regulators, and engineering."},
-        {state:"active", t:"Insurance layer + agentic automation design", d:"Insurance identified as the 4th component (smart-contract policy validation); multi-agent compliance automation."},
-        {state:"active", t:"Education platform concept - in discovery", d:"White-label SaaS backed by a 46-expert network - a non-dilutive revenue stream; in discovery."},
-        {state:"active", t:"Custom data room build", d:"On the KCS site (Google + Microsoft login), replacing the Drive-based room."},
-        {state:"todo", t:"Engage CTO → discovery → hackathon MVP", d:"4-6 week discovery then a focused MVP build with a design-partner bank."},
-        {state:"todo", t:"MVP build (deposit-token pilot)", d:"Canada's first tokenized deposit flow as the MVP candidate; 6-12 months."},
-        {state:"todo", t:"Sandbox + ATB bank pilot", d:"Regulator-aligned sandbox deployment (Phase 5)."},
-        {state:"todo", t:"LayerZero Phase-3 interoperability", d:"Optional cross-chain adapter - not required for the Alberta pilot or provincial scale."},
-        {state:"todo", t:"Production hardening", d:"Security audits, multi-bank governance; full product to market in 18-24 months."}
+        {state:"done", t:"The consumer check designed", d:"Ask about a business or a person, get an answer you can act on."},
+        {state:"active", t:"4ormIQ in build with Speer", d:"Sequenced as one of the first things the pre-seed funds."},
+        {state:"todo", t:"4ormIQ goes live, free", d:"Q1 2027, free for the consumer."},
+        {state:"todo", t:"Demand pulls the first firms", d:"A checked business is a business drawn toward the paid record."},
+        {state:"todo", t:"75,000 consumers on the free layer", d:"By Q3 2027, base case; 3.0M by 2031."}
       ],
       facts:[
-        "Lead architect: <b>Zed</b> (80+ hrs, building for equity)",
-        "Atomic settlement: <b>~3.3-9s</b> vs legacy 1.3-3 days",
-        "Web build value: <b>$30K-96K</b> built in-house",
-        "Build quote: <b>Spear Tech ~$211-317K</b>",
-        "LayerZero = Phase-3 adapter, <b>not</b> core",
-        "Full product to market: <b>18-24 months</b>"
-      ],
-      links:[{label:"4ormex.com ↗", url:"https://4ormex.com"}]
-    },
-    /* 2 ---------------------------------------------------------- */
-    {
-      id:"compliance", name:"Compliance & Regulatory", short:"Compliance",
-      pct:18, stage:"Pathway defined · filings ahead",
-      benchmark:{level:"onpar", note:"<b>On-par, with an early-engagement edge.</b> The regulatory pathway is mapped across all four bodies and the team is already in the room with regulators (CSA Calgary event + private dinner) - unusual this early. And the regulatory rails are forming in the same window: CIRO published its Digital Asset Custody Framework in Feb 2026 and federal stablecoin legislation is expected. But no sandbox application or registration has been filed yet."},
-      subs:[{name:"CIRO (custody framework, Tier-2 target)", pct:28},{name:"CSA (NI 45-106 / 31-103 / 21-101)", pct:25},{name:"OSFI (banking controls / sandbox)", pct:18},{name:"FINTRAC (MSB - not yet started)", pct:5}],
-      checkpoints:[
-        {state:"done", t:"Full regulatory mapping", d:"CSA, OSFI, CIRO, FINTRAC, PFMI, PIPEDA, ISO 27001 mapped to the architecture."},
-        {state:"todo", t:"MSB registration (FINTRAC)", d:"Money Services Business registration - not yet started."},
-        {state:"done", t:"Three-entity structure mapped", d:"HoldCo / OpCo / CustodyCo per the CIRO Digital Asset Custody Framework (Tier-2 target)."},
-        {state:"done", t:"Securities counsel engaged (2 firms)", d:"Michael Stevens / Fasken (offered to work for equity) + Matthew / Osler (published on tokenization legal architecture)."},
-        {state:"done", t:"Prior compliance discovery sourced", d:"~$12M of pre-existing exchange compliance/legal discovery available via Fasken for an update fee."},
-        {state:"done", t:"Competitive/regulatory intel", d:"Mapped Broadridge, VersaBank, ChainUp; tracked CSA Project Tokenization + BoC Project Samara."},
-        {state:"done", t:"In the regulator room", d:"Inside the CSA Calgary tokenization event with the Bank of Canada, Scotiabank, TD and LayerZero present; private dinner with senior regulators on supervision gaps."},
-        {state:"active", t:"CSA / CIRO pre-clearance research", d:"Mapping the registration pathway before formal filings."},
-        {state:"active", t:"Compliance review w/ Michael Stevens", d:"Run by Miika (CFA, CCO-eligible) alongside Fasken."},
-        {state:"active", t:"Hybrid onshore/offshore structuring", d:"Canadian ops onshore (+ SR&ED credits); offshore the components not yet viable in Canada."},
-        {state:"todo", t:"OSFI / CSA / FINTRAC sandbox application", d:"Targeted Q3 2026."},
-        {state:"todo", t:"CAMLO sign-off (ATB onboarding)", d:"Final AML approval in the ATB banking relationship."},
-        {state:"todo", t:"Registration & approvals", d:"Regulator review (Phase 5) → production supervision model (Phase 6)."}
-      ],
-      facts:[
-        "MSB / FINTRAC: <b>not yet started</b>",
-        "Structure: <b>HoldCo / OpCo / CustodyCo</b> (CIRO Tier-2)",
-        "Counsel: <b>Fasken</b> + <b>Osler</b> (2 top-tier firms)",
-        "CIRO custody framework: <b>published Feb 2026</b>",
-        "Sandbox application target: <b>Q3 2026</b>",
-        "Context: <b>no central RWA marketplace</b> in Canada yet"
+        "Free for the consumer, <b>always</b>",
+        "The consumer is <b>never charged</b>",
+        "Top of the funnel for <b>4orm</b>",
+        "3.0M consumers by 2031, base case"
       ]
     },
-    /* 3 ---------------------------------------------------------- */
     {
-      id:"capital", name:"Capital & Pre-Seed Raise", short:"Pre-Seed",
-      pct:45, stage:"Round structured · $3M Pre-Seed · opens August 1, 2026",
-      benchmark:{level:"onpar", note:"<b>On-par for an opening pre-seed - but unusually capital-efficient.</b> Terms, valuation, cap table and a CFA-audited model are set, with real soft commitments in hand. The founding $44K has already produced $111K-$264K of secured value (2.6-6.3× per $1). The round is not yet formally open: the $3M Pre-Seed opens August 1, 2026."},
+      id:"form", name:"4orm - the paid record", short:"4orm",
+      pct:14, stage:"Mortgage-first · first firms ahead",
+      benchmark:{level:"onpar", note:"<b>4orm sells the daily record to the regulated business.</b> Mortgage brokering is the first paid market, chosen because the documented gap is sharpest there. The engine, the price card and the first firms are sequenced right behind the build."},
       checkpoints:[
-        {state:"done", t:"Investor-ready model + pro forma (CFA-audited)", d:"Built with Miika (CFA) and backed as valid & correct; dilution scenarios for multiple raise sizes."},
-        {state:"done", t:"Cap table finalized", d:"$10M valuation, 20M shares @ $0.50, ~10% dilution; warrant strategy to absorb raise uncertainty."},
-        {state:"done", t:"Single-class share structure defined", d:"A single class of Class A common carrying 1:1 voting; no preferred and no super-voting. Founder coordination via the Voting Alignment Covenant (FVA v14)."},
-        {state:"done", t:"$50K bootstrap / angel investment secured", d:"Founding cheque of $50K committed ($44K received to date); ~$42K deployed across legal, build, advisory and ops."},
-        {state:"done", t:"First pre-seed tranche secured", d:"Our first pre-seed investor's $250K - the first tranche of the $3M raise."},
-        {state:"done", t:"Third-party submission & reporting secured", d:"External submission and reporting in place for the raise."},
-        {state:"done", t:"Capiche Capital retained", d:"$10K retainer; financing platform + subscription docs."},
-        {state:"done", t:"Pitch deck built", d:"Finalized institutional pitch deck."},
-        {state:"active", t:"Round sized at $3M", d:"Valuation $10M; $3M Pre-Seed confirmed as the build scope firmed up."},
-        {state:"active", t:"Registered-account eligibility (TFSA/RRSP)", d:"Confirming TFSA/RRSP subscription eligibility with counsel; ~6-15 working days to full investor eligibility."},
-        {state:"active", t:"Subscription documents", d:"Drafting via Capiche."},
-        {state:"todo", t:"Formally open the $3M pre-seed round", d:"Opens August 1, 2026, once subscription docs are finalized."},
-        {state:"todo", t:"Final pitch deck v2.0 + investor ROI section", d:"Refreshed with the revised valuation."},
-        {state:"todo", t:"Close pre-seed", d:"Target 30-60 days."}
+        {state:"done", t:"The record model defined", d:"Identity, options, reasoning, disclosure, acknowledgement and evidence, joined into one re-performable record."},
+        {state:"active", t:"Mortgage-first market readied", d:"The sharpest gap: 100% of a targeted FSRA sample lacked documented suitability."},
+        {state:"todo", t:"First mortgage broker firms live", d:"Q1 2027, with the first paying customer."},
+        {state:"todo", t:"Evidence record shipping", d:"Reconciliation and the dated record, Q2 2027."},
+        {state:"todo", t:"$10,000 a month recurring", d:"By mid-2027, base case."},
+        {state:"todo", t:"110 firms, 40,000 seats", d:"The 2031 base-case adoption target."}
       ],
       facts:[
-        "Target: <b>$3M</b> · Opens August 1, 2026",
-        "Valuation: <b>$10M</b>",
-        "Committed: <b>$50K</b> angel ($44K in) + <b>$250K</b> 1st pre-seed",
-        "Capital efficiency: <b>2.6-6.3×</b> per $1 ($111-264K value)",
-        "Vehicle: <b>Alberta (ABCA)</b> corporation",
-        "Close target: <b>30-60 days</b>"
+        "First market: <b>mortgage brokering</b>",
+        "Seat payback: <b>6.6 months</b>",
+        "2031 base revenue: <b>$71.1M</b>",
+        "One engine, <b>five rule sets</b>"
       ]
     },
-    /* 4 ---------------------------------------------------------- */
     {
-      id:"grants", name:"Grants & Non-Dilutive", short:"Grants",
-      pct:20, stage:"Programs identified · advisory secured · applications next",
-      benchmark:{level:"ahead", note:"<b>Ahead on identification, early on execution.</b> Most pre-seed companies ignore non-dilutive funding entirely; 4orm has mapped a large grant pipeline and secured a grant advisor. Applications have not yet been submitted or won."},
+      id:"moat", name:"The Moat - industry by industry", short:"The Moat",
+      pct:8, stage:"One engine, market by market",
+      benchmark:{level:"ahead", note:"<b>The same record, pointed at a different rule set.</b> The moat is the join between systems, which is universal, so each new market is content rather than a new product. Mortgage first, then payments, automotive, real estate, and investments and insurance."},
       checkpoints:[
-        {state:"done", t:"Grant landscape compiled", d:"170+ programs identified (16 Canada-specific), incl. NRC IRAP, Creative Destruction Lab, Elevate IP, SR&ED, Alberta productivity/export programs, blockchain incubators."},
-        {state:"done", t:"Grant advisory secured (GetUpgraded)", d:"$1M+ in grants identified over 3 years with a 5× ROI guarantee."},
-        {state:"active", t:"Prioritizing fastest-fit programs", d:"MyDax and SR&ED flagged as the quickest first applications; free matchmaking underway."},
-        {state:"todo", t:"Submit first applications", d:"File the top-priority programs."},
-        {state:"todo", t:"Secure first non-dilutive grant", d:"Offset opex and reduce dilution."}
+        {state:"done", t:"Markets sequenced", d:"Five regulated markets, each reusing the same engine."},
+        {state:"active", t:"Mortgage brokering", d:"First paid market, 2027."},
+        {state:"todo", t:"Regulated payments", d:"Daily safeguarding duty already live and penalised; 2028."},
+        {state:"todo", t:"Automotive finance", d:"Inside dealer groups that set the requirement; 2028."},
+        {state:"todo", t:"Real estate trust", d:"Monthly trust reconciliation planned; 2029."},
+        {state:"todo", t:"Investments and insurance", d:"Adjacent duties, once the engine is proven; 2030."}
       ],
       facts:[
-        "Programs identified: <b>170+</b> (16 Canada-specific)",
-        "Identified value: <b>$1M+</b> over 3 yrs",
-        "Advisor: <b>GetUpgraded</b> secured (5× ROI guarantee)",
-        "First filings: <b>MyDax, SR&ED</b>",
-        "Submitted to date: <b>0</b>",
-        "Purpose: offset opex, <b>reduce raise size</b>"
+        "The join is <b>universal</b>",
+        "Each market is <b>content, not a new product</b>",
+        "Five regulated markets, <b>one company</b>",
+        "Payments duty live: <b>8 Sep 2025</b>"
       ]
     },
-    /* 5 ---------------------------------------------------------- */
     {
-      id:"bd", name:"Business Development & GTM", short:"BD & GTM",
-      pct:30, stage:"GTM complete · ATB live · outreach launching",
-      benchmark:{level:"ahead", note:"<b>Well ahead of a typical pre-seed.</b> A mapped 191-institution target list, named contacts inside the majors, a completed GTM strategy, and two regulated deposit-takers leaning in (ATB asking for a second meeting; Bow Valley met) are rare this early. The bank relationships run the 'right' way - institutions are pulling, not being pushed. The gap is conversion - no signed MOU or pilot yet."},
+      id:"product", name:"Product & Engineering (tiered build)", short:"Build",
+      pct:16, stage:"Architecture accepted · tiered Speer build",
+      benchmark:{level:"onpar", note:"<b>Built in tiers with Speer Technologies, full IP to 4orm.</b> The architecture is accepted; the engine and 4ormIQ come first, then the record and reconciliation, then hardening. The build is sequenced behind the pre-seed close by design."},
       checkpoints:[
-        {state:"done", t:"191 Canadian FIs mapped", d:"CEO/CTO/CFO/CRO contacts + scraped financials, scored into 4 priority waves (A-D)."},
-        {state:"done", t:"442-record sourcing database", d:"191 institutional CEO direct contacts + 81 VC contacts + 170 grants - verified and organized in ClickUp."},
-        {state:"done", t:"Go-to-market strategy completed", d:"Institutional GTM playbook finalized."},
-        {state:"done", t:"BD pipeline stages defined", d:"Outreach → Attempted → Contact Made → Qualified, tracked in ClickUp under each institution."},
-        {state:"done", t:"90-day ABM outreach engine (v4)", d:"3-touch: LinkedIn research DM → day-7 email (Sam) → 45-min call with Chad; 42 user personas mapped."},
-        {state:"done", t:"Sales / education tool decision", d:"The interactive demo is the funnel asset - show understanding, book exec calls (not a passive audit)."},
-        {state:"done", t:"ATB relationship opened", d:"Named contacts (Ali Syed, Jonathan Rizzo ex-Kraken, + C-suite); ATB flagged 4orm internally as a client of interest; first meeting held."},
-        {state:"done", t:"Bow Valley Credit Union met", d:"Second regulated deposit-taker engaged; Brett (BVCU) interested in tokenized deposits."},
-        {state:"done", t:"Handshakes at the CSA Calgary event", d:"Met StableCorp, Oak Creek Capital and the Samara Project; in the room with BoC, Scotiabank, TD and LayerZero."},
-        {state:"active", t:"Institutional outreach - first batch of 10", d:"Testing the ABM sequence before scaling."},
-        {state:"active", t:"ATB second meeting / tokenized deposits", d:"ATB asked to go deeper and explore tokenized deposits with us."},
-        {state:"active", t:"ATB due-diligence package", d:"Corporate docs, cap table, deck, MSB registration (pending), transaction-flow, vendor list - due within 4 weeks."},
-        {state:"active", t:"3-step pilot validation", d:"Validate operations → technical build → market with pilot banks before pitching."},
-        {state:"todo", t:"Launch full outbound", d:"Scale across the 191 after the test batch."},
-        {state:"todo", t:"5 pilot banks → case studies", d:"Named targets include ATB and Bow Valley; dev-partner model (~$500K buy-in)."},
-        {state:"todo", t:"Secure 3 institutional MOUs", d:"Primary near-term GTM goal."}
+        {state:"done", t:"Tier 1 - architecture accepted", d:"The evidence architecture, accepted; intellectual property assigned to 4orm."},
+        {state:"done", t:"Build partner engaged", d:"Speer Technologies engaged for the phased build."},
+        {state:"active", t:"Tier 2 - engine and 4ormIQ", d:"The core evidence engine and the free consumer check, in build."},
+        {state:"todo", t:"Tier 3 - the record and reconciliation", d:"The dated record and reconciliation shipping, Q2 2027."},
+        {state:"todo", t:"Tier 4 - connectors, market by market", d:"The same engine pointed at each new rule set."},
+        {state:"todo", t:"Tier 5 - hardening and review", d:"Security, audit and review readiness."}
       ],
       facts:[
-        "Institutions mapped: <b>191</b> (191 CEO direct contacts)",
-        "Deposit-takers leaning in: <b>ATB + Bow Valley</b>",
-        "ATB account opening: <b>1-3 months</b>",
-        "Pilot target: <b>5 banks</b>",
-        "Open lane: <b>no central RWA marketplace</b> in Canada",
-        "Near-term goal: <b>3 MOUs</b>"
+        "Build partner: <b>Speer Technologies</b>",
+        "Full <b>IP to 4orm</b>",
+        "4orm <b>never holds</b> client money",
+        "Build sequenced <b>behind the close</b>"
       ]
     },
-    /* 6 ---------------------------------------------------------- */
     {
-      id:"marketing", name:"Marketing & Web", short:"Marketing",
-      pct:80, stage:"Built & live · launch, SEO & content engine remaining",
-      benchmark:{level:"ahead", note:"<b>Far ahead of a typical pre-seed.</b> Four live web properties, an interactive institutional demo, a brand system, a 22-brief content library and a 16-page investor Runway Briefing exceed what most companies have at Series A - built in-house for a fraction of agency cost. Remaining work is the ongoing SEO/content engine, the budget/roadmap, and PR, not the build."},
+      id:"distribution", name:"Distribution & Design Partner", short:"Distribution",
+      pct:12, stage:"Discovery underway · design partner ahead",
+      benchmark:{level:"ahead", note:"<b>The channel is the network, not the door.</b> These markets sit inside franchisors, dealer groups and lender panels, so one relationship reaches many firms. A design partner proves the record first, then the networks carry it."},
       checkpoints:[
-        {state:"done", t:"Brand kits finalized", d:"KCS Capital + 4orm Finance brand systems, stored in the shared drive."},
-        {state:"done", t:"Four web properties live", d:"kcs-capital.com, 4ormfinance.com, 4ormex.com + the institutional demo (~80-100 pages, 250+ design iterations)."},
-        {state:"done", t:"Institutional sales tool (pitch deck) live", d:"Interactive demo + investor pitch deck used as the institutional sales tool."},
-        {state:"done", t:"Positioning locked", d:"KCS = \"Canada's leading research & advisory firm\"; 4orm = the separate exchange entity (deliberate regulatory separation)."},
-        {state:"active", t:"Landing video + LinkedIn rebuild - in process", d:"Company page rebuild and landing video underway; founders updating profiles with affiliation."},
-        {state:"done", t:"ClickUp Command Center + CRM", d:"Pipeline/tasks separation, contact directory."},
-        {state:"done", t:"22 research briefs published", d:"KCS Briefs library; voice narration added."},
-        {state:"done", t:"16-page Runway Briefing produced", d:"Single-view investor progress briefing across all seven lanes of work."},
-        {state:"done", t:"Foresights live", d:"Foresight content series live and public-facing."},
-        {state:"active", t:"Brand / logo redesign", d:"Shifting to institutional blues/greens (away from crypto purple/gold)."},
-        {state:"active", t:"Marketing budget", d:"Phase-based budget being finalized (~$200K phase one)."},
-        {state:"active", t:"Marketing roadmap / timeline", d:"Sequencing the campaign calendar - in progress."},
-        {state:"active", t:"LinkedIn content strategy", d:"Primary social channel content plan - in progress."},
-        {state:"active", t:"Email marketing strategy", d:"Newsletter + nurture sequences - in progress."},
-        {state:"active", t:"SEO engagement (Ming)", d:"Discovery/audit; dual-track KCS (C-suite) + 4ormEx (volume); plan 4-8 briefs/month."},
-        {state:"active", t:"Data audit for personalized pages", d:"Auditing bank-specific financials before they go live."},
-        {state:"todo", t:"SEO / content engine ongoing", d:"Reverse-engineer Onyx/Polymath; close the new-domain authority gap."},
-        {state:"todo", t:"PR / newswire campaign", d:"Position 4orm as \"Canada's first RWA marketplace.\""},
-        {state:"todo", t:"Bank-specific personalized pages", d:"ATB, Scotia using actual financials."}
+        {state:"done", t:"Target base sourced", d:"217,585 professionals and the regulated firm populations, sourced firm by firm."},
+        {state:"active", t:"Discovery, twenty conversations", d:"Firm conversations opened, mortgage-first."},
+        {state:"active", t:"First network conversations", d:"Opening with a franchisor group that reaches many firms."},
+        {state:"todo", t:"Design partner live", d:"A lighthouse firm co-proving the record, Q1 2027."},
+        {state:"todo", t:"First two firms live", d:"The first paid deployments, Q1 2027."},
+        {state:"todo", t:"First network partner signed", d:"One relationship reaching many firms, Q2 2027."}
       ],
       facts:[
-        "Live web properties: <b>4</b>",
-        "Research briefs: <b>22</b> + 16-pg Runway Briefing",
-        "Built in-house value: <b>$30K-96K</b> of sites",
-        "SEO lead: <b>Ming</b> (Canada-wide; + web back-end ops)",
-        "Web partner: <b>Evolve One Media</b>",
-        "Phase-1 budget: <b>~$200K</b> (in progress)"
-      ],
-      links:[{label:"kcs-capital.com ↗", url:"https://www.kcs-capital.com"},{label:"4ormfinance.com ↗", url:"https://www.4ormfinance.com"},{label:"4ormex.com ↗", url:"https://4ormex.com"}]
-    },
-    /* 7 ---------------------------------------------------------- */
-    {
-      id:"team", name:"Team & Talent", short:"Team",
-      pct:38, stage:"Founders + deep advisory bench · key hires ahead",
-      benchmark:{level:"ahead", note:"<b>The advisory bench is a genuine standout.</b> Two top-tier securities firms engaged (one offering to work for equity), an architect building for equity, a CFA backing the numbers and eligible to serve as CCO, and an ex-SWIFT banking lead - deeper than most pre-seeds. The gap investors will probe is a committed full-time CTO and an engineering team - both in progress."},
-      checkpoints:[
-        {state:"done", t:"Founding team in place", d:"Chad Johnston (CEO) and co-founder Kevin Wong (CMO / marketing); Sam Mraiheen (relations, recognition only)."},
-        {state:"done", t:"Bruce Fair - capital-markets advisor", d:"30-yr VC (raised $500M+, 3 public boards); embedded ~4 months; sourced both law firms."},
-        {state:"done", t:"Michael Stevens - Partner, Fasken", d:"Technology & securities lawyer; offered to work for equity."},
-        {state:"done", t:"James - Capiche Capital", d:"Securities & capital-structure lawyer; handling incorporation and subscription docs."},
-        {state:"done", t:"Matthew - Osler", d:"Securities & tokenization lawyer; Osler has published on tokenization legal architecture."},
-        {state:"done", t:"Mike Andrews - banking & technology advisor", d:"Original dev lead for the SWIFT network for global institutions; ex-Morgan Stanley / BofA / Barclays."},
-        {state:"done", t:"Miika (CFA) - finance & compliance", d:"Audited the pro forma, models and case studies; eligible to serve as Chief Compliance Officer."},
-        {state:"done", t:"Zed - enterprise architect", d:"80+ hrs; 3 architecture overviews + 30/60/90 roadmap; building for equity."},
-        {state:"done", t:"Ming - SEO expert (Canada-wide)", d:"Leading SEO and website back-end operations for marketing & web."},
-        {state:"active", t:"Martin Hack - CTO / technical advisor", d:"Silicon Valley operator (scaled to $5M rev, raised ~$25M seed). Proposal + NDA + architecture docs sent; ~$20K/mo."},
-        {state:"active", t:"Partnership lanes defined", d:"Three lanes - full-time / part-time / co-founder - to satisfy investor team-composition scrutiny."},
-        {state:"active", t:"Equity incentive plan", d:"12% team pool; reverse-vesting agreements drafted."},
-        {state:"todo", t:"Engage full-time CTO / tech lead", d:"Convert advisor into committed technical leadership."},
-        {state:"todo", t:"Recruit dev leads + founding engineers", d:"2 dev leads + supporting roles, post pre-seed close."},
-        {state:"todo", t:"Advisory council charter", d:"Formalize the advisory council."}
-      ],
-      facts:[
-        "Founders: <b>2</b> (Chad, Kevin); Sam recognized",
-        "Securities firms engaged: <b>Fasken + Osler</b>",
-        "Lawyer offering <b>equity</b>: Michael Stevens",
-        "CFA on the numbers: <b>Miika</b> (CCO-eligible)",
-        "Prospective CTO: <b>Martin Hack</b> (~$20K/mo)",
-        "Next hires: <b>2 dev leads</b> + engineers"
+        "Payment firms: <b>745</b> · trust firms: <b>25,682</b>",
+        "One relationship reaches <b>many firms</b>",
+        "Reach by 2031: <b>18.4%</b> of a counted base",
+        "Design partner <b>before</b> the network"
       ]
     },
-    /* 8 ---------------------------------------------------------- */
     {
-      id:"legal", name:"Legal & Corporate Structure", short:"Legal",
-      pct:48, stage:"Multi-entity structure papered · Mission Anchor & governance drafted",
-      benchmark:{level:"ahead", note:"<b>Strong and remarkably capital-efficient.</b> Two elite securities firms are engaged (one offering equity), the cap table and single-class Class A share structure are set, and the firm cut ~$85K by choosing Capiche over Osler. The whole company has converted a $44K founding cheque into $111K-$264K of secured value (2.6-6.3× per $1). Incorporation completion is the gating item."},
+      id:"regulator", name:"Regulator Cultivation & Review Readiness", short:"Regulatory",
+      pct:22, stage:"Landscape mapped · cultivation ahead",
+      benchmark:{level:"ahead", note:"<b>4orm never holds client money, so the duty stays with the firm.</b> The landscape is mapped and sourced; the near work is cultivating the regulators and proving that a firm using 4orm can pass the reviews and examinations these regimes now demand."},
       checkpoints:[
-        {state:"done", t:"Three-firm legal structure locked", d:"Capiche (incorporation / subscription / shareholder agreements), CFA (TFSA/RRSP trust), Fasken / Michael Stevens (securities)."},
-        {state:"done", t:"~$85K legal cost reduction", d:"Capiche ($30-35K) selected over Osler ($115K) while preserving TFSA/RRSP eligibility."},
-        {state:"done", t:"Cap table finalized", d:"Founder, advisor and investor allocations modeled and locked into the structure."},
-        {state:"done", t:"Single share class defined", d:"A single class of Class A common (1:1 voting); no preferred and no super-voting; founder shares at $0.001. Founder alignment via the Voting Alignment Covenant."},
-        {state:"done", t:"First-tranche convertible structured", d:"Our first pre-seed investor's $250K (~$5K legal) to deploy ahead of subscription docs."},
-        {state:"done", t:"\"Capital In, Value Out\" summary produced", d:"Board summary documenting $44K in to $111K-$264K value out; the in-house build replaced ~$55K-169K of agency cost for $5,923 of tooling (9-29x)."},
-        {state:"active", t:"Initial Coin Offering (ICO) strategy", d:"ICO strategy development in place - not yet completed."},
-        {state:"active", t:"Shareholder agreement", d:"Voting Alignment Covenant; drag-along + buyback; in review."},
-        {state:"active", t:"Founder protections", d:"Reverse-vesting agreements; in review."},
-        {state:"active", t:"Incorporation + registration", d:"Alberta (ABCA) incorporation; extra-provincial registration as needed."},
-        {state:"active", t:"TFSA / RRSP eligibility - in process", d:"Trust accounts being set up so investors can subscribe via registered accounts."},
-        {state:"active", t:"Subscription agreements - in process", d:"Being drafted for the pre-seed close."},
-        {state:"todo", t:"Privacy charter", d:"Values-based / lawful-resistance language."},
-        {state:"todo", t:"Track incorporation completion", d:"Gating item for the raise mechanics."}
+        {state:"done", t:"Landscape mapped and sourced", d:"RPAA, FSRA, RECO, CSA and CIRO, FCAC and FINTRAC, each traced to a public source."},
+        {state:"done", t:"Product posture defined", d:"4orm never holds or moves client money, never signs a filing, never decides for the customer."},
+        {state:"active", t:"Regulator cultivation", d:"First engagements on review readiness and the evidence a firm must produce."},
+        {state:"todo", t:"Review-readiness proven", d:"End to end, Q3 2027, aligned to the RPAA independent review."},
+        {state:"todo", t:"First examination support", d:"Supporting a customer through a real examination or review."}
       ],
       facts:[
-        "Entity: <b>Alberta (ABCA)</b> corporation",
-        "Firms: <b>Capiche</b> + <b>CFA</b> + <b>Fasken</b>",
-        "Legal cost saved: ~<b>$85K</b> vs Osler",
-        "Capital in → value out: <b>$44K → $111-264K</b>",
-        "Shares: <b>single class (Class A)</b>; ICO strategy in development"
+        "RPAA safeguarding live: <b>8 Sep 2025</b>",
+        "4orm <b>never holds</b> client money",
+        "Reviews fall due <b>firm by firm from 2028</b>",
+        "One record, <b>five regimes</b>"
       ]
     },
-    /* 9 ---------------------------------------------------------- */
     {
-      id:"investors", name:"Investor Pipeline & Future Rounds", short:"Investors",
-      pct:24, stage:"Pipeline built · first capital in · seed mapped",
-      benchmark:{level:"ahead", note:"<b>Ahead on pipeline breadth, early on conversion.</b> The investor and strategic-interest list is unusually broad for pre-seed - 81 VC contacts plus an identified network of up to 12,000 international accredited investors - and first capital is committed. Conversion to closed capital is the early-stage gap, and the seed round is deliberately gated behind the pre-seed close."},
+      id:"capital", name:"Capital & the Raise", short:"Capital",
+      pct:32, stage:"Pre-seed open · $2.05M · seed to follow",
+      benchmark:{level:"onpar", note:"<b>Structured, priced and open.</b> Five tranches make the $2.05M pre-seed; the angel and first subscription are set and the three price-later tranches are open now, closing May 2027. A $3.55M seed follows at a $30M valuation."},
       checkpoints:[
-        {state:"done", t:"VC pipeline compiled", d:"81 VC contacts loaded in ClickUp with check sizes ($500K-$50M) and decision-makers."},
-        {state:"done", t:"Accredited-investor network identified", d:"Reach to up to 12,000 international accredited investors mapped."},
-        {state:"done", t:"First capital committed", d:"$50K angel investment (→1% / 200,000 shares); first pre-seed investor $250K - the first tranche of the $3M raise."},
-        {state:"done", t:"100+ institutional CEO direct emails", d:"Personal (not info@) lines to the people who actually decide."},
-        {state:"done", t:"Data room built", d:"Custom data room (migrating onto the KCS site)."},
-        {state:"active", t:"Neo Financial - cultivation", d:"Founders (Skip the Dishes exit) being cultivated via a warm intro."},
-        {state:"active", t:"Digital Commodities - meeting setup", d:"Strategic conversation being scheduled."},
-        {state:"active", t:"$250K first tranche of the $3M - in process", d:"First tranche from our first pre-seed investor, landing over the registered-account transfer window."},
-        {state:"active", t:"Warm intros to Tier-1 VCs + bank", d:"Mapping intro paths; strategic interest from Spear and LayerZero (open to the seed)."},
-        {state:"todo", t:"Pre-seed investor ROI model", d:"Projected-ROI section for the deck."},
-        {state:"todo", t:"Seed round planning", d:"\"Seed-strapping\" $15-25M (2027), likely via a US entity."}
+        {state:"done", t:"Capital structure set", d:"$2.05M across five tranches; cap table and three-case model tracing to the pro forma."},
+        {state:"done", t:"Angel and first subscription", d:"$50,000 at $0.25 and $500,000 at $0.50."},
+        {state:"active", t:"Three price-later tranches open", d:"$500,000 each at $15M, $18M and $20M ceilings, 15% discount."},
+        {state:"active", t:"Non-dilutive applications", d:"Eight programmes, modelled at zero as upside."},
+        {state:"todo", t:"Pre-seed completes", d:"May 2027, at $1.5M."},
+        {state:"todo", t:"Seed closed", d:"$3.55M at a $30M valuation, September 2027, against five references."}
       ],
       facts:[
-        "VC contacts: <b>81</b> ($500K-$50M)",
-        "Accredited network: <b>up to 12,000</b> intl.",
-        "Committed: <b>$50K angel</b> + <b>$250K</b> 1st pre-seed",
-        "Cultivating: <b>Neo Financial</b>, <b>Digital Commodities</b>",
-        "Strategic: <b>Spear</b>, <b>LayerZero</b>",
-        "Seed plan: <b>$15-25M</b> (2027)"
+        "Pre-seed: <b>$2.05M</b> · open now: <b>$1.5M</b>",
+        "Seed: <b>$3.55M</b> at <b>$30M</b>",
+        "First profit: <b>2029</b>, base case",
+        "Grants modelled at <b>zero</b> (upside)"
+      ]
+    },
+    {
+      id:"team", name:"Team & Partners", short:"Team",
+      pct:20, stage:"Founder-led · build partner and advisors",
+      benchmark:{level:"onpar", note:"<b>Founder-led, with the build partner engaged and the senior hires sequenced behind the raise.</b> Incorporated in Alberta; the technology and compliance searches run alongside the pre-seed."},
+      checkpoints:[
+        {state:"done", t:"Incorporated in Alberta", d:"The operating company incorporated, founding structure in place."},
+        {state:"done", t:"Build partner engaged", d:"Speer Technologies, with IP assigned to 4orm."},
+        {state:"active", t:"Technology and compliance search", d:"Recruiting the technology and compliance leadership."},
+        {state:"todo", t:"Founding team hires", d:"The first engineering and go-to-market hires after the close."},
+        {state:"todo", t:"Sixty people by 2031", d:"The base-case team, built as revenue supports it."}
+      ],
+      facts:[
+        "Incorporated in <b>Alberta</b>",
+        "Build partner: <b>Speer Technologies</b>",
+        "Team in 2031: <b>60</b>, base case",
+        "Revenue a person: <b>$1.18M</b>"
       ]
     }
   ]
