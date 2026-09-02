@@ -137,7 +137,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .pcard p{color:var(--tx-2);font-size:.95rem;line-height:1.55;}
 .pain-note{margin:34px 0 0;background:var(--tx);color:#fff;border-radius:var(--r);padding:22px 26px;font-size:clamp(1.02rem,1.5vw,1.2rem);font-weight:600;letter-spacing:-.01em;line-height:1.45;}
 
-.hero h1.umbrella{color:var(--blue);font-size:clamp(3.2rem,9.5vw,7rem);letter-spacing:-.045em;line-height:.98;max-width:none;}
+.hero h1.umbrella{color:var(--tx);font-size:clamp(3.2rem,9.5vw,7rem);letter-spacing:-.045em;line-height:.98;max-width:none;}.hero h1.umbrella .blu{color:var(--blue);}
 </style></head>
 <body>
 <div class="wash"></div>
@@ -153,7 +153,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 
 <header class="hero"><div class="wrap rv">
  <div class="eyebrow">Member access</div>
- <h1 class="umbrella">The 4orm umbrella.</h1>
+ <h1 class="umbrella">The <span class="blu">4</span>orm umbrella.</h1>
  <p>One company, three products. Open the one you came for, or read the 4orm Finance documents below. Everything here is confidential to you.</p>
 </div></header>
 
@@ -201,27 +201,27 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <div class="folder rv">
   <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The overview, the one-pagers, and the full business plan.</span></div>
   <div class="grid">
-   <a class="card" href="assets/docs/start/what-we-do.pdf" target="_blank" rel="noopener"><span class="k">What we do</span><span class="t">What We Do</span><span class="dd">The whole company explained in plain terms, sold four ways.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/start/one-pager-investor.pdf" target="_blank" rel="noopener"><span class="k">For the investor</span><span class="t">One Page, for the Investor</span><span class="dd">The wedge, the numbers and the raise, on a single page.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/start/one-pager-business.pdf" target="_blank" rel="noopener"><span class="k">For a business</span><span class="t">One Page, for a Business</span><span class="dd">What a firm that holds client money gets from 4orm.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/start/one-pager-consumer.pdf" target="_blank" rel="noopener"><span class="k">For people</span><span class="t">One Page, for People</span><span class="dd">The everyday check, in a person's own words.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/start/business-plan.pdf" target="_blank" rel="noopener"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a><a class="card" href="one-clear-path.html"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a><a class="card" href="assets/docs/4ormiq-core-architecture.pdf" target="_blank" rel="noopener"><span class="k">The technology</span><span class="t">The Technology, in Full</span><span class="dd">The 4ormIQ core system architecture.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/what-we-do.pdf','What We Do');return false;"><span class="k">What we do</span><span class="t">What We Do</span><span class="dd">The whole company explained in plain terms, sold four ways.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-investor.pdf','One Page, for the Investor');return false;"><span class="k">For the investor</span><span class="t">One Page, for the Investor</span><span class="dd">The wedge, the numbers and the raise, on a single page.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-business.pdf','One Page, for a Business');return false;"><span class="k">For a business</span><span class="t">One Page, for a Business</span><span class="dd">What a firm that holds client money gets from 4orm.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-consumer.pdf','One Page, for People');return false;"><span class="k">For people</span><span class="t">One Page, for People</span><span class="dd">The everyday check, in a person's own words.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/business-plan.pdf','The Business Plan');return false;"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a><a class="card" href="#" onclick="openPdf('one-clear-path.html','One Clear Path');return false;"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a><a class="card" href="#" onclick="openPdf('assets/docs/4ormiq-core-architecture.pdf','The Technology, in Full');return false;"><span class="k">The technology</span><span class="t">The Technology, in Full</span><span class="dd">The 4ormIQ core system architecture.</span><span class="go">Open PDF &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">02</span><h3>The Numbers</h3><span class="d">The full financial model and the pre-seed summary, calculated live.</span></div>
   <div class="grid">
-   <a class="card data" href="documents/pro-forma-v5.html" target="_blank" rel="noopener"><span class="k">The whole model</span><span class="t">The Full Financial Model</span><span class="dd">Every sheet, three cases side by side, calculated live.</span><span class="go">Open &#8599;</span></a>
-   <a class="card data" href="documents/pre-seed-summary.html" target="_blank" rel="noopener"><span class="k">The raise</span><span class="t">The Pre-Seed, on Five Pages</span><span class="dd">The terms, where the money goes, and who must comply.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('pro-forma-v5.html','The Financial Model');return false;"><span class="k">The whole model</span><span class="t">The Full Financial Model</span><span class="dd">Every sheet, three cases side by side, calculated live.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('pre-seed-summary.html','The Pre-Seed');return false;"><span class="k">The raise</span><span class="t">The Pre-Seed, on Five Pages</span><span class="dd">The terms, where the money goes, and who must comply.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">03</span><h3>The Team</h3><span class="d">The people building it and the partners behind them.</span></div>
   <div class="grid">
-   <a class="card" href="assets/docs/team/team-and-partners.pdf" target="_blank" rel="noopener"><span class="k">Who is building this</span><span class="t">The Team and Partners</span><span class="dd">The people building 4orm, and why they come first.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/team/team-at-a-glance.pdf" target="_blank" rel="noopener"><span class="k">On one page</span><span class="t">The Team at a Glance</span><span class="dd">The whole team on a single page.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/team/team-and-partners.pdf','The Team and Partners');return false;"><span class="k">Who is building this</span><span class="t">The Team and Partners</span><span class="dd">The people building 4orm, and why they come first.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/team/team-at-a-glance.pdf','The Team at a Glance');return false;"><span class="k">On one page</span><span class="t">The Team at a Glance</span><span class="dd">The whole team on a single page.</span><span class="go">Open PDF &#8599;</span></a>
   </div>
  </div>
 </div></main>
