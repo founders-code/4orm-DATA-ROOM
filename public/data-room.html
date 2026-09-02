@@ -28,7 +28,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .nav{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none;}
 .nav-in{pointer-events:auto;display:flex;align-items:center;gap:20px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);
  border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 12px 9px 20px;box-shadow:var(--sh);}
-.nav-mark{display:flex;align-items:center;}.nav-logo{height:26px;width:26px;display:block;}
+.nav-mark{display:flex;align-items:center;}.nav-logo{height:44px;width:auto;display:block;}
 .nav-mark b{color:var(--blue-lt);}
 .nav-links{display:flex;align-items:center;gap:4px;margin-left:6px;}
 .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;}
@@ -57,9 +57,9 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .tile .thumb-fb img{width:52px;height:52px;display:block;}
 .tile .thumb-fb b{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
 .tile .body{display:flex;flex-direction:column;padding:22px 24px 20px;flex:1;}
-.tile .k{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dp);}
-.tile .nm{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin:10px 0 8px;}
-.tile .ds{color:var(--tx-2);font-size:.92rem;line-height:1.5;flex:1;}
+.tile .k{display:block;font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dp);}
+.tile .nm{display:block;font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin:10px 0 8px;}
+.tile .ds{display:block;color:var(--tx-2);font-size:.92rem;line-height:1.5;flex:1;}
 .tile .go{margin-top:16px;font-weight:700;font-size:.9rem;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
 .tile .badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(20,32,54,.72);backdrop-filter:blur(6px);border-radius:999px;padding:5px 10px;}
 .tile.active .badge{color:#fff;background:var(--blue);}
@@ -137,22 +137,24 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .pcard p{color:var(--tx-2);font-size:.95rem;line-height:1.55;}
 .pain-note{margin:34px 0 0;background:var(--tx);color:#fff;border-radius:var(--r);padding:22px 26px;font-size:clamp(1.02rem,1.5vw,1.2rem);font-weight:600;letter-spacing:-.01em;line-height:1.45;}
 
+.hero h1.umbrella{color:var(--blue);font-size:clamp(3.2rem,9.5vw,7rem);letter-spacing:-.045em;line-height:.98;max-width:none;}
 </style></head>
 <body>
 <div class="wash"></div>
 <nav class="nav"><div class="nav-in">
- <span class="nav-mark"><img src="assets/favicon-512x512.png?v=20260902" alt="4orm" class="nav-logo"></span>
+ <span class="nav-mark"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="nav-logo"></span>
  <div class="nav-links">
   <a class="hide-sm" href="#documents">Documents</a>
+  <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
   <a class="hide-sm" href="visual-data.html">Visual Data</a>
   <a class="nav-out" href="index.html">Sign out</a>
  </div>
 </div></nav>
 
 <header class="hero"><div class="wrap rv">
- <div class="eyebrow">The 4orm umbrella</div>
- <h1>One company. Three products.</h1>
- <p>4orm is the umbrella over three products. Open the one you came for, or read the 4orm Finance documents below. Everything here is confidential to you.</p>
+ <div class="eyebrow">Member access</div>
+ <h1 class="umbrella">The 4orm umbrella.</h1>
+ <p>One company, three products. Open the one you came for, or read the 4orm Finance documents below. Everything here is confidential to you.</p>
 </div></header>
 
 <section class="wrap"><div class="tiles">
@@ -194,7 +196,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 </section>
 
 <main class="docs" id="documents"><div class="wrap">
- <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">9 documents · view only</span></div>
+ <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">11 documents · view only</span></div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The overview, the one-pagers, and the full business plan.</span></div>
@@ -203,7 +205,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
    <a class="card" href="assets/docs/start/one-pager-investor.pdf" target="_blank" rel="noopener"><span class="k">For the investor</span><span class="t">One Page, for the Investor</span><span class="dd">The wedge, the numbers and the raise, on a single page.</span><span class="go">Open PDF &#8599;</span></a>
    <a class="card" href="assets/docs/start/one-pager-business.pdf" target="_blank" rel="noopener"><span class="k">For a business</span><span class="t">One Page, for a Business</span><span class="dd">What a firm that holds client money gets from 4orm.</span><span class="go">Open PDF &#8599;</span></a>
    <a class="card" href="assets/docs/start/one-pager-consumer.pdf" target="_blank" rel="noopener"><span class="k">For people</span><span class="t">One Page, for People</span><span class="dd">The everyday check, in a person's own words.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/start/business-plan.pdf" target="_blank" rel="noopener"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="assets/docs/start/business-plan.pdf" target="_blank" rel="noopener"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a><a class="card" href="one-clear-path.html"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a><a class="card" href="assets/docs/4ormiq-core-architecture.pdf" target="_blank" rel="noopener"><span class="k">The technology</span><span class="t">The Technology, in Full</span><span class="dd">The 4ormIQ core system architecture.</span><span class="go">Open PDF &#8599;</span></a>
   </div>
  </div>
 
@@ -224,10 +226,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 </div></main>
 
-<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('assets/docs/4ormiq-core-architecture.pdf','How it works · 4ormIQ core system architecture');return false;">
+<section class="wrap rv"><a class="howit" href="one-clear-path.html">
  <div class="howit-l"><div class="howit-k">How it works</div>
-  <div class="howit-h">One engine underneath all three.</div>
-  <div class="howit-d">The core system architecture behind 4ormIQ, in full. See how a record is built, checked and kept.</div></div>
+  <div class="howit-h">One clear path, from concern to confidence.</div>
+  <div class="howit-d">See how 4ormIQ and 4orm work together, before the decision and after: check, understand, share carefully, and preserve the record.</div></div>
  <div class="howit-btn">Read it <span class="ar">&#8594;</span></div>
 </a></section>
 
