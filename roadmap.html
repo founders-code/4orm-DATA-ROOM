@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>The Road to Revenue · 4orm</title>
+<link rel="icon" href="assets/favicon.ico?v=20260903" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--mono:'JetBrains Mono',monospace;--sans:'Inter',-apple-system,sans-serif;--blue:#2E6BF2;--blue-lt:#9DB8FF;--gold:#E7C76C;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#0A1024}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#sky{position:fixed;inset:0;z-index:0;background:linear-gradient(180deg,#0A1024,#12193c)}
+#stars{position:fixed;inset:0;z-index:1;pointer-events:none}
+#moon{position:fixed;left:74%;top:92px;width:92px;height:92px;border-radius:50%;z-index:2;
+  background:radial-gradient(circle at 36% 34%,#F4F7FF,#D9E2F5 60%,#C3CFE8);box-shadow:0 0 60px 10px rgba(220,232,255,.45)}
+#moon:before,#moon:after{content:"";position:absolute;border-radius:50%;background:rgba(160,175,205,.35)}
+#moon:before{width:20px;height:20px;left:20px;top:28px}#moon:after{width:13px;height:13px;left:50px;top:52px}
+#sun{position:fixed;left:70%;top:120px;width:110px;height:110px;border-radius:50%;z-index:2;opacity:0;
+  background:radial-gradient(circle at 50% 50%,#FFF3D0,#FFD37A 58%,#FFB84D);box-shadow:0 0 90px 26px rgba(255,203,120,.55)}
+.docnav{position:fixed;top:0;left:0;right:0;height:52px;z-index:40;background:rgba(6,10,22,.55);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.docnav a{color:rgba(255,255,255,.9);font-weight:600;font-size:.9rem;text-decoration:none;padding:7px 10px;border-radius:8px}
+.docnav a:hover{background:rgba(255,255,255,.12)}
+.docnav .r{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:rgba(255,255,255,.6);text-transform:uppercase}
+.intro{position:relative;z-index:5;text-align:center;padding:118px 24px 20px;color:#fff}
+.intro .eb{font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-lt)}
+.intro h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:-.04em;margin-top:12px;line-height:1.02;color:#fff}
+.intro p{max-width:52ch;margin:14px auto 0;color:rgba(255,255,255,.78);font-size:1.02rem;line-height:1.55}
+.scrollcue{margin-top:22px;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:uppercase;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+#scene{position:relative;z-index:3;width:100%}
+#road{position:absolute;inset:0;width:100%;height:100%;z-index:3}
+/* car: small, faces down the road, tilts into bends */
+#car{position:fixed;top:56vh;left:50%;width:16px;height:30px;z-index:8;
+  transform:translate(-50%,-50%) rotate(180deg);transition:transform .1s linear,left .1s linear;will-change:left,transform;
+  filter:drop-shadow(0 10px 12px rgba(0,0,0,.5))}
+#beam{position:fixed;z-index:7;top:56vh;left:50%;width:70px;height:130px;pointer-events:none;
+  transform:translate(-50%,10px);background:radial-gradient(ellipse 46% 62% at 50% 0%,rgba(255,244,200,.55),rgba(255,244,200,0) 72%);
+  opacity:1;transition:opacity .5s;filter:blur(2px)}
+/* road-sign board, always visible */
+.sign{position:absolute;z-index:6;width:min(320px,42vw)}
+.sign .board{position:relative;background:rgba(12,20,40,.92);border:1px solid rgba(255,255,255,.22);border-top:5px solid var(--blue-lt);
+  border-radius:12px;padding:16px 18px 17px;box-shadow:0 18px 44px rgba(0,0,0,.6)}
+.sign.gold .board{border-top-color:var(--gold)}
+.sign .posts{position:absolute;left:0;right:0;bottom:-46px;display:flex;justify-content:center;gap:46px;pointer-events:none}
+.sign .posts i{width:10px;height:50px;background:linear-gradient(180deg,#aab6cd,#39445c);border-radius:3px;box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.sign .q{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-lt)}
+.sign.gold .q{color:var(--gold)}
+.sign ul{list-style:none;display:grid;gap:7px;margin-top:10px}
+.sign li{position:relative;padding-left:16px;font-size:.9rem;color:#fff;line-height:1.42}
+.sign li:before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--blue-lt)}
+.sign.gold li:before{background:var(--gold)}
+.sign .badge4{display:inline-block;font-weight:900;font-size:2.3rem;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:3px}
+.sign .badge4 b{color:var(--blue-lt)}
+/* minor road sign: smaller board, single post, always visible */
+.mini{position:absolute;z-index:6;width:min(232px,34vw)}
+.mini .board{position:relative;background:rgba(12,20,40,.9);border:1px solid rgba(255,255,255,.2);border-top:4px solid var(--gold);
+  border-radius:10px;padding:12px 15px;box-shadow:0 14px 32px rgba(0,0,0,.55)}
+.mini .posts{position:absolute;left:0;right:0;bottom:-34px;display:flex;justify-content:center}
+.mini .posts i{width:8px;height:38px;background:linear-gradient(180deg,#aab6cd,#39445c);border-radius:3px;box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.mini .mt{font-size:.86rem;color:#fff;line-height:1.4;display:flex;gap:9px;align-items:flex-start}
+.mini .mt .dt{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
+.finishwrap{position:relative;z-index:6;text-align:center;color:#fff;padding:30px 24px 130px}
+.finishwrap .chip{display:inline-block;font-family:var(--mono);font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  font-size:.72rem;background:#0E8A5F;color:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 10px 26px rgba(14,138,95,.4)}
+.finishwrap h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin-top:16px;color:#fff}
+.finishwrap p{max-width:52ch;margin:10px auto 0;color:rgba(255,255,255,.82);line-height:1.5}
+@media(max-width:640px){.sign{width:66vw}.mini{max-width:60vw}#moon,#sun{left:62%}}
+</style></head>
+<body>
+<div id="sky"></div>
+<canvas id="stars"></canvas>
+<div id="moon"></div>
+<div id="sun"></div>
+
+<nav class="docnav"><a href="data-room.html" target="_top">&#8592; Back to the room</a><span class="r">The road to revenue</span></nav>
+
+<div class="intro">
+  <div class="eb">The road to revenue</div>
+  <h1>The journey, milestone by milestone.</h1>
+  <p>Scroll to drive the road from the pre-seed at night to a self-funding record in daylight. Every bend is a checkpoint the company can be measured against, September 2026 to 2029.</p>
+  <div class="scrollcue">Scroll to drive &#8595;</div>
+</div>
+
+<div id="scene">
+  <svg id="road" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div id="marks"></div>
+  <div class="finishwrap" id="finish">
+    <div class="chip">Finish &middot; Daylight</div>
+    <h2>A record that pays for itself.</h2>
+    <p>First profit in 2029, the seed closed, and the same engine widening market by market. The road keeps going; from here the company funds its own way.</p>
+  </div>
+</div>
+
+<div id="beam"></div>
+<svg id="car" viewBox="0 0 40 74" xmlns="http://www.w3.org/2000/svg" aria-label="car">
+  <rect x="2" y="15" width="5" height="12" rx="2.5" fill="#0b1220"/><rect x="33" y="15" width="5" height="12" rx="2.5" fill="#0b1220"/>
+  <rect x="2" y="47" width="5" height="13" rx="2.5" fill="#0b1220"/><rect x="33" y="47" width="5" height="13" rx="2.5" fill="#0b1220"/>
+  <path d="M20 2 C12 4 8 13 8 25 L7 46 C7 60 11 71 20 72 C29 71 33 60 33 46 L32 25 C32 13 28 4 20 2 Z" fill="#2E6BF2" stroke="#1B4ABE" stroke-width="1.4"/>
+  <rect x="18.5" y="6" width="3" height="60" rx="1.5" fill="#5B8CFF" opacity=".5"/>
+  <path d="M13 26 C13 22 27 22 27 26 L26 44 C26 48 14 48 14 44 Z" fill="#0d1830"/>
+  <path d="M14.5 27 C15 25 25 25 25.5 27 L25 33 L15 33 Z" fill="#9DBEF7" opacity=".85"/>
+  <circle cx="14" cy="8" r="2.2" fill="#FFF3C4"/><circle cx="26" cy="8" r="2.2" fill="#FFF3C4"/>
+  <rect x="12" y="67" width="6" height="3" rx="1.5" fill="#D6334E"/><rect x="22" y="67" width="6" height="3" rx="1.5" fill="#D6334E"/>
+</svg>
+
+<script>
+/* Majors sit at the elbows (one per bend). Minors sit on the straights between. */
+var MAJORS = [
+  {gold:false, four:true,  q:"Q3 2026 · The start line", items:["Pre-seed opens; angel and first subscription set.","Speer engaged; architecture accepted, IP assigned."]},
+  {gold:false, q:"Q4 2026 · Foundations", items:["The evidence engine and the 4ormIQ check in build.","First $500,000 in; non-dilutive applications filed."]},
+  {gold:false, q:"Q1 2027 · First light", items:["4ormIQ goes live, free for the consumer.","First two broker firms live; the first paying customer."]},
+  {gold:false, q:"Q2 2027 · Traction", items:["Ten thousand dollars a month recurring.","First network partner signed, reaching many firms."]},
+  {gold:true,  q:"Q3 2027 · Sunrise", items:["Seed closed, $3.55M at a $30M valuation.","Independent review readiness proven."]},
+  {gold:true,  q:"2028 - 2029 · The moat widens", items:["Regulated payments and automotive turn paid.","Real estate trust accounts follow, one engine each market."]}
+];
+/* minors between major i and i+1 (index 0..4) */
+var MINORS = [
+  ["Discovery: twenty firm conversations","Franchisor and network talks open"],
+  ["Design partner live"],
+  ["Reconciliation and the record shipping","Pre-seed completes at $1.5M"],
+  ["Regulator cultivation begins"],
+  ["Seventy-five thousand consumers on the free layer"]
+];
+
+var VW=()=>window.innerWidth, VH=()=>window.innerHeight;
+var AMP, CX, WAVELEN=880, TOPPAD, HALF, BOT=560, sceneH, sceneTop=0;
+function roadX(y){ return CX + AMP*Math.sin((y-TOPPAD)/WAVELEN*Math.PI*2); }
+
+var scene=document.getElementById('scene'), marksEl=document.getElementById('marks'),
+    road=document.getElementById('road'), finish=document.getElementById('finish');
+
+function majorY(i){ return TOPPAD + WAVELEN*(0.25 + i*0.5); }   // elbows: sin = +1 (i even, right) / -1 (i odd, left)
+
+function layout(){
+  AMP = Math.min(VW()*0.16, 150); CX = VW()*0.5;
+  TOPPAD = Math.round(VH()*0.85); HALF = WAVELEN*0.5;
+  sceneH = majorY(MAJORS.length-1) + WAVELEN*0.5 + BOT;
+  scene.style.height = sceneH+'px';
+  sceneTop = scene.offsetTop;
+  road.setAttribute('viewBox','0 0 '+VW()+' '+sceneH);
+  road.setAttribute('width',VW()); road.setAttribute('height',sceneH);
+
+  var d='M '+roadX(0).toFixed(1)+' 0';
+  for(var y=0;y<=sceneH;y+=14){ d+=' L '+roadX(y).toFixed(1)+' '+y; }
+  road.innerHTML =
+    '<path d="'+d+'" fill="none" stroke="#1b2740" stroke-width="66" stroke-linecap="round"/>'+
+    '<path d="'+d+'" fill="none" stroke="#2b3a55" stroke-width="54" stroke-linecap="round"/>'+
+    '<path d="'+d+'" fill="none" stroke="#E7C76C" stroke-width="4" stroke-dasharray="24 26"/>';
+
+  marksEl.innerHTML='';
+  // majors at elbows
+  MAJORS.forEach(function(m,i){
+    var y=majorY(i), rx=roadX(y), right=(i%2===0);
+    var el=document.createElement('div');
+    el.className='sign '+(right?'right':'left')+(m.gold?' gold':''); el.dataset.y=y;
+    var lis=m.items.map(function(t){return '<li>'+t+'</li>';}).join('');
+    var head=m.four?'<div class="badge4"><b>4</b>orm</div>':'';
+    el.innerHTML='<div class="board">'+head+'<div class="q">'+m.q+'</div><ul>'+lis+'</ul><div class="posts"><i></i><i></i></div></div>';
+    var w=Math.min(300,VW()*0.40);
+    el.style.left = right ? Math.min(VW()-w-14,(rx+54))+'px' : Math.max(14,(rx-54-w))+'px';
+    el.style.top = (y-84)+'px';
+    marksEl.appendChild(el);
+  });
+  // minors on the straights between elbows
+  MINORS.forEach(function(list,i){
+    var y0=majorY(i), y1=majorY(i+1);
+    list.forEach(function(txt,k){
+      var f=(k+1)/(list.length+1);
+      var y=y0+(y1-y0)*f, rx=roadX(y);
+      var toRight = roadX(y+6) < roadX(y);  // place on the outside-ish of travel
+      var el=document.createElement('div');
+      el.className='mini'; el.dataset.y=y;
+      el.innerHTML='<div class="board"><div class="mt"><span class="dt"></span><span>'+txt+'</span></div><div class="posts"><i></i></div></div>';
+      var w=Math.min(230,VW()*0.34);
+      el.style.left = toRight ? Math.min(VW()-w-14,(rx+40))+'px' : Math.max(14,(rx-40-w))+'px';
+      el.style.top = (y-52)+'px';
+      marksEl.appendChild(el);
+    });
+  });
+}
+
+function lerp(a,b,t){return a+(b-a)*t;}
+function mix(c1,c2,t){return 'rgb('+Math.round(lerp(c1[0],c2[0],t))+','+Math.round(lerp(c1[1],c2[1],t))+','+Math.round(lerp(c1[2],c2[2],t))+')';}
+var nightTop=[10,16,36], nightBot=[18,25,60], dayTop=[126,178,240], dayBot=[234,242,253];
+var sky=document.getElementById('sky'), moon=document.getElementById('moon'), sun=document.getElementById('sun'),
+    car=document.getElementById('car'), beam=document.getElementById('beam'), stars=document.getElementById('stars');
+
+var sctx=stars.getContext('2d'), STARS=[];
+function initStars(){ stars.width=VW(); stars.height=VH(); STARS=[]; var n=Math.round(VW()*VH()/9000);
+  for(var i=0;i<n;i++) STARS.push({x:Math.random()*VW(),y:Math.random()*VH()*0.8,r:Math.random()*1.4+0.3,tw:Math.random()*6.28}); }
+function drawStars(alpha){ sctx.clearRect(0,0,stars.width,stars.height); if(alpha<=0.02)return;
+  for(var i=0;i<STARS.length;i++){var s=STARS[i];var a=alpha*(0.55+0.45*Math.sin(s.tw+Date.now()/700));
+    sctx.globalAlpha=Math.max(0,a);sctx.fillStyle='#eaf1ff';sctx.beginPath();sctx.arc(s.x,s.y,s.r,0,6.28);sctx.fill();}
+  sctx.globalAlpha=1; }
+
+var carScreenY=()=>VH()*0.56;
+function frac(){ var p=window.scrollY/Math.max(1,(sceneTop+majorY(MAJORS.length-1)-VH()*0.4)); return Math.max(0,Math.min(1,p)); }
+
+var ticking=false;
+function onScroll(){
+  if(ticking)return; ticking=true;
+  requestAnimationFrame(function(){
+    var f=frac();
+    sky.style.background='linear-gradient(180deg,'+mix(nightTop,dayTop,f)+','+mix(nightBot,dayBot,f)+')';
+    moon.style.opacity=Math.max(0,1-f*1.7); moon.style.transform='translateY('+(f*90)+'px)';
+    var sf=Math.max(0,(f-0.35)/0.65); sun.style.opacity=Math.min(1,sf*1.3); sun.style.transform='translateY('+((1-sf)*80)+'px)';
+    drawStars(Math.max(0,1-f*1.6));
+    beam.style.opacity=Math.max(0,1-f*1.9);
+    // car locked to the road (scene-relative y), tilts into the bend
+    var yScene=window.scrollY+carScreenY()-sceneTop;
+    var rx=roadX(yScene);
+    var slope=(roadX(yScene+10)-roadX(yScene-10))/20;         // dx/dy
+    var ang=Math.atan(slope)*180/Math.PI;
+    car.style.left=rx+'px';
+    car.style.transform='translate(-50%,-50%) rotate('+(180+ang)+'deg)';
+    beam.style.left=rx+'px';
+    beam.style.transform='translate(-50%,10px) rotate('+ang+'deg)';
+    /* signs are always visible */
+    ticking=false;
+  });
+}
+function boot(){ layout(); initStars(); onScroll(); }
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',function(){ layout(); initStars(); onScroll(); });
+setInterval(function(){ drawStars(Math.max(0,1-frac()*1.6)); },120);
+boot();
+</script>
+</body></html>
