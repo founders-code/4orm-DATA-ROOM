@@ -123,6 +123,8 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .howmodal .pages .pdfpage{position:relative;margin:0 auto 18px;}
 .howmodal .pages .pdflink{position:absolute;display:block;z-index:3;border-radius:2px;}
 .howmodal .pages .pdflink:hover{background:rgba(46,107,242,.18);box-shadow:0 0 0 1px rgba(46,107,242,.5);}
+.howmodal .pages .pdflinktag{position:absolute;z-index:4;font-family:var(--mono);font-size:8px;font-weight:800;letter-spacing:.04em;line-height:1;color:#2E6BF2;background:#EAF1FE;border:1px solid #CFE0FD;border-radius:3px;padding:2px 3px;text-decoration:none;white-space:nowrap;}
+.howmodal .pages .pdflinktag:hover{background:#2E6BF2;color:#fff;border-color:#2E6BF2;}
 .howmodal .pstatus{color:rgba(255,255,255,.7);text-align:center;font-family:var(--mono);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:48px 20px;}
 
 
@@ -372,6 +374,9 @@ function renderPdf(url){
         var el=document.createElement('a');el.className='pdflink';el.href=a.url;el.target='_blank';el.rel='noopener';
         el.style.left=x1+'px';el.style.top=y1+'px';el.style.width=(x2-x1)+'px';el.style.height=(y2-y1)+'px';
         wrap.appendChild(el);
+        var tag=document.createElement('a');tag.className='pdflinktag';tag.href=a.url;tag.target='_blank';tag.rel='noopener';tag.textContent='link';
+        tag.style.left=(x2+2)+'px';tag.style.top=(y1-2)+'px';
+        wrap.appendChild(tag);
        }
       });
      });
