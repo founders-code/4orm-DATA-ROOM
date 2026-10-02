@@ -116,6 +116,11 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .howmodal-bar .mc{background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;font-size:.9rem;}
 .howmodal-bar .mc:hover{background:rgba(255,255,255,.26);}
 .howmodal iframe{flex:1;width:100%;border:none;border-radius:14px;background:#fff;}
+.howmodal iframe.hide{display:none;}
+.howmodal .pages{flex:1;width:100%;overflow-y:auto;border-radius:14px;background:#ECF0F6;padding:22px 12px;-webkit-overflow-scrolling:touch;}
+.howmodal .pages.hide{display:none;}
+.howmodal .pages canvas{display:block;margin:0 auto 18px;max-width:100%;box-shadow:0 10px 30px rgba(16,32,64,.22);border-radius:4px;background:#fff;}
+.howmodal .pstatus{color:rgba(255,255,255,.7);text-align:center;font-family:var(--mono);font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:48px 20px;}
 
 
 .wwd{padding:66px 0 8px;}
@@ -206,62 +211,59 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 </a></section>
 
 <main class="docs" id="documents"><div class="wrap">
- <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">13 documents · view only</span></div>
+ <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">18 documents · view only</span></div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The founder's vision and north star, then the investor deck.</span></div>
+  <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The founder's vision, the deck, and the road to capital and revenue.</span></div>
   <div class="grid">
-   <div class="card soon"><span class="k">The vision</span><span class="t">Founder Vision &amp; North Star</span><span class="dd">Where 4orm is going, and the single star it steers by.</span><span class="go">Coming soon</span></div>
-   <div class="card soon"><span class="k">The deck</span><span class="t">The Investor Deck</span><span class="dd">The full 4orm story, as presented to investors.</span><span class="go">Coming soon</span></div>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/founder-vision.pdf','Founder Vision &amp; North Star');return false;"><span class="k">The vision</span><span class="t">Founder Vision &amp; North Star</span><span class="dd">The founder story, the purpose, and the permanent star 4orm steers by.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/investor-deck.pdf','The Investor Deck');return false;"><span class="k">The deck</span><span class="t">The Investor Deck</span><span class="dd">The full 4orm story, start to finish, as presented to investors.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/roadmap-to-capital.pdf','Roadmap to Capital');return false;"><span class="k">The raise</span><span class="t">Roadmap to Capital</span><span class="dd">The pre-seed, the tranches, and the path to a closed seed.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/roadmap-to-revenue.pdf','Roadmap to Revenue');return false;"><span class="k">The revenue</span><span class="t">Roadmap to Revenue</span><span class="dd">From validation to a repeatable mortgage revenue engine.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">02</span><h3>The Team</h3><span class="d">The people building it and the partners behind them.</span></div>
+  <div class="folder-h"><span class="n">02</span><h3>The Team</h3><span class="d">Everyone building it, in one window.</span></div>
   <div class="grid">
-   <a class="card" href="#" onclick="openPdf('team-and-partners.html','The 4orm Family · Team and Partners');return false;"><span class="k">Who is building this</span><span class="t">The Team and Partners</span><span class="dd">Everyone on one page: the founders, the architect, the CTO seat, the funded hires, the capital and counsel advisors, and the Speer engineering bench.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('team-and-partners.html','The 4orm Family · Team and Partners');return false;"><span class="k">Who is building this</span><span class="t">The Team &amp; Partners</span><span class="dd">Everyone on one page: the founders, the CTO seat, the funded hires, the capital and counsel advisors, and the Speer engineering bench.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">03</span><h3>Financials</h3><span class="d">The full financial model and the pre-seed, calculated live from the pro forma.</span></div>
+  <div class="folder-h"><span class="n">03</span><h3>Financials</h3><span class="d">The summary, the full pre-seed pro forma, and the cap table.</span></div>
   <div class="grid">
-   <a class="card data" href="#" onclick="openPdf('pro-forma-v5.html','The Financial Model');return false;"><span class="k">The whole model</span><span class="t">The Full Financial Model</span><span class="dd">Every sheet, three cases side by side, calculated live from the pro forma.</span><span class="go">Open &#8599;</span></a>
-   <a class="card data" href="#" onclick="openPdf('pre-seed-summary.html','The Pre-Seed');return false;"><span class="k">The raise</span><span class="t">The Pre-Seed, on Five Pages</span><span class="dd">The terms, where the money goes, and who must comply.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('assets/docs/financials/financial-summary.pdf','Financial Summary');return false;"><span class="k">The numbers that matter</span><span class="t">Financial Summary</span><span class="dd">The round, where the money goes, and the targets, on a few pages.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('assets/docs/financials/full-financial-model.pdf','The Full Financial Model');return false;"><span class="k">The whole model</span><span class="t">The Full Financial Model</span><span class="dd">Every sheet of the pre-seed pro forma.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('assets/docs/financials/capital-table.pdf','Capital Table');return false;"><span class="k">Ownership</span><span class="t">Capital Table</span><span class="dd">Shares, SAFEs and ownership, line by line.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">04</span><h3>Product &amp; Technology</h3><span class="d">The demos, the roadmaps, and the architecture.</span></div>
+  <div class="folder-h"><span class="n">04</span><h3>Product &amp; Technology</h3><span class="d">The demos, the slide walkthroughs, and the roadmaps.</span></div>
   <div class="grid">
-   <a class="card" href="#" onclick="openPdf('4ormiq-story.html','4ormIQ · The Consumer Demo');return false;"><span class="k">Watch · for people</span><span class="t">The Consumer Demo</span><span class="dd">The everyday journey, from a big decision to a clear, confident outcome. Plays right here.</span><span class="go">Open demo &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('4ormiq-business.html','4ormIQ · The Business Demo');return false;"><span class="k">Watch · for a firm</span><span class="t">The Business Demo</span><span class="dd">What a firm that holds client money sees: shared context, a clean record, a defensible review.</span><span class="go">Open demo &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('4ormiq-preview.html','4ormIQ · Product Preview');return false;"><span class="k">Share it</span><span class="t">The Product Preview</span><span class="dd">Six shareable preview cards of 4ormIQ. View them here, or download the set to send on.</span><span class="go">Open &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('roadmap.html','The Product Roadmap');return false;"><span class="k">The roadmap</span><span class="t">The Product Roadmap</span><span class="dd">The visual 12-month plan: every checkpoint and milestone from the pre-seed to a closed seed.</span><span class="go">Open &#8599;</span></a>
-   <div class="card soon"><span class="k">The build plan</span><span class="t">The Technical Roadmap</span><span class="dd">The engineering plan behind the product roadmap.</span><span class="go">Coming soon</span></div>
-   <a class="card" href="#" onclick="openPdf('one-clear-path.html','One Clear Path');return false;"><span class="k">How it works</span><span class="t">One Clear Path</span><span class="dd">The whole picture on one page: check before the decision, preserve the record after.</span><span class="go">Open &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/4ormiq-core-architecture.pdf','Architecture Overview');return false;"><span class="k">The architecture</span><span class="t">Architecture Overview</span><span class="dd">The 4ormIQ core system architecture, in full.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="assets/docs/4ormiq/4ormIQ-Demo-Slides.pptx" download><span class="k">Download · consumer</span><span class="t">The Consumer Slide Deck</span><span class="dd">The full consumer story as editable PowerPoint slides.</span><span class="go">Download &#8595;</span></a>
-   <a class="card" href="assets/docs/4ormiq/4ormIQ-Business-Slides.pptx" download><span class="k">Download · business</span><span class="t">The Business Slide Deck</span><span class="dd">The full business story as editable PowerPoint slides.</span><span class="go">Download &#8595;</span></a>
+   <a class="card" href="#" onclick="openPdf('4ormiq-story.html','4ormIQ · The Consumer Demo');return false;"><span class="k">Watch it live · for people</span><span class="t">The Consumer Demo</span><span class="dd">The everyday journey, from a big decision to a clear, confident outcome. Plays right here.</span><span class="go">Open demo &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/consumer-demo-slides.pdf','The Consumer Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Consumer Walkthrough</span><span class="dd">The same consumer story, slide by slide.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('4ormiq-business.html','4ormIQ · The Business Demo');return false;"><span class="k">Watch it live · for a firm</span><span class="t">The Business Demo</span><span class="dd">What a firm that holds client money sees: shared context, a clean record, a defensible review.</span><span class="go">Open demo &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/business-demo-slides.pdf','The Business Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Business Walkthrough</span><span class="dd">The same business story, slide by slide.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/product-roadmap.pdf','Product Roadmap');return false;"><span class="k">The product plan</span><span class="t">Product Roadmap</span><span class="dd">How the product is sequenced over twelve to eighteen months, and what each phase proves.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/technical-roadmap.pdf','Technical Roadmap');return false;"><span class="k">The build plan</span><span class="t">Technical Roadmap</span><span class="dd">How the architecture is de-risked in layers, and the tests it has to pass.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">05</span><h3>Marketing &amp; Competition</h3><span class="d">Defensibility, the market opportunity, and the validation behind it.</span></div>
+  <div class="folder-h"><span class="n">05</span><h3>Market &amp; Evidence</h3><span class="d">The competition, the market, and the evidence behind every claim.</span></div>
   <div class="grid">
-   <div class="card soon"><span class="k">The moat</span><span class="t">Defensibility</span><span class="dd">Why 4orm holds its ground: the moat and the competitive picture.</span><span class="go">Coming soon</span></div>
-   <div class="card soon"><span class="k">The market</span><span class="t">Market Opportunity</span><span class="dd">The size of the prize, and where the demand sits.</span><span class="go">Coming soon</span></div>
-   <a class="card" href="#" onclick="openPdf('customer-adoption.html','Customer Adoption and Distribution');return false;"><span class="k">The validation</span><span class="t">Customer Adoption &amp; Distribution</span><span class="dd">How the seats and firms are won: mortgage-first, networks, the penetration math and retention.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/market/competitive-landscape.pdf','Competitive Landscape');return false;"><span class="k">The competition</span><span class="t">Competitive Landscape</span><span class="dd">One hundred and five companies read, eighteen measured, and the three that shape the market.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/market/evidence-book.pdf','Evidence Book');return false;"><span class="k">The evidence</span><span class="t">Evidence Book</span><span class="dd">Every claim 4orm makes, with the source that carries it.</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/market/evidence-tables.pdf','Evidence Tables');return false;"><span class="k">The data</span><span class="t">Evidence Tables</span><span class="dd">The underlying data behind the evidence, in full.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">06</span><h3>Company Docs</h3><span class="d">The agreements and the fundraise reference.</span></div>
+  <div class="folder-h"><span class="n">06</span><h3>Company Docs</h3><span class="d">The charter, and the records that come with the company.</span></div>
   <div class="grid">
-   <a class="card" href="#" onclick="openPdf('assets/docs/company/mission-anchor.pdf','The Mission Anchor');return false;"><span class="k">The north star</span><span class="t">The Mission Anchor</span><span class="dd">What 4orm is for, and the single line everything traces back to.</span><span class="go">Open PDF &#8599;</span></a>
-   <div class="card soon"><span class="k">The founders</span><span class="t">Founders Agreement</span><span class="dd">The agreement between the 4orm founders.</span><span class="go">Coming soon</span></div>
-   <div class="card soon"><span class="k">The agreements</span><span class="t">Advisor Agreements</span><span class="dd">The signed agreements with 4orm's advisors.</span><span class="go">Coming soon</span></div>
-   <div class="card soon"><span class="k">The raise, in brief</span><span class="t">Fundraise Reference Sheet</span><span class="dd">The key fundraise terms and figures, on one reference page.</span><span class="go">Coming soon</span></div>
+   <a class="card" href="#" onclick="openPdf('assets/docs/company/mission-anchor.pdf','The Mission Anchor');return false;"><span class="k">The charter</span><span class="t">The Mission Anchor</span><span class="dd">The standing charter: what 4orm builds, what it protects, and how it makes decisions.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 </div></main>
@@ -284,10 +286,39 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  addEventListener('scroll',sweep,{passive:true});addEventListener('load',sweep);sweep();
 })();
 </script>
-<div class="howmodal" id="docModal"><div class="howmodal-bar"><span class="mt" id="docModalTitle">Document</span><button class="mc" onclick="closePdf()">Close &#10005;</button></div><iframe id="docFrame" title="Document"></iframe></div>
+<div class="howmodal" id="docModal"><div class="howmodal-bar"><span class="mt" id="docModalTitle">Document</span><button class="mc" onclick="closePdf()">Close &#10005;</button></div><div class="pages hide" id="docPages"></div><iframe id="docFrame" class="hide" title="Document"></iframe></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 <script>
-function openPdf(url,title){var f=document.getElementById('docFrame');f.src=(/\.pdf(\?|$)/i.test(url)?url+(url.indexOf('#')<0?'#toolbar=0&navpanes=0&scrollbar=0':''):url);document.getElementById('docModalTitle').textContent=title||'Document';document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';}
-function closePdf(){var m=document.getElementById('docModal');m.classList.remove('open');document.getElementById('docFrame').src='';document.body.style.overflow='';}
+function openPdf(url,title){
+ document.getElementById('docModalTitle').textContent=title||'Document';
+ document.getElementById('docModal').classList.add('open');document.body.style.overflow='hidden';
+ var frame=document.getElementById('docFrame'),pages=document.getElementById('docPages');
+ if(/\.pdf(\?|$)/i.test(url)){frame.classList.add('hide');frame.src='';pages.classList.remove('hide');renderPdf(url.split('#')[0]);}
+ else{pages.classList.add('hide');pages.innerHTML='';frame.classList.remove('hide');frame.src=url;}
+}
+function renderPdf(url){
+ var pages=document.getElementById('docPages');pages.innerHTML='<div class="pstatus">Loading document…</div>';
+ var token=Date.now();pages.dataset.token=token;
+ if(!window.pdfjsLib){pages.innerHTML='<div class="pstatus">Could not load the viewer</div>';return;}
+ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+ pdfjsLib.getDocument(url).promise.then(function(pdf){
+  if(pages.dataset.token!=token)return;pages.innerHTML='';
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  var cw=Math.min(940,(pages.clientWidth||900)-24);
+  var seq=Promise.resolve();
+  for(var i=1;i<=pdf.numPages;i++){(function(n){seq=seq.then(function(){
+   if(pages.dataset.token!=token)return;
+   return pdf.getPage(n).then(function(page){
+    var vp=page.getViewport({scale:1});var scale=cw/vp.width;var v=page.getViewport({scale:scale*dpr});
+    var c=document.createElement('canvas');c.width=v.width;c.height=v.height;c.style.width=cw+'px';
+    pages.appendChild(c);return page.render({canvasContext:c.getContext('2d'),viewport:v}).promise;
+   });
+  });})(i);}
+ }).catch(function(){if(pages.dataset.token==token)pages.innerHTML='<div class="pstatus">Could not open this document</div>';});
+}
+function closePdf(){var m=document.getElementById('docModal');m.classList.remove('open');
+ var f=document.getElementById('docFrame');f.src='';var p=document.getElementById('docPages');p.innerHTML='';p.dataset.token='';
+ document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();});
 </script>
 </body></html>
