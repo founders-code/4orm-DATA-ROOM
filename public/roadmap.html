@@ -36,29 +36,29 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 #beam{position:fixed;z-index:7;top:56vh;left:50%;width:70px;height:130px;pointer-events:none;
   transform:translate(-50%,10px);background:radial-gradient(ellipse 46% 62% at 50% 0%,rgba(255,244,200,.55),rgba(255,244,200,0) 72%);
   opacity:1;transition:opacity .5s;filter:blur(2px)}
-/* MAJOR sign: dark glass panel, white words */
-.sign{position:absolute;z-index:6;width:min(300px,40vw);opacity:0;transform:translateY(24px);
-  transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
-.sign.reached{opacity:1;transform:none}
-.sign .board{background:rgba(14,22,42,.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.16);border-radius:16px;
-  padding:15px 17px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
-.sign .post{position:absolute;bottom:-42px;width:7px;height:48px;background:linear-gradient(180deg,#8b98b0,#3c465e);border-radius:4px}
-.sign.left .post{right:32px}.sign.right .post{left:32px}
-.sign .q{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-lt)}
+/* road-sign board, always visible */
+.sign{position:absolute;z-index:6;width:min(320px,42vw)}
+.sign .board{position:relative;background:rgba(12,20,40,.92);border:1px solid rgba(255,255,255,.22);border-top:5px solid var(--blue-lt);
+  border-radius:12px;padding:16px 18px 17px;box-shadow:0 18px 44px rgba(0,0,0,.6)}
+.sign.gold .board{border-top-color:var(--gold)}
+.sign .posts{position:absolute;left:0;right:0;bottom:-46px;display:flex;justify-content:center;gap:46px;pointer-events:none}
+.sign .posts i{width:10px;height:50px;background:linear-gradient(180deg,#aab6cd,#39445c);border-radius:3px;box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.sign .q{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-lt)}
 .sign.gold .q{color:var(--gold)}
-.sign ul{list-style:none;display:grid;gap:6px;margin-top:9px}
-.sign li{position:relative;padding-left:15px;font-size:.85rem;color:#fff;line-height:1.4}
-.sign li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--blue-lt)}
+.sign ul{list-style:none;display:grid;gap:7px;margin-top:10px}
+.sign li{position:relative;padding-left:16px;font-size:.9rem;color:#fff;line-height:1.42}
+.sign li:before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--blue-lt)}
 .sign.gold li:before{background:var(--gold)}
-.sign .badge4{display:inline-block;font-weight:900;font-size:2.2rem;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:2px}
+.sign .badge4{display:inline-block;font-weight:900;font-size:2.3rem;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:3px}
 .sign .badge4 b{color:var(--blue-lt)}
-/* MINOR marker: small pill, white words */
-.mini{position:absolute;z-index:6;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1);
-  display:flex;align-items:center;gap:8px;background:rgba(14,22,42,.66);backdrop-filter:blur(5px);
-  border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 14px;max-width:min(230px,34vw)}
-.mini.reached{opacity:1;transform:none}
-.mini .d{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.mini span{font-size:.78rem;color:#fff;line-height:1.3}
+/* minor road sign: smaller board, single post, always visible */
+.mini{position:absolute;z-index:6;width:min(232px,34vw)}
+.mini .board{position:relative;background:rgba(12,20,40,.9);border:1px solid rgba(255,255,255,.2);border-top:4px solid var(--gold);
+  border-radius:10px;padding:12px 15px;box-shadow:0 14px 32px rgba(0,0,0,.55)}
+.mini .posts{position:absolute;left:0;right:0;bottom:-34px;display:flex;justify-content:center}
+.mini .posts i{width:8px;height:38px;background:linear-gradient(180deg,#aab6cd,#39445c);border-radius:3px;box-shadow:0 3px 5px rgba(0,0,0,.5)}
+.mini .mt{font-size:.86rem;color:#fff;line-height:1.4;display:flex;gap:9px;align-items:flex-start}
+.mini .mt .dt{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
 .finishwrap{position:relative;z-index:6;text-align:center;color:#fff;padding:30px 24px 130px}
 .finishwrap .chip{display:inline-block;font-family:var(--mono);font-weight:800;letter-spacing:.18em;text-transform:uppercase;
   font-size:.72rem;background:#0E8A5F;color:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 10px 26px rgba(14,138,95,.4)}
@@ -155,10 +155,10 @@ function layout(){
     el.className='sign '+(right?'right':'left')+(m.gold?' gold':''); el.dataset.y=y;
     var lis=m.items.map(function(t){return '<li>'+t+'</li>';}).join('');
     var head=m.four?'<div class="badge4"><b>4</b>orm</div>':'';
-    el.innerHTML='<div class="board"><div class="post"></div>'+head+'<div class="q">'+m.q+'</div><ul>'+lis+'</ul></div>';
+    el.innerHTML='<div class="board">'+head+'<div class="q">'+m.q+'</div><ul>'+lis+'</ul><div class="posts"><i></i><i></i></div></div>';
     var w=Math.min(300,VW()*0.40);
     el.style.left = right ? Math.min(VW()-w-14,(rx+54))+'px' : Math.max(14,(rx-54-w))+'px';
-    el.style.top = (y-46)+'px';
+    el.style.top = (y-84)+'px';
     marksEl.appendChild(el);
   });
   // minors on the straights between elbows
@@ -170,10 +170,10 @@ function layout(){
       var toRight = roadX(y+6) < roadX(y);  // place on the outside-ish of travel
       var el=document.createElement('div');
       el.className='mini'; el.dataset.y=y;
-      el.innerHTML='<span class="d"></span><span>'+txt+'</span>';
+      el.innerHTML='<div class="board"><div class="mt"><span class="dt"></span><span>'+txt+'</span></div><div class="posts"><i></i></div></div>';
       var w=Math.min(230,VW()*0.34);
       el.style.left = toRight ? Math.min(VW()-w-14,(rx+40))+'px' : Math.max(14,(rx-40-w))+'px';
-      el.style.top = (y-18)+'px';
+      el.style.top = (y-52)+'px';
       marksEl.appendChild(el);
     });
   });
@@ -215,10 +215,7 @@ function onScroll(){
     car.style.transform='translate(-50%,-50%) rotate('+(180+ang)+'deg)';
     beam.style.left=rx+'px';
     beam.style.transform='translate(-50%,10px) rotate('+ang+'deg)';
-    var reachY=window.scrollY+carScreenY()+VH()*0.10;
-    marksEl.querySelectorAll('.sign,.mini').forEach(function(el){
-      if(parseFloat(el.dataset.y) <= (reachY-sceneTop)) el.classList.add('reached');
-    });
+    /* signs are always visible */
     ticking=false;
   });
 }
