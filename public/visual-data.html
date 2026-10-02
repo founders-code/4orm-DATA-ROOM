@@ -1,108 +1,91 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<title>Visual Data · 4orm Finance</title>
-<link rel="icon" href="assets/favicon.ico?v=20260902" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20260902">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>4orm · Visual Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--brand:#2E6BF2;--lt:#9AB6FF;--green:#7BE3B0;--gold:#E7C76C;--gold2:#C49A3A;--purple:#C8B0EF;
---bg:#0B1220;--line:rgba(255,255,255,.12);--t1:#fff;--t2:rgba(255,255,255,.78);--t3:rgba(255,255,255,.5);
---ink:#142036;--ink2:#46556E;--ink3:#5E6E88;--track:#EFF3FA;--hair:#D7DEEA;
---font-sans:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;--maxw:1180px;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--font-sans);background:var(--bg);color:var(--t2);min-height:100vh;-webkit-font-smoothing:antialiased;}
-.nav{background:#000;position:sticky;top:0;z-index:60;}
-.nav-in{max-width:var(--maxw);margin:0 auto;min-height:54px;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;}
-.nav-in a.back{color:rgba(255,255,255,.82);font-weight:600;font-size:.92rem;text-decoration:none;padding:7px 10px;border-radius:8px;}
-.nav-in a.back:hover{background:rgba(255,255,255,.1);color:#fff;}
-.nav-in .r{display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;color:rgba(255,255,255,.5);text-transform:uppercase;}
-.nav-in .r img{height:22px;width:22px;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
-.hero{background:linear-gradient(180deg,#1F3CA8 0%,#15233F 26%,#0B1220 100%);padding:44px 0 26px;}
-.eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:10px;}
-h1{color:var(--t1);font-size:2.2rem;letter-spacing:-.02em;margin-bottom:12px;}
-.lead{max-width:60em;line-height:1.6;font-size:.98rem;}
-main{padding-bottom:40px;}
-/* accordion */
-.acc{border:1px solid var(--line);border-radius:16px;margin:12px 0 0;background:rgba(255,255,255,.04);overflow:hidden;}
-.acc-head{width:100%;display:flex;align-items:center;gap:16px;padding:17px 22px;background:none;border:none;cursor:pointer;text-align:left;font-family:inherit;}
-.acc-head:hover{background:rgba(255,255,255,.03);}
-.acc-k{font-family:var(--font-mono);font-size:.82rem;font-weight:800;color:#7FA8FF;letter-spacing:.08em;flex-shrink:0;}
-.acc-tt{display:flex;flex-direction:column;gap:2px;min-width:0;}
-.acc-h{font-size:1.12rem;font-weight:800;color:#fff;letter-spacing:-.01em;}
-.acc-s{font-size:.82rem;color:rgba(255,255,255,.5);}
-.acc-peek{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:44%;}
-.acc-peek span{font-family:var(--font-mono);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:3px 9px;white-space:nowrap;}
-.acc-chev{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;font-size:1.3rem;line-height:1;flex-shrink:0;transition:transform .25s,background .25s;}
-.acc.open .acc-chev{background:#2E6BF2;transform:rotate(45deg);}
-.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-.acc.open .acc-body{max-height:none;overflow:visible;}
-.acc-inner{padding:6px 20px 22px;}
-@media(max-width:820px){.acc-peek{display:none;}}
-/* grid + cards */
-.g{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.g .s2{grid-column:1/-1;}
-@media(max-width:900px){.g{grid-template-columns:1fr;}.g .s2{grid-column:auto;}}
-.card{background:#F7FAFF;border:1px solid var(--line);border-radius:14px;padding:18px 20px 16px;display:flex;flex-direction:column;}
-.src{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--brand);margin-bottom:6px;}
-.t{color:var(--ink);font-weight:800;font-size:1.02rem;letter-spacing:-.01em;margin-bottom:12px;}
-.vt{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:10px;}
-.take{margin-top:auto;padding-top:12px;font-size:.8rem;color:var(--ink2);line-height:1.55;border-top:1px dashed var(--hair);}
-.take b{color:var(--ink);}
-.hrow{display:flex;align-items:center;gap:9px;margin-bottom:7px;}
-.hlab{width:150px;font-size:.74rem;color:var(--ink);font-weight:600;flex-shrink:0;text-align:right;line-height:1.2;}
-.htrack{flex:1;height:14px;background:var(--track);border-radius:4px;position:relative;overflow:hidden;}
-.hfill{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--brand);}
-.hfill.lt{background:var(--lt);}.hfill.green{background:#0E8A5F;}.hfill.gold{background:var(--gold2);}.hfill.bad{background:#D6334E;}
-.hval{width:120px;font-family:var(--font-mono);font-size:.62rem;color:var(--ink2);flex-shrink:0;}
-.vbars{display:flex;align-items:flex-end;gap:8px;height:172px;padding:4px 4px 0;}
-.vb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0;}
-.vb .val{font-family:var(--font-mono);font-size:.56rem;font-weight:700;color:var(--ink);margin-bottom:4px;white-space:nowrap;}
-.vb i{display:block;width:100%;max-width:46px;background:linear-gradient(180deg,var(--brand),#1B4ABE);border-radius:5px 5px 0 0;}
-.vb.alt i{background:linear-gradient(180deg,var(--green),#0E8A5F);}
-.vb.neg .val{color:#B4541F;}.vb.neg i{background:linear-gradient(180deg,#F2DFA7,#C49A3A);border-radius:0 0 5px 5px;}
-.vx{display:flex;gap:8px;padding:6px 4px 0;border-top:2px solid var(--ink);}
-.vx span{flex:1;text-align:center;font-family:var(--font-mono);font-size:.56rem;color:var(--ink3);font-weight:700;}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-@media(max-width:760px){.stats{grid-template-columns:1fr 1fr;}}
-.stat{background:#fff;border:1px solid var(--hair);border-radius:10px;padding:13px 14px;}
-.stat .n{font-family:var(--font-mono);font-size:1.25rem;font-weight:700;color:var(--brand);letter-spacing:-.02em;}
-.stat.g .n{color:#0E8A5F;}.stat.gd .n{color:var(--gold2);}.stat.bad .n{color:#D6334E;}.stat.navy .n{color:var(--ink);}
-.stat .l{font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-top:4px;line-height:1.45;}
-.pie{width:150px;height:150px;border-radius:50%;position:relative;flex-shrink:0;}
-.pie::after{content:attr(data-c);position:absolute;inset:32px;background:#F7FAFF;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--font-mono);font-size:.6rem;font-weight:700;color:var(--ink);white-space:pre-line;}
-.piewrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
-.pl{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--track);font-size:.78rem;color:var(--ink2);}
-.pl:last-child{border-bottom:none;}.pl i{width:11px;height:11px;border-radius:3px;flex-shrink:0;}.pl b{color:var(--ink);margin-left:auto;font-family:var(--font-mono);font-size:.68rem;}
-.plegend{flex:1;min-width:200px;}
-table.dt{width:100%;border-collapse:collapse;}
-table.dt th{font-family:var(--font-mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);text-align:left;border-bottom:2px solid var(--ink);padding:0 10px 7px 0;}
-table.dt td{font-size:.8rem;color:var(--ink2);border-bottom:1px solid var(--hair);padding:8px 10px 8px 0;line-height:1.5;}
-table.dt td:first-child{color:var(--ink);font-weight:600;}
-table.dt td.num{font-family:var(--font-mono);font-size:.72rem;text-align:right;color:var(--ink);white-space:nowrap;}
-table.dt tr.tot td{font-weight:800;color:var(--ink);border-top:2px solid var(--ink);border-bottom:none;}
-/* flow chart */
-.flow{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;}
-.fstep{flex:1;min-width:150px;background:#fff;border:1px solid var(--hair);border-radius:12px;border-top:3px solid var(--brand);padding:13px 14px;position:relative;}
-.fstep .fn{font-family:var(--font-mono);font-size:.7rem;font-weight:800;color:var(--brand);}
-.fstep .fh{font-weight:800;color:var(--ink);font-size:.9rem;margin:5px 0 4px;letter-spacing:-.01em;}
-.fstep .fd{font-size:.76rem;color:var(--ink2);line-height:1.4;}
-.qtl{display:grid;gap:12px;}
-.qrow{background:#fff;border:1px solid var(--hair);border-radius:12px;padding:14px 16px;}
-.qrow .qq{font-family:var(--font-mono);font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:8px;}
-.qrow .qi{display:flex;gap:8px;flex-wrap:wrap;}
-.qrow .qi span{font-size:.76rem;color:var(--ink2);background:var(--track);border:1px solid var(--hair);border-radius:8px;padding:6px 10px;line-height:1.3;}
-.foot{border-top:1px solid var(--line);margin-top:40px;}
-.foot .wrap{padding:22px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);}
-
-.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none;}
-.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18);}
-.ovnav-logo{height:40px;width:auto;display:block;}
-.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px;}
-.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;}
-.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
-.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important;}
-.ovnav-out:hover{background:#1B4ABE !important;}
-@media(max-width:760px){.ovnav-links a.hide-sm{display:none;}}
-</style></head><body>
+:root{--bg:#FFFFFF;--bg-2:#F7F9FC;--surface:#FFFFFF;--border:#E6EBF3;--border-strong:#CCD6E4;
+--tx:#142036;--tx-2:#46556E;--tx-3:#5E6E88;--blue:#2E6BF2;--blue-lt:#5B8CFF;--blue-dp:#1B4ABE;--blue-50:#EAF1FE;--blue-100:#CFE0FD;--grn:#0E8A5F;--pur:#7A5BF0;
+--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+--r:18px;--r-lg:26px;--sh-sm:0 1px 2px rgba(16,32,64,.05);--sh:0 10px 34px rgba(16,32,64,.08);--sh-lg:0 28px 70px rgba(16,32,64,.14);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--tx);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0 0 auto 0;height:520px;z-index:-1;background:
+radial-gradient(900px 440px at 18% -8%,rgba(46,107,242,.14),transparent 60%),
+radial-gradient(760px 380px at 92% -10%,rgba(91,140,255,.12),transparent 62%),
+linear-gradient(180deg,var(--bg-2),var(--bg) 72%)}
+.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none}
+.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18)}
+.ovnav-logo{height:40px;width:auto;display:block}
+.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px}
+.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap}
+.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important}
+@media(max-width:820px){.ovnav-links a.hide-sm{display:none}}
+.spacer{height:88px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.hero{padding:40px 0 10px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.hero h1{margin-top:14px;font-weight:800;letter-spacing:-.04em;line-height:1.03;font-size:clamp(2.2rem,5vw,3.4rem);text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{margin-top:16px;font-size:clamp(1rem,1.4vw,1.14rem);color:var(--tx-2);max-width:72ch}
+.toc{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.toc a{font-family:var(--mono);font-size:.64rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-2);background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:8px 14px;text-decoration:none;box-shadow:var(--sh-sm)}
+.toc a:hover{border-color:var(--blue);color:var(--blue)}
+section{padding:92px 0 10px;scroll-margin-top:100px}
+.sidemenu{position:fixed;top:50%;left:22px;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:3px;opacity:.38;transition:opacity .25s}
+.sidemenu:hover{opacity:1}
+.sidemenu a{display:flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);padding:6px 8px;border-radius:999px}
+.sidemenu a i{width:7px;height:7px;border-radius:50%;background:var(--border-strong);flex:0 0 7px;transition:.2s}
+.sidemenu a span{opacity:0;transform:translateX(-4px);transition:.2s;white-space:nowrap}
+.sidemenu:hover a span{opacity:1;transform:none}
+.sidemenu a:hover{color:var(--blue)}
+.sidemenu a.on{color:var(--blue)}
+.sidemenu a.on i{background:var(--blue);box-shadow:0 0 0 4px var(--blue-50)}
+@media(max-width:1180px){.sidemenu{display:none}}
+.sh{margin-bottom:20px}
+.sh .eyebrow{display:block;margin-bottom:10px}
+.sh h2{font-weight:800;letter-spacing:-.03em;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.1}
+.sh p{margin-top:9px;color:var(--tx-2);font-size:.98rem;max-width:74ch}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 22px 18px;box-shadow:var(--sh-sm);margin-top:18px}
+.card.pad{padding:26px 24px 22px}
+.ct{font-weight:800;font-size:1.06rem;letter-spacing:-.02em;margin-bottom:2px}
+.cs{font-size:.86rem;color:var(--tx-3);margin-bottom:14px}
+.chart svg{display:block;width:100%;height:auto}
+.scnbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+.scnlab{font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);margin-right:4px}
+.pill{font-family:var(--mono);font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--tx-2);background:var(--bg-2);border:1.5px solid var(--border);border-radius:999px;padding:9px 18px;cursor:pointer;transition:.14s}
+.pill:hover{border-color:var(--blue-lt)}
+.pill.on{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(46,107,242,.26)}
+.pill .d{font-size:.56rem;display:block;opacity:.7;margin-top:1px;letter-spacing:.08em}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:14px;margin-top:18px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:17px 18px 15px;box-shadow:var(--sh-sm)}
+.kpi .k{font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3)}
+.kpi .v{font-size:1.85rem;font-weight:800;letter-spacing:-.03em;color:var(--tx);margin-top:7px;font-variant-numeric:tabular-nums;line-height:1}
+.kpi .v.blue{color:var(--blue)}
+.kpi .l{font-size:.78rem;color:var(--tx-2);margin-top:5px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--tx-2)}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+.etable{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:4px;font-variant-numeric:tabular-nums}
+.etable th,.etable td{padding:8px 10px;border-bottom:1px solid #EFF3F9;text-align:right;white-space:nowrap}
+.etable th{font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--tx-3);border-bottom:1.5px solid var(--border-strong)}
+.etable td:first-child,.etable th:first-child{text-align:left;color:var(--tx);font-weight:600}
+.etable tr.tot td{background:var(--blue-50);font-weight:800}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;margin-top:18px}
+.grid2 .card{margin-top:0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;margin-top:18px}
+.tile{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px 16px 14px;box-shadow:var(--sh-sm);border-top:3px solid var(--blue)}
+.tile .v{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1}
+.tile .l{font-size:.78rem;color:var(--tx-2);margin-top:7px;line-height:1.4}
+.tile.g{border-top-color:var(--grn)}.tile.g .v{color:var(--grn)}
+.tile.p{border-top-color:var(--pur)}.tile.p .v{color:var(--pur)}
+.note{margin-top:18px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:16px 20px;color:var(--tx-3);font-size:.8rem;line-height:1.55}
+.note b{color:var(--tx-2)}
+footer{margin-top:46px;padding:26px 0 56px;border-top:1px solid var(--border)}
+footer .f{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
+</style></head>
+<body>
+<div class="bg"></div>
 <nav class="ovnav"><div class="ovnav-in">
  <a href="data-room.html"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="ovnav-logo"></a>
  <div class="ovnav-links">
@@ -113,10 +96,373 @@ table.dt tr.tot td{font-weight:800;color:var(--ink);border-top:2px solid var(--i
   <a class="ovnav-out" href="index.html">Sign out</a>
  </div>
 </div></nav>
-<div style="height:80px"></div>
-<section class="hero"><div class="wrap"><div class="eyebrow">Visual Data</div><h1>Every number, in one place.</h1>
-<p class="lead">Everything we can show in a picture, from the company business model dated 1 September 2026 and the documents in this room. Open any section to see the charts, tables and flows behind it. Base case, Canadian dollars.</p></div></section>
-<main><div class="wrap"><div class="acc open"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">01</span><span class="acc-tt"><span class="acc-h">The challenge</span><span class="acc-s">Why the record is the business</span></span><span class="acc-peek"><span>Suitability gap</span><span>Complaints</span><span>Precedent</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card s2"><div class=src>What we do</div><div class="t">Why the record matters</div><div class="stats"><div class="stat bad"><div class="n">100%</div><div class="l">Mortgage files with no documented suitability</div></div><div class="stat bad"><div class="n">73%</div><div class="l">Missing on material-risk disclosure</div></div><div class="stat bad"><div class="n">65%</div><div class="l">Missing on conflict disclosure</div></div><div class="stat bad"><div class="n">100%</div><div class="l">Brokering supervised inadequately</div></div></div><div class="take"><b>A recommendation can be right, and still be impossible to prove.</b> The regulator often cannot see enough evidence to judge whether advice suited the client. That is a record failure, and it is the one we solve.</div></div><div class="card"><div class=src>What we do</div><div class="t">The pressure is building</div><div class="stats"><div class="stat navy"><div class="n">2,878</div><div class="l">Complaints opened by the Ontario real estate regulator in 2025</div></div><div class="stat bad"><div class="n">+88%</div><div class="l">Up on the year before</div></div><div class="stat gd"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress, 12.1M agreements</div></div><div class="stat navy"><div class="n">105</div><div class="l">Firms reviewed, findings without a basis</div></div></div><div class="take"><b>The direction is one way.</b> More complaints, priced precedents abroad, and supervisors saying the file cannot answer the question.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">02</span><span class="acc-tt"><span class="acc-h">The market</span><span class="acc-s">Who owes the duty, and what it is worth</span></span><span class="acc-peek"><span>Three layers</span><span>By sector</span><span>Professionals</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card"><div class=src>Market</div><div class="t">Who owes the duty, by layer</div><div class=vt>FIRMS BY LAYER</div><div class="hrow"><span class="hlab">Supervised for money laundering</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">38,000</span></div><div class="hrow"><span class="hlab">Trust-holding firms, provinces</span><span class="htrack"><span class="hfill lt" style="width:68%"></span></span><span class="hval">25,682</span></div><div class="hrow"><span class="hlab">Payment firms, federal duty now</span><span class="htrack"><span class="hfill green" style="width:2%"></span></span><span class="hval">745</span></div><div class="take"><b>745 pay the federal duty today.</b> The larger provincial layer owes the same kind of duty.</div></div><div class="card"><div class=src>Market</div><div class="t">What it is worth</div><div class=vt>YEARLY, IF EVERY FIRM BOUGHT · C$</div><div class="hrow"><span class="hlab">Provincial trust firms</span><span class="htrack"><span class="hfill lt" style="width:100%"></span></span><span class="hval">$770M</span></div><div class="hrow"><span class="hlab">Federal payment firms</span><span class="htrack"><span class="hfill green" style="width:7%"></span></span><span class="hval">$53M</span></div><div class="take"><b>Counted firm by firm</b> from the registers each regulator publishes.</div></div><div class="card"><div class=src>Market</div><div class="t">The provincial layer, by sector</div><div class=vt>NUMBER OF FIRMS</div><div class="hrow"><span class="hlab">Law firms</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">14,415</span></div><div class="hrow"><span class="hlab">Real estate, ON and BC</span><span class="htrack"><span class="hfill lt" style="width:37%"></span></span><span class="hval">5,360</span></div><div class="hrow"><span class="hlab">Mortgage, Ontario</span><span class="htrack"><span class="hfill green" style="width:10%"></span></span><span class="hval">1,428</span></div><div class="hrow"><span class="hlab">Travel agencies, ON</span><span class="htrack"><span class="hfill gold" style="width:13%"></span></span><span class="hval">1,894</span></div><div class="hrow"><span class="hlab">Insolvency trustees</span><span class="htrack"><span class="hfill lt" style="width:8%"></span></span><span class="hval">1,126</span></div><div class="hrow"><span class="hlab">Insurance, ON</span><span class="htrack"><span class="hfill green" style="width:6%"></span></span><span class="hval">900</span></div><div class="hrow"><span class="hlab">Funeral homes, ON</span><span class="htrack"><span class="hfill gold" style="width:4%"></span></span><span class="hval">559</span></div><div class="take"><b>Two provinces plus three national figures.</b> Every other province is uncounted, so the layer is understated.</div></div><div class="card"><div class=src>Market</div><div class="t">The professional base</div><div class="stats"><div class="stat navy"><div class="n">217,585</div><div class="l">Regulated Canadian professionals in the counted base</div></div><div class="stat navy"><div class="n">4,940</div><div class="l">Mortgage brokerages and new-vehicle dealers</div></div><div class="stat g"><div class="n">745</div><div class="l">Firms holding customer money</div></div><div class="stat gd"><div class="n">38,000</div><div class="l">Businesses under money-laundering supervision</div></div></div><div class="take"><b>The buyers are named on public registers</b>, which is a call list rather than a marketing budget.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">03</span><span class="acc-tt"><span class="acc-h">How it is adopted</span><span class="acc-s">People, professionals, organizations and payment firms</span></span><span class="acc-peek"><span>Consumers</span><span>Seats</span><span>Networks</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card"><div class=src>Adoption</div><div class="t">Everyday people using the free check</div><div class=vt>ACTIVE USERS · MILLIONS</div><div class="vbars"><div class="vb alt"><span class="val">75K</span><i style="height:2%"></i></div><div class="vb alt"><span class="val">350K</span><i style="height:12%"></i></div><div class="vb alt"><span class="val">1.0M</span><i style="height:33%"></i></div><div class="vb alt"><span class="val">2.0M</span><i style="height:67%"></i></div><div class="vb alt"><span class="val">3.0M</span><i style="height:100%"></i></div></div><div class="vx"><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div><div class="take"><b>3.0M by 2031</b>, about 7 in 100 Canadians. The free check feeds every paid engine.</div></div><div class="card"><div class=src>Adoption</div><div class="t">Professionals paying for a seat</div><div class=vt>PAID SEATS</div><div class="vbars"><div class="vb"><span class="val">500</span><i style="height:1%"></i></div><div class="vb"><span class="val">4,000</span><i style="height:10%"></i></div><div class="vb"><span class="val">12,000</span><i style="height:30%"></i></div><div class="vb"><span class="val">25,000</span><i style="height:62%"></i></div><div class="vb"><span class="val">40,000</span><i style="height:100%"></i></div></div><div class="vx"><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div><div class="take"><b>40,000 by 2031</b>, most through partner networks.</div></div><div class="card"><div class=src>Adoption</div><div class="t">How professionals arrive, 2031</div><div class="piewrap"><div class="pie" data-c="40,000&#10;SEATS" style="background:conic-gradient(#2E6BF2 0 319.5deg,#C8B0EF 319.5deg 360deg);"></div><div class="plegend"><div class="pl"><i style="background:#2E6BF2"></i>Through partner networks<b>35,500</b></div><div class="pl"><i style="background:#C8B0EF"></i>Signed up directly<b>4,500</b></div></div></div><div class="take"><b>The networks are the engine.</b> 110 partners carry most of the seats.</div></div><div class="card"><div class=src>Adoption</div><div class="t">Organizations and payment firms</div><div class=vt>AT YEAR END</div><div class="hrow"><span class="hlab">Organizations, 2031</span><span class="htrack"><span class="hfill lt" style="width:100%"></span></span><span class="hval">400</span></div><div class="hrow"><span class="hlab">Payment firms, 2031</span><span class="htrack"><span class="hfill green" style="width:28%"></span></span><span class="hval">110</span></div><div class="hrow"><span class="hlab">Network partners, 2031</span><span class="htrack"><span class="hfill " style="width:28%"></span></span><span class="hval">110</span></div><div class="hrow"><span class="hlab">Embedded partners, 2031</span><span class="htrack"><span class="hfill gold" style="width:18%"></span></span><span class="hval">70</span></div><div class="take"><b>110 payment firms by 2031</b>, about 15 in 100 of the 745.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">04</span><span class="acc-tt"><span class="acc-h">The plan, year by year</span><span class="acc-s">Revenue, profit, cash, margin and team</span></span><span class="acc-peek"><span>Revenue</span><span>Earnings</span><span>Cash</span><span>Team</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card s2"><div class=src>The plan</div><div class="t">Money coming in</div><div class=vt>TOTAL REVENUE · C$M · CANADA ONLY</div><div class="vbars"><div class="vb"><span class="val">$0</span><i style="height:1%"></i></div><div class="vb"><span class="val">$0.9M</span><i style="height:1%"></i></div><div class="vb"><span class="val">$6.1M</span><i style="height:9%"></i></div><div class="vb"><span class="val">$18.7M</span><i style="height:26%"></i></div><div class="vb"><span class="val">$40.7M</span><i style="height:57%"></i></div><div class="vb"><span class="val">$71.1M</span><i style="height:100%"></i></div></div><div class="vx"><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div><div class="take"><b>$71.1M in 2031</b>, base case, about $137M added across the six years.</div></div><div class="card"><div class=src>The plan</div><div class="t">Money left after running costs</div><div class=vt>EARNINGS · C$M</div><div class="vbars"><div class="vb neg"><span class="val">($0.5M)</span><i style="height:1%"></i></div><div class="vb neg"><span class="val">($1.8M)</span><i style="height:5%"></i></div><div class="vb neg"><span class="val">($0.3M)</span><i style="height:1%"></i></div><div class="vb"><span class="val">$6.5M</span><i style="height:18%"></i></div><div class="vb"><span class="val">$18.9M</span><i style="height:51%"></i></div><div class="vb"><span class="val">$36.9M</span><i style="height:100%"></i></div></div><div class="vx"><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div><div class="take"><b>Profitable from 2029</b>, $36.9M in 2031.</div></div><div class="card"><div class=src>The plan</div><div class="t">Money in the bank</div><div class=vt>CASH AT YEAR END · C$M</div><div class="vbars"><div class="vb"><span class="val">$0.6M</span><i style="height:1%"></i></div><div class="vb"><span class="val">$3.4M</span><i style="height:5%"></i></div><div class="vb"><span class="val">$3.1M</span><i style="height:5%"></i></div><div class="vb"><span class="val">$9.6M</span><i style="height:15%"></i></div><div class="vb"><span class="val">$28.5M</span><i style="height:44%"></i></div><div class="vb"><span class="val">$65.3M</span><i style="height:100%"></i></div></div><div class="vx"><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div><div class="take"><b>Positive after the 2027 round</b>, about $65M by end of 2031.</div></div><div class="card"><div class=src>The plan</div><div class="t">Margin and team</div><div class="stats"><div class="stat g"><div class="n">81%</div><div class="l">Kept after the cost of service</div></div><div class="stat navy"><div class="n">60</div><div class="l">People by 2031, against 75</div></div><div class="stat gd"><div class="n">3</div><div class="l">People at the start</div></div><div class="stat g"><div class="n">2029</div><div class="l">First profitable year</div></div></div><div class="take"><b>Profitable well before the team is full.</b> Fifteen hires avoided through workflow savings.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">05</span><span class="acc-tt"><span class="acc-h">How the economics work</span><span class="acc-s">What a customer costs and returns</span></span><span class="acc-peek"><span>CAC by route</span><span>Payback</span><span>Checks</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card"><div class=src>Unit economics</div><div class="t">What it costs to win a customer, by route</div><div class=vt>C$ · BASE CASE</div><div class="hrow"><span class="hlab">Channel partner</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">$50,000</span></div><div class="hrow"><span class="hlab">Embedded partner</span><span class="htrack"><span class="hfill lt" style="width:60%"></span></span><span class="hval">$30,000</span></div><div class="hrow"><span class="hlab">Payment firm</span><span class="htrack"><span class="hfill green" style="width:24%"></span></span><span class="hval">$12,000</span></div><div class="hrow"><span class="hlab">Organization</span><span class="htrack"><span class="hfill gold" style="width:16%"></span></span><span class="hval">$8,000</span></div><div class="hrow"><span class="hlab">Direct seat</span><span class="htrack"><span class="hfill lt" style="width:1%"></span></span><span class="hval">$600</span></div><div class="take"><b>The channel costs more to sign, and returns more.</b> Direct seats are cheap; networks do the volume.</div></div><div class="card"><div class=src>Unit economics</div><div class="t">How fast a seat pays back</div><div class=vt>MONTHS · BY CASE · BENCHMARK UNDER 12</div><div class="hrow"><span class="hlab">Low</span><span class="htrack"><span class="hfill lt" style="width:100%"></span></span><span class="hval">11.2</span></div><div class="hrow"><span class="hlab">Base</span><span class="htrack"><span class="hfill " style="width:59%"></span></span><span class="hval">6.6</span></div><div class="hrow"><span class="hlab">Blue-sky</span><span class="htrack"><span class="hfill green" style="width:39%"></span></span><span class="hval">4.4</span></div><div class="take"><b>Under a year in every case</b>, under seven months in the plan.</div></div><div class="card s2"><div class=src>Unit economics</div><div class="t">The health checks</div><div class="stats"><div class="stat gd"><div class="n">$1.18M</div><div class="l">Revenue for each person, 2031</div></div><div class="stat g"><div class="n">6.6 mo</div><div class="l">A seat pays back its cost</div></div><div class="stat navy"><div class="n">81%</div><div class="l">Kept after cost of service</div></div><div class="stat navy"><div class="n">127%</div><div class="l">Yearly growth, 2028 to 2031</div></div></div><div class="take"><b>Efficient once it is running</b>, on the usual tests.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">06</span><span class="acc-tt"><span class="acc-h">The three cases</span><span class="acc-s">Base, a slower Low, and an upside</span></span><span class="acc-peek"><span>At 2029</span><span>Seats</span><span>Profit year</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card"><div class=src>Three cases</div><div class="t">Revenue at 2029</div><div class=vt>C$M · BY CASE</div><div class="vbars"><div class="vb"><span class="val">$2.6M</span><i style="height:4%"></i></div><div class="vb"><span class="val">$18.7M</span><i style="height:27%"></i></div><div class="vb"><span class="val">$68.4M</span><i style="height:100%"></i></div></div><div class="vx"><span>Low</span><span>Base</span><span>Blue</span></div><div class="take"><b>Base is the plan.</b> Same product, price and law in all three; only the pace of the network changes.</div></div><div class="card"><div class=src>Three cases</div><div class="t">Professionals at 2029</div><div class=vt>PAID SEATS · BY CASE</div><div class="hrow"><span class="hlab">Blue-sky</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">25,000</span></div><div class="hrow"><span class="hlab">Base</span><span class="htrack"><span class="hfill lt" style="width:48%"></span></span><span class="hval">12,000</span></div><div class="hrow"><span class="hlab">Low</span><span class="htrack"><span class="hfill green" style="width:10%"></span></span><span class="hval">2,500</span></div><div class="take"><b>The professional line separates the cases most.</b></div></div><div class="card"><div class=src>Three cases</div><div class="t">When each turns profitable</div><div class="stats"><div class="stat g"><div class="n">2029</div><div class="l">Base, the plan</div></div><div class="stat gd"><div class="n">2028</div><div class="l">Blue-sky, the upside</div></div><div class="stat bad"><div class="n">after 2031</div><div class="l">Low, the slow case</div></div><div class="stat navy"><div class="n">$3.55M</div><div class="l">Seed either way, 2027</div></div></div><div class="take"><b>Low needs the largest round</b> because it takes longest to reach self-funding.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">07</span><span class="acc-tt"><span class="acc-h">Cash, month by month</span><span class="acc-s">The real tranche schedule to the seed</span></span><span class="acc-peek"><span>Cash bridge</span><span>Tranche points</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card s2"><div class=src>Cash bridge</div><div class="t">Cash, month by month, on the real tranche schedule</div><div class=vt>CLOSING CASH · C$K · AUG 2026 TO DEC 2027</div><div class="vbars"><div class="vb"><span class="val">$455K</span><i style="height:12%"></i></div><div class="vb"><span class="val">$365K</span><i style="height:10%"></i></div><div class="vb"><span class="val">$275K</span><i style="height:8%"></i></div><div class="vb"><span class="val">$685K</span><i style="height:19%"></i></div><div class="vb"><span class="val">$595K</span><i style="height:16%"></i></div><div class="vb"><span class="val">$376K</span><i style="height:10%"></i></div><div class="vb"><span class="val">$176K</span><i style="height:5%"></i></div><div class="vb"><span class="val">$495K</span><i style="height:14%"></i></div><div class="vb"><span class="val">$323K</span><i style="height:9%"></i></div><div class="vb"><span class="val">$661K</span><i style="height:18%"></i></div><div class="vb"><span class="val">$508K</span><i style="height:14%"></i></div><div class="vb"><span class="val">$364K</span><i style="height:10%"></i></div><div class="vb"><span class="val">$230K</span><i style="height:6%"></i></div><div class="vb"><span class="val">$3.7M</span><i style="height:100%"></i></div><div class="vb"><span class="val">$3.5M</span><i style="height:97%"></i></div><div class="vb"><span class="val">$3.4M</span><i style="height:94%"></i></div><div class="vb"><span class="val">$3.3M</span><i style="height:92%"></i></div></div><div class="vx"><span>A26</span><span>S</span><span>O</span><span>N</span><span>D</span><span>J27</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div><div class="take"><b>Four equity cheques land Nov, Mar and May, and the $3.55M seed lands in September 2027.</b> The low point is about $176K in February 2027, before the second cheque.</div></div><div class="card s2"><div class=src>Cash bridge</div><div class="t">The tranche points</div><div class="flow"><div class="fstep"><div class="fn">Aug 2026</div><div class="fh">$550K in</div><div class="fd">Two subscriptions close.</div></div><div class="fstep"><div class="fn">Nov 2026</div><div class="fh">$500K</div><div class="fd">First agreement, $15M ceiling.</div></div><div class="fstep"><div class="fn">Mar 2027</div><div class="fh">$500K</div><div class="fd">Second, $18M ceiling.</div></div><div class="fstep"><div class="fn">May 2027</div><div class="fh">$500K</div><div class="fd">Third, $20M ceiling. Pre-seed complete.</div></div><div class="fstep"><div class="fn">Sep 2027</div><div class="fh">$3.55M</div><div class="fd">The seed, on evidence.</div></div></div><div class="take"><b>Milestone-gated, not a rolling raise.</b> Each cheque releases against a checkpoint.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">08</span><span class="acc-tt"><span class="acc-h">The raise and returns</span><span class="acc-s">Terms, use of money, and what it could return</span></span><span class="acc-peek"><span>Tranches</span><span>Use</span><span>Returns</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card"><div class=src>The raise</div><div class="t">What is being raised now</div><table class="dt"><thead><tr><th>Cheque</th><th class="num">Amount</th></tr></thead><tr><td>Angel, at close</td><td class="num">$50,000</td></tr><tr><td>First subscription</td><td class="num">$500,000</td></tr><tr><td>$15M ceiling</td><td class="num">$500,000</td></tr><tr><td>$18M ceiling</td><td class="num">$500,000</td></tr><tr><td>$20M ceiling</td><td class="num">$500,000</td></tr><tr class="tot"><td>Pre-seed total</td><td class="num">$2,050,000</td></tr></table><div class="take"><b>$1.5M open now</b> across three cheques, closing May 2027, then a $3.55M round.</div></div><div class="card"><div class=src>The raise</div><div class="t">Where the pre-seed goes</div><div class=vt>AUG 2026 TO AUG 2027 · C$</div><div class="hrow"><span class="hlab">The team, 13 months</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">$784,945</span></div><div class="hrow"><span class="hlab">Reaching first customers</span><span class="htrack"><span class="hfill lt" style="width:64%"></span></span><span class="hval">$502,667</span></div><div class="hrow"><span class="hlab">Building the software</span><span class="htrack"><span class="hfill green" style="width:59%"></span></span><span class="hval">$466,667</span></div><div class="hrow"><span class="hlab">Legal and audit</span><span class="htrack"><span class="hfill gold" style="width:19%"></span></span><span class="hval">$149,500</span></div><div class="hrow"><span class="hlab">Delivering the service</span><span class="htrack"><span class="hfill lt" style="width:13%"></span></span><span class="hval">$102,871</span></div><div class="take"><b>Costed, not guessed.</b> Founder pay below market, shown only in total.</div></div><div class="card"><div class=src>Investor returns</div><div class="t">What each early cheque could return</div><div class=vt>CASH BACK PER DOLLAR IN, BY CHEQUE</div><div class="hrow"><span class="hlab">Angel</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">28.3x</span></div><div class="hrow"><span class="hlab">First $500K</span><span class="htrack"><span class="hfill lt" style="width:50%"></span></span><span class="hval">14.1x</span></div><div class="hrow"><span class="hlab">$15M ceiling</span><span class="htrack"><span class="hfill lt" style="width:35%"></span></span><span class="hval">10.0x</span></div><div class="hrow"><span class="hlab">$18M ceiling</span><span class="htrack"><span class="hfill green" style="width:29%"></span></span><span class="hval">8.3x</span></div><div class="hrow"><span class="hlab">2027 round</span><span class="htrack"><span class="hfill gold" style="width:24%"></span></span><span class="hval">6.9x</span></div><div class="take"><b>Return comes two ways:</b> cash paid out from 2029, and the shares still held after.</div></div><div class="card"><div class=src>Investor returns</div><div class="t">The round that follows</div><div class="stats"><div class="stat gd"><div class="n">$3.55M</div><div class="l">The 2027 round</div></div><div class="stat g"><div class="n">$30M</div><div class="l">The price it is set at</div></div><div class="stat navy"><div class="n">8.2x</div><div class="l">All investors, cash on cash</div></div><div class="stat navy"><div class="n">2029</div><div class="l">Cash starts being paid</div></div></div><div class="take"><b>Illustrations, not promises.</b></div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">09</span><span class="acc-tt"><span class="acc-h">The milestones</span><span class="acc-s">Eighteen checkpoints, Q3 2026 to Q3 2027</span></span><span class="acc-peek"><span>The clock</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card s2"><div class=src>Milestones</div><div class="t">Eighteen checkpoints, on the same clock</div><div class="qtl"><div class="qrow"><div class="qq">Q3 2026</div><div class="qi"><span>$550K subscriptions close</span><span>Build partner engaged</span><span>Intellectual property assigned</span></div></div><div class="qrow"><div class="qq">Q4 2026</div><div class="qi"><span>Architecture note accepted</span><span>20 discovery calls</span><span>Two design partners</span><span>First $500K, $15M ceiling</span></div></div><div class="qrow"><div class="qq">Q1 2027</div><div class="qi"><span>Two partners in production</span><span>First paying customer</span><span>Second $500K, $18M ceiling</span><span>4ormIQ live</span></div></div><div class="qrow"><div class="qq">Q2 2027</div><div class="qi"><span>An old export reproduced exactly</span><span>$10K a month recurring</span><span>Third $500K, pre-seed complete</span><span>First network partner signed</span></div></div><div class="qrow"><div class="qq">Q3 2027</div><div class="qi"><span>First independent review passed</span><span>Five reference customers</span><span>Seed closed on evidence</span></div></div></div><div class="take"><b>None of them is a matter of opinion.</b> Each is either true or not. The first named network partner is the single most important one.</div></div></div></div></div></div><div class="acc"><button class="acc-head" type="button" onclick="tg(this)"><span class="acc-k">10</span><span class="acc-tt"><span class="acc-h">How it works, and the context</span><span class="acc-s">The record flow, comparables, grants, ownership</span></span><span class="acc-peek"><span>Record flow</span><span>Comparables</span><span>Ownership</span></span><span class="acc-chev">+</span></button><div class="acc-body"><div class="acc-inner"><div class="g"><div class="card s2"><div class=src>How it works</div><div class="t">How a decision becomes a record</div><div class="flow"><div class="fstep"><div class="fn">1</div><div class="fh">Ask</div><div class="fd">A person or a firm starts a decision.</div></div><div class="fstep"><div class="fn">2</div><div class="fh">Read the registers</div><div class="fd">The public record is checked, live.</div></div><div class="fstep"><div class="fn">3</div><div class="fh">Show what is known</div><div class="fd">What can, and cannot, be verified.</div></div><div class="fstep"><div class="fn">4</div><div class="fh">Disclose and agree</div><div class="fd">Both sides align on the terms.</div></div><div class="fstep"><div class="fn">5</div><div class="fh">Seal the record</div><div class="fd">Added, and never changed after.</div></div><div class="fstep"><div class="fn">6</div><div class="fh">Answer later</div><div class="fd">The same record answers years on.</div></div></div><div class="take"><b>A correction is a new record</b> that names what it replaced, so the original always survives.</div></div><div class="card"><div class=src>Comparables</div><div class="t">Canadian precedent for the rates</div><div class=vt>THREE-YEAR GROWTH · NAMED FIRMS</div><div class="hrow"><span class="hlab">Neo Financial</span><span class="htrack"><span class="hfill " style="width:100%"></span></span><span class="hval">1,279%</span></div><div class="hrow"><span class="hlab">KOHO</span><span class="htrack"><span class="hfill lt" style="width:44%"></span></span><span class="hval">559%</span></div><div class="hrow"><span class="hlab">Verafin, 5-yr</span><span class="htrack"><span class="hfill green" style="width:20%"></span></span><span class="hval">25% a year</span></div><div class="take"><b>The shape is achievable in Canada.</b> These do not prove our figures; the mechanics differ on every line.</div></div><div class="card"><div class=src>Non-dilutive</div><div class="t">Eight programmes, none awarded</div><div class=vt>GRANTS MODELLED · C$</div><div class="hrow"><span class="hlab">2027</span><span class="htrack"><span class="hfill gold" style="width:100%"></span></span><span class="hval">$295,000</span></div><div class="hrow"><span class="hlab">2028</span><span class="htrack"><span class="hfill gold" style="width:73%"></span></span><span class="hval">$215,000</span></div><div class="hrow"><span class="hlab">2029</span><span class="htrack"><span class="hfill gold" style="width:66%"></span></span><span class="hval">$195,000</span></div><div class="hrow"><span class="hlab">2030</span><span class="htrack"><span class="hfill gold" style="width:20%"></span></span><span class="hval">$60,000</span></div><div class="hrow"><span class="hlab">2026</span><span class="htrack"><span class="hfill gold" style="width:3%"></span></span><span class="hval">$10,000</span></div><div class="take"><b>$775,000 modelled and none awarded.</b> Switch them off and the plan still reaches the round.</div></div><div class="card"><div class=src>Ownership</div><div class="t">Who owns the company after the rounds</div><div class=vt>AFTER THE 2027 ROUND</div><div class="piewrap"><div class="pie" data-c="ONE&#10;CLASS" style="background:conic-gradient(#2E6BF2 0 244.4deg,#7BE3B0 244.4deg 324deg,#C8B0EF 324deg 360deg);"></div><div class="plegend"><div class="pl"><i style="background:#2E6BF2"></i>Founders<b>67.9%</b></div><div class="pl"><i style="background:#7BE3B0"></i>All investors<b>22.1%</b></div><div class="pl"><i style="background:#C8B0EF"></i>Team option pool<b>10%</b></div></div></div><div class="take"><b>One class of share, one vote each.</b> The founders keep the largest holding.</div></div></div></div></div></div><div style="height:20px"></div></div></main>
-<footer class="foot"><div class="wrap"><span>4orm Finance · Confidential · Not for distribution</span><span>Base case · 1 September 2026</span></div></footer>
-<script>function tg(b){b.closest('.acc').classList.toggle('open');}</script>
+<div class="spacer"></div>
+
+<nav class="sidemenu" id="sideMenu">
+ <a href="#financials" data-s="financials"><i></i><span>Financials</span></a>
+ <a href="#model" data-s="model"><i></i><span>Five-year model</span></a>
+ <a href="#market" data-s="market"><i></i><span>Market &amp; TAM</span></a>
+ <a href="#consumer" data-s="consumer"><i></i><span>Consumer</span></a>
+ <a href="#evidence" data-s="evidence"><i></i><span>Evidence</span></a>
+</nav>
+
+<header class="hero"><div class="wrap">
+ <span class="eyebrow">Visual data</span>
+ <h1>Every number, <em>made visible.</em></h1>
+ <p>The whole case in charts: the financials across three revenue scenarios, the five-year model, the market it sits in, the consumer behaviour underneath it, and the time and cost evidence behind the price. The financials rest on the base case and switch between Ground Floor, Base and Blue Sky. Every figure traces to the master pro forma, the investor summary and the evidence book.</p>
+ <div class="toc">
+  <a href="#financials">Financials</a>
+  <a href="#model">Five-year model</a>
+  <a href="#market">Market &amp; TAM</a>
+  <a href="#consumer">Consumer</a>
+  <a href="#evidence">Time &amp; cost evidence</a>
+ </div>
+</div></header>
+
+<!-- FINANCIALS : scenario switchable -->
+<section id="financials"><div class="wrap">
+ <div class="sh"><span class="eyebrow">Financials &middot; three revenue scenarios</span>
+  <h2>Ground Floor, Base, Blue&nbsp;Sky.</h2>
+  <p>One revenue architecture, six engines, three outcomes. Base is the current management target case and the resting view. Ground Floor is the prior low case if the product proves but distribution stays limited. Blue Sky is the prior high case if two or three national-scale networks succeed. Switch the pill to move every financial view below between them.</p>
+ </div>
+
+ <div class="card pad">
+  <div class="scnbar">
+   <span class="scnlab">Scenario</span>
+   <button class="pill" data-scn="GroundFloor" onclick="setScn('GroundFloor')">Ground Floor<span class="d">product proved</span></button>
+   <button class="pill on" data-scn="Base" onclick="setScn('Base')">Base<span class="d">management target</span></button>
+   <button class="pill" data-scn="BlueSky" onclick="setScn('BlueSky')">Blue Sky<span class="d">networks succeed</span></button>
+  </div>
+  <div class="kpis" id="scnKpi"></div>
+ </div>
+
+ <div class="grid2">
+  <div class="card"><div class="ct">Revenue by engine, stacked</div><div class="cs" id="stackSub">Base case &middot; six engines &middot; 2027 to 2031</div><div class="chart" id="stackChart"></div><div class="legend" id="stackLegend"></div></div>
+  <div class="card"><div class="ct">2031 revenue mix</div><div class="cs" id="donutSub">Base case &middot; share of the terminal year</div><div class="chart" id="donutChart"></div></div>
+ </div>
+
+ <div class="card pad"><div class="ct">All three scenarios, compared</div><div class="cs">Total revenue path, 2027 to 2031 &middot; the line chart, kept</div><div class="chart" id="cmpChart"></div>
+  <div class="legend"><span><i style="background:#9AA7BD"></i>Ground Floor &middot; C$10.5M</span><span><i style="background:#2E6BF2"></i>Base &middot; C$94.7M</span><span><i style="background:#1B4ABE"></i>Blue Sky &middot; C$260.6M</span></div>
+ </div>
+
+ <div class="card pad"><div class="ct">The build underneath</div><div class="cs" id="tableSub">Base case &middot; volume and price per engine, by year</div>
+  <div style="overflow-x:auto"><table class="etable" id="scnTable"></table></div>
+ </div>
+ <div class="note"><b>Three revenue models.</b> Scenario totals are the named terminal figures: Ground Floor C$10.54M, Base C$94.70M, Blue Sky C$260.56M in 2031. The stacked build sums the six engines and runs marginally above each headline; Ground Floor and Blue Sky totals are the prior V4 low and high cases, with their six-engine allocation newly mapped to the current architecture. Consumer subscription revenue is excluded from all three. Canadian dollars. Management scenarios, not forecasts.</div>
+</div></section>
+
+<!-- FIVE YEAR MODEL : base case P&L -->
+<section id="model"><div class="wrap">
+ <div class="sh"><span class="eyebrow">The five-year model &middot; base case</span>
+  <h2>Revenue, profit, margin, cash.</h2>
+  <p>The full profit-and-loss shape of the base case, straight from the 28 September pre-seed pro forma. Profit before tax turns positive in 2028; gross margin climbs to 82% as the platform, records and supervision scale; the company is self-funding on cash well before the C$5M seed.</p>
+ </div>
+ <div class="grid2">
+  <div class="card"><div class="ct">Revenue, gross profit &amp; profit before tax</div><div class="cs">Base case &middot; C$ &middot; 2026 to 2031</div><div class="chart" id="plChart"></div>
+   <div class="legend"><span><i style="background:#2E6BF2"></i>Revenue</span><span><i style="background:#5B8CFF"></i>Gross profit</span><span><i style="background:#0E8A5F"></i>Profit before tax</span></div></div>
+  <div class="card"><div class="ct">Gross margin</div><div class="cs">Base case &middot; percent &middot; 2027 to 2031</div><div class="chart" id="marginChart"></div></div>
+  <div class="card"><div class="ct">Cash at year end</div><div class="cs">Base case &middot; C$ &middot; after the C$2.5M pre-seed and C$5M seed</div><div class="chart" id="cashChart"></div></div>
+  <div class="card"><div class="ct">Paid Decision Records &amp; operating roles</div><div class="cs">Base case &middot; volume &middot; 2026 to 2031</div><div class="chart" id="recChart"></div>
+   <div class="legend"><span><i style="background:#2E6BF2"></i>Decision Records</span><span><i style="background:#0E8A5F"></i>Operating roles (right)</span></div></div>
+ </div>
+ <div class="grid2">
+  <div class="card"><div class="ct">Where the C$2.5M goes</div><div class="cs">18-month core spend C$2.001M, then contingency and reserve</div><div class="chart" id="uofChart"></div></div>
+  <div class="card"><div class="ct">The round</div><div class="cs">Pre-seed structure &middot; shares plus SAFE</div>
+   <div class="kpis" style="margin-top:4px">
+    <div class="kpi"><div class="k">Pre-seed target</div><div class="v blue">C$2.5M</div><div class="l">Close Oct–Dec 2026</div></div>
+    <div class="kpi"><div class="k">First close</div><div class="v">C$500K</div><div class="l">Shares @ C$0.50</div></div>
+    <div class="kpi"><div class="k">SAFE portion</div><div class="v">C$2.0M</div><div class="l">C$15M cap &middot; 15% draft</div></div>
+    <div class="kpi"><div class="k">Seed target</div><div class="v">C$5.0M</div><div class="l">Open Q3–Q4 2027</div></div>
+   </div></div>
+ </div>
+</div></section>
+
+<!-- MARKET & TAM -->
+<section id="market"><div class="wrap">
+ <div class="sh"><span class="eyebrow">Market &amp; TAM</span>
+  <h2>The pool, and 4orm's share of it.</h2>
+  <p>The addressable market, counted at firm and office level and never by summing overlapping populations. The 2031 target is 20.7% of the budget-qualified serviceable market, high enough that network and embedded distribution is mandatory. Tier 4 micro and sole practitioners are held at zero deliberately.</p>
+ </div>
+ <div class="grid2">
+  <div class="card"><div class="ct">TAM, SAM, SOM</div><div class="cs">The market, nested &middot; Canadian recurring revenue</div><div class="chart" id="bubbleChart"></div></div>
+  <div class="card"><div class="ct">The market ladder</div><div class="cs">Every estimate &middot; C$ &middot; ceiling to target</div><div class="chart" id="tamChart"></div></div>
+ </div>
+ <div class="kpis">
+  <div class="kpi"><div class="k">2031 target / SAM</div><div class="v blue">20.7%</div><div class="l">Of C$457.5M serviceable</div></div>
+  <div class="kpi"><div class="k">Known annual events</div><div class="v">~3.70M</div><div class="l">Mortgages + MLS + new autos</div></div>
+  <div class="kpi"><div class="k">Full-product ceiling</div><div class="v">C$1.77B</div><div class="l">If all applicable firms adopt</div></div>
+  <div class="kpi"><div class="k">PSPs holding funds</div><div class="v">745</div><div class="l">60 at the 2028 review, 8.1%</div></div>
+ </div>
+ <div class="grid2">
+  <div class="card"><div class="ct">Firms in scope, by sector</div><div class="cs">Canadian employer establishments &middot; 2025 industry classification</div><div class="chart" id="estChart"></div></div>
+  <div class="card"><div class="ct">The known annual transaction pool</div><div class="cs">Events 4orm's Decision Records attach to</div><div class="chart" id="eventChart"></div></div>
+ </div>
+ <div class="tiles">
+  <div class="tile"><div class="v">C$2.4T</div><div class="l">Canadian residential mortgage debt</div></div>
+  <div class="tile"><div class="v">22.5B</div><div class="l">Payments a year, worth C$12.2T &middot; 86% digital</div></div>
+  <div class="tile"><div class="v">544M</div><div class="l">Investment trades, worth C$5.387T</div></div>
+  <div class="tile"><div class="v">~30M</div><div class="l">Canadians with life/health insurance cover</div></div>
+  <div class="tile"><div class="v">1,562</div><div class="l">PSPs registered &middot; 459 still in review</div></div>
+  <div class="tile"><div class="v">C$38M+</div><div class="l">Reimbursed across 745,000+ accounts</div></div>
+ </div>
+ <div class="note"><b>Do not sum these populations.</b> One firm may operate several establishments, and the sector counts overlap. Market estimates vary by source: a conservative current pool of C$726.6M and a recurring-revenue estimate of C$840.5M are both carried; the serviceable figure is management's budget-qualified estimate and still requires sales validation.</div>
+</div></section>
+
+<!-- CONSUMER -->
+<section id="consumer"><div class="wrap">
+ <div class="sh"><span class="eyebrow">Consumer</span>
+  <h2>Why the record matters to people.</h2>
+  <p>The behaviour underneath the market. Canadians research heavily but still enter the largest decisions of their lives with gaps, unexpected costs and thin records. 4ormIQ is free to the consumer, which is why it can grow like a consumer app: the target is one million users by 2031, with the paying firms riding alongside.</p>
+ </div>
+ <div class="tiles">
+  <div class="tile"><div class="v">20%</div><div class="l">Did not compare mortgage lenders</div></div>
+  <div class="tile"><div class="v">13%</div><div class="l">Did not know they could negotiate</div></div>
+  <div class="tile"><div class="v">88%</div><div class="l">Researched rates online</div></div>
+  <div class="tile"><div class="v">72%</div><div class="l">Used mortgage calculators</div></div>
+  <div class="tile"><div class="v">52%</div><div class="l">Bought at the maximum they could afford</div></div>
+  <div class="tile"><div class="v">32%</div><div class="l">Hit unexpected costs</div></div>
+  <div class="tile"><div class="v">51%</div><div class="l">Reported payment strain, 2025</div></div>
+  <div class="tile"><div class="v">4.4 yrs</div><div class="l">To save a down payment</div></div>
+  <div class="tile p"><div class="v">82%</div><div class="l">Researched their car purchase online</div></div>
+  <div class="tile p"><div class="v">45%</div><div class="l">Self-directed investors</div></div>
+  <div class="tile p"><div class="v">23%</div><div class="l">Investors who met possible fraud</div></div>
+  <div class="tile p"><div class="v">21%</div><div class="l">Could correctly define a stablecoin</div></div>
+ </div>
+ <div class="grid2">
+  <div class="card"><div class="ct">Consumer users &middot; 4ormIQ, free</div><div class="cs">Target to one million by 2031 &middot; benchmarked to KOHO</div><div class="chart" id="userChart"></div></div>
+  <div class="card"><div class="ct">Paying firms alongside</div><div class="cs">The firms are who pay &middot; 2027 to 2031</div><div class="chart" id="firmChart"></div></div>
+ </div>
+ <div class="note"><b>Illustrative target model.</b> The consumer-user path is a target benchmarked to KOHO, which went from roughly 500K users in 2022 to 2.5M by 2026, not a forecast. Consumer survey figures are drawn from the evidence book and its cited Canadian sources.</div>
+</div></section>
+
+<!-- EVIDENCE : time & cost -->
+<section id="evidence"><div class="wrap">
+ <div class="sh"><span class="eyebrow">Time &amp; cost evidence</span>
+  <h2>What the record is worth.</h2>
+  <p>The price rests on saved work. At C$30K a year, a firm saving 500 hours at C$60 an hour already clears the cost. Comparable tools across banking, lending and compliance show the scale of what a complete, retrievable record removes: days collapse into hours, and hours into minutes.</p>
+ </div>
+ <div class="card pad"><div class="ct">Before and after, named cases</div><div class="cs">Process time, comparable tools &middot; lower is better</div><div class="chart" id="baChart"></div>
+  <div class="legend"><span><i style="background:#CCD6E4"></i>Before</span><span><i style="background:#2E6BF2"></i>After</span></div></div>
+ <div class="tiles">
+  <div class="tile g"><div class="v">2,000+</div><div class="l">Hours saved a year &middot; Snowflake + Vanta</div></div>
+  <div class="tile g"><div class="v">700+</div><div class="l">Hours &amp; $70K+ a year &middot; Zello + Drata</div></div>
+  <div class="tile g"><div class="v">60%→15%</div><div class="l">Compliance share of team time &middot; Perforce</div></div>
+  <div class="tile g"><div class="v">93%</div><div class="l">Security-questionnaire work automated &middot; GitHub</div></div>
+  <div class="tile"><div class="v">40%</div><div class="l">Pre-applicants who completed &middot; U.S. Bank + Blend</div></div>
+  <div class="tile"><div class="v">US$141M</div><div class="l">Additional funded loans &middot; Prosperity + Total Expert</div></div>
+  <div class="tile"><div class="v">20%</div><div class="l">Higher loan-officer productivity &middot; FirstBank</div></div>
+  <div class="tile"><div class="v">C$30K</div><div class="l">500 hours × C$60 &middot; the buyer's own calculation</div></div>
+ </div>
+ <div class="note"><b>Comparable evidence, not 4orm's own results.</b> These outcomes are reported by other firms using comparable tools, drawn from the evidence book with named cases and sources. They size the opportunity; 4orm has not yet established its own measured savings.</div>
+</div></section>
+
+<footer><div class="wrap"><span class="f">4orm Finance &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; Canadian dollars &nbsp;&middot;&nbsp; Not for distribution</span></div></footer>
+
+<script>
+var C={blue:'#2E6BF2',dp:'#1B4ABE',lt:'#5B8CFF',grn:'#0E8A5F',pur:'#7A5BF0',gry:'#9AA7BD',tx:'#142036',tx2:'#46556E',tx3:'#5E6E88',grid:'#E6EBF3'};
+var YRS=[2027,2028,2029,2030,2031];
+var ENG=['Core platform','Enterprise / network','Decision Records','Supervision','API / white label','Implementation / other'];
+var ECOL=[C.blue,C.dp,C.lt,C.grn,C.pur,C.gry];
+var DATA={
+ GroundFloor:{headline:10540040,total:[161132,870852,2587432,5863956,10540040],
+  eng:[[80000,400000,1200000,2800000,5000000],[50000,100000,400000,600000,1000000],[25000,250000,625000,1500000,2500000],[0,50000,160000,400000,800000],[0,0,100000,150000,300000],[6132,70852,102432,413956,940040]],
+  vol:[[4,20,60,140,250],[1,1,2,3,5],[1000,10000,25000,60000,100000],[0,2,4,10,20],[0,0,1,1,2],null],
+  prc:[[20000,20000,20000,20000,20000],[50000,100000,200000,200000,200000],[25,25,25,25,25],[25000,25000,40000,40000,40000],[0,0,100000,150000,150000],null]},
+ Base:{headline:94700000,total:[715000,4475000,16250000,43630000,94700000],
+  eng:[[240000,1400000,4800000,11380000,22000000],[100000,600000,2250000,6000000,12000000],[125000,1250000,5000000,15000000,37500000],[0,125000,1000000,3750000,9000000],[0,100000,700000,2500000,7000000],[250000,1000000,2500000,5000000,7200000]],
+  vol:[[12,70,240,569,1100],[1,3,9,20,30],[5000,50000,200000,600000,1500000],[0,5,25,75,150],[0,1,4,10,20],null],
+  prc:[[20000,20000,20000,20000,20000],[100000,200000,250000,300000,400000],[25,25,25,25,25],[25000,25000,40000,50000,60000],[0,100000,175000,250000,350000],null]},
+ BlueSky:{headline:260556913,total:[3391718,20954087,68379001,155181796,260556914],
+  eng:[[1000000,4000000,14000000,32000000,60000000],[750000,3750000,12250000,27000000,40000000],[1000000,7500000,25000000,62500000,100000000],[125000,1600000,5000000,15000000,30000000],[200000,1600000,6000000,12250000,20000000],[316718,2504087,6129001,6431796,10556914]],
+  vol:[[50,200,700,1600,3000],[5,15,35,60,80],[40000,300000,1000000,2500000,4000000],[5,40,100,250,400],[2,8,20,35,50],null],
+  prc:[[20000,20000,20000,20000,20000],[150000,250000,350000,450000,500000],[25,25,25,25,25],[25000,40000,50000,60000,75000],[100000,200000,300000,350000,400000],null]}
+};
+function money(v){var a=Math.abs(v);if(a>=1e9)return '$'+(v/1e9).toFixed(2)+'B';if(a>=1e6)return '$'+(v/1e6).toFixed(1)+'M';if(a>=1e3)return '$'+Math.round(v/1e3)+'K';return '$'+Math.round(v);}
+function num(v){return v>=1e6?(v/1e6).toFixed(v>=1e7?0:1)+'M':v>=1e3?Math.round(v/1e3)+'K':''+v;}
+function el(id){return document.getElementById(id);}
+function niceMax(m){var e=Math.pow(10,Math.floor(Math.log10(m)));var n=m/e;var s=n<=1?1:n<=2?2:n<=2.5?2.5:n<=5?5:10;return s*e;}
+
+// ---- STACKED BARS ----
+function stacked(id,series,colors){
+ var W=900,H=360,pl=66,pr=16,pt=16,pb=40,iw=W-pl-pr,ih=H-pt-pb;
+ var tot=YRS.map((_,i)=>series.reduce((s,a)=>s+a[i],0));
+ var max=niceMax(Math.max.apply(null,tot));
+ var bw=iw/YRS.length*0.56,step=iw/YRS.length;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4,val=max*(1-g/4);s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/>';s+='<text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+money(val)+'</text>';}
+ YRS.forEach((yr,i)=>{var cx=pl+step*i+step/2,yb=pt+ih;
+  for(var k=0;k<series.length;k++){var h=series[k][i]/max*ih;yb-=h;s+='<rect x="'+(cx-bw/2)+'" y="'+yb+'" width="'+bw+'" height="'+Math.max(h,0)+'" fill="'+colors[k]+'"/>';}
+  s+='<text x="'+cx+'" y="'+(pt+ih-series.reduce((a,b)=>a+b[i],0)/max*ih-7)+'" text-anchor="middle" font-family="Inter" font-size="12" font-weight="800" fill="'+C.tx+'">'+money(tot[i])+'</text>';
+  s+='<text x="'+cx+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>';});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- DONUT ----
+function donut(id,slices){
+ var W=560,H=300,cx=140,cy=150,r=104,ir=60,tot=slices.reduce((s,x)=>s+x.v,0),ang=-Math.PI/2;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ slices.forEach(sl=>{var a2=ang+sl.v/tot*Math.PI*2;var x1=cx+r*Math.cos(ang),y1=cy+r*Math.sin(ang),x2=cx+r*Math.cos(a2),y2=cy+r*Math.sin(a2);var xi1=cx+ir*Math.cos(a2),yi1=cy+ir*Math.sin(a2),xi2=cx+ir*Math.cos(ang),yi2=cy+ir*Math.sin(ang);var big=(a2-ang)>Math.PI?1:0;s+='<path d="M'+x1+' '+y1+' A'+r+' '+r+' 0 '+big+' 1 '+x2+' '+y2+' L'+xi1+' '+yi1+' A'+ir+' '+ir+' 0 '+big+' 0 '+xi2+' '+yi2+' Z" fill="'+sl.c+'"/>';ang=a2;});
+ s+='<text x="'+cx+'" y="'+(cy-4)+'" text-anchor="middle" font-family="Inter" font-size="13" font-weight="800" fill="'+C.tx+'">'+money(tot)+'</text><text x="'+cx+'" y="'+(cy+14)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="'+C.tx3+'">2031 REVENUE</text>';
+ var ly=28;slices.forEach(sl=>{s+='<rect x="268" y="'+(ly-10)+'" width="11" height="11" rx="3" fill="'+sl.c+'"/><text x="285" y="'+(ly-1)+'" font-family="Inter" font-size="11" fill="'+C.tx2+'">'+sl.n+'</text><text x="285" y="'+(ly+12)+'" font-family="Inter" font-size="10.5" font-weight="800" fill="'+C.tx+'">'+money(sl.v)+' &#183; '+Math.round(sl.v/tot*100)+'%</text>';ly+=40;});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- MULTILINE ----
+function multiline(id,series,fmt){
+ var W=900,H=330,pl=64,pr=20,pt=18,pb=38,iw=W-pl-pr,ih=H-pt-pb;
+ var all=[];series.forEach(se=>se.data.forEach(v=>all.push(v)));var max=niceMax(Math.max.apply(null,all)),min=Math.min(0,Math.min.apply(null,all));
+ var xs=i=>pl+iw*i/(YRS.length-1),ys=v=>pt+ih-(v-min)/(max-min)*ih;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4,val=max-(max-min)*g/4;s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/><text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+fmt(val)+'</text>';}
+ YRS.forEach((yr,i)=>s+='<text x="'+xs(i)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>');
+ series.forEach(se=>{var d=se.data.map((v,i)=>(i?'L':'M')+xs(i)+' '+ys(v)).join(' ');s+='<path d="'+d+'" fill="none" stroke="'+se.color+'" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>';se.data.forEach((v,i)=>s+='<circle cx="'+xs(i)+'" cy="'+ys(v)+'" r="4" fill="'+se.color+'"/>');s+='<text x="'+(xs(YRS.length-1))+'" y="'+(ys(se.data[se.data.length-1])-9)+'" text-anchor="end" font-family="Inter" font-size="11.5" font-weight="800" fill="'+se.color+'">'+fmt(se.data[se.data.length-1])+'</text>';});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- GROUPED BARS (3 series, 6 yrs incl 2026) ----
+function grouped(id,years,series){
+ var W=900,H=340,pl=64,pr=16,pt=18,pb=38,iw=W-pl-pr,ih=H-pt-pb;
+ var all=[];series.forEach(se=>se.data.forEach(v=>all.push(v)));var max=niceMax(Math.max.apply(null,all)),min=Math.min(0,Math.min.apply(null,all));
+ var step=iw/years.length,bw=step*0.74/series.length;
+ var ys=v=>pt+ih-(v-min)/(max-min)*ih;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4,val=max-(max-min)*g/4;s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/><text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+money(val)+'</text>';}
+ var zero=ys(0);
+ years.forEach((yr,i)=>{var gx=pl+step*i+step*0.13;series.forEach((se,k)=>{var v=se.data[i],y=ys(Math.max(v,0)),h=Math.abs(ys(v)-zero);s+='<rect x="'+(gx+bw*k)+'" y="'+y+'" width="'+(bw-3)+'" height="'+h+'" fill="'+se.color+'"/>';});s+='<text x="'+(pl+step*i+step/2)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>';});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- SINGLE LINE ----
+function line(id,years,data,color,fmt,fill){
+ var W=900,H=300,pl=64,pr=20,pt=18,pb=36,iw=W-pl-pr,ih=H-pt-pb;
+ var max=niceMax(Math.max.apply(null,data)),min=Math.min(0,Math.min.apply(null,data));
+ var xs=i=>pl+iw*i/(years.length-1),ys=v=>pt+ih-(v-min)/(max-min)*ih;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ if(fill)s+='<defs><linearGradient id="'+id+'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+color+'" stop-opacity=".2"/><stop offset="1" stop-color="'+color+'" stop-opacity="0"/></linearGradient></defs>';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4,val=max-(max-min)*g/4;s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/><text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+fmt(val)+'</text>';}
+ var d=data.map((v,i)=>(i?'L':'M')+xs(i)+' '+ys(v)).join(' ');
+ if(fill)s+='<path d="'+d+' L'+xs(data.length-1)+' '+(pt+ih)+' L'+xs(0)+' '+(pt+ih)+' Z" fill="url(#'+id+'g)"/>';
+ s+='<path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>';
+ data.forEach((v,i)=>{s+='<circle cx="'+xs(i)+'" cy="'+ys(v)+'" r="4" fill="'+color+'"/><text x="'+xs(i)+'" y="'+(ys(v)-9)+'" text-anchor="middle" font-family="Inter" font-size="11" font-weight="800" fill="'+color+'">'+fmt(v)+'</text>';});
+ years.forEach((yr,i)=>s+='<text x="'+xs(i)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>');
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- HORIZONTAL BARS ----
+function hbars(id,rows,fmt){
+ var W=900,rh=46,pt=10,pl=250,pr=90,H=pt*2+rows.length*rh,iw=W-pl-pr;
+ var max=Math.max.apply(null,rows.map(r=>r.v));
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ rows.forEach((r,i)=>{var y=pt+i*rh+8,bw=r.v/max*iw,col=r.c||C.blue;s+='<text x="'+(pl-14)+'" y="'+(y+20)+'" text-anchor="end" font-family="Inter" font-size="13" font-weight="600" fill="'+C.tx+'">'+r.n+'</text>';s+='<rect x="'+pl+'" y="'+y+'" width="'+Math.max(bw,2)+'" height="26" rx="6" fill="'+col+'"/>';s+='<text x="'+(pl+Math.max(bw,2)+10)+'" y="'+(y+19)+'" font-family="Inter" font-size="12.5" font-weight="800" fill="'+C.tx+'">'+fmt(r.v)+'</text>';if(r.s)s+='<text x="'+(pl-14)+'" y="'+(y+34)+'" text-anchor="end" font-family="Inter" font-size="10.5" fill="'+C.tx3+'">'+r.s+'</text>';});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- DUAL AXIS (records bars + roles line) ----
+function dual(id,years,bars,lineD){
+ var W=900,H=330,pl=60,pr=52,pt=18,pb=38,iw=W-pl-pr,ih=H-pt-pb;
+ var bmax=niceMax(Math.max.apply(null,bars)),lmax=niceMax(Math.max.apply(null,lineD));
+ var step=iw/years.length,bw=step*0.5;
+ var ysb=v=>pt+ih-v/bmax*ih,ysl=v=>pt+ih-v/lmax*ih,xs=i=>pl+step*i+step/2;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4;s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/><text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+num(bmax*(1-g/4))+'</text><text x="'+(W-pr+8)+'" y="'+(y+4)+'" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.grn+'">'+Math.round(lmax*(1-g/4))+'</text>';}
+ years.forEach((yr,i)=>{var h=bars[i]/bmax*ih;s+='<rect x="'+(xs(i)-bw/2)+'" y="'+ysb(bars[i])+'" width="'+bw+'" height="'+h+'" rx="4" fill="'+C.blue+'"/><text x="'+(pl+step*i+step/2)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>';});
+ var d=lineD.map((v,i)=>(i?'L':'M')+xs(i)+' '+ysl(v)).join(' ');s+='<path d="'+d+'" fill="none" stroke="'+C.grn+'" stroke-width="3" stroke-linecap="round"/>';lineD.forEach((v,i)=>s+='<circle cx="'+xs(i)+'" cy="'+ysl(v)+'" r="4" fill="'+C.grn+'"/>');
+ s+='</svg>';el(id).innerHTML=s;
+}
+
+// ---- TAM/SAM/SOM BUBBLE ----
+function bubble(id,rings){
+ var W=560,H=440,cx=215,baseY=H-30,rmax=190;
+ var vmax=rings[0].v;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ rings.forEach(function(r){var rad=Math.sqrt(r.v/vmax)*rmax;var cy=baseY-rad;
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="'+rad+'" fill="'+r.c+'" fill-opacity="'+r.o+'" stroke="'+r.s+'" stroke-width="1.5"/>';
+  s+='<text x="'+cx+'" y="'+(baseY-rad*2+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="800" fill="'+r.s+'">'+r.k+'</text>';
+  s+='<text x="'+cx+'" y="'+(baseY-rad*2+40)+'" text-anchor="middle" font-family="Inter" font-size="14" font-weight="800" fill="'+C.tx+'">'+money(r.v)+'</text>';});
+ var ly=40;rings.forEach(function(r){s+='<rect x="430" y="'+(ly-11)+'" width="12" height="12" rx="3" fill="'+r.s+'"/><text x="448" y="'+(ly-1)+'" font-family="Inter" font-size="12" font-weight="800" fill="'+C.tx+'">'+r.k+'</text><text x="448" y="'+(ly+14)+'" font-family="Inter" font-size="10.5" fill="'+C.tx2+'">'+r.lab+'</text>';ly+=58;});
+ s+='</svg>';el(id).innerHTML=s;
+}
+// ---- SCENARIO RENDER ----
+var curScn='Base',scnName={GroundFloor:'Ground Floor',Base:'Base',BlueSky:'Blue Sky'};
+function setScn(k){curScn=k;document.querySelectorAll('.pill').forEach(p=>p.classList.toggle('on',p.dataset.scn===k));renderScn();}
+function renderScn(){
+ var d=DATA[curScn],nm=scnName[curScn];
+ // KPIs
+ var t31=d.eng.reduce((s,a)=>s+a[4],0),gr=Math.round((d.total[4]/d.total[0]-1)*100),cagr=Math.round((Math.pow(d.total[4]/d.total[0],1/4)-1)*100);
+ el('scnKpi').innerHTML=
+  '<div class="kpi"><div class="k">2031 revenue</div><div class="v blue">'+money(d.headline)+'</div><div class="l">'+nm+' terminal</div></div>'+
+  '<div class="kpi"><div class="k">2027 start</div><div class="v">'+money(d.total[0])+'</div><div class="l">First revenue year</div></div>'+
+  '<div class="kpi"><div class="k">5-yr CAGR</div><div class="v">'+cagr+'%</div><div class="l">2027 to 2031</div></div>'+
+  '<div class="kpi"><div class="k">Largest engine, 2031</div><div class="v">'+money(Math.max.apply(null,d.eng.map(e=>e[4])))+'</div><div class="l">'+ENG[d.eng.map(e=>e[4]).indexOf(Math.max.apply(null,d.eng.map(e=>e[4])))]+'</div></div>';
+ el('stackSub').textContent=nm+' case · six engines · 2027 to 2031';
+ el('donutSub').textContent=nm+' case · share of the terminal year';
+ el('tableSub').textContent=nm+' case · volume and price per engine, by year';
+ stacked('stackChart',d.eng,ECOL);
+ el('stackLegend').innerHTML=ENG.map((n,i)=>'<span><i style="background:'+ECOL[i]+'"></i>'+n+'</span>').join('');
+ donut('donutChart',ENG.map((n,i)=>({n:n,v:d.eng[i][4],c:ECOL[i]})).sort((a,b)=>b.v-a.v));
+ // table: per engine volume & price (2031) + revenue row per year
+ var h='<tr><th>Engine</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th><th>2031</th><th>Vol × price, 2031</th></tr>';
+ ENG.forEach((n,k)=>{var vp='';if(d.vol[k]){var vv=d.vol[k][4],pp=d.prc[k][4];vp=(vv>=1000?num(vv):vv)+' × '+money(pp);}else vp='services';h+='<tr><td>'+n+'</td>'+d.eng[k].map(v=>'<td>'+money(v)+'</td>').join('')+'<td>'+vp+'</td></tr>';});
+ h+='<tr class="tot"><td>Total, engine build</td>'+YRS.map((_,i)=>'<td>'+money(d.eng.reduce((s,a)=>s+a[i],0))+'</td>').join('')+'<td>'+money(t31)+'</td></tr>';
+ el('scnTable').innerHTML=h;
+}
+// ---- STATIC RENDERS ----
+function pct(v){return v.toFixed(0)+'%';}
+window.addEventListener('DOMContentLoaded',function(){
+ renderScn();
+ // comparison line
+ multiline('cmpChart',[{name:'Ground Floor',color:C.gry,data:DATA.GroundFloor.total},{name:'Base',color:C.blue,data:DATA.Base.total},{name:'Blue Sky',color:C.dp,data:DATA.BlueSky.total}],money);
+ // P&L grouped
+ var Y6=[2026,2027,2028,2029,2030,2031];
+ grouped('plChart',Y6,[
+  {color:C.blue,data:[0,715000,4475000,16250000,43630000,94700000]},
+  {color:C.lt,data:[-12000,329750,2981000,12310500,34881000,77660000]},
+  {color:C.grn,data:[-285000,-917250,866625,7517250,24230050,56126500]}]);
+ line('marginChart',YRS,[46.1,66.6,75.8,79.9,82.0],C.blue,pct,true);
+ line('cashChart',Y6,[2215000,6108861,6388542,11943292,31610008,79224842],C.grn,money,true);
+ dual('recChart',Y6,[0,5000,50000,200000,600000,1500000],[3,5,7,11,17,27]);
+ hbars('uofChart',[
+  {n:'People & advisors',v:1005000},{n:'Speer — build & maintain',v:460000},
+  {n:'Legal & security',v:190000},{n:'Running the company',v:180000},
+  {n:'Reaching customers',v:136000},{n:'Bridge repayment',v:30000},
+  {n:'Cost contingency (15%)',v:300150,c:C.lt},{n:'Reserve',v:198850,c:C.gry}],money);
+ // MARKET bubble
+ bubble('bubbleChart',[
+  {k:'TAM',v:840500000,c:'#CFE0FD',o:.5,s:C.dp,lab:'Total recurring-revenue market'},
+  {k:'SAM',v:457500000,c:'#2E6BF2',o:.3,s:C.blue,lab:'Serviceable, budget-qualified'},
+  {k:'SOM',v:94700000,c:'#0E8A5F',o:.5,s:C.grn,lab:'2031 target · 20.7% of SAM'}]);
+ hbars('tamChart',[
+  {n:'Full-product ceiling',v:1770000000,c:C.gry,s:'If all applicable firms adopt'},
+  {n:'Recurring-revenue market',v:840500000,c:C.dp,s:'Total recurring estimate'},
+  {n:'Conservative current pool',v:726600000,c:C.blue,s:'Core software + known records'},
+  {n:'Serviceable (SAM)',v:457500000,c:C.lt,s:'Budget-qualified'},
+  {n:'2031 revenue target',v:94700000,c:C.grn,s:'20.7% of SAM'}],money);
+ hbars('estChart',[
+  {n:'Real-estate establishments',v:14100,c:C.blue},
+  {n:'Insurance establishments',v:9722,c:C.dp},
+  {n:'Auto-dealer establishments',v:6480,c:C.lt},
+  {n:'Franchised dealerships',v:3778,c:C.pur},
+  {n:'Banks',v:78,c:C.grn},
+  {n:'Trust & loan companies',v:52,c:C.gry}],v=>v>=1000?num(v):''+v);
+ hbars('eventChart',[
+  {n:'New light vehicles',v:1897055,c:C.blue,s:'CADA 2025'},
+  {n:'Mortgage originations',v:1330000,c:C.dp,s:'2025 estimate'},
+  {n:'MLS residential sales',v:470314,c:C.lt,s:'CREA 2025'}],v=>num(v));
+ // CONSUMER growth
+ line('userChart',YRS,[20000,120000,350000,650000,1000000],C.blue,num,true);
+ line('firmChart',YRS,[6,45,160,420,900],C.grn,v=>''+Math.round(v),true);
+ // EVIDENCE before/after (minutes)
+ baChart();
+ // scroll spy for faded side menu
+ var links=[].slice.call(document.querySelectorAll('.sidemenu a'));
+ var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.dataset.s===e.target.id);});}});},{rootMargin:'-45% 0px -50% 0px'});
+ ['financials','model','market','consumer','evidence'].forEach(function(id){var s=document.getElementById(id);if(s)obs.observe(s);});
+});
+function baChart(){
+ var rows=[['Santander · account open',12*1440,2*1440,'days'],['Bancolombia · data collection',79*1440,34*1440,'days'],['Connective · audit prep',135*1440,18*1440,'days'],['FineMark · trust packet',270,30,'min'],['Key Group · quality review',90,15,'min'],['Vestwell · agreement prep',75,5,'min']];
+ var W=900,rh=52,pt=10,pl=210,pr=70,H=pt*2+rows.length*rh,iw=W-pl-pr;
+ var max=Math.max.apply(null,rows.map(r=>r[1]));
+ function lab(v,u){return u==='days'?(v/1440)+'d':v+'m';}
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
+ rows.forEach((r,i)=>{var y=pt+i*rh+6;var bb=r[1]/max*iw,ab=r[2]/max*iw;
+  s+='<text x="'+(pl-14)+'" y="'+(y+18)+'" text-anchor="end" font-family="Inter" font-size="12.5" font-weight="600" fill="'+C.tx+'">'+r[0]+'</text>';
+  s+='<rect x="'+pl+'" y="'+y+'" width="'+Math.max(bb,2)+'" height="15" rx="4" fill="#CCD6E4"/><text x="'+(pl+Math.max(bb,2)+8)+'" y="'+(y+12)+'" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C.tx3+'">'+lab(r[1],r[3])+'</text>';
+  s+='<rect x="'+pl+'" y="'+(y+18)+'" width="'+Math.max(ab,2)+'" height="15" rx="4" fill="'+C.blue+'"/><text x="'+(pl+Math.max(ab,2)+8)+'" y="'+(y+30)+'" font-family="JetBrains Mono,monospace" font-size="10" font-weight="800" fill="'+C.blue+'">'+lab(r[2],r[3])+'</text>';});
+ s+='</svg>';el('baChart').innerHTML=s;
+}
+</script>
 </body></html>
