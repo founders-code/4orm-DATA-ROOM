@@ -40,7 +40,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .hero{padding:150px 0 26px;}
 .eyebrow{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;}
 .hero h1{font-weight:800;letter-spacing:-.04em;line-height:1.04;font-size:clamp(2.4rem,5.4vw,4.1rem);text-wrap:balance;max-width:16ch;}
-.hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:52ch;line-height:1.55;}
+.hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:860px;line-height:1.55;}
 /* product tiles */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:44px 0 8px;}
 @media(max-width:900px){.tiles{grid-template-columns:1fr;}}
@@ -163,17 +163,17 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 </div></header>
 
 <section class="wrap"><div class="tiles">
- <a class="tile rv" href="https://4ormiq.com" target="_blank" rel="noopener">
-  <span class="thumb"><img src="assets/thumb-4ormiq.png?v=20260902" alt="4ormIQ" loading="lazy"></span>
-  <span class="body"><span class="k">Know before you send</span><span class="nm">4ormIQ</span>
-  <span class="ds">A free check for anyone about to move money. Ask about a company or a person, and get an answer you can act on.</span>
-  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
- </a>
  <a class="tile active rv" href="#documents">
   <span class="thumb"><img src="assets/thumb-4orm-finance.png?v=20260902" alt="4orm Finance" loading="lazy"></span>
   <span class="body"><span class="k">The daily proof</span><span class="nm">4orm Finance</span>
   <span class="ds">The company keeping the daily proof a regulated business owes when it holds money that belongs to other people. The raise lives here.</span>
   <span class="go">Open the room &#8595;</span></span>
+ </a>
+ <a class="tile rv" href="https://4ormiq.com" target="_blank" rel="noopener">
+  <span class="thumb"><img src="assets/thumb-4ormiq.png?v=20260902" alt="4ormIQ" loading="lazy"></span>
+  <span class="body"><span class="k">Know before you send</span><span class="nm">4ormIQ</span>
+  <span class="ds">A free check for anyone about to move money. Ask about a company or a person, and get an answer you can act on.</span>
+  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
  </a>
  <a class="tile rv" href="https://4ormex.com" target="_blank" rel="noopener">
   <span class="thumb"><img src="assets/thumb-4ormex.png?v=20260902" alt="4ormEx" loading="lazy" onerror="this.closest('.thumb').classList.add('nofile')"><span class="thumb-fb"><img src="assets/favicon-512x512.png" alt=""><b>The Enterprise Experience</b></span></span>
@@ -206,27 +206,20 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 </a></section>
 
 <main class="docs" id="documents"><div class="wrap">
- <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">19 documents · view only</span></div>
+ <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">13 documents · view only</span></div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The founder's vision and north star, the investor deck, and the plan in full.</span></div>
+  <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The founder's vision and north star, then the investor deck.</span></div>
   <div class="grid">
    <div class="card soon"><span class="k">The vision</span><span class="t">Founder Vision &amp; North Star</span><span class="dd">Where 4orm is going, and the single star it steers by.</span><span class="go">Coming soon</span></div>
    <div class="card soon"><span class="k">The deck</span><span class="t">The Investor Deck</span><span class="dd">The full 4orm story, as presented to investors.</span><span class="go">Coming soon</span></div>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/why-4orm.pdf','Why 4orm, and Why Now');return false;"><span class="k">Why now</span><span class="t">Why 4orm, and Why Now</span><span class="dd">How the record went missing, what it costs, and why the window is open now.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/what-we-do.pdf','What We Do');return false;"><span class="k">What we do</span><span class="t">What We Do</span><span class="dd">The whole company explained in plain terms, sold four ways.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/business-plan.pdf','The Business Plan');return false;"><span class="k">The full plan</span><span class="t">The Business Plan</span><span class="dd">The complete plan, market, product, model and team.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-investor.pdf','One Page, for the Investor');return false;"><span class="k">For the investor</span><span class="t">One Page, for the Investor</span><span class="dd">The wedge, the numbers and the raise, on a single page.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-business.pdf','One Page, for a Business');return false;"><span class="k">For a business</span><span class="t">One Page, for a Business</span><span class="dd">What a firm that holds client money gets from 4orm.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/one-pager-consumer.pdf','One Page, for People');return false;"><span class="k">For people</span><span class="t">One Page, for People</span><span class="dd">The everyday check, in a person's own words.</span><span class="go">Open PDF &#8599;</span></a>
   </div>
  </div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">02</span><h3>The Team</h3><span class="d">The people building it and the partners behind them.</span></div>
   <div class="grid">
-   <a class="card" href="#" onclick="openPdf('assets/docs/team/team-and-partners.pdf','The Team and Partners');return false;"><span class="k">Who is building this</span><span class="t">The Team and Partners</span><span class="dd">The people building 4orm, and why they come first.</span><span class="go">Open PDF &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/team/team-at-a-glance.pdf','The Team at a Glance');return false;"><span class="k">On one page</span><span class="t">The Team at a Glance</span><span class="dd">The whole team on a single page.</span><span class="go">Open PDF &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('team-and-partners.html','The 4orm Family · Team and Partners');return false;"><span class="k">Who is building this</span><span class="t">The Team and Partners</span><span class="dd">Everyone on one page: the founders, the architect, the CTO seat, the funded hires, the capital and counsel advisors, and the Speer engineering bench.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
@@ -265,6 +258,8 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <div class="folder rv">
   <div class="folder-h"><span class="n">06</span><h3>Company Docs</h3><span class="d">The agreements and the fundraise reference.</span></div>
   <div class="grid">
+   <a class="card" href="#" onclick="openPdf('assets/docs/company/mission-anchor.pdf','The Mission Anchor');return false;"><span class="k">The north star</span><span class="t">The Mission Anchor</span><span class="dd">What 4orm is for, and the single line everything traces back to.</span><span class="go">Open PDF &#8599;</span></a>
+   <div class="card soon"><span class="k">The founders</span><span class="t">Founders Agreement</span><span class="dd">The agreement between the 4orm founders.</span><span class="go">Coming soon</span></div>
    <div class="card soon"><span class="k">The agreements</span><span class="t">Advisor Agreements</span><span class="dd">The signed agreements with 4orm's advisors.</span><span class="go">Coming soon</span></div>
    <div class="card soon"><span class="k">The raise, in brief</span><span class="t">Fundraise Reference Sheet</span><span class="dd">The key fundraise terms and figures, on one reference page.</span><span class="go">Coming soon</span></div>
   </div>
