@@ -59,7 +59,7 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 .mini .posts i{width:8px;height:38px;background:linear-gradient(180deg,#aab6cd,#39445c);border-radius:3px;box-shadow:0 3px 5px rgba(0,0,0,.5)}
 .mini .mt{font-size:.86rem;color:#fff;line-height:1.4;display:flex;gap:9px;align-items:flex-start}
 .mini .mt .dt{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px}
-.finishwrap{position:relative;z-index:6;text-align:center;color:#fff;padding:30px 24px 130px}
+.finishwrap{position:absolute;bottom:0;left:0;right:0;z-index:6;text-align:center;color:#fff;padding:30px 24px 130px}
 .finishwrap .chip{display:inline-block;font-family:var(--mono);font-weight:800;letter-spacing:.18em;text-transform:uppercase;
   font-size:.72rem;background:#0E8A5F;color:#fff;padding:10px 20px;border-radius:999px;box-shadow:0 10px 26px rgba(14,138,95,.4)}
 .finishwrap h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin-top:16px;color:#fff}
@@ -96,7 +96,7 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 <div class="intro">
   <div class="eb">The road to revenue</div>
   <h1>The journey, milestone by milestone.</h1>
-  <p>Scroll to drive the road from the pre-seed at night to a self-funding record in daylight. Every bend is a checkpoint the company can be measured against, September 2026 to 2029.</p>
+  <p>Scroll to drive the road from the pre-seed at night to a self-funding record in daylight. Every sign is a checkpoint the company can be measured against, across capital, build, regulators, partners and performance, 2026 to 2031.</p>
   <div class="scrollcue">Scroll to drive &#8595;</div>
 </div>
 
@@ -106,7 +106,7 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
   <div class="finishwrap" id="finish">
     <div class="chip">Finish &middot; Daylight</div>
     <h2>A record that pays for itself.</h2>
-    <p>First profit in 2029, the seed closed, and the same engine widening market by market. The road keeps going; from here the company funds its own way.</p>
+    <p>First full-year profit in 2029, the $5.0M seed closed, and the same engine widening market by market to one million consumers, 900 paying firms and $94.7M by 2031. The road keeps going; from here the company funds its own way.</p>
   </div>
 </div>
 
@@ -125,20 +125,26 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 <script>
 /* Majors sit at the elbows (one per bend). Minors sit on the straights between. */
 var MAJORS = [
-  {gold:false, four:true,  q:"Q3 2026 · The start line", items:["Pre-seed opens; angel and first subscription set.","Speer engaged; architecture accepted, IP assigned."]},
-  {gold:false, q:"Q4 2026 · Foundations", items:["The evidence engine and the 4ormIQ check in build.","First $500,000 in; non-dilutive applications filed."]},
-  {gold:false, q:"Q1 2027 · First light", items:["4ormIQ goes live, free for the consumer.","First two broker firms live; the first paying customer."]},
-  {gold:false, q:"Q2 2027 · Traction", items:["Ten thousand dollars a month recurring.","First network partner signed, reaching many firms."]},
-  {gold:true,  q:"Q3 2027 · Sunrise", items:["Seed closed, $3.55M at a $30M valuation.","Independent review readiness proven."]},
-  {gold:true,  q:"2028 - 2029 · The moat widens", items:["Regulated payments and automotive turn paid.","Real estate trust accounts follow, one engine each market."]}
+  {gold:false, four:true,  q:"Q3 2026 · The start line", items:["Incorporated in Alberta; $80K founding capital in.","Speer engaged; architecture accepted, IP assigned."]},
+  {gold:false, q:"Q4 2026 · Foundations", items:["Opening capital to $250K; $170K added.","Tier 2 build: the evidence engine and the 4ormIQ check."]},
+  {gold:false, q:"Q1 2027 · First light", items:["Pre-seed closes at $2.5M ($1.0M, then $1.25M).","4ormIQ live, free; first two broker firms paying."]},
+  {gold:false, q:"Q2 2027 · Traction", items:["$10K a month recurring; the dated record shipping.","First network partner signed; 20K consumers."]},
+  {gold:true,  q:"Q3 2027 · Sunrise", items:["$5.0M seed closes, against five references.","RPAA review-readiness proven end to end."]},
+  {gold:false, q:"Q4 2027 · First year booked", items:["2027 revenue ~$0.7M; ~6 paying firms.","First enterprise / network customer live."]},
+  {gold:true,  q:"2028 · The moat widens", items:["Payments and automotive turn paid.","120K consumers, 45 firms, $4.5M; profit turns positive."]},
+  {gold:true,  q:"2029 · Self-funding", items:["Real estate trust accounts turn paid.","350K consumers, 160 firms, $16.3M; first full-year profit."]},
+  {gold:true,  q:"2030 - 2031 · One million", items:["Investments and insurance turn paid.","1.0M consumers, 900 firms, $94.7M at 82% margin."]}
 ];
-/* minors between major i and i+1 (index 0..4) */
+/* minors between major i and i+1 (index 0..7) */
 var MINORS = [
-  ["Discovery: twenty firm conversations","Franchisor and network talks open"],
-  ["Design partner live"],
-  ["Reconciliation and the record shipping","Pre-seed completes at $1.5M"],
-  ["Regulator cultivation begins"],
-  ["Seventy-five thousand consumers on the free layer"]
+  ["Discovery: 20 firm conversations open","Target base sourced: 745 payment firms, 25,682 trust firms","Franchisor and network talks open"],
+  ["Regulator cultivation begins: RPAA, FSRA, CSA, CIRO","Non-dilutive filed: SR&ED and IRAP","First $500,000 subscription in"],
+  ["Markets 2 and 3 open: payments and automotive","Tier 3: reconciliation and the dated record","Design partner live — a lighthouse firm"],
+  ["Seat payback proven: ~6.6 months","Independent security testing underway","Second-vertical architecture reuse 70%+"],
+  ["Five customer references built for the seed","First examination-support readiness","4ormIQ past its first consumer cohort"],
+  ["First enterprise / network + first API partner","Supervision product opens","Team to ~7 operating roles"],
+  ["3 enterprise / network, 1 API partner","650K consumers; gross margin to ~76%","Company self-funding on cash"],
+  ["20 API / white-label partners by 2031","30 enterprise / network customers by 2031","1.5M paid Decision Records by 2031"]
 ];
 
 var VW=()=>window.innerWidth, VH=()=>window.innerHeight;
@@ -152,7 +158,7 @@ function majorY(i){ return TOPPAD + WAVELEN*(0.25 + i*0.5); }   // elbows: sin =
 
 function layout(){
   AMP = Math.min(VW()*0.16, 150); CX = VW()*0.5;
-  TOPPAD = Math.round(VH()*0.85); HALF = WAVELEN*0.5;
+  TOPPAD = Math.round(VH()*0.38); HALF = WAVELEN*0.5;
   sceneH = majorY(MAJORS.length-1) + WAVELEN*0.5 + BOT;
   scene.style.height = sceneH+'px';
   sceneTop = scene.offsetTop;
