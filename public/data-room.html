@@ -156,6 +156,24 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .pain-note{margin:34px 0 0;background:var(--tx);color:#fff;border-radius:var(--r);padding:22px 26px;font-size:clamp(1.02rem,1.5vw,1.2rem);font-weight:600;letter-spacing:-.01em;line-height:1.45;}
 
 .hero h1.umbrella{color:var(--tx);font-size:clamp(3.2rem,9.5vw,7rem);letter-spacing:-.045em;line-height:.98;max-width:none;}.hero h1.umbrella .fav4{height:.86em;width:auto;display:inline-block;vertical-align:-.045em;margin:0 .015em 0 .05em;}
+.raise{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--ok);border-radius:var(--r-lg);padding:26px 30px 26px;box-shadow:var(--sh);margin:6px 0 0;}
+.raise-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+.raise-k{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ok);display:inline-flex;align-items:center;gap:9px;}
+.raise-k:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px var(--ok-bg);animation:rpulse 2s ease-in-out infinite;}
+@keyframes rpulse{0%,100%{box-shadow:0 0 0 3px var(--ok-bg);}50%{box-shadow:0 0 0 6px var(--ok-bg);}}
+.raise-h{font-size:clamp(1.35rem,2.5vw,1.85rem);font-weight:800;letter-spacing:-.03em;margin-top:12px;}
+.raise-d{margin-top:10px;color:var(--tx-2);font-size:.96rem;line-height:1.55;max-width:70ch;}
+.raise-fig{text-align:right;flex-shrink:0;}
+.rf-n{display:block;font-size:2.7rem;font-weight:800;letter-spacing:-.03em;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums;}
+.rf-l{font-family:var(--mono);font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);}
+.rrow{margin-top:20px;max-width:540px;}
+.rrow.muted{margin-top:16px;opacity:.5;}
+.rrow-h{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);margin-bottom:8px;}
+.rrow-h b{color:var(--tx);}
+.rbar2{height:12px;border-radius:999px;background:var(--bg-3);overflow:hidden;box-shadow:inset 0 1px 2px rgba(16,32,64,.06);}
+.rbar2-fill{height:100%;background:linear-gradient(90deg,var(--blue-dp),var(--blue));border-radius:999px;min-width:4px;}
+.rbar2-fill.an{background:var(--gold);min-width:0;}
+@media(max-width:600px){.raise-fig{text-align:left;}}
 </style></head>
 <body>
 <div class="wash"></div>
@@ -175,6 +193,25 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <h1 class="umbrella">The <img class="fav4" src="assets/4orm-mark4.png?v=20260903b" alt="4">orm Data Room.</h1>
  <p>4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p><p style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client and providing the business the auditable record in real time, without having to reconstruct it later to prove suitability.</p>
 </div></header>
+
+<section class="wrap rv"><div class="raise">
+ <div class="raise-top">
+  <div>
+   <span class="raise-k">Open raise &middot; now</span>
+   <h2 class="raise-h">The round is open &mdash; Friends &amp; Family first.</h2>
+   <p class="raise-d">$80,000 is in of a $250,000 friends and family round. The friends and family round opens access to the $2.25M angel round that follows.</p>
+  </div>
+  <div class="raise-fig"><span class="rf-n">$80K</span><span class="rf-l">of $250K &middot; 32% &middot; Friends &amp; Family</span></div>
+ </div>
+ <div class="rrow">
+  <div class="rrow-h"><span>Friends &amp; Family round</span><span><b>$80K</b> / $250K &middot; 32%</span></div>
+  <div class="rbar2"><div class="rbar2-fill" style="width:32%"></div></div>
+ </div>
+ <div class="rrow muted">
+  <div class="rrow-h"><span>Angel round &middot; opens after</span><span>$2.25M target</span></div>
+  <div class="rbar2"><div class="rbar2-fill an" style="width:0%"></div></div>
+ </div>
+</div></section>
 
 <main class="docs" id="documents"><div class="wrap">
  <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">21 documents · view only</span></div>
