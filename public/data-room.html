@@ -37,10 +37,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .nav-out:hover{background:var(--blue-dp) !important;}
 @media(max-width:640px){.nav-links a.hide-sm{display:none;}}
 /* hero */
-.hero{padding:150px 0 26px;}
+.hero{padding:188px 0 26px;}
 .eyebrow{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;}
 .hero h1{font-weight:800;letter-spacing:-.04em;line-height:1.04;font-size:clamp(2.4rem,5.4vw,4.1rem);text-wrap:balance;max-width:16ch;}
-.hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:860px;line-height:1.55;}
+.hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:none;line-height:1.55;}
 /* product tiles */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:44px 0 8px;}
 @media(max-width:900px){.tiles{grid-template-columns:1fr;}}
@@ -73,7 +73,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .folder-h h3{font-size:1.32rem;font-weight:800;letter-spacing:-.02em;}
 .folder-h .d{color:var(--tx-3);font-size:.9rem;margin-left:auto;max-width:44ch;text-align:right;}
 @media(max-width:640px){.folder-h .d{display:none;}}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:16px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,268px),1fr));gap:16px;}
 .card{display:flex;flex-direction:column;gap:9px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
  padding:20px 20px 18px;text-decoration:none;color:inherit;box-shadow:var(--sh-sm);transition:transform .45s var(--spring),box-shadow .45s var(--ease),border-color .3s;min-height:172px;}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--blue-100);}
@@ -167,51 +167,8 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <p>4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p><p style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client and providing the business the auditable record in real time, without having to reconstruct it later to prove suitability.</p>
 </div></header>
 
-<section class="wrap"><div class="tiles">
- <a class="tile active rv" href="#documents">
-  <span class="thumb"><img src="assets/thumb-4orm-finance.png?v=20260902" alt="4orm Finance" loading="lazy"></span>
-  <span class="body"><span class="k">The daily proof</span><span class="nm">4orm Finance</span>
-  <span class="ds">The company keeping the daily proof a regulated business owes when it holds money that belongs to other people. The raise lives here.</span>
-  <span class="go">Open the room &#8595;</span></span>
- </a>
- <a class="tile rv" href="https://4ormiq.com" target="_blank" rel="noopener">
-  <span class="thumb"><img src="assets/thumb-4ormiq.png?v=20260902" alt="4ormIQ" loading="lazy"></span>
-  <span class="body"><span class="k">Know before you send</span><span class="nm">4ormIQ</span>
-  <span class="ds">A free check for anyone about to move money. Ask about a company or a person, and get an answer you can act on.</span>
-  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
- </a>
- <a class="tile rv" href="https://4ormex.com" target="_blank" rel="noopener">
-  <span class="thumb"><img src="assets/thumb-4ormex.png?v=20260902" alt="4ormEx" loading="lazy" onerror="this.closest('.thumb').classList.add('nofile')"><span class="thumb-fb"><img src="assets/favicon-512x512.png" alt=""><b>The Enterprise Experience</b></span></span>
-  <span class="body"><span class="k">The Enterprise Experience</span><span class="nm">4ormEx</span>
-  <span class="ds">Transaction integrity for regulated financial firms. Every client relationship easier to understand, and easier to show suitability for.</span>
-  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
- </a>
-</div></section>
-
-
-
-
-<section class="wrap wwd rv">
- <div class="wwd-k">What we do</div>
- <h2 class="wwd-h">Major financial decisions. Easier to understand. Easier to explain.</h2>
- <p class="wwd-p">4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p><p class="wwd-p" style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client and providing the business the auditable record in real time, without having to reconstruct it later to prove suitability.</p>
- <div class="wwd-stats">
-  <div class="s"><div class="n bad">100%</div><div class="l">No documented suitability, FSRA review</div></div>
-  <div class="s"><div class="n bad">73%</div><div class="l">Missing material-risk disclosure</div></div>
-  <div class="s"><div class="n bad">65%</div><div class="l">Missing conflict disclosure</div></div>
-  <div class="s"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress</div></div>
- </div>
-</section>
-
-<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('roadmap.html','The 12-Month Road');return false;">
- <div class="howit-l"><div class="howit-k">The roadmap</div>
-  <div class="howit-h">The 12-month road.</div>
-  <div class="howit-d">From the pre-seed to a closed seed and a self-funding record. See the whole journey: every checkpoint, mark and milestone across product, distribution, the regulated consumer and the financials.</div></div>
- <div class="howit-btn">Open the roadmap <span class="ar">&#8594;</span></div>
-</a></section>
-
 <main class="docs" id="documents"><div class="wrap">
- <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">20 documents · view only</span></div>
+ <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">21 documents · view only</span></div>
 
  <div class="folder rv">
   <div class="folder-h"><span class="n">01</span><h3>Start Here</h3><span class="d">The vision, the deck, the pitch, the road to capital and revenue, and the research.</span></div>
@@ -238,6 +195,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
    <a class="card data" href="#" onclick="openPdf('assets/docs/financials/financial-summary.pdf','Financial Summary');return false;"><span class="k">The numbers that matter</span><span class="t">Financial Summary</span><span class="dd">The round, where the money goes, and the targets, on a few pages.</span><span class="go">Open &#8599;</span></a>
    <a class="card data" href="#" onclick="openPdf('assets/docs/financials/full-financial-model.pdf','The Full Financial Model');return false;"><span class="k">The whole model</span><span class="t">The Full Financial Model</span><span class="dd">Every sheet of the pre-seed pro forma.</span><span class="go">Open &#8599;</span></a>
    <a class="card data" href="#" onclick="openPdf('assets/docs/financials/capital-table.pdf','Capital Table');return false;"><span class="k">Ownership</span><span class="t">Capital Table</span><span class="dd">Shares, SAFEs and ownership, line by line.</span><span class="go">Open &#8599;</span></a>
+   <a class="card data" href="#" onclick="openPdf('growth-model.html','The Growth Model');return false;"><span class="k">The growth</span><span class="t">The Growth Model</span><span class="dd">The path to one million consumer users by 2031 and the paying firms behind them, benchmarked to KOHO.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
@@ -270,8 +228,45 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 </div></main>
 
+<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('roadmap.html','The 12-Month Road');return false;">
+ <div class="howit-l"><div class="howit-k">The roadmap</div>
+  <div class="howit-h">The 12-month road.</div>
+  <div class="howit-d">From the pre-seed to a closed seed and a self-funding record. See the whole journey: every checkpoint, mark and milestone across product, distribution, the regulated consumer and the financials.</div></div>
+ <div class="howit-btn">Open the roadmap <span class="ar">&#8594;</span></div>
+</a></section>
 
+<section class="wrap"><div class="tiles">
+ <a class="tile active rv" href="#documents">
+  <span class="thumb"><img src="assets/thumb-4orm-finance.png?v=20260902" alt="4orm Finance" loading="lazy"></span>
+  <span class="body"><span class="k">The daily proof</span><span class="nm">4orm Finance</span>
+  <span class="ds">The company keeping the daily proof a regulated business owes when it holds money that belongs to other people. The raise lives here.</span>
+  <span class="go">Open the room &#8595;</span></span>
+ </a>
+ <a class="tile rv" href="https://4ormiq.com" target="_blank" rel="noopener">
+  <span class="thumb"><img src="assets/thumb-4ormiq.png?v=20260902" alt="4ormIQ" loading="lazy"></span>
+  <span class="body"><span class="k">Know before you send</span><span class="nm">4ormIQ</span>
+  <span class="ds">A free check for anyone about to move money. Ask about a company or a person, and get an answer you can act on.</span>
+  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
+ </a>
+ <a class="tile rv" href="https://4ormex.com" target="_blank" rel="noopener">
+  <span class="thumb"><img src="assets/thumb-4ormex.png?v=20260902" alt="4ormEx" loading="lazy" onerror="this.closest('.thumb').classList.add('nofile')"><span class="thumb-fb"><img src="assets/favicon-512x512.png" alt=""><b>The Enterprise Experience</b></span></span>
+  <span class="body"><span class="k">The Enterprise Experience</span><span class="nm">4ormEx</span>
+  <span class="ds">Transaction integrity for regulated financial firms. Every client relationship easier to understand, and easier to show suitability for.</span>
+  <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
+ </a>
+</div></section>
 
+<section class="wrap wwd rv">
+ <div class="wwd-k">What we do</div>
+ <h2 class="wwd-h">Major financial decisions. Easier to understand. Easier to explain.</h2>
+ <p class="wwd-p">4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p><p class="wwd-p" style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client and providing the business the auditable record in real time, without having to reconstruct it later to prove suitability.</p>
+ <div class="wwd-stats">
+  <div class="s"><div class="n bad">100%</div><div class="l">No documented suitability, FSRA review</div></div>
+  <div class="s"><div class="n bad">73%</div><div class="l">Missing material-risk disclosure</div></div>
+  <div class="s"><div class="n bad">65%</div><div class="l">Missing conflict disclosure</div></div>
+  <div class="s"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress</div></div>
+ </div>
+</section>
 
 <footer class="foot"><div class="wrap">
  <span>4orm Finance · Confidential · Not for distribution</span>

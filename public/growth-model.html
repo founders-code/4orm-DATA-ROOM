@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>4orm · The Growth Model</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-2:#F7F9FC;--surface:#FFFFFF;--border:#E6EBF3;--border-strong:#CCD6E4;
+--tx:#142036;--tx-2:#46556E;--tx-3:#5E6E88;--blue:#2E6BF2;--blue-lt:#5B8CFF;--blue-dp:#1B4ABE;--blue-50:#EAF1FE;--blue-100:#CFE0FD;--ok:#0E8A5F;
+--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+--r:18px;--r-lg:26px;--sh-sm:0 1px 2px rgba(16,32,64,.05);--sh:0 10px 34px rgba(16,32,64,.08);--sh-lg:0 28px 70px rgba(16,32,64,.14);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--tx);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0 0 auto 0;height:520px;z-index:-1;background:
+radial-gradient(900px 440px at 18% -8%,rgba(46,107,242,.14),transparent 60%),
+radial-gradient(760px 380px at 92% -10%,rgba(91,140,255,.12),transparent 62%),
+linear-gradient(180deg,var(--bg-2),var(--bg) 72%)}
+.docnav{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none}
+.docnav a{pointer-events:auto;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);color:#fff;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:10px 20px;text-decoration:none;font-weight:600;font-size:.86rem;box-shadow:var(--sh)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 26px}
+.hero{padding:120px 0 14px}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.hero h1{margin-top:14px;font-weight:800;letter-spacing:-.04em;line-height:1.03;font-size:clamp(2.3rem,5.2vw,3.7rem);text-wrap:balance;max-width:20ch}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{margin-top:16px;font-size:clamp(1rem,1.4vw,1.15rem);color:var(--tx-2);max-width:60ch}
+.koho{margin-top:24px;display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:var(--r);padding:18px 22px;box-shadow:var(--sh-sm);max-width:760px}
+.koho .k{font-family:var(--mono);font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);flex:0 0 96px;padding-top:3px}
+.koho p{font-size:.92rem;color:var(--tx-2);line-height:1.55;margin:0}
+.koho b{color:var(--tx)}
+section{padding:48px 0 6px}
+.sh{margin-bottom:22px}
+.sh .eyebrow{display:block;margin-bottom:10px}
+.sh h2{font-weight:800;letter-spacing:-.03em;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.1}
+.sh p{margin-top:9px;color:var(--tx-2);font-size:.98rem;max-width:64ch}
+.chart{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 24px 18px;box-shadow:var(--sh-sm)}
+.chart svg{display:block;width:100%;height:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:14px;margin-top:20px}
+.yc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 18px 16px;box-shadow:var(--sh-sm)}
+.yc .yr{font-family:var(--mono);font-size:.66rem;font-weight:800;letter-spacing:.14em;color:var(--tx-3)}
+.yc .big{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;color:var(--tx);margin-top:8px;font-variant-numeric:tabular-nums;line-height:1}
+.yc .big.blue{color:var(--blue)}
+.yc .lab{font-size:.8rem;color:var(--tx-2);margin-top:5px}
+.yc .firm{margin-top:12px;padding-top:11px;border-top:1px solid var(--border);font-size:.86rem;color:var(--tx-2)}
+.yc .firm b{color:var(--tx);font-weight:800;font-variant-numeric:tabular-nums}
+.note{margin-top:28px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;color:var(--tx-3);font-size:.82rem;line-height:1.55}
+.note b{color:var(--tx-2)}
+footer{margin-top:40px;padding:26px 0 54px;border-top:1px solid var(--border)}
+footer .f{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
+@media(max-width:560px){.koho{flex-direction:column;gap:6px}.koho .k{flex-basis:auto}}
+</style></head>
+<body>
+<div class="bg"></div>
+<nav class="docnav"><a href="data-room.html" target="_top">&#8592; Back to the room</a></nav>
+
+<header class="hero"><div class="wrap">
+ <span class="eyebrow">The growth model</span>
+ <h1>To <em>one million</em> people, and the firms behind them.</h1>
+ <p>4ormIQ is free for the consumer, so it can grow the way a consumer app grows. 4orm earns its revenue from the regulated firms that pay for the record. The target is one million consumer users by 2031, and the paying firms that ride alongside them.</p>
+ <div class="koho"><span class="k">The benchmark</span><p><b>KOHO</b>, Canada&rsquo;s most-used neobank, went from roughly <b>500K users in 2022</b> to <b>1M in late 2023</b> and <b>2.5M by 2026</b>, on about <b>$250M</b> of annual revenue. A free, trust-first check has the same consumer dynamics. 4orm targets its first million in five years rather than nine.</p></div>
+</div></header>
+
+<section><div class="wrap">
+ <div class="sh"><span class="eyebrow">Consumer users &middot; 4ormIQ, free</span><h2>One million by 2031.</h2>
+  <p>A mortgage-first launch that widens across auto, insurance, real estate and investing. The curve is a target, not a forecast.</p></div>
+ <div class="chart">
+  <svg viewBox="0 0 920 330" role="img" aria-label="Consumer users growing from 20,000 in 2027 to 1,000,000 in 2031">
+   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E6BF2" stop-opacity=".22"/><stop offset="1" stop-color="#2E6BF2" stop-opacity="0"/></linearGradient></defs>
+   <!-- gridlines -->
+   <g stroke="#E6EBF3" stroke-width="1">
+    <line x1="60" y1="40" x2="892" y2="40"/><line x1="60" y1="100" x2="892" y2="100"/><line x1="60" y1="160" x2="892" y2="160"/><line x1="60" y1="220" x2="892" y2="220"/><line x1="60" y1="280" x2="892" y2="280"/>
+   </g>
+   <g font-family="JetBrains Mono,monospace" font-size="11" fill="#5E6E88">
+    <text x="52" y="44" text-anchor="end">1.0M</text><text x="52" y="104" text-anchor="end">750K</text><text x="52" y="164" text-anchor="end">500K</text><text x="52" y="224" text-anchor="end">250K</text><text x="52" y="284" text-anchor="end">0</text>
+   </g>
+   <!-- area + line: pts 2027..2031 = 20,120,350,650,1000 (K) -->
+   <path d="M90,275.2 L290,251.2 L490,196 L690,124 L890,40 L890,280 L90,280 Z" fill="url(#g)"/>
+   <path d="M90,275.2 L290,251.2 L490,196 L690,124 L890,40" fill="none" stroke="#2E6BF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+   <g fill="#2E6BF2"><circle cx="90" cy="275.2" r="5"/><circle cx="290" cy="251.2" r="5"/><circle cx="490" cy="196" r="5"/><circle cx="690" cy="124" r="5"/><circle cx="890" cy="40" r="6" stroke="#fff" stroke-width="2"/></g>
+   <g font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="#142036" text-anchor="middle">
+    <text x="90" y="300">20K</text><text x="290" y="300">120K</text><text x="490" y="300">350K</text><text x="690" y="300">650K</text><text x="890" y="300">1.0M</text>
+   </g>
+   <g font-family="JetBrains Mono,monospace" font-size="11" fill="#5E6E88" text-anchor="middle">
+    <text x="90" y="320">2027</text><text x="290" y="320">2028</text><text x="490" y="320">2029</text><text x="690" y="320">2030</text><text x="890" y="320">2031</text>
+   </g>
+  </svg>
+ </div>
+
+ <div class="cards">
+  <div class="yc"><div class="yr">2027</div><div class="big blue">20K</div><div class="lab">users, mortgage-first launch</div><div class="firm">Paying firms <b>6</b></div></div>
+  <div class="yc"><div class="yr">2028</div><div class="big blue">120K</div><div class="lab">users</div><div class="firm">Paying firms <b>45</b></div></div>
+  <div class="yc"><div class="yr">2029</div><div class="big blue">350K</div><div class="lab">users</div><div class="firm">Paying firms <b>160</b></div></div>
+  <div class="yc"><div class="yr">2030</div><div class="big blue">650K</div><div class="lab">users</div><div class="firm">Paying firms <b>420</b></div></div>
+  <div class="yc"><div class="yr">2031</div><div class="big blue">1.0M</div><div class="lab">users</div><div class="firm">Paying firms <b>900</b></div></div>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="sh"><span class="eyebrow">Paying firms &middot; the revenue</span><h2>The firms are who pay.</h2>
+  <p>Regulated businesses pay for the record. Fewer than one thousand paying firms carries the base-case revenue; the consumer million is the trust engine that feeds them.</p></div>
+ <div class="cards">
+  <div class="yc"><div class="yr">Paying firms, 2031</div><div class="big">900</div><div class="lab">of 31,709 Canadian firms in scope</div></div>
+  <div class="yc"><div class="yr">Base-case revenue, 2031</div><div class="big">$71.1M</div><div class="lab">tracing to the pre-seed pro forma</div></div>
+  <div class="yc"><div class="yr">Consumer layer</div><div class="big blue">Free</div><div class="lab">the consumer is never charged</div></div>
+  <div class="yc"><div class="yr">First profit</div><div class="big">2029</div><div class="lab">base case, then self-funding</div></div>
+ </div>
+ <div class="note"><b>Illustrative target model.</b> The consumer-user path is a target benchmarked to KOHO, not a forecast; the paying-firm and revenue figures trace to the 4orm Finance master pro forma (base case, October 2026, in Canadian dollars). Firm counts and the 31,709 in-scope population are from published Canadian registers. 4orm never charges the consumer.</div>
+</div></section>
+
+<footer><div class="wrap"><span class="f">4orm Finance &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; Not for distribution</span></div></footer>
+</body></html>

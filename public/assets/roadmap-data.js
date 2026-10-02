@@ -7,32 +7,32 @@ const DATA = {
   overallNote: "The arc is simple: 4ormIQ earns trust for free, 4orm sells the record to the regulated business, and the same engine widens into a moat one industry at a time. The groundwork is done, the pre-seed is open, and the build, the first customers and the free consumer check are sequenced behind the close. The workstreams below carry the whole plan: what is done, what is underway now, and what is next.",
 
   capitalValue: {
-    asOf: "September 2026",
-    lead: "The pre-seed is $2.05 million across five tranches, of which $1.5 million is open now and closes in May 2027. A $3.55 million seed follows at a $30 million valuation. Below are the tranches, and where the first year of money goes.",
+    asOf: "October 2026",
+    lead: "The pre-seed is $2.5 million, closed in Q1 2027. $80K is raised; $170K completes the opening $250K; the remaining $2.25M closes in two tranches, $1.0M and $1.25M. A $3.55 million seed follows at a $30 million valuation. Below is the sequence, and where the money goes.",
     stats: [
-      { k:"$2.05M", l:"Pre-seed, five tranches" },
-      { k:"$1.5M",  l:"Open now, closes May 2027" },
+      { k:"$2.5M", l:"Pre-seed, closed Q1 2027" },
+      { k:"$250K",  l:"Opening capital ($80K raised)" },
       { k:"$3.55M", l:"Seed to follow, at $30M" },
       { k:"$71.1M", l:"Base-case revenue in 2031" }
     ],
     groups: [
-      { title:"The pre-seed, tranche by tranche", rows:[
-        { item:"Angel, at close", detail:"First cheque, priced.", cons:"$50,000", head:"$0.25 a share" },
-        { item:"First subscription", detail:"Priced equity.", cons:"$500,000", head:"$0.50 a share" },
-        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$15M ceiling" },
-        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$18M ceiling" },
-        { item:"Price-later tranche", detail:"Converts at the next round, 15% discount.", cons:"$500,000", head:"$20M ceiling" }
-      ], subtotal:{ label:"Subtotal - the pre-seed", cons:"$2,050,000", head:"" } },
-      { title:"Where the first year of money goes", rows:[
-        { item:"The team", detail:"13 months of payroll, founder pay below market.", cons:"$784,945", head:"38%" },
-        { item:"Reaching first customers", detail:"Sales and marketing, mortgage-first.", cons:"$502,667", head:"25%" },
-        { item:"Building the software", detail:"The engine and 4ormIQ, with Speer.", cons:"$466,667", head:"23%" },
-        { item:"Legal and audit", detail:"Counsel, audit and review readiness.", cons:"$149,500", head:"7%" },
-        { item:"Delivering the service", detail:"Hosting, security and operations.", cons:"$102,871", head:"5%" }
-      ], subtotal:{ label:"Subtotal - use of the pre-seed", cons:"$2,006,650", head:"98%" } }
+      { title:"The capital sequence", rows:[
+        { item:"Raised", detail:"Capital already raised and working as the base.", cons:"$80,000", head:"Foundation" },
+        { item:"To $250K", detail:"Completes the opening tranche: discovery, legal and compliance, insurance, talent and design-partner work.", cons:"+$170,000", head:"Q4 2026" },
+        { item:"First major close", detail:"To $1.25M total: the mortgage build, pilot readiness, core delivery and the operating team.", cons:"+$1,000,000", head:"Q1 2027" },
+        { item:"Final close", detail:"To $2.5M total: full runway, commercial launch and the proof required to expand.", cons:"+$1,250,000", head:"Q1 2027" }
+      ], subtotal:{ label:"Subtotal - the pre-seed", cons:"$2,500,000", head:"" } },
+      { title:"What the $2.5M must buy", rows:[
+        { item:"People and advisors", detail:"Named fees, sales and client delivery, and operating leadership.", cons:"$1,005,000", head:"40%" },
+        { item:"Speer build and maintenance", detail:"Development and routine testing through Speer.", cons:"$460,000", head:"18%" },
+        { item:"Legal and security", detail:"Contracts, privacy design, independent security testing and advice.", cons:"$190,000", head:"8%" },
+        { item:"Run the company", detail:"Hosting, tools, bookkeeping, insurance and administration.", cons:"$180,000", head:"7%" },
+        { item:"Reach customers", detail:"Discovery, demonstrations, pilots and customer marketing.", cons:"$136,000", head:"5%" },
+        { item:"Bridge repayment", detail:"Existing principal allowance; final balance to be confirmed.", cons:"$30,000", head:"1%" }
+      ], subtotal:{ label:"Subtotal - 18-month core", cons:"$2,001,000", head:"80%" } }
     ],
-    total: { label:"Pre-seed total", cons:"$2,050,000", head:"" },
-    foot: "The one-line version: five tranches totalling $2.05M fund thirteen months of build and first sales, after which the company turns its first profit in 2029 and funds itself. The $3.55M seed at a $30M valuation shortens the climb rather than keeping the company alive. Source: 4orm Finance master pro forma and capital structure, September 2026, in Canadian dollars."
+    total: { label:"Pre-seed total", cons:"$2,500,000", head:"" },
+    foot: "The one-line version: $2.5M closes the pre-seed in Q1 2027 - $80K raised, $170K to $250K, then $1.0M and $1.25M. The $2.001M 18-month core is wrapped with $300K contingency (15%) and a $199K runway reserve, for $2.5M total. A $3.55M seed at a $30M valuation shortens the climb rather than keeping the company alive. Source: 4orm Finance Roadmap to Capital and master pro forma, October 2026, in Canadian dollars."
   },
 
   /* Planned milestones, newest target first. date = target quarter. vertical = a workstream id. */
@@ -42,7 +42,7 @@ const DATA = {
     { date:"Q3 2027", vertical:"regulator",   text:"Independent review readiness proven end to end, aligned to the RPAA review." },
     { date:"Q3 2027", vertical:"capital",     text:"Seed closed at $3.55M on a $30M valuation, against five customer references." },
     { date:"Q3 2027", vertical:"iq",          text:"Seventy-five thousand consumers on the free 4ormIQ layer." },
-    { date:"Q2 2027", vertical:"capital",     text:"Pre-seed completes at $1.5M; the three price-later tranches close." },
+    { date:"Q1 2027", vertical:"capital",     text:"Pre-seed closes at $2.5M; the final $1.25M tranche completes." },
     { date:"Q2 2027", vertical:"distribution",text:"First network partner signed, reaching many firms at once." },
     { date:"Q2 2027", vertical:"form",        text:"$10,000 a month recurring; reconciliation and the evidence record shipping." },
     { date:"Q1 2027", vertical:"moat",        text:"Regulated payments and automotive open as the second and third markets." },
@@ -54,7 +54,7 @@ const DATA = {
     { date:"Q4 2026", vertical:"regulator",   text:"Regulator cultivation: first engagements on review readiness." },
     { date:"Q4 2026", vertical:"distribution",text:"First franchisor and network conversations opened." },
     { date:"Q3 2026", vertical:"product",     text:"Tier one of the Speer build: architecture accepted, IP assigned." },
-    { date:"Q3 2026", vertical:"capital",     text:"Pre-seed opens; angel cheque and first subscription set." },
+    { date:"Q4 2026", vertical:"capital",     text:"Opening capital to $250K; $80K raised, then $170K added." },
     { date:"Q3 2026", vertical:"distribution",text:"Discovery underway, twenty firm conversations opened." },
     { date:"Q3 2026", vertical:"team",        text:"Incorporated in Alberta; Speer Technologies engaged as build partner." }
   ],
@@ -174,18 +174,18 @@ const DATA = {
     },
     {
       id:"capital", name:"Capital & the Raise", short:"Capital",
-      pct:32, stage:"Pre-seed open · $2.05M · seed to follow",
-      benchmark:{level:"onpar", note:"<b>Structured, priced and open.</b> Five tranches make the $2.05M pre-seed; the angel and first subscription are set and the three price-later tranches are open now, closing May 2027. A $3.55M seed follows at a $30M valuation."},
+      pct:32, stage:"Pre-seed open · $2.5M · seed to follow",
+      benchmark:{level:"onpar", note:"<b>Structured and open.</b> A $2.5M pre-seed closes in Q1 2027: $80K is raised, $170K completes the opening $250K, then $1.0M and $1.25M close the round. A $3.55M seed follows at a $30M valuation."},
       checkpoints:[
-        {state:"done", t:"Capital structure set", d:"$2.05M across five tranches; cap table and three-case model tracing to the pro forma."},
-        {state:"done", t:"Angel and first subscription", d:"$50,000 at $0.25 and $500,000 at $0.50."},
-        {state:"active", t:"Three price-later tranches open", d:"$500,000 each at $15M, $18M and $20M ceilings, 15% discount."},
-        {state:"active", t:"Non-dilutive applications", d:"Eight programmes, modelled at zero as upside."},
-        {state:"todo", t:"Pre-seed completes", d:"May 2027, at $1.5M."},
+        {state:"done", t:"Capital structure set", d:"$2.5M pre-seed, four-step sequence; cap table and three-case model tracing to the pro forma."},
+        {state:"done", t:"$80K raised", d:"The founding capital, working as the base."},
+        {state:"active", t:"Opening capital to $250K", d:"$170K completes the opening tranche: discovery, legal, compliance, insurance, talent and the design partner."},
+        {state:"todo", t:"First major close", d:"+$1.0M to $1.25M total: build, pilot readiness and the operating team."},
+        {state:"todo", t:"Pre-seed closes", d:"+$1.25M to $2.5M total, Q1 2027: full runway and expansion proof."},
         {state:"todo", t:"Seed closed", d:"$3.55M at a $30M valuation, September 2027, against five references."}
       ],
       facts:[
-        "Pre-seed: <b>$2.05M</b> · open now: <b>$1.5M</b>",
+        "Pre-seed: <b>$2.5M</b> · opening: <b>$250K</b> ($80K raised)",
         "Seed: <b>$3.55M</b> at <b>$30M</b>",
         "First profit: <b>2029</b>, base case",
         "Grants modelled at <b>zero</b> (upside)"
