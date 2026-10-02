@@ -132,6 +132,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .wwd-stats .n{font-size:2.7rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--tx);font-variant-numeric:tabular-nums;white-space:nowrap;}
 .wwd-stats .n.blue{color:var(--blue);} .wwd-stats .n.ok{color:var(--ok);} .wwd-stats .n.bad{color:var(--bad);}
 .wwd-stats .l{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tx-3);margin-top:0;line-height:1.4;max-width:22ch;}
+.wwd-stats.why{gap:16px;}
+.wwd-stats.why .s{flex-direction:column;align-items:flex-start;gap:8px;border-radius:var(--r-lg);padding:20px 24px 22px;max-width:360px;}
+.wwd-stats.why .n{font-size:1.18rem;font-weight:800;line-height:1.2;letter-spacing:-.01em;white-space:normal;color:var(--blue);}
+.wwd-stats.why .l{font-family:var(--sans);text-transform:none;font-weight:400;letter-spacing:0;font-size:.9rem;color:var(--tx-2);line-height:1.5;max-width:none;}
 .wwd-note{margin-top:34px;background:var(--blue-50);border-left:3px solid var(--blue);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;color:var(--tx-2);font-size:.98rem;line-height:1.55;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}.wwd-more{flex-shrink:0;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;border-radius:999px;padding:11px 20px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}.wwd-more:hover{background:var(--blue-dp);} .wwd-more .ar{transition:transform .35s var(--spring);} .wwd-more:hover .ar{transform:translateX(4px);}
 
 
@@ -154,9 +158,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 <nav class="nav"><div class="nav-in">
  <span class="nav-mark"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="nav-logo"></span>
  <div class="nav-links">
-  <a class="hide-sm" href="#documents">Documents</a>
+  <a class="hide-sm" href="data-room.html#documents">Documents</a>
   <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
   <a class="hide-sm" href="visual-data.html">Visual Data</a>
+  <a class="hide-sm" href="roadmap.html">Roadmap</a>
   <a class="nav-out" href="index.html">Sign out</a>
  </div>
 </div></nav>
@@ -228,12 +233,30 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 </div></main>
 
-<section class="wrap rv"><a class="howit" href="#" onclick="openPdf('roadmap.html','The 12-Month Road');return false;">
+<section class="wrap rv"><a class="howit" href="roadmap.html">
  <div class="howit-l"><div class="howit-k">The roadmap</div>
   <div class="howit-h">The 12-month road.</div>
   <div class="howit-d">From the pre-seed to a closed seed and a self-funding record. See the whole journey: every checkpoint, mark and milestone across product, distribution, the regulated consumer and the financials.</div></div>
  <div class="howit-btn">Open the roadmap <span class="ar">&#8594;</span></div>
 </a></section>
+
+
+
+
+
+<section class="wrap wwd rv">
+ <div class="wwd-k">Why we win</div>
+ <h2 class="wwd-h">Why we win.</h2>
+ <p class="wwd-p">Several things line up at once. A founder who has run high-consequence operations, a market pushed by a hard regulatory deadline, a build partner shipping fast, counsel who leads on technology law, and an intelligence-led approach that protects people inside their biggest financial decisions. The consumer never pays, so it grows like a consumer product; the business pays for the record, so it earns like one.</p>
+ <div class="wwd-stats why">
+  <div class="s"><div class="n">Founder-led</div><div class="l">High-consequence operations and disciplined risk, owning the vision and product scope.</div></div>
+  <div class="s"><div class="n">Product-market fit</div><div class="l">A hard regulatory deadline the whole market has to meet, now.</div></div>
+  <div class="s"><div class="n">The fastest-growing dev team</div><div class="l">Partnered with Speer Technologies, full IP to 4orm.</div></div>
+  <div class="s"><div class="n">Leading technology counsel</div><div class="l">Michael Stephens, ranked in Best Lawyers in Canada for technology law.</div></div>
+  <div class="s"><div class="n">An intelligence-led approach</div><div class="l">An innovative way to help people protect their major financial decisions.</div></div>
+  <div class="s"><div class="n">Free for the consumer</div><div class="l">The consumer is never charged; the regulated business pays for the record.</div></div>
+ </div>
+</section>
 
 <section class="wrap"><div class="tiles">
  <a class="tile active rv" href="#documents">
@@ -255,18 +278,6 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
   <span class="go">See it &#8599;</span></span><span class="badge">Preview</span>
  </a>
 </div></section>
-
-<section class="wrap wwd rv">
- <div class="wwd-k">What we do</div>
- <h2 class="wwd-h">Major financial decisions. Easier to understand. Easier to explain.</h2>
- <p class="wwd-p">4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p><p class="wwd-p" style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client and providing the business the auditable record in real time, without having to reconstruct it later to prove suitability.</p>
- <div class="wwd-stats">
-  <div class="s"><div class="n bad">100%</div><div class="l">No documented suitability, FSRA review</div></div>
-  <div class="s"><div class="n bad">73%</div><div class="l">Missing material-risk disclosure</div></div>
-  <div class="s"><div class="n bad">65%</div><div class="l">Missing conflict disclosure</div></div>
-  <div class="s"><div class="n">&pound;9.1bn</div><div class="l">UK motor-finance redress</div></div>
- </div>
-</section>
 
 <footer class="foot"><div class="wrap">
  <span>4orm Finance · Confidential · Not for distribution</span>

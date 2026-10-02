@@ -72,9 +72,29 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .close p{color:rgba(255,255,255,.72);margin:14px auto 0;max-width:62ch;font-size:1rem;line-height:1.55;}
 .foot{border-top:1px solid var(--border);margin-top:60px;}
 .foot .wrap{padding:24px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);}
+
+.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none;}
+.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18);}
+.ovnav-logo{height:40px;width:auto;display:block;}
+.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px;}
+.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;}
+.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important;}
+.ovnav-out:hover{background:#1B4ABE !important;}
+@media(max-width:760px){.ovnav-links a.hide-sm{display:none;}}
 </style></head><body>
 <div class="wash"></div>
-<nav class="docnav"><div class="docnav-in"><a class="back" href="data-room.html">&#8592; Back to the room</a><div class="r"><img src="assets/favicon-512x512.png?v=20260902" alt=""> One Clear Path</div></div></nav>
+<nav class="ovnav"><div class="ovnav-in">
+ <a href="data-room.html"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="ovnav-logo"></a>
+ <div class="ovnav-links">
+  <a class="hide-sm" href="data-room.html#documents">Documents</a>
+  <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
+  <a class="hide-sm" href="visual-data.html">Visual Data</a>
+  <a class="hide-sm" href="roadmap.html">Roadmap</a>
+  <a class="ovnav-out" href="index.html">Sign out</a>
+ </div>
+</div></nav>
+<div style="height:80px"></div>
 <header class="hero"><div class="wrap">
  <div class="step-eyebrow">4ormIQ + 4orm</div>
  <h1>One clear path, from concern to confidence.</h1>

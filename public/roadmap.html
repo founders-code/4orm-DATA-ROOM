@@ -65,6 +65,16 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 .finishwrap h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin-top:16px;color:#fff}
 .finishwrap p{max-width:52ch;margin:10px auto 0;color:rgba(255,255,255,.82);line-height:1.5}
 @media(max-width:640px){.sign{width:66vw}.mini{max-width:60vw}#moon,#sun{left:62%}}
+
+.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none;}
+.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18);}
+.ovnav-logo{height:40px;width:auto;display:block;}
+.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px;}
+.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;}
+.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important;}
+.ovnav-out:hover{background:#1B4ABE !important;}
+@media(max-width:760px){.ovnav-links a.hide-sm{display:none;}}
 </style></head>
 <body>
 <div id="sky"></div>
@@ -72,7 +82,16 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidde
 <div id="moon"></div>
 <div id="sun"></div>
 
-<nav class="docnav"><a href="data-room.html" target="_top">&#8592; Back to the room</a><span class="r">The road to revenue</span></nav>
+<nav class="ovnav"><div class="ovnav-in">
+ <a href="data-room.html"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="ovnav-logo"></a>
+ <div class="ovnav-links">
+  <a class="hide-sm" href="data-room.html#documents">Documents</a>
+  <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
+  <a class="hide-sm" href="visual-data.html">Visual Data</a>
+  <a class="hide-sm" href="roadmap.html">Roadmap</a>
+  <a class="ovnav-out" href="index.html">Sign out</a>
+ </div>
+</div></nav>
 
 <div class="intro">
   <div class="eb">The road to revenue</div>
