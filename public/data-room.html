@@ -177,6 +177,17 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .rbar2-fill.an{background:var(--gold);min-width:0;}
 @media(max-width:600px){.raise-fig{text-align:left;}}
 .card .t .tpg{font-size:.7rem;font-weight:700;color:var(--tx-3);letter-spacing:0;white-space:nowrap;}
+.trac{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 22px 18px;box-shadow:var(--sh-sm);border-top:3px solid var(--blue);}
+.tcard h4{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;}
+.tcard ul{list-style:none;display:grid;gap:11px;}
+.tcard li{font-size:.9rem;color:var(--tx-2);line-height:1.46;}
+.ttag{display:inline-block;font-family:var(--mono);font-size:.52rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-right:7px;white-space:nowrap;}
+.ttag.sec{background:var(--ok-bg);color:var(--ok);}
+.ttag.now{background:var(--blue-50);color:var(--blue-dp);}
+.ttag.tgt{background:var(--gold-50);color:var(--gold-dp);}
+.tlegend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:.78rem;color:var(--tx-3);}
+.tlegend span{display:inline-flex;align-items:center;gap:7px;}
 </style></head>
 <body>
 <div class="wash"></div>
@@ -194,7 +205,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 <header class="hero"><div class="wrap rv">
  <div class="eyebrow">Member access</div>
  <h1 class="umbrella">The <img class="fav4" src="assets/4orm-mark4.png?v=20260903b" alt="4">orm Data Room.</h1>
- <p>4orm intelligence helps people think through major financial decisions. People can explore their concerns, model possible outcomes and share what is needed with a professional. 4orm connects those conversations with the information the business already has, helping the business explain the recommendation and keep a clear record of how the decision was reached and if it was suitable.</p>
+ <p>4orm Finance is building counselling-centred AI to help people privately explore major financial decisions, model possible outcomes and understand the implications before they commit. They choose what information to share and with whom.</p>
+ <p style="margin-top:14px">Our approach draws on preventive safety principles used in high-risk operations, including oil and gas, where protecting life and health starts before work begins. We adapt that discipline to financial decisions: identify short- and long-term risks, explore potential consequences, establish safeguards and reassess as circumstances change.</p>
+ <p style="margin-top:14px">4orm connects the information a client chooses to share with the business's existing tools and compliance processes. This is designed to reduce discovery time, help professionals better understand their clients and give clients greater clarity and peace of mind.</p>
+ <p style="margin-top:14px">As the decision progresses, 4orm builds an auditable record of what was understood, how concerns were addressed and why the professional considered the recommendation suitable, reducing the work and cost of reconstructing that evidence later.</p>
 </div></header>
 
 <section class="wrap rv"><div class="raise">
@@ -237,7 +251,38 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">03</span><h3>Financials</h3><span class="d">The summary, the full pre-seed pro forma, and the cap table.</span></div>
+  <div class="folder-h"><span class="n">03</span><h3>Traction</h3><span class="d">What is secured, what is underway, and what is on target. Shown as it stands today.</span></div>
+  <div class="trac">
+   <div class="tcard"><h4>Product development</h4><ul>
+    <li><span class="ttag sec">Secured</span>Speer Technologies engaged as build partner, with full IP assigned to 4orm.</li>
+    <li><span class="ttag sec">Secured</span>Target-state architecture accepted. Tier 1 complete.</li>
+    <li><span class="ttag now">Underway</span>The evidence engine and the free 4ormIQ check in build (Tier 2).</li>
+    <li><span class="ttag now">Underway</span>4ormIQ, the free consumer check, in beta.</li>
+   </ul></div>
+   <div class="tcard"><h4>Legal</h4><ul>
+    <li><span class="ttag sec">Secured</span>Incorporated in Alberta.</li>
+    <li><span class="ttag sec">Secured</span>Counsel in place: Michael Stephens (Fasken) and James Atherton (securities).</li>
+    <li><span class="ttag sec">Secured</span>Capital structure set: C$2.5M pre-seed, SAFE and cap table.</li>
+    <li><span class="ttag now">Underway</span>Regulatory landscape mapped to primary sources; privacy by design and independent security testing.</li>
+   </ul></div>
+   <div class="tcard"><h4>Design partner</h4><ul>
+    <li><span class="ttag sec">Secured</span>Target base sourced: 745 payment firms, 25,682 trust firms.</li>
+    <li><span class="ttag now">Underway</span>Discovery open, about twenty firm conversations.</li>
+    <li><span class="ttag now">Underway</span>Franchisor and network talks opened.</li>
+    <li><span class="ttag tgt">Target &middot; Q1 2027</span>First design partner signed, co-proving the record.</li>
+   </ul></div>
+   <div class="tcard"><h4>Customer</h4><ul>
+    <li><span class="ttag now">Underway</span>Mortgage-first pipeline in discovery.</li>
+    <li><span class="ttag now">Underway</span>Pilot readiness in build.</li>
+    <li><span class="ttag tgt">Target &middot; Q1 2027</span>First broker firms live; the first paying customer.</li>
+    <li><span class="ttag tgt">Target &middot; Q2 2027</span>C$10,000 a month recurring.</li>
+   </ul></div>
+  </div>
+  <div class="tlegend"><span><span class="ttag sec">Secured</span>done and in place</span><span><span class="ttag now">Underway</span>happening now</span><span><span class="ttag tgt">Target</span>planned, dated</span></div>
+ </div>
+
+ <div class="folder rv">
+  <div class="folder-h"><span class="n">04</span><h3>Financials</h3><span class="d">The summary, the full pre-seed pro forma, and the cap table.</span></div>
   <div class="grid">
    <a class="card data" href="#" onclick="openPdf('assets/docs/financials/financial-summary.html','Financial Summary');return false;"><span class="k">The numbers that matter</span><span class="t">Financial Summary</span><span class="dd">The round, where the money goes, and the five-year targets. The full pre-seed pro forma opens from inside.</span><span class="go">Open &#8599;</span></a>
    <a class="card data" href="#" onclick="openPdf('assets/docs/financials/capital-table.html','Capital Table');return false;"><span class="k">Ownership</span><span class="t">Capital Table</span><span class="dd">Shares, SAFEs and ownership, line by line.</span><span class="go">Open &#8599;</span></a>
@@ -246,7 +291,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">04</span><h3>Product &amp; Technology</h3><span class="d">The demos, the slide walkthroughs, and the roadmaps.</span></div>
+  <div class="folder-h"><span class="n">05</span><h3>Product &amp; Technology</h3><span class="d">The demos, the slide walkthroughs, and the roadmaps.</span></div>
   <div class="grid">
    <a class="card" href="#" onclick="openPdf('4ormiq-story.html','4ormIQ · The Consumer Demo');return false;"><span class="k">Watch it live · for people</span><span class="t">The Consumer Demo</span><span class="dd">The everyday journey, from a big decision to a clear, confident outcome. Plays right here.</span><span class="go">Open demo &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/product/consumer-demo-slides.pdf','The Consumer Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Consumer Walkthrough</span><span class="dd">The same consumer story, slide by slide.</span><span class="go">Open &#8599;</span></a>
@@ -258,7 +303,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">05</span><h3>Research &amp; Evidence</h3><span class="d">The research papers, the competition, the market, and the evidence behind every claim.</span></div>
+  <div class="folder-h"><span class="n">06</span><h3>Research &amp; Evidence</h3><span class="d">The research papers, the competition, the market, and the evidence behind every claim.</span></div>
   <div class="grid">
    <a class="card" href="#" onclick="openPdf('assets/docs/market/financial-decision-intelligence.pdf','4ormIQ · Financial Decision Intelligence');return false;"><span class="k">The research</span><span class="t">Financial Decision Intelligence</span><span class="dd">The 4ormIQ research: the intelligence approach to major financial decisions, and the evidence behind it.</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/cost-of-proving-suitability.pdf','The Cost of Proving Suitability in Canada');return false;"><span class="k">The research</span><span class="t">The Cost of Proving Suitability</span><span class="dd">What it costs Canadian firms to prove suitability, and why it matters.</span><span class="go">Open &#8599;</span></a>
@@ -269,7 +314,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  </div>
 
  <div class="folder rv">
-  <div class="folder-h"><span class="n">06</span><h3>Company Docs</h3><span class="d">The charter, and the records that come with the company.</span></div>
+  <div class="folder-h"><span class="n">07</span><h3>Company Docs</h3><span class="d">The charter, and the records that come with the company.</span></div>
   <div class="grid">
    <a class="card" href="#" onclick="openPdf('assets/docs/company/mission-anchor.pdf','The Mission Anchor');return false;"><span class="k">The charter</span><span class="t">The Mission Anchor</span><span class="dd">The standing charter: what 4orm builds, what it protects, and how it makes decisions.</span><span class="go">Open &#8599;</span></a>
   </div>
