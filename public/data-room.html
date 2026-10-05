@@ -362,7 +362,7 @@ function renderPdf(url){
    return pdf.getPage(n).then(function(page){
     var vp=page.getViewport({scale:1});
     var landscape=vp.width>vp.height;
-    var cw=Math.min(landscape?1600:1180,avail);
+    var cw=landscape?Math.max(avail,1500):Math.min(1180,avail);
     var scale=cw/vp.width;
     var v=page.getViewport({scale:scale*dpr});var vdisp=page.getViewport({scale:scale});
     var wrap=document.createElement('div');wrap.className='pdfpage';wrap.style.width=cw+'px';wrap.style.height=vdisp.height+'px';
