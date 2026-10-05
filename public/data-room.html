@@ -39,19 +39,8 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 /* hero */
 .hero{padding:188px 0 26px;}
 .eyebrow{font-family:var(--mono);font-size:15px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:18px;}
-.hero h1{font-weight:800;letter-spacing:-.038em;line-height:1.06;font-size:clamp(2rem,4.2vw,3.3rem);text-wrap:balance;max-width:24ch;}
-.hero h1 .hl{color:var(--blue);}
-.hero-logo{display:block;margin-bottom:74px;}
-.hero-logo img{height:112px;width:auto;display:block;}
+.hero h1{font-weight:800;letter-spacing:-.04em;line-height:1.04;font-size:clamp(2.4rem,5.4vw,4.1rem);text-wrap:balance;max-width:16ch;}
 .hero p{margin-top:20px;font-size:clamp(1rem,1.5vw,1.22rem);color:var(--tx-2);max-width:none;line-height:1.55;}
-.hero .said{margin-top:22px;font-size:clamp(1.05rem,1.7vw,1.32rem);color:var(--tx-2);max-width:60ch;line-height:1.5;}
-.hero .said b{color:var(--tx);font-weight:700;}
-.trust{margin-top:22px;font-family:var(--mono);font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);}
-.trust:before{content:"";display:block;width:54px;height:3px;background:var(--blue);border-radius:2px;margin-bottom:16px;}
-.cta-row{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;}
-.btn{border-radius:999px;padding:14px 24px;font-weight:700;font-size:.98rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
-.btn-p{background:var(--blue);color:#fff;box-shadow:var(--sh-sm);}.btn-p:hover{background:var(--blue-dp);}
-.btn-g{background:var(--surface);color:var(--tx);border:1px solid var(--border);}.btn-g:hover{border-color:var(--blue-100);}
 /* product tiles */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:44px 0 8px;}
 @media(max-width:900px){.tiles{grid-template-columns:1fr;}}
@@ -214,11 +203,10 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 </div></nav>
 
 <header class="hero"><div class="wrap rv">
- <div class="hero-logo"><img src="assets/4orm-logo-color.png?v=20260903" alt="4orm Finance"></div>
- <h1>Major Financial Decisions.<br><span class="hl">Easier to understand,<br>Easier to explain.</span></h1>
- <p class="said">4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p>
- <p class="said" style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client. This provides the business an auditable record in real time, without having to pay to reconstruct it later trying to prove suitability.</p>
- <div class="trust">PEOPLE &middot; TRUST &middot; CLEAR OUTCOMES</div>
+ <div class="eyebrow">Member access</div>
+ <h1 class="umbrella">The <img class="fav4" src="assets/4orm-mark4.png?v=20260903b" alt="4">orm Data Room.</h1>
+ <p>4orm Intelligence supports people through their major financial decisions, by assisting them to explore concerns, model outcomes and control what information is shared.</p>
+ <p style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client. This provides the business an auditable record in real time, without having to pay to reconstruct it later trying to prove suitability.</p>
 </div></header>
 
 <section class="wrap rv"><div class="raise">
