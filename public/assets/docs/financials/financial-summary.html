@@ -69,6 +69,23 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
 .legend span{display:inline-flex;align-items:center;gap:7px}
 .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3)}
 @media(max-width:620px){.lines td.what{display:none}.lines th.what{display:none}}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px;margin-top:4px}
+.cmpc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--sh-sm)}
+.cmpc.ca{border-color:var(--blue-100);background:var(--blue-50)}
+.cflag{font-family:var(--mono);font-size:.52rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-dp);margin-bottom:6px}
+.cmpc .cn{font-weight:800;font-size:1rem;letter-spacing:-.01em}
+.cmpc .cv{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--blue);margin-top:6px;line-height:1}
+.cmpc .cl{font-size:.78rem;color:var(--tx-2);margin-top:3px}
+.cmpc .cm{font-size:.74rem;color:var(--tx-3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.buildc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-sm);margin-top:18px;overflow:hidden}
+.br{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:15px 20px;border-bottom:1px solid var(--border)}
+.br:last-child{border-bottom:none}
+.br .bl{font-weight:700;color:var(--tx)}
+.br .bv{font-size:1.25rem;font-weight:800;letter-spacing:-.02em;color:var(--tx);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.br .bn{grid-column:1 / -1;font-size:.8rem;color:var(--tx-3);line-height:1.5}
+.br.plus .bv{color:var(--grn)}
+.br.eq{background:var(--blue-50);border-top:2px solid var(--blue-100)}
+.br.eq .bv{color:var(--blue);font-size:1.5rem}
 </style></head>
 <body>
 <div class="top"><div><h1>Investor Financial Summary</h1><div class="sub">4orm Finance &middot; Canadian dollars &middot; Management target case, not a forecast</div></div><a class="full" href="full-financial-model.html">See the full financial model &#8594;</a></div>
@@ -108,12 +125,16 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
  <div class="card"><div style="font-weight:800;margin-bottom:2px">Total revenue, base case</div><div style="font-size:.84rem;color:var(--tx-3);margin-bottom:10px">Canadian dollars &middot; 2027 to 2031</div>
   <div class="chart" id="revChart"></div>
  </div>
- <div class="kpis">
-  <div class="kpi"><div class="k">First profit</div><div class="v grn">2028</div><div class="l">Profit before tax turns positive</div></div>
-  <div class="kpi"><div class="k">Gross margin, 2031</div><div class="v">82%</div><div class="l">Up from 46% in 2027</div></div>
-  <div class="kpi"><div class="k">Self-funding</div><div class="v grn">2029</div><div class="l">Cash funds its own growth</div></div>
-  <div class="kpi"><div class="k">Operating roles, 2031</div><div class="v">27</div><div class="l">From 5 in 2027</div></div>
+ <div class="card"><div style="font-weight:800;margin-bottom:2px">Cash in the bank never goes negative</div><div style="font-size:.84rem;color:var(--tx-3);margin-bottom:10px">Cash at year end &middot; the pre-seed funds the early build, so the account stays positive on the way to profit</div>
+  <div class="chart" id="cashChart"></div>
  </div>
+ <div class="kpis">
+  <div class="kpi"><div class="k">Cash at year end, 2026</div><div class="v grn">C$2.2M</div><div class="l">Opening, after the pre-seed</div></div>
+  <div class="kpi"><div class="k">Cash at year end, 2031</div><div class="v grn">C$79.2M</div><div class="l">Never dips negative in between</div></div>
+  <div class="kpi"><div class="k">First profit</div><div class="v">2028</div><div class="l">Profit before tax turns positive</div></div>
+  <div class="kpi"><div class="k">Gross margin, 2031</div><div class="v">82%</div><div class="l">Up from 46% in 2027</div></div>
+ </div>
+ <p class="note"><b>The 2027 loss is planned, and funded.</b> 2027 shows a profit-before-tax loss because the round is being spent to build and reach the first firms. It is paid for out of the raised capital, not out of revenue, which is why cash stays positive the whole way. The company turns profitable in 2028 and self-funds from 2029.</p>
  <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:22px 0 4px">The same engine, three outcomes &middot; 2031 revenue</div>
  <div class="scn">
   <div class="scnchip gf"><div class="n">Ground Floor</div><div class="v">C$10.5M</div><div class="d">Product proves; distribution stays limited.</div></div>
@@ -133,7 +154,7 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
     <li>Regulators require the record now: <b>RPAA</b> safeguarding is live and penalised, mortgage firms carry ongoing <b>FINTRAC</b> duties.</li>
     <li><b>100%</b> of a targeted FSRA sample had no documented suitability assessment.</li>
     <li>Comparable tools cut work from days to hours and hours to minutes, with named cases in the evidence book.</li>
-    <li>Category buyers already spend at scale: Vanta US$300M ARR, Nasdaq Verafin US$329M ARR.</li>
+    <li>Adjacent "prove trust and compliance" businesses already reached large recurring revenue (below).</li>
    </ul>
   </div>
   <div class="col prove"><h3><span class="tag">Still to prove</span></h3>
@@ -145,7 +166,15 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
    </ul>
   </div>
  </div>
+ <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:22px 0 4px">This growth is possible &middot; adjacent compliance-evidence businesses</div>
+ <div class="cmp">
+  <div class="cmpc"><div class="cn">Vanta</div><div class="cv">US$300M</div><div class="cl">annual recurring revenue</div><div class="cm">8 years &middot; 16,000 customers</div></div>
+  <div class="cmpc"><div class="cn">Nasdaq Verafin</div><div class="cv">US$329M</div><div class="cl">annual recurring revenue</div><div class="cm">23 years &middot; +23% a year &middot; 2,800+ institutions</div></div>
+  <div class="cmpc"><div class="cn">Drata</div><div class="cv">US$100M+</div><div class="cl">annual recurring revenue</div><div class="cm">6 years &middot; 8,000+ customers</div></div>
+  <div class="cmpc ca"><div class="cflag">Canadian precedent</div><div class="cn">Flinks</div><div class="cv">15,000+</div><div class="cl">institutions connected</div><div class="cm">10 years &middot; 1M+ connections a month</div></div>
+ </div>
  <p class="note"><b>How the pilot settles it.</b> A paid pilot measures review minutes per case, retrieval time for a file, rework and follow-up, and consumer understanding, on the firm's own files. A design-partner firm co-proves the record before the networks carry it. These are the measures that turn the target into proof.</p>
+ <p class="note" style="border-left-color:var(--border-strong)"><b>Comparables show the scale, not a promise.</b> These are published figures for other companies in adjacent trust and compliance markets. They show category buyers already pay at this scale, including a Canadian precedent. They do not predict 4orm's own adoption, pricing or revenue.</p>
 </section>
 
 <!-- 4 -->
@@ -159,11 +188,12 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
   <div class="step"><div class="n">Step 3</div><div class="h">Split by dollars in</div><div class="d">Each investor&rsquo;s share is their invested dollars over the participating capital.</div></div>
   <div class="step"><div class="n">Step 4</div><div class="h">Paid, cash stays positive</div><div class="d">Cash after tax and distributions still grows to C$29.4M by 2031.</div></div>
  </div>
- <div class="kpis">
-  <div class="kpi"><div class="k">Illustrative cheque</div><div class="v blue">C$100K</div><div class="l">In the C$500K first share tranche</div></div>
-  <div class="kpi"><div class="k">Cash received by 2031</div><div class="v">C$345K</div><div class="l">Cumulative profit-share, illustration</div></div>
-  <div class="kpi"><div class="k">Plus unsold equity</div><div class="v">~C$1.5M</div><div class="l">Estimated value of the stake held</div></div>
-  <div class="kpi"><div class="k">Cash + equity, 2031</div><div class="v grn">~C$1.84M</div><div class="l">Illustration, not a promised return</div></div>
+ <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:22px 0 2px">What a C$100,000 cheque looks like by 2031 &middot; illustration</div>
+ <div class="buildc">
+  <div class="br"><span class="bl">Invested in 2026</span><span class="bv">C$100,000</span><span class="bn">200,000 shares in the C$500K first tranche, at C$0.50 a share.</span></div>
+  <div class="br plus"><span class="bl">Cash profit-share received, 2027&ndash;2031</span><span class="bv">+ C$345,496</span><span class="bn">Cumulative over five years. Each year, 40% of the company's after-tax profit goes to the investor pool, and this cheque's share is its C$100K out of the C$7.5M of participating capital. It is small next to the equity because most of the value is the stake, not the yearly cash.</span></div>
+  <div class="br plus"><span class="bl">Value of the equity still held, 2031</span><span class="bv">+ ~C$1,498,952</span><span class="bn">The shares are not sold. At an illustrative 5&times; the 2031 licence revenue, the stake this C$100K bought is worth about C$1.5M.</span></div>
+  <div class="br eq"><span class="bl">Total by 2031, cash plus equity</span><span class="bv">~C$1,844,448</span><span class="bn">About 18&times; the C$100,000 invested. Illustration, not a promised return.</span></div>
  </div>
  <p class="note"><b>These are management illustrations, not promised returns.</b> Payments require available cash and board approval. Returns depend on the modelled seed closing, on tax, and on a valuation multiple that is an assumption. Tax is an illustrative 27%. Full workings, with every assumption and source, are in the Investor Returns tab of the full model.</p>
 </section>
@@ -184,6 +214,18 @@ function money(v){var a=Math.abs(v);if(a>=1e6)return 'C$'+(v/1e6).toFixed(1)+'M'
   s+='<text x="'+(x+bw/2)+'" y="'+(y-8)+'" text-anchor="middle" font-family="Inter" font-size="13" font-weight="800" fill="'+C.tx+'">'+money(data[i])+'</text>';
   s+='<text x="'+(x+bw/2)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>';});
  document.getElementById('revChart').innerHTML=s;
+})();
+(function(){
+ var yrs=[2026,2027,2028,2029,2030,2031], data=[2215000,6108861,6388542,11943292,31610008,79224842];
+ var W=900,H=300,pl=66,pr=18,pt=24,pb=38,iw=W-pl-pr,ih=H-pt-pb,max=80000000;
+ var step=iw/yrs.length,bw=step*0.5;
+ var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Cash at year end 2026 to 2031">';
+ for(var g=0;g<=4;g++){var y=pt+ih*g/4,val=max*(1-g/4);s+='<line x1="'+pl+'" y1="'+y+'" x2="'+(W-pr)+'" y2="'+y+'" stroke="'+C.grid+'"/><text x="'+(pl-8)+'" y="'+(y+4)+'" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+money(val)+'</text>';}
+ yrs.forEach(function(yr,i){var h=data[i]/max*ih,x=pl+step*i+(step-bw)/2,y=pt+ih-h;
+  s+='<rect x="'+x+'" y="'+y+'" width="'+bw+'" height="'+h+'" rx="5" fill="'+C.grn+'"/>';
+  s+='<text x="'+(x+bw/2)+'" y="'+(y-8)+'" text-anchor="middle" font-family="Inter" font-size="12.5" font-weight="800" fill="'+C.tx+'">'+money(data[i])+'</text>';
+  s+='<text x="'+(x+bw/2)+'" y="'+(pt+ih+22)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" fill="'+C.tx3+'">'+yr+'</text>';});
+ document.getElementById('cashChart').innerHTML=s;
 })();
 </script>
 </body></html>
