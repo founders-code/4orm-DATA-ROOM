@@ -86,6 +86,19 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
 .br.plus .bv{color:var(--grn)}
 .br.eq{background:var(--blue-50);border-top:2px solid var(--blue-100)}
 .br.eq .bv{color:var(--blue);font-size:1.5rem}
+.col li a,.cm a,.note a{color:var(--blue);font-weight:700;text-decoration:none;white-space:nowrap}
+.col li a:hover,.cm a:hover,.note a:hover{text-decoration:underline}
+.tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r);margin-top:4px}
+.ytab{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.85rem}
+.ytab td{padding:11px 15px;border-bottom:1px solid #F1F5FA;white-space:nowrap;color:var(--tx-2)}
+.ytab td.k{font-weight:700;color:var(--tx)}
+.ytab td.n{text-align:right;color:var(--tx)}
+.ytab td.muted{color:#9AA7BD}
+.ytab tr.hd td{font-weight:800;color:#fff;background:var(--blue-dp);font-size:.64rem;letter-spacing:.04em;text-transform:uppercase;white-space:normal;vertical-align:bottom}
+.ytab tr.hd td.k{color:#fff}
+.ytab tr.tot td{background:var(--blue-50);font-weight:800;color:var(--tx)}
+.ytab tr:hover td{background:#FAFBFE}
+.ytab tr.tot:hover td{background:#E0EBFD}
 </style></head>
 <body>
 <div class="top"><div><h1>Investor Financial Summary</h1><div class="sub">4orm Finance &middot; Canadian dollars &middot; Management target case, not a forecast</div></div><a class="full" href="full-financial-model.html">See the full financial model &#8594;</a></div>
@@ -151,9 +164,9 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
  <div class="two">
   <div class="col proof"><h3><span class="tag">Already evidenced</span></h3>
    <ul>
-    <li>Regulators require the record now: <b>RPAA</b> safeguarding is live and penalised, mortgage firms carry ongoing <b>FINTRAC</b> duties.</li>
-    <li><b>100%</b> of a targeted FSRA sample had no documented suitability assessment.</li>
-    <li>Comparable tools cut work from days to hours and hours to minutes, with named cases in the evidence book.</li>
+    <li>Regulators require the record now: <b>RPAA</b> safeguarding is live and penalised, mortgage firms carry ongoing <b>FINTRAC</b> duties. <a href="https://www.bankofcanada.ca/core-functions/retail-payments-supervision/" target="_blank" rel="noopener">Bank of Canada &#8599;</a> <a href="https://fintrac-canafe.canada.ca/" target="_blank" rel="noopener">FINTRAC &#8599;</a></li>
+    <li><b>100%</b> of a targeted FSRA sample had no documented suitability assessment. <a href="../market/evidence-tables.html" target="_blank" rel="noopener">Evidence &#8599;</a></li>
+    <li>Comparable tools cut work from days to hours and hours to minutes, with named cases. <a href="../market/evidence-book.pdf" target="_blank" rel="noopener">Evidence book &#8599;</a></li>
     <li>Adjacent "prove trust and compliance" businesses already reached large recurring revenue (below).</li>
    </ul>
   </div>
@@ -168,10 +181,10 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
  </div>
  <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:22px 0 4px">This growth is possible &middot; adjacent compliance-evidence businesses</div>
  <div class="cmp">
-  <div class="cmpc"><div class="cn">Vanta</div><div class="cv">US$300M</div><div class="cl">annual recurring revenue</div><div class="cm">8 years &middot; 16,000 customers</div></div>
-  <div class="cmpc"><div class="cn">Nasdaq Verafin</div><div class="cv">US$329M</div><div class="cl">annual recurring revenue</div><div class="cm">23 years &middot; +23% a year &middot; 2,800+ institutions</div></div>
-  <div class="cmpc"><div class="cn">Drata</div><div class="cv">US$100M+</div><div class="cl">annual recurring revenue</div><div class="cm">6 years &middot; 8,000+ customers</div></div>
-  <div class="cmpc ca"><div class="cflag">Canadian precedent</div><div class="cn">Flinks</div><div class="cv">15,000+</div><div class="cl">institutions connected</div><div class="cm">10 years &middot; 1M+ connections a month</div></div>
+  <div class="cmpc"><div class="cn">Vanta</div><div class="cv">US$300M</div><div class="cl">annual recurring revenue</div><div class="cm">8 years &middot; 16,000 customers &middot; <a href="https://www.vanta.com/resources/vanta-crosses-300m-in-arr-as-growth-accelerates" target="_blank" rel="noopener">source &#8599;</a></div></div>
+  <div class="cmpc"><div class="cn">Nasdaq Verafin</div><div class="cv">US$329M</div><div class="cl">annual recurring revenue</div><div class="cm">23 years &middot; +23% a year &middot; <a href="https://www.nasdaq.com/solutions/anti-financial-crime-technology" target="_blank" rel="noopener">source &#8599;</a></div></div>
+  <div class="cmpc"><div class="cn">Drata</div><div class="cv">US$100M+</div><div class="cl">annual recurring revenue</div><div class="cm">6 years &middot; 8,000+ customers &middot; <a href="https://drata.com/" target="_blank" rel="noopener">source &#8599;</a></div></div>
+  <div class="cmpc ca"><div class="cflag">Canadian precedent</div><div class="cn">Flinks</div><div class="cv">15,000+</div><div class="cl">institutions connected</div><div class="cm">10 years &middot; 1M+ connections a month &middot; <a href="https://flinks.com/" target="_blank" rel="noopener">source &#8599;</a></div></div>
  </div>
  <p class="note"><b>How the pilot settles it.</b> A paid pilot measures review minutes per case, retrieval time for a file, rework and follow-up, and consumer understanding, on the firm's own files. A design-partner firm co-proves the record before the networks carry it. These are the measures that turn the target into proof.</p>
  <p class="note" style="border-left-color:var(--border-strong)"><b>Comparables show the scale, not a promise.</b> These are published figures for other companies in adjacent trust and compliance markets. They show category buyers already pay at this scale, including a Canadian precedent. They do not predict 4orm's own adoption, pricing or revenue.</p>
@@ -188,14 +201,18 @@ h2{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.03em;li
   <div class="step"><div class="n">Step 3</div><div class="h">Split by dollars in</div><div class="d">Each investor&rsquo;s share is their invested dollars over the participating capital.</div></div>
   <div class="step"><div class="n">Step 4</div><div class="h">Paid, cash stays positive</div><div class="d">Cash after tax and distributions still grows to C$29.4M by 2031.</div></div>
  </div>
- <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:22px 0 2px">What a C$100,000 cheque looks like by 2031 &middot; illustration</div>
- <div class="buildc">
-  <div class="br"><span class="bl">Invested in 2026</span><span class="bv">C$100,000</span><span class="bn">200,000 shares in the C$500K first tranche, at C$0.50 a share.</span></div>
-  <div class="br plus"><span class="bl">Cash profit-share received, 2027&ndash;2031</span><span class="bv">+ C$345,496</span><span class="bn">Cumulative over five years. Each year, 40% of the company's after-tax profit goes to the investor pool, and this cheque's share is its C$100K out of the C$7.5M of participating capital. It is small next to the equity because most of the value is the stake, not the yearly cash.</span></div>
-  <div class="br plus"><span class="bl">Value of the equity still held, 2031</span><span class="bv">+ ~C$1,498,952</span><span class="bn">The shares are not sold. At an illustrative 5&times; the 2031 licence revenue, the stake this C$100K bought is worth about C$1.5M.</span></div>
-  <div class="br eq"><span class="bl">Total by 2031, cash plus equity</span><span class="bv">~C$1,844,448</span><span class="bn">About 18&times; the C$100,000 invested. Illustration, not a promised return.</span></div>
- </div>
- <p class="note"><b>These are management illustrations, not promised returns.</b> Payments require available cash and board approval. Returns depend on the modelled seed closing, on tax, and on a valuation multiple that is an assumption. Tax is an illustrative 27%. Full workings, with every assumption and source, are in the Investor Returns tab of the full model.</p>
+ <div style="font-family:var(--mono);font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);margin:24px 0 8px">Played out year by year &middot; a C$100,000 cheque &middot; illustration</div>
+ <div class="tblwrap"><table class="ytab">
+  <tr class="hd"><td class="k">Year</td><td>Company profit, after tax</td><td>Investor pool, 40%</td><td>Your cash that year</td><td>Cash received so far</td><td>Your equity value</td><td>Total you could access</td></tr>
+  <tr><td class="k">2027</td><td class="n">(C$917,250)</td><td class="n">C$0</td><td class="n">C$0</td><td class="n">C$0</td><td class="n muted">&ndash;</td><td class="n muted">&ndash;</td></tr>
+  <tr><td class="k">2028</td><td class="n">C$632,636</td><td class="n">C$253,054</td><td class="n">C$3,374</td><td class="n">C$3,374</td><td class="n muted">&ndash;</td><td class="n">C$3,374</td></tr>
+  <tr><td class="k">2029</td><td class="n">C$5,487,592</td><td class="n">C$2,195,037</td><td class="n">C$29,267</td><td class="n">C$32,641</td><td class="n">C$104,927</td><td class="n">C$137,568</td></tr>
+  <tr><td class="k">2030</td><td class="n">C$17,687,936</td><td class="n">C$7,075,175</td><td class="n">C$94,336</td><td class="n">C$126,977</td><td class="n">C$566,724</td><td class="n">C$693,701</td></tr>
+  <tr class="tot"><td class="k">2031</td><td class="n">C$40,972,345</td><td class="n">C$16,388,938</td><td class="n">C$218,519</td><td class="n">C$345,496</td><td class="n">C$1,498,952</td><td class="n">C$1,844,448</td></tr>
+ </table></div>
+ <p class="note" style="border-left-color:var(--grn)"><b>How to read it.</b> <b>Your cash that year</b> is really paid: it is this cheque&rsquo;s C$100K share of the C$7.5M participating capital, applied to 40% of the company&rsquo;s after-tax profit. <b>Cash received so far</b> adds those up, reaching C$345,496 by 2031. <b>Your equity value</b> is the stake this C$100K bought, not sold, valued at an illustrative 5&times; that year&rsquo;s licence revenue; it is accessed at a sale or a later round, not paid out yearly. <b>Total you could access</b> is the two together.</p>
+ <p class="note">Access each year: the cash column is distributed and spendable; the equity column is value on paper until an exit. The profit-share does not stop in 2031 &ndash; the plan proposes a further 20% of after-tax profit across 2032 to 2036, with those profits not yet forecast, so they are not shown here.</p>
+ <p class="note"><b>These are management illustrations, not promised returns.</b> Payments require available cash and board approval. Returns depend on the modelled seed closing, on tax, and on a valuation multiple that is an assumption. Tax is an illustrative 27%. Every figure above ties to the <a href="full-financial-model.html" style="color:var(--blue);font-weight:700">Investor Returns tab of the full model</a>.</p>
 </section>
 
 <div class="foot">4orm Finance &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; Canadian dollars &nbsp;&middot;&nbsp; Management target case, not a forecast &nbsp;&middot;&nbsp; October 2026</div>
