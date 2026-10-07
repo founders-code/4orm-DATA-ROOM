@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>The Challenge, in the Data · 4orm</title>
+<link rel="icon" href="assets/favicon.ico?v=20261006" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20261006">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-2:#F7F9FC;--surface:#FFFFFF;--surface-2:#F4F7FB;--border:#E6EBF3;--border-strong:#CCD6E4;--tx:#142036;--tx-2:#46556E;--tx-3:#5E6E88;
+--blue:#2E6BF2;--blue-lt:#5B8CFF;--blue-dp:#1B4ABE;--blue-50:#EAF1FE;--blue-100:#CFE0FD;--acc:#2E6BF2;--acc-dp:#1B4ABE;--acc-50:#EAF1FE;
+--caution:#8A5200;--caution-bg:#FFF6E5;--caution-br:#F2C879;--ok:#0E8A5F;--ok-bg:#E3F6EE;
+--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+--r-sm:12px;--r:18px;--r-lg:26px;--sh-sm:0 1px 2px rgba(16,32,64,.05);--sh:0 10px 34px rgba(16,32,64,.08);--spring:cubic-bezier(.32,.72,0,1);--ease:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.wash{position:absolute;inset:0 0 auto 0;height:460px;z-index:-1;background:radial-gradient(820px 400px at 18% -10%,rgba(46,107,242,.13),transparent 60%),radial-gradient(680px 320px at 94% -14%,rgba(46,107,242,.08),transparent 62%),linear-gradient(180deg,var(--bg-2),var(--bg) 80%);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-dp);margin-bottom:16px;}
+.hero{padding:58px 0 10px;}
+.hero h1{font-size:clamp(2.2rem,4.8vw,3.7rem);font-weight:800;letter-spacing:-.04em;line-height:1.03;text-wrap:balance;max-width:20ch;}
+.hero p{margin-top:20px;font-size:clamp(1.05rem,1.6vw,1.24rem);color:var(--tx-2);max-width:68ch;line-height:1.55;}
+.sec{padding:52px 0 0;}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.sh .num{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.95rem;flex-shrink:0;font-family:var(--mono);}
+.sh h2{font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:800;letter-spacing:-.03em;text-wrap:balance;}
+.sd{color:var(--tx-2);font-size:1.02rem;line-height:1.58;max-width:72ch;margin:6px 0 24px 46px;}
+@media(max-width:640px){.sd{margin-left:0;}}
+.bignums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+@media(max-width:860px){.bignums{grid-template-columns:1fr 1fr;}}@media(max-width:460px){.bignums{grid-template-columns:1fr;}}
+.bn{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);border-top:3px solid var(--blue);padding:20px 18px 16px;box-shadow:var(--sh-sm);}
+.bn .fig{font-size:clamp(1.9rem,3.4vw,2.5rem);font-weight:800;letter-spacing:-.04em;color:var(--blue-dp);font-variant-numeric:tabular-nums;line-height:1;}
+.bn .cap{margin-top:10px;font-size:.88rem;color:var(--tx);font-weight:700;line-height:1.34;letter-spacing:-.01em;}
+.bn .src{margin-top:10px;font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tx-3);}
+.sig{display:grid;gap:12px;margin-left:46px;}
+@media(max-width:640px){.sig{margin-left:0;}}
+.sr{display:grid;grid-template-columns:1.2fr 1.3fr;gap:18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:20px 22px;box-shadow:var(--sh-sm);}
+@media(max-width:720px){.sr{grid-template-columns:1fr;gap:10px;}}
+.sr .ev{font-size:.96rem;color:var(--tx);line-height:1.5;}
+.sr .ev b{font-weight:800;color:var(--tx);}
+.sr .mn{font-size:.92rem;color:var(--tx-2);line-height:1.5;border-left:3px solid var(--blue-100);padding-left:14px;}
+.sr .tag{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--acc-dp);display:block;margin-bottom:8px;}
+.sr .lim{display:block;margin-top:9px;font-size:.82rem;color:var(--tx-3);line-height:1.45;}
+.bars{margin-left:46px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px 24px 20px;box-shadow:var(--sh-sm);}
+@media(max-width:640px){.bars{margin-left:0;}}
+.bars .bh{font-weight:800;letter-spacing:-.01em;margin-bottom:4px;}
+.bars .bsub{font-size:.86rem;color:var(--tx-2);margin-bottom:18px;}
+.bar{display:grid;grid-template-columns:168px 1fr 44px;align-items:center;gap:12px;margin-bottom:11px;}
+@media(max-width:540px){.bar{grid-template-columns:120px 1fr 38px;}}
+.bar .bl{font-size:.9rem;color:var(--tx);font-weight:600;line-height:1.25;}
+.bar .bt{height:20px;background:var(--blue-50);border-radius:6px;overflow:hidden;}
+.bar .bf{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue-lt));border-radius:6px;}
+.bar .bv{font-family:var(--mono);font-size:.84rem;font-weight:800;color:var(--blue-dp);text-align:right;font-variant-numeric:tabular-nums;}
+.bars .bn2{margin-top:8px;font-size:.8rem;color:var(--tx-3);line-height:1.45;}
+.note{margin:26px 0 0 46px;color:var(--tx-2);font-size:.94rem;line-height:1.56;max-width:78ch;padding:18px 20px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);}
+@media(max-width:640px){.note{margin-left:0;}}
+.note b{color:var(--tx);font-weight:800;}
+.paper{margin:40px 0 0 46px;display:inline-flex;align-items:center;gap:12px;background:var(--tx);color:#fff;text-decoration:none;border-radius:999px;padding:13px 22px;font-weight:700;font-size:.94rem;}
+.paper:hover{background:#0c1830;}
+.paper .pm{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-lt);}
+@media(max-width:640px){.paper{margin-left:0;}}
+.close{margin:70px 0 0;background:var(--tx);border-radius:var(--r-lg);padding:50px 44px;text-align:center;}
+.close .ck{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-lt);margin-bottom:16px;}
+.close h2{color:#fff;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:800;letter-spacing:-.03em;max-width:28ch;margin:0 auto;line-height:1.12;}
+.close p{color:rgba(255,255,255,.72);margin:16px auto 0;max-width:62ch;font-size:1.04rem;line-height:1.55;}
+.foot{border-top:1px solid var(--border);margin-top:62px;}
+.foot .wrap{padding:24px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);}
+.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none;}
+.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18);}
+.ovnav-logo{height:40px;width:auto;display:block;}
+.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px;}
+.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;}
+.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.ovnav-links a.on{color:#fff;background:rgba(255,255,255,.10);}
+.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important;}
+.ovnav-out:hover{background:#1B4ABE !important;}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+@media(max-width:820px){.ovnav-links a.hide-sm{display:none;}}
+</style></head><body>
+<div class="wash"></div>
+<nav class="ovnav"><div class="ovnav-in">
+ <a href="data-room.html"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="ovnav-logo"></a>
+ <div class="ovnav-links">
+  <a class="hide-sm" href="data-room.html#documents">Documents</a>
+  <a class="hide-sm" href="challenge.html">The Challenge</a>
+  <a class="hide-sm on" href="challenge-data.html">The Data</a>
+  <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
+  <a class="ovnav-out" href="index.html">Sign out</a>
+ </div>
+</div></nav>
+<div style="height:80px"></div>
+<header class="hero"><div class="wrap">
+ <div class="eyebrow">The Challenge &middot; In the Data</div>
+ <h1>The pressure is rising, and documentation alone is not keeping up.</h1>
+ <p>Published Canadian evidence points to the same gap: firms face more compliance work, yet a file on its own does not show that a decision was understood, reviewed in time, or explained. Each figure below is shown with the source and with its limits.</p>
+</div></header>
+<main class="wrap">
+
+<section class="sec"><div class="sh"><span class="num">1</span><h2>Five numbers that frame the challenge.</h2></div>
+ <div class="sd">Drawn from Canadian regulator publications, industry surveys and official consultations. These describe the people and firms who took part, not the whole market.</div>
+ <div class="bignums">
+  <div class="bn"><div class="fig">94%</div><div class="cap">of Canadian respondents said compliance grew more complex over three years</div><div class="src">PwC 2025 survey</div></div>
+  <div class="bn"><div class="fig">+81%</div><div class="cap">reported rise in compliance costs, 2022 to 2024, in one insurance segment</div><div class="src">Insurance Bureau of Canada</div></div>
+  <div class="bn"><div class="fig">47%</div><div class="cap">of mortgage respondents said a yes/no income check would not meet their needs</div><div class="src">CRA consultation</div></div>
+  <div class="bn"><div class="fig">C$704M</div><div class="cap">in reported fraud losses in 2025, with only 5% to 10% of frauds reported</div><div class="src">Canadian Anti-Fraud Centre</div></div>
+ </div>
+</section>
+
+<section class="sec"><div class="sh"><span class="num">2</span><h2>What each signal means, and what it does not.</h2></div>
+ <div class="sig">
+  <div class="sr">
+   <div><span class="tag">Rising workload &middot; PwC</span><div class="ev"><b>94%</b> of Canadian respondents to PwC's 2025 survey reported greater compliance complexity over the prior three years, against 85% globally.</div></div>
+   <div class="mn">The pressure extends beyond any single rule change.<span class="lim">Limit: this measures how executives perceive complexity, not a measured increase in spending.</span></div>
+  </div>
+  <div class="sr">
+   <div><span class="tag">Cost signal &middot; Insurance Bureau of Canada</span><div class="ev">Reported compliance costs rose <b>81%</b> from 2022 to 2024, compliance staff rose <b>26%</b>, and internal labour made up nearly three quarters of the cost.</div></div>
+   <div class="mn">The burden is largely staff time, which is where software can free capacity.<span class="lim">Limit: 24 companies, about 61% of the Canadian property and casualty market. One segment, not all financial firms.</span></div>
+  </div>
+  <div class="sr">
+   <div><span class="tag">A control gap &middot; FSRA</span><div class="ev">In FSRA's large-brokerage examinations, checks were document-focused and <b>most file reviews happened after closing</b>.</div></div>
+   <div class="mn">Having a file does not show timely, meaningful oversight.<span class="lim">Limit: findings apply to the firms examined, not a market-wide failure rate.</span></div>
+  </div>
+  <div class="sr">
+   <div><span class="tag">Verification needs &middot; CRA</span><div class="ev">Of <b>1,637</b> mortgage-industry submissions, <b>47%</b> said a yes/no income check would not meet their needs (41% said yes, 12% unsure).</div></div>
+   <div class="mn">Different cases need different depth of verification, not one questionnaire for all.<span class="lim">Limit: consultation interest is not the same as willingness to pay, and no such connected service was shown to exist today.</span></div>
+  </div>
+  <div class="sr">
+   <div><span class="tag">Authority must be checked &middot; CSA</span><div class="ev"><b>11,728</b> fraudulent investment and crypto websites were deactivated in one year under the CSA / CIRO initiative (5 June 2025 to 5 June 2026).</div></div>
+   <div class="mn">A convincing document is not, by itself, evidence of authorization.<span class="lim">Limit: an enforcement-output count, not a count of victims, businesses or distinct fraud networks.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec"><div class="sh"><span class="num">3</span><h2>Where disputes actually land.</h2></div>
+ <div class="sd">The top five issues in OBSI's investment cases opened in 2025. Service, instructions and suitability lead, which is exactly what a reviewable record of understanding addresses.</div>
+ <div class="bars">
+  <div class="bh">OBSI investment cases opened in 2025, top five issues</div>
+  <div class="bsub">672 cases in total. Categories, not findings of misconduct.</div>
+  <div class="bar"><span class="bl">Service issue</span><span class="bt"><span class="bf" style="width:100%"></span></span><span class="bv">114</span></div>
+  <div class="bar"><span class="bl">Instructions not followed</span><span class="bt"><span class="bf" style="width:76%"></span></span><span class="bv">87</span></div>
+  <div class="bar"><span class="bl">Investment suitability</span><span class="bt"><span class="bf" style="width:66%"></span></span><span class="bv">75</span></div>
+  <div class="bar"><span class="bl">Transfer delay</span><span class="bt"><span class="bf" style="width:64%"></span></span><span class="bv">73</span></div>
+  <div class="bar"><span class="bl">Fraud</span><span class="bt"><span class="bf" style="width:48%"></span></span><span class="bv">55</span></div>
+  <div class="bn2">Source: Ombudsman for Banking Services and Investments, Annual Report 2025. These are complaint categories, not findings of misconduct or market-wide failure rates.</div>
+ </div>
+</section>
+
+<section class="sec"><div class="sh"><span class="num">4</span><h2>How to read these figures.</h2></div>
+ <div class="note">Regulator publications establish rules, guidance and examination findings within their scope. Consultations and surveys describe the people who took part. Fraud and enforcement counts describe incidents and activity, not a software market. International cases (for example the UK Consumer Duty) show that related tools attract investment abroad; they are not Canadian requirements, Canadian results or forecasts for 4orm. <b>None of these figures is presented as a measure of 4orm's results.</b> Every one is sourced, dated and carried with its limit in the research paper.</div>
+ <a class="paper" href="assets/docs/start/cost-of-proving-suitability.pdf" target="_blank" rel="noopener"><span class="pm">Research &middot; Issue 01</span>Read the full paper: The Cost of Proving Suitability in Canada</a>
+</section>
+
+<div class="close"><div class="ck">What the data points to</div>
+ <h2>The firms carrying the most compliance work have the least proof of understanding.</h2>
+ <p>4orm captures client understanding as the decision is made, connects it to the firm's existing records, and preserves it as reviewable evidence, so a file can finally show what was understood, not only what was collected.</p></div>
+</main>
+<footer class="foot"><div class="wrap"><span>4orm Finance &middot; Confidential &middot; Not for distribution</span><span>The Challenge, in the Data</span></div></footer>
+</body></html>

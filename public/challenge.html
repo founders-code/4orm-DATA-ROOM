@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>The Challenge · 4orm</title>
+<link rel="icon" href="assets/favicon.ico?v=20261006" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20261006">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--bg-2:#F7F9FC;--surface:#FFFFFF;--border:#E6EBF3;--border-strong:#CCD6E4;--tx:#142036;--tx-2:#46556E;--tx-3:#5E6E88;
+--blue:#2E6BF2;--blue-lt:#5B8CFF;--blue-dp:#1B4ABE;--blue-50:#EAF1FE;--blue-100:#CFE0FD;--acc:#2E6BF2;--acc-dp:#1B4ABE;--acc-50:#EAF1FE;
+--caution:#8A5200;--caution-bg:#FFF6E5;--caution-br:#F2C879;--ok:#0E8A5F;--ok-bg:#E3F6EE;--ok-br:#9CCFBB;
+--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+--r-sm:12px;--r:18px;--r-lg:26px;--sh-sm:0 1px 2px rgba(16,32,64,.05);--sh:0 10px 34px rgba(16,32,64,.08);--spring:cubic-bezier(.32,.72,0,1);--ease:cubic-bezier(.22,.61,.36,1);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6;}
+.wash{position:absolute;inset:0 0 auto 0;height:460px;z-index:-1;background:radial-gradient(820px 400px at 18% -10%,rgba(46,107,242,.13),transparent 60%),radial-gradient(680px 320px at 94% -14%,rgba(46,107,242,.08),transparent 62%),linear-gradient(180deg,var(--bg-2),var(--bg) 80%);}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--acc-dp);margin-bottom:16px;}
+.hero{padding:58px 0 10px;}
+.hero h1{font-size:clamp(2.3rem,5vw,3.9rem);font-weight:800;letter-spacing:-.04em;line-height:1.03;text-wrap:balance;max-width:17ch;}
+.hero p{margin-top:20px;font-size:clamp(1.05rem,1.6vw,1.26rem);color:var(--tx-2);max-width:66ch;line-height:1.55;}
+.sec{padding:54px 0 0;}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.sh .num{width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.95rem;flex-shrink:0;font-family:var(--mono);}
+.sh h2{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;letter-spacing:-.03em;text-wrap:balance;}
+.sd{color:var(--tx-2);font-size:1.02rem;line-height:1.58;max-width:70ch;margin:6px 0 24px 46px;}
+@media(max-width:640px){.sd{margin-left:0;}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-left:46px;}
+@media(max-width:760px){.split{grid-template-columns:1fr;margin-left:0;}}
+.col{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:22px 22px 18px;box-shadow:var(--sh-sm);}
+.col.proves{border-top:3px solid var(--ok);}
+.col.gap{border-top:3px solid var(--caution-br);}
+.col .clab{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+.col.proves .clab{color:var(--ok);}
+.col.gap .clab{color:var(--caution);}
+.col .clab i{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:.76rem;}
+.col.proves .clab i{background:var(--ok-bg);color:var(--ok);}
+.col.gap .clab i{background:var(--caution-bg);color:var(--caution);}
+.li{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:.96rem;color:var(--tx);font-weight:600;line-height:1.42;}
+.li:last-child{border-bottom:none;}
+.li .d{flex-shrink:0;width:7px;height:7px;border-radius:50%;margin-top:7px;}
+.col.proves .li .d{background:var(--ok);}
+.col.gap .li .d{background:var(--caution-br);}
+.pull{margin:56px 0 0;background:linear-gradient(180deg,var(--blue-50),var(--surface));border:1px solid var(--blue-100);border-radius:var(--r-lg);padding:46px 40px;text-align:center;}
+.pull .pk{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--acc-dp);margin-bottom:14px;}
+.pull h2{font-size:clamp(1.7rem,3.6vw,2.7rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;color:var(--tx);max-width:22ch;margin:0 auto;}
+.gains{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-left:46px;}
+@media(max-width:860px){.gains{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.gains{grid-template-columns:1fr;}}
+@media(max-width:640px){.gains{margin-left:0;}}
+.gc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);border-top:3px solid var(--blue-100);padding:18px 18px 16px;box-shadow:var(--sh-sm);}
+.gc .gi{width:34px;height:34px;border-radius:10px;background:var(--blue-50);display:grid;place-items:center;margin-bottom:12px;font-family:var(--mono);font-weight:800;color:var(--blue);font-size:.84rem;}
+.gc p{font-size:.95rem;color:var(--tx);font-weight:700;line-height:1.38;letter-spacing:-.01em;}
+.close{margin:72px 0 0;background:var(--tx);border-radius:var(--r-lg);padding:50px 44px;text-align:center;}
+.close .ck{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-lt);margin-bottom:16px;}
+.close h2{color:#fff;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:800;letter-spacing:-.03em;max-width:26ch;margin:0 auto;line-height:1.12;}
+.close p{color:rgba(255,255,255,.72);margin:16px auto 0;max-width:60ch;font-size:1.04rem;line-height:1.55;}
+.foot{border-top:1px solid var(--border);margin-top:62px;}
+.foot .wrap{padding:24px 28px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);}
+.ovnav{position:fixed;top:16px;left:0;right:0;z-index:9999;display:flex;justify-content:center;pointer-events:none;}
+.ovnav-in{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(17,26,44,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:9px 14px 9px 20px;box-shadow:0 10px 34px rgba(16,32,64,.18);}
+.ovnav-logo{height:40px;width:auto;display:block;}
+.ovnav-links{display:flex;align-items:center;gap:4px;margin-left:4px;}
+.ovnav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.86rem;font-weight:600;padding:8px 12px;border-radius:999px;white-space:nowrap;}
+.ovnav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.ovnav-links a.on{color:#fff;background:rgba(255,255,255,.10);}
+.ovnav-out{background:#2E6BF2;color:#fff !important;padding:8px 16px !important;}
+.ovnav-out:hover{background:#1B4ABE !important;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+@media(max-width:820px){.ovnav-links a.hide-sm{display:none;}}
+</style></head><body>
+<div class="wash"></div>
+<nav class="ovnav"><div class="ovnav-in">
+ <a href="data-room.html"><img src="assets/4orm-logo-white.png?v=20260903" alt="4orm Finance" class="ovnav-logo"></a>
+ <div class="ovnav-links">
+  <a class="hide-sm" href="data-room.html#documents">Documents</a>
+  <a class="hide-sm on" href="challenge.html">The Challenge</a>
+  <a class="hide-sm" href="challenge-data.html">The Data</a>
+  <a class="hide-sm" href="one-clear-path.html">One Clear Path</a>
+  <a class="ovnav-out" href="index.html">Sign out</a>
+ </div>
+</div></nav>
+<div style="height:80px"></div>
+<header class="hero"><div class="wrap">
+ <div class="eyebrow">The Challenge</div>
+ <h1>The missing layer is client understanding.</h1>
+ <p>Businesses are investing heavily in technology to better understand and protect their clients, reduce compliance costs and respond to growing regulatory pressure. But too often, the answer is more data, more forms and more documentation.</p>
+</div></header>
+<main class="wrap">
+
+<section class="sec"><div class="sh"><span class="num">1</span><h2>More documentation proves what was collected, not what was understood.</h2></div>
+ <div class="sd">That can help prove what information was collected. It does not necessarily prove that the client understood the decision, the risks, the trade-offs or why a recommendation made sense for them.</div>
+ <div class="split">
+  <div class="col proves"><div class="clab"><i>&#10003;</i>What more documentation can prove</div>
+   <div class="li"><span class="d"></span>What information was collected</div>
+  </div>
+  <div class="col gap"><div class="clab"><i>!</i>What it does not necessarily prove</div>
+   <div class="li"><span class="d"></span>That the client understood the decision</div>
+   <div class="li"><span class="d"></span>That they understood the risks</div>
+   <div class="li"><span class="d"></span>That they understood the trade-offs</div>
+   <div class="li"><span class="d"></span>Why a recommendation made sense for them</div>
+  </div>
+ </div>
+</section>
+
+<div class="pull"><div class="pk">The gap</div>
+ <h2>The missing layer is client understanding.</h2>
+ <p style="margin-top:14px;color:var(--tx-2);font-size:1.04rem;max-width:46ch;margin-left:auto;margin-right:auto;line-height:1.5;">The challenge is not simply documenting more. It is understanding more, and being able to prove it.</p>
+</div>
+
+<section class="sec"><div class="sh"><span class="num">2</span><h2>Regulators are raising the bar on consumer outcomes.</h2></div>
+ <div class="sd">Canadian regulators are placing greater emphasis on consumer outcomes, including whether financial products, recommendations and services are appropriate for the people receiving them.</div>
+</section>
+
+<section class="sec"><div class="sh"><span class="num">3</span><h2>4orm turns understanding into compliance evidence.</h2></div>
+ <div class="sd">4orm Finance is providing Canadian business owners with the integrated compliance tools to increase consumer education and understanding of why and how they made their financial decisions, while creating a clearer record of the reasoning behind it.</div>
+ <div class="gains">
+  <div class="gc"><div class="gi">01</div><p>Better client context</p></div>
+  <div class="gc"><div class="gi">02</div><p>Clearer suitability evidence</p></div>
+  <div class="gc"><div class="gi">03</div><p>Less discovery work</p></div>
+  <div class="gc"><div class="gi">04</div><p>A stronger record of why the decision made sense</p></div>
+ </div>
+</section>
+
+<div class="close"><div class="ck">The outcome</div>
+ <h2>Better understanding for the consumer. Better evidence for the business.</h2>
+ <p>4orm captures client understanding as the decision is made, and carries it through the transaction as reviewable evidence.</p>
+</div>
+</main>
+<footer class="foot"><div class="wrap"><span>4orm Finance &middot; Confidential &middot; Not for distribution</span><span>The Challenge</span></div></footer>
+</body></html>
