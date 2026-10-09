@@ -188,6 +188,35 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 .ttag.tgt{background:var(--gold-50);color:var(--gold-dp);}
 .tlegend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:.78rem;color:var(--tx-3);}
 .tlegend span{display:inline-flex;align-items:center;gap:7px;}
+
+/* 4orm Intelligence voice widget */
+.intel{position:relative;background:linear-gradient(180deg,var(--blue-50,#EAF1FE),#fff);border:1px solid var(--blue-100,#CFE0FD);border-radius:26px;padding:34px 30px 26px;text-align:center;overflow:hidden;}
+.intel-k{font-family:var(--mono);font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-dp,#1B4ABE);}
+.intel-h{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-.035em;margin:10px 0 8px;color:var(--tx,#142036);}
+.intel-d{color:var(--tx-2,#46556E);font-size:1rem;line-height:1.5;max-width:52ch;margin:0 auto;}
+.intel-wave{display:block;width:100%;max-width:640px;height:118px;margin:20px auto 6px;}
+.intel-ctl{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:4px;}
+.intel-mic{appearance:none;border:none;cursor:pointer;width:64px;height:64px;border-radius:50%;background:var(--blue,#2E6BF2);box-shadow:0 10px 30px rgba(46,107,242,.34);display:grid;place-items:center;transition:transform .2s var(--pop,cubic-bezier(.34,1.42,.5,1)),background .2s;}
+.intel-mic:hover{background:var(--blue-dp,#1B4ABE);}
+.intel-mic:active{transform:scale(.94);}
+.intel-mic.live{background:var(--bad,#D6334E);box-shadow:0 0 0 0 rgba(214,51,78,.5);animation:intelPulse 1.4s infinite;}
+.intel-mic.busy{background:var(--tx-3,#5E6E88);cursor:default;}
+@keyframes intelPulse{0%{box-shadow:0 0 0 0 rgba(214,51,78,.45);}70%{box-shadow:0 0 0 16px rgba(214,51,78,0);}100%{box-shadow:0 0 0 0 rgba(214,51,78,0);}}
+.intel-mic svg{width:26px;height:26px;fill:#fff;}
+.intel-status{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3,#5E6E88);min-height:14px;}
+.intel-field{display:none;gap:8px;max-width:520px;margin:14px auto 0;}
+.intel-field.show{display:flex;}
+.intel-field input{flex:1;border:1px solid var(--border,#E6EBF3);border-radius:12px;padding:11px 14px;font-size:.95rem;font-family:var(--sans);color:var(--tx,#142036);background:#fff;}
+.intel-field input:focus{outline:2px solid var(--blue,#2E6BF2);outline-offset:2px;}
+.intel-field button{border:none;background:var(--blue,#2E6BF2);color:#fff;font-weight:700;border-radius:12px;padding:11px 18px;cursor:pointer;}
+.intel-field button:hover{background:var(--blue-dp,#1B4ABE);}
+.intel-qa{max-width:560px;margin:18px auto 0;text-align:left;}
+.intel-qa .iq{font-size:.86rem;color:var(--tx-3,#5E6E88);font-weight:600;margin-bottom:6px;}
+.intel-qa .ia{font-size:1rem;color:var(--tx,#142036);line-height:1.58;background:#fff;border:1px solid var(--border,#E6EBF3);border-radius:16px;padding:16px 18px;box-shadow:var(--sh-sm,0 1px 2px rgba(16,32,64,.05));white-space:pre-wrap;}
+.intel-note{margin:18px auto 0;max-width:62ch;font-size:.78rem;color:var(--tx-3,#5E6E88);line-height:1.5;}
+.intel-mic:focus-visible,.intel-field button:focus-visible{outline:2px solid var(--blue,#2E6BF2);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){.intel-mic.live{animation:none;}}
+
 </style></head>
 <body>
 <div class="wash"></div>
@@ -211,14 +240,25 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <p style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client. This provides the business an auditable record in real time, without having to pay to reconstruct it later trying to prove suitability.</p>
 </div></header>
 
-<section class="wrap rv"><div class="raise">
- <div class="raise-top">
-  <div>
-   <span class="raise-k">Open raise &middot; now</span>
-   <h2 class="raise-h">The round is open: Friends &amp; Family first.</h2>
-   <p class="raise-d">The Friends &amp; Family round is open now, and opens access to the angel round that follows.</p>
-  </div>
+<section class="wrap rv" id="intel-sec"><div class="intel">
+ <div class="intel-head">
+  <span class="intel-k">4orm Intelligence</span>
+  <h2 class="intel-h">Ask the data room. Just talk.</h2>
+  <p class="intel-d">Tap the line and ask a question out loud. 4orm Intelligence answers from inside this data room, and speaks back.</p>
  </div>
+ <canvas id="intelWave" class="intel-wave" width="640" height="118" aria-hidden="true"></canvas>
+ <div class="intel-ctl">
+  <button id="intelMic" class="intel-mic" type="button" aria-label="Tap and ask a question out loud">
+   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 1 0-7 0v5A3.5 3.5 0 0 0 12 15Z"/><path d="M19 11.5a1 1 0 1 0-2 0 5 5 0 0 1-10 0 1 1 0 1 0-2 0 7 7 0 0 0 6 6.92V21a1 1 0 1 0 2 0v-2.58a7 7 0 0 0 6-6.92Z"/></svg>
+  </button>
+  <span id="intelStatus" class="intel-status" role="status" aria-live="polite">Tap to speak</span>
+ </div>
+ <div id="intelField" class="intel-field">
+  <input id="intelText" type="text" maxlength="500" placeholder="Or type your question about the data room" aria-label="Type your question about the data room">
+  <button id="intelSend" type="button">Ask</button>
+ </div>
+ <div id="intelQA" class="intel-qa" aria-live="polite"></div>
+ <p class="intel-note">4orm Intelligence answers from this data room only, and will say when it does not have something. For exact figures, see the model and documents below. Voice needs a supported browser and microphone access.</p>
 </div></section>
 
 <main class="docs" id="documents"><div class="wrap">
@@ -431,4 +471,97 @@ function closePdf(){var m=document.getElementById('docModal');m.classList.remove
  document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();});
 </script>
+<script>
+(function(){
+  var cvs=document.getElementById('intelWave'); if(!cvs) return;
+  var ctx=cvs.getContext('2d');
+  var mic=document.getElementById('intelMic'), statusEl=document.getElementById('intelStatus');
+  var field=document.getElementById('intelField'), tin=document.getElementById('intelText'), send=document.getElementById('intelSend');
+  var qa=document.getElementById('intelQA');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var W,H,dpr; function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=cvs.clientWidth;H=cvs.clientHeight;cvs.width=W*dpr;cvs.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+  size(); window.addEventListener('resize',size);
+
+  var state='idle', level=0, target=0, t=0, analyser=null, audioCtx=null, micStream=null, rafOn=false;
+  function setState(st,msg){state=st; if(msg!==undefined) statusEl.textContent=msg;
+    mic.classList.toggle('live',st==='listening'); mic.classList.toggle('busy',st==='thinking'||st==='speaking');}
+
+  function draw(){
+    t+=0.045; ctx.clearRect(0,0,W,H);
+    if(state==='listening'&&analyser){var buf=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(buf);var sum=0;for(var i=0;i<buf.length;i++){var v=(buf[i]-128)/128;sum+=v*v;}target=Math.min(1,Math.sqrt(sum/buf.length)*3.2);}
+    else if(state==='thinking'){target=0.32+0.14*Math.sin(t*2.3);}
+    else if(state==='speaking'){target=0.5+0.34*Math.abs(Math.sin(t*3.1))*Math.abs(Math.cos(t*1.7));}
+    else {target=0.10;}
+    level+=(target-level)*0.18;
+    var mid=H/2, amp=level*(H*0.42)+ (reduce?0:1.5);
+    var grad=ctx.createLinearGradient(0,0,W,0);
+    grad.addColorStop(0,'rgba(46,107,242,0)');grad.addColorStop(.18,'#5B8CFF');grad.addColorStop(.5,'#2E6BF2');grad.addColorStop(.82,'#5B8CFF');grad.addColorStop(1,'rgba(46,107,242,0)');
+    ctx.lineWidth=3; ctx.lineCap='round'; ctx.strokeStyle=grad; ctx.beginPath();
+    var step=2;
+    for(var x=0;x<=W;x+=step){
+      var k=x/W;
+      var env=Math.sin(Math.PI*k); // taper ends
+      var y=mid + Math.sin(k*18 - t*2.0)*amp*env*0.55 + Math.sin(k*7 - t*1.3)*amp*env*0.45;
+      if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    if(rafOn) requestAnimationFrame(draw);
+  }
+  function startLoop(){ if(!rafOn){rafOn=true; requestAnimationFrame(draw);} }
+  function stopLoopSoon(){ /* keep idle animation running softly */ }
+  startLoop();
+
+  // ---- speech recognition ----
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var rec=null, listening=false;
+  function stopMicStream(){ if(micStream){micStream.getTracks().forEach(function(tr){tr.stop();});micStream=null;} if(audioCtx){try{audioCtx.close();}catch(e){} audioCtx=null;} analyser=null; }
+
+  function beginListen(){
+    if(!SR){ setState('idle','Type your question'); field.classList.add('show'); tin.focus(); return; }
+    try{ rec=new SR(); }catch(e){ field.classList.add('show'); return; }
+    rec.lang='en-CA'; rec.interimResults=false; rec.maxAlternatives=1;
+    rec.onstart=function(){ listening=true; setState('listening','Listening'); };
+    rec.onerror=function(ev){ listening=false; stopMicStream(); setState('idle', ev.error==='not-allowed'?'Microphone blocked. Type instead.':'Tap to speak'); if(ev.error==='not-allowed') field.classList.add('show'); };
+    rec.onend=function(){ listening=false; stopMicStream(); if(state==='listening') setState('idle','Tap to speak'); };
+    rec.onresult=function(ev){ var txt=ev.results[0][0].transcript; ask(txt); };
+    // mic meter for the line
+    if(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia){
+      navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){ micStream=st;
+        try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); var src=audioCtx.createMediaStreamSource(st); analyser=audioCtx.createAnalyser(); analyser.fftSize=512; src.connect(analyser);}catch(e){} }).catch(function(){});
+    }
+    try{ rec.start(); }catch(e){}
+  }
+  function stopListen(){ if(rec&&listening){ try{rec.stop();}catch(e){} } }
+
+  mic.addEventListener('click',function(){
+    if(state==='thinking') return;
+    if(state==='speaking'){ try{window.speechSynthesis.cancel();}catch(e){} setState('idle','Tap to speak'); return; }
+    if(listening){ stopListen(); return; }
+    beginListen();
+  });
+
+  // ---- ask the server ----
+  function render(q,a){ qa.innerHTML=''; var dq=document.createElement('div'); dq.className='iq'; dq.textContent='You asked: '+q; var da=document.createElement('div'); da.className='ia'; da.textContent=a; qa.appendChild(dq); qa.appendChild(da); }
+  function speak(text){ if(!('speechSynthesis'in window)){ setState('idle','Tap to speak'); return; }
+    try{ window.speechSynthesis.cancel(); var u=new SpeechSynthesisUtterance(text); u.lang='en-CA'; u.rate=1.02; u.pitch=1.0;
+      u.onstart=function(){ setState('speaking','Answering'); }; u.onend=function(){ setState('idle','Tap to speak'); };
+      window.speechSynthesis.speak(u);
+    }catch(e){ setState('idle','Tap to speak'); } }
+
+  var busy=false;
+  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true; stopListen(); stopMicStream();
+    render(q,'...'); setState('thinking','Thinking');
+    fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
+    .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
+    .then(function(res){ busy=false; var a=(res.d&&res.d.answer)?res.d.answer:'I could not answer that right now. Please try again.';
+      render(q,a); speak(a); })
+    .catch(function(){ busy=false; render(q,'I could not reach 4orm Intelligence right now. Please try again in a moment.'); setState('idle','Tap to speak'); });
+  }
+
+  send.addEventListener('click',function(){ ask(tin.value); tin.value=''; });
+  tin.addEventListener('keydown',function(e){ if(e.key==='Enter'){ ask(tin.value); tin.value=''; } });
+  if(!SR) field.classList.add('show');
+})();
+</script>
+
 </body></html>
