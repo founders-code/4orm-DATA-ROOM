@@ -148,7 +148,7 @@ var MINORS = [
 ];
 
 var VW=()=>window.innerWidth, VH=()=>window.innerHeight;
-var AMP, CX, WAVELEN=880, TOPPAD, HALF, BOT=560, sceneH, sceneTop=0;
+var AMP, CX, WAVELEN=1480, TOPPAD, HALF, BOT=560, sceneH, sceneTop=0;
 function roadX(y){ return CX + AMP*Math.sin((y-TOPPAD)/WAVELEN*Math.PI*2); }
 
 var scene=document.getElementById('scene'), marksEl=document.getElementById('marks'),
@@ -190,7 +190,8 @@ function layout(){
   MINORS.forEach(function(list,i){
     var y0=majorY(i), y1=majorY(i+1);
     list.forEach(function(txt,k){
-      var f=(k+1)/(list.length+1);
+      var n=list.length;
+      var f=(n>1)?(0.30+0.40*(k/(n-1))):0.5;
       var y=y0+(y1-y0)*f, rx=roadX(y);
       var toRight = roadX(y+6) < roadX(y);  // place on the outside-ish of travel
       var el=document.createElement('div');
