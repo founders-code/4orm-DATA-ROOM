@@ -219,16 +219,32 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 
 
 /* collapsible folders */
-.folder-h{cursor:pointer;user-select:none;}
-.folder-h:hover h3{color:var(--blue-dp);}
+.folder-h[role="button"]{cursor:pointer;user-select:none;}
+.folder-h-static{cursor:default;}
+.folder-h[role="button"]:hover h3{color:var(--blue-dp);}
 .fold-ic{margin-left:auto;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;flex-shrink:0;transition:background .25s;}
-.folder-h:hover .fold-ic{background:var(--blue-50);}
+.folder-h[role="button"]:hover .fold-ic{background:var(--blue-50);}
 .fold-ic svg{width:19px;height:19px;fill:none;stroke:var(--tx-3);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease),stroke .25s;}
-.folder.open .fold-ic svg{transform:rotate(180deg);stroke:var(--blue);}
-.folder-h:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:8px;}
-.folder .grid{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s var(--ease),opacity .35s var(--ease);}
-.folder.open .grid{opacity:1;}
-@media(prefers-reduced-motion:reduce){.folder .grid{transition:none;}.fold-ic svg{transition:none;}}
+.folder.open .fold-ic svg,.more-gate.open .fold-ic svg{transform:rotate(180deg);stroke:var(--blue);}
+.folder-h:focus-visible,.more-gate:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:12px;}
+.folder .grid,.folder .trac{max-height:0;overflow:hidden;opacity:0;transition:max-height .45s var(--ease),opacity .35s var(--ease);}
+.folder.open .grid,.folder.open .trac{opacity:1;}
+.folder.qlook .grid{max-height:none !important;opacity:1 !important;overflow:visible !important;}
+/* Everything-else gate */
+.more-gate{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;margin:44px 0 0;padding:18px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh-sm);transition:border-color .25s,box-shadow .25s;}
+.more-gate:hover{border-color:var(--blue-100);box-shadow:var(--sh);}
+.more-gate .mg-k{display:block;font-weight:800;font-size:1.18rem;letter-spacing:-.02em;color:var(--tx);}
+.more-gate .mg-d{display:block;color:var(--tx-3);font-size:.9rem;margin-top:3px;}
+.more-gate:hover .fold-ic{background:var(--blue-50);}
+.more-wrap{display:none;}
+.more-wrap.show{display:block;}
+@media(prefers-reduced-motion:reduce){.folder .grid,.folder .trac{transition:none;}.fold-ic svg{transition:none;}}
+
+.intel-src{margin-top:12px;display:flex;flex-direction:column;gap:6px;text-align:left;}
+.intel-src-k{font-family:var(--mono);font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3,#5E6E88);}
+.intel-src a{font-size:.86rem;color:var(--blue,#2E6BF2);text-decoration:none;line-height:1.4;overflow-wrap:anywhere;}
+.intel-src a:hover{text-decoration:underline;}
+.intel-src a:focus-visible{outline:2px solid var(--blue,#2E6BF2);outline-offset:2px;}
 </style></head>
 <body>
 <div class="wash"></div>
@@ -276,14 +292,19 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
 <main class="docs" id="documents"><div class="wrap">
  <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">20 documents · view only</span></div>
 
- <div class="folder rv">
-  <div class="folder-h" role="button" tabindex="0" aria-expanded="false"><span class="n">01</span><h3>Quick Look</h3><span class="d">Two short reads to understand 4orm fast.</span><span class="fold-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></div>
+ <div class="folder rv qlook">
+  <div class="folder-h folder-h-static"><span class="n">01</span><h3>Quick Look</h3><span class="d">Two short reads to understand 4orm fast.</span></div>
   <div class="grid">
    <a class="card" href="#" onclick="openPdf('assets/docs/start/founder-vision.pdf','Founder Vision &amp; North Star');return false;"><span class="k">The vision</span><span class="t">Founder Vision &amp; North Star</span><span class="dd">The founder story, the purpose, and the permanent star 4orm steers by.</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/4orm-investor-brief.pdf','4orm Investor Brief');return false;"><span class="k">The brief</span><span class="t">4orm Investor Brief</span><span class="dd">The whole 4orm story in one short read, start to finish.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
+ <div class="more-gate rv" id="moreGate" role="button" tabindex="0" aria-expanded="false" aria-controls="moreWrap">
+  <div class="mg-txt"><span class="mg-k">Everything else</span><span class="mg-d">Overview, the team, traction, product, financials, research and company docs.</span></div>
+  <span class="fold-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+ </div>
+ <div id="moreWrap" class="more-wrap">
  <div class="folder rv">
   <div class="folder-h" role="button" tabindex="0" aria-expanded="false"><span class="n">02</span><h3>Overview</h3><span class="d">The challenge, the deck, and the road to capital and revenue.</span><span class="fold-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></div>
   <div class="grid">
@@ -371,6 +392,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
    <a class="card" href="#" onclick="openPdf('assets/docs/company/mission-anchor.pdf','The Mission Anchor');return false;"><span class="k">The charter</span><span class="t">The Mission Anchor</span><span class="dd">The standing charter: what 4orm builds, what it protects, and how it makes decisions.</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
+</div>
 </div></main>
 
 <section class="wrap rv"><a class="howit" href="roadmap.html">
@@ -508,72 +530,76 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
   function draw(){
     t+=0.045; ctx.clearRect(0,0,W,H);
     if(state==='listening'&&analyser){var buf=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(buf);var sum=0;for(var i=0;i<buf.length;i++){var v=(buf[i]-128)/128;sum+=v*v;}target=Math.min(1,Math.sqrt(sum/buf.length)*3.2);}
+    else if(state==='listening'){target=0.30;}
     else if(state==='thinking'){target=0.32+0.14*Math.sin(t*2.3);}
     else if(state==='speaking'){target=0.5+0.34*Math.abs(Math.sin(t*3.1))*Math.abs(Math.cos(t*1.7));}
     else {target=0.10;}
     level+=(target-level)*0.18;
-    var mid=H/2, amp=level*(H*0.42)+ (reduce?0:1.5);
+    var mid=H/2, amp=level*(H*0.42)+(reduce?0:1.5);
     var grad=ctx.createLinearGradient(0,0,W,0);
     grad.addColorStop(0,'rgba(46,107,242,0)');grad.addColorStop(.18,'#5B8CFF');grad.addColorStop(.5,'#2E6BF2');grad.addColorStop(.82,'#5B8CFF');grad.addColorStop(1,'rgba(46,107,242,0)');
     ctx.lineWidth=3; ctx.lineCap='round'; ctx.strokeStyle=grad; ctx.beginPath();
-    var step=2;
-    for(var x=0;x<=W;x+=step){
-      var k=x/W;
-      var env=Math.sin(Math.PI*k); // taper ends
+    for(var x=0;x<=W;x+=2){var k=x/W;var env=Math.sin(Math.PI*k);
       var y=mid + Math.sin(k*18 - t*2.0)*amp*env*0.55 + Math.sin(k*7 - t*1.3)*amp*env*0.45;
-      if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-    }
+      if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
     ctx.stroke();
     if(rafOn) requestAnimationFrame(draw);
   }
-  function startLoop(){ if(!rafOn){rafOn=true; requestAnimationFrame(draw);} }
-  function stopLoopSoon(){ /* keep idle animation running softly */ }
-  startLoop();
+  rafOn=true; requestAnimationFrame(draw);
 
-  // ---- speech recognition ----
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  var rec=null, listening=false;
+  var rec=null, listening=false, transcript='', submitOnEnd=false;
   function stopMicStream(){ if(micStream){micStream.getTracks().forEach(function(tr){tr.stop();});micStream=null;} if(audioCtx){try{audioCtx.close();}catch(e){} audioCtx=null;} analyser=null; }
 
+  function startMeter(){
+    if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)) return;
+    navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){ micStream=st;
+      try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); var src=audioCtx.createMediaStreamSource(st); analyser=audioCtx.createAnalyser(); analyser.fftSize=512; src.connect(analyser);}catch(e){} }).catch(function(){});
+  }
+
   function beginListen(){
-    if(!SR){ setState('idle','Type your question'); field.classList.add('show'); tin.focus(); return; }
+    if(!SR){ field.classList.add('show'); setState('idle','Type your question'); tin.focus(); return; }
     try{ rec=new SR(); }catch(e){ field.classList.add('show'); return; }
-    rec.lang='en-CA'; rec.interimResults=false; rec.maxAlternatives=1;
-    rec.onstart=function(){ listening=true; setState('listening','Listening'); };
-    rec.onerror=function(ev){ listening=false; stopMicStream(); setState('idle', ev.error==='not-allowed'?'Microphone blocked. Type instead.':'Tap to speak'); if(ev.error==='not-allowed') field.classList.add('show'); };
-    rec.onend=function(){ listening=false; stopMicStream(); if(state==='listening') setState('idle','Tap to speak'); };
-    rec.onresult=function(ev){ var txt=ev.results[0][0].transcript; ask(txt); };
-    // mic meter for the line
-    if(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia){
-      navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){ micStream=st;
-        try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); var src=audioCtx.createMediaStreamSource(st); analyser=audioCtx.createAnalyser(); analyser.fftSize=512; src.connect(analyser);}catch(e){} }).catch(function(){});
-    }
+    transcript=''; submitOnEnd=false;
+    rec.lang='en-CA'; rec.continuous=true; rec.interimResults=true; rec.maxAlternatives=1;
+    rec.onstart=function(){ listening=true; setState('listening','Listening. Tap again to send.'); };
+    rec.onerror=function(ev){ listening=false; stopMicStream();
+      if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ field.classList.add('show'); setState('idle','Microphone blocked. Type instead.'); }
+      else if(ev.error==='no-speech'){ setState('idle','I did not catch that. Tap to try again.'); }
+      else { setState('idle','Tap to speak'); } };
+    rec.onresult=function(ev){ var full='';
+      for(var i=0;i<ev.results.length;i++){ full+=ev.results[i][0].transcript; }
+      transcript=full.trim();
+      if(transcript) setState('listening','Listening. Tap again to send.'); };
+    rec.onend=function(){ listening=false; stopMicStream();
+      if(submitOnEnd){ submitOnEnd=false; if(transcript){ ask(transcript); } else { setState('idle','I did not catch that. Tap to try again.'); } }
+      else if(state==='listening'){ setState('idle','Tap to speak'); } };
+    startMeter();
     try{ rec.start(); }catch(e){}
   }
-  function stopListen(){ if(rec&&listening){ try{rec.stop();}catch(e){} } }
+  function stopAndSend(){ submitOnEnd=true; if(rec){ try{ rec.stop(); }catch(e){} } }
 
   mic.addEventListener('click',function(){
     if(state==='thinking') return;
     if(state==='speaking'){ try{window.speechSynthesis.cancel();}catch(e){} setState('idle','Tap to speak'); return; }
-    if(listening){ stopListen(); return; }
+    if(listening){ stopAndSend(); return; }
     beginListen();
   });
 
-  // ---- ask the server ----
-  function render(q,a){ qa.innerHTML=''; var dq=document.createElement('div'); dq.className='iq'; dq.textContent='You asked: '+q; var da=document.createElement('div'); da.className='ia'; da.textContent=a; qa.appendChild(dq); qa.appendChild(da); }
+  function render(q,a,sources){ qa.innerHTML=''; var dq=document.createElement('div'); dq.className='iq'; dq.textContent='You asked: '+q; var da=document.createElement('div'); da.className='ia'; da.textContent=a; qa.appendChild(dq); qa.appendChild(da); if(sources&&sources.length){ var sd=document.createElement('div'); sd.className='intel-src'; var lab=document.createElement('span'); lab.className='intel-src-k'; lab.textContent='Sources'; sd.appendChild(lab); sources.forEach(function(sc){ if(!sc||!sc.url) return; var a2=document.createElement('a'); a2.href=sc.url; a2.target='_blank'; a2.rel='noopener noreferrer'; a2.textContent=sc.title||sc.url; sd.appendChild(a2); }); qa.appendChild(sd); } }
   function speak(text){ if(!('speechSynthesis'in window)){ setState('idle','Tap to speak'); return; }
     try{ window.speechSynthesis.cancel(); var u=new SpeechSynthesisUtterance(text); u.lang='en-CA'; u.rate=1.02; u.pitch=1.0;
-      u.onstart=function(){ setState('speaking','Answering'); }; u.onend=function(){ setState('idle','Tap to speak'); };
+      u.onstart=function(){ setState('speaking','Answering. Tap to stop.'); }; u.onend=function(){ setState('idle','Tap to speak'); };
       window.speechSynthesis.speak(u);
     }catch(e){ setState('idle','Tap to speak'); } }
 
   var busy=false;
-  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true; stopListen(); stopMicStream();
+  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true; stopMicStream();
     render(q,'...'); setState('thinking','Thinking');
     fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
     .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
-    .then(function(res){ busy=false; var a=(res.d&&res.d.answer)?res.d.answer:'I could not answer that right now. Please try again.';
-      render(q,a); speak(a); })
+    .then(function(res){ busy=false; var a=(res.d&&res.d.answer)?res.d.answer:'I could not answer that right now. Please try again.'; var srcs=(res.d&&res.d.sources)?res.d.sources:[];
+      render(q,a,srcs); speak(a); })
     .catch(function(){ busy=false; render(q,'I could not reach 4orm Intelligence right now. Please try again in a moment.'); setState('idle','Tap to speak'); });
   }
 
@@ -586,17 +612,25 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
 <script>
 (function(){
   var heads=document.querySelectorAll('.folder-h[role="button"]');
-  function grid(h){return h.parentNode.querySelector('.grid');}
+  function body(h){return h.parentNode.querySelector('.grid, .trac');}
   function openF(f,g){f.classList.add('open');g.style.maxHeight=g.scrollHeight+'px';
     g.addEventListener('transitionend',function te(e){if(e.propertyName==='max-height'&&f.classList.contains('open')){g.style.maxHeight='none';}g.removeEventListener('transitionend',te);});}
   function closeF(f,g){g.style.maxHeight=g.scrollHeight+'px';requestAnimationFrame(function(){requestAnimationFrame(function(){f.classList.remove('open');g.style.maxHeight='0px';});});}
   heads.forEach(function(h){
-    var f=h.parentNode,g=grid(h);
-    function toggle(){var open=f.classList.contains('open');if(open){closeF(f,g);h.setAttribute('aria-expanded','false');}else{openF(f,g);h.setAttribute('aria-expanded','true');}}
+    var f=h.parentNode,g=body(h); if(!g) return;
+    function toggle(){if(f.classList.contains('open')){closeF(f,g);h.setAttribute('aria-expanded','false');}else{openF(f,g);h.setAttribute('aria-expanded','true');}}
     h.addEventListener('click',toggle);
     h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
   });
-  window.addEventListener('resize',function(){document.querySelectorAll('.folder.open .grid').forEach(function(g){g.style.maxHeight='none';});});
+  window.addEventListener('resize',function(){document.querySelectorAll('.folder.open .grid,.folder.open .trac').forEach(function(g){g.style.maxHeight='none';});});
+
+  // Everything-else gate
+  var gate=document.getElementById('moreGate'), wrap=document.getElementById('moreWrap');
+  if(gate&&wrap){
+    function toggleGate(){var open=gate.classList.toggle('open');wrap.classList.toggle('show',open);gate.setAttribute('aria-expanded',open?'true':'false');}
+    gate.addEventListener('click',toggleGate);
+    gate.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleGate();}});
+  }
 })();
 </script>
 
