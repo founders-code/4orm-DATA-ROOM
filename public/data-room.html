@@ -546,27 +546,28 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
   requestAnimationFrame(draw);
 
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  var rec=null, listening=false, wantListen=false, submitOnEnd=false, finalBuf='', transcript='', restartT=null;
+  var rec=null, listening=false, wantListen=false, submitOnEnd=false, finalBuf='', interimBuf='', transcript='', restartT=null, lastErr='';
 
   function newRec(){
     var r=new SR(); r.lang='en-CA'; r.continuous=true; r.interimResults=true; r.maxAlternatives=1;
     r.onstart=function(){ listening=true; if(wantListen) setState('listening','Listening. Tap again to send.'); };
     r.onresult=function(ev){ var interim='';
       for(var i=ev.resultIndex;i<ev.results.length;i++){ var tx=ev.results[i][0].transcript; if(ev.results[i].isFinal){ finalBuf+=tx+' '; } else { interim+=tx; } }
-      transcript=(finalBuf+interim).trim(); };
-    r.onerror=function(ev){
+      interimBuf=interim; transcript=(finalBuf+interimBuf).trim(); };
+    r.onerror=function(ev){ lastErr=ev.error||'';
       if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ wantListen=false; listening=false; field.classList.add('show'); setState('idle','Microphone blocked. Allow the mic, then tap again.'); }
       /* no-speech, aborted, network, audio-capture: transient - let onend restart */ };
     r.onend=function(){ listening=false;
-      if(submitOnEnd){ submitOnEnd=false; wantListen=false; if(transcript){ ask(transcript); } else { setState('idle','I did not catch that. Tap to try again.'); } return; }
-      if(wantListen){ restartT=setTimeout(function(){ if(!wantListen) return; try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){} } },250); }
+      if(submitOnEnd){ submitOnEnd=false; wantListen=false; var txt=(finalBuf+interimBuf).trim();
+        if(txt){ ask(txt); } else { setState('idle', lastErr==='network' ? 'Could not reach the speech service. Type your question below.' : 'I did not catch that. Tap, speak, then tap again.'); if(lastErr==='network') field.classList.add('show'); } return; }
+      if(wantListen){ if(interimBuf){ finalBuf+=interimBuf+' '; interimBuf=''; } restartT=setTimeout(function(){ if(!wantListen) return; try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){} } },250); }
     };
     return r;
   }
 
   function beginListen(){
     if(!SR){ field.classList.add('show'); setState('idle','Type your question'); tin.focus(); return; }
-    finalBuf=''; transcript=''; submitOnEnd=false; wantListen=true;
+    finalBuf=''; interimBuf=''; transcript=''; submitOnEnd=false; wantListen=true; lastErr='';
     try{ rec=newRec(); }catch(e){ field.classList.add('show'); return; }
     setState('listening','Listening. Tap again to send.');
     try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){} }
