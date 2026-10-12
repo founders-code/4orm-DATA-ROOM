@@ -266,25 +266,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <p style="margin-top:14px">4orm connects what information the client shares into the business's compliance tools, saving time in the discovery process while bringing peace of mind to their client. This provides the business an auditable record in real time, without having to pay to reconstruct it later trying to prove suitability.</p>
 </div></header>
 
-<section class="wrap rv" id="intel-sec"><div class="intel">
- <div class="intel-head">
-  <span class="intel-k">4orm Intelligence</span>
-  <h2 class="intel-h">Ask me anything.</h2>
-  <p class="intel-d">Ask about 4orm, the market, the model or the documents in this room. Every answer comes with its sources.</p>
- </div>
- <div id="intelQA" class="intel-qa" aria-live="polite"></div>
- <div class="intel-chips" id="intelChips">
-  <button class="intel-chip" type="button">What does 4orm do?</button>
-  <button class="intel-chip" type="button">What is the 2031 revenue target?</button>
-  <button class="intel-chip" type="button">Why are regulators driving this now?</button>
-  <button class="intel-chip" type="button">How does 4orm make money?</button>
- </div>
- <div class="intel-bar">
-  <input id="intelText" type="text" maxlength="500" placeholder="Ask me anything about 4orm..." aria-label="Ask a question about 4orm">
-  <button id="intelSend" type="button">Ask</button>
- </div>
- <p class="intel-note">Answers draw on the 4orm data room and public sources, with links. Figures from the model are management targets and estimates, not guarantees. For exact numbers, open the documents below.</p>
-</div></section>
+
 
 <main class="docs" id="documents"><div class="wrap">
  <div class="sec-head rv"><h2>The 4orm Finance documents</h2><span class="c">20 documents · view only</span></div>
@@ -509,30 +491,7 @@ function closePdf(){var m=document.getElementById('docModal');m.classList.remove
  document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();});
 </script>
-<script>
-(function(){
-  var qa=document.getElementById('intelQA'), tin=document.getElementById('intelText'), send=document.getElementById('intelSend'), chips=document.getElementById('intelChips');
-  if(!qa||!tin||!send) return;
-  var busy=false;
-  function addUser(q){ var m=document.createElement('div'); m.className='msg u'; var b=document.createElement('div'); b.className='bub'; b.textContent=q; m.appendChild(b); qa.appendChild(m); }
-  function addLoading(){ var m=document.createElement('div'); m.className='msg a'; var b=document.createElement('div'); b.className='bub load'; b.textContent='Thinking...'; m.appendChild(b); qa.appendChild(m); return b; }
-  function fillAnswer(b,a,sources){ b.className='bub'; b.textContent=a;
-    if(sources&&sources.length){ var sd=document.createElement('div'); sd.className='intel-src';
-      var lab=document.createElement('span'); lab.className='intel-src-k'; lab.textContent='Sources'; sd.appendChild(lab);
-      sources.forEach(function(sc){ if(!sc||!sc.url) return; var a2=document.createElement('a'); a2.href=sc.url; a2.target='_blank'; a2.rel='noopener noreferrer'; a2.textContent=sc.title||sc.url; sd.appendChild(a2); });
-      b.appendChild(sd); } }
-  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true; send.disabled=true; if(chips) chips.style.display='none';
-    addUser(q); tin.value=''; var b=addLoading(); b.scrollIntoView({behavior:'smooth',block:'nearest'});
-    fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
-    .then(function(r){ return r.json(); })
-    .then(function(d){ busy=false; send.disabled=false; var a=(d&&d.answer)?d.answer:'I could not answer that right now. Please try again.'; fillAnswer(b,a,(d&&d.sources)?d.sources:[]); b.scrollIntoView({behavior:'smooth',block:'nearest'}); })
-    .catch(function(){ busy=false; send.disabled=false; fillAnswer(b,'I could not reach 4orm Intelligence right now. Please try again in a moment.',[]); });
-  }
-  send.addEventListener('click',function(){ ask(tin.value); });
-  tin.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); ask(tin.value); } });
-  if(chips){ [].slice.call(chips.querySelectorAll('.intel-chip')).forEach(function(c){ c.addEventListener('click',function(){ ask(c.textContent); }); }); }
-})();
-</script>
+
 
 <script>
 (function(){
