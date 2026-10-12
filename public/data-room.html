@@ -523,56 +523,44 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
   var W,H,dpr; function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=cvs.clientWidth;H=cvs.clientHeight;cvs.width=W*dpr;cvs.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
   size(); window.addEventListener('resize',size);
 
-  var state='idle', level=0, t=0, analyser=null, audioCtx=null, micStream=null;
+  var state='idle', t=0, lvl=0;
   function setState(st,msg){state=st; if(msg!==undefined) statusEl.textContent=msg;
     mic.classList.toggle('live',st==='listening'); mic.classList.toggle('busy',st==='thinking'||st==='speaking');}
 
   function draw(){
-    ctx.clearRect(0,0,W,H);
-    var mid=H/2;
+    ctx.clearRect(0,0,W,H); var mid=H/2;
     var grad=ctx.createLinearGradient(0,0,W,0);
     grad.addColorStop(0,'rgba(46,107,242,0)');grad.addColorStop(.18,'#5B8CFF');grad.addColorStop(.5,'#2E6BF2');grad.addColorStop(.82,'#5B8CFF');grad.addColorStop(1,'rgba(46,107,242,0)');
     ctx.lineWidth=3; ctx.lineCap='round'; ctx.strokeStyle=grad; ctx.beginPath();
-    if(state==='listening' && !reduce){
-      t+=0.05;
-      var tgt=0.12;
-      if(analyser){var buf=new Uint8Array(analyser.fftSize);analyser.getByteTimeDomainData(buf);var sum=0;for(var i=0;i<buf.length;i++){var v=(buf[i]-128)/128;sum+=v*v;}tgt=Math.min(1,Math.sqrt(sum/buf.length)*3.4);}
-      level+=(tgt-level)*0.2;
-      var amp=level*(H*0.44);
+    var active=(state==='listening'||state==='speaking')&&!reduce;
+    lvl+=((active?1:0)-lvl)*0.12;
+    if(active){
+      t+=0.05; var amp=lvl*(H*0.40);
       for(var x=0;x<=W;x+=2){var k=x/W;var env=Math.sin(Math.PI*k);
         var y=mid + Math.sin(k*18 - t*2.0)*amp*env*0.55 + Math.sin(k*7 - t*1.3)*amp*env*0.45;
         if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);}
-    } else {
-      // still, flat line when not listening
-      level=0;
-      ctx.moveTo(0,mid); ctx.lineTo(W,mid);
-    }
+    } else { ctx.moveTo(0,mid); ctx.lineTo(W,mid); }
     ctx.stroke();
     requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
 
   var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  var rec=null, listening=false, wantListen=false, submitOnEnd=false, finalBuf='', transcript='';
-  function stopMicStream(){ if(micStream){micStream.getTracks().forEach(function(tr){tr.stop();});micStream=null;} if(audioCtx){try{audioCtx.close();}catch(e){} audioCtx=null;} analyser=null; }
-  function startMeter(){ if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia)) return;
-    navigator.mediaDevices.getUserMedia({audio:true}).then(function(st){ micStream=st;
-      try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); var src=audioCtx.createMediaStreamSource(st); analyser=audioCtx.createAnalyser(); analyser.fftSize=512; src.connect(analyser);}catch(e){} }).catch(function(){}); }
+  var rec=null, listening=false, wantListen=false, submitOnEnd=false, finalBuf='', transcript='', restartT=null;
 
   function newRec(){
     var r=new SR(); r.lang='en-CA'; r.continuous=true; r.interimResults=true; r.maxAlternatives=1;
-    r.onstart=function(){ listening=true; setState('listening','Listening. Tap again to send.'); };
+    r.onstart=function(){ listening=true; if(wantListen) setState('listening','Listening. Tap again to send.'); };
     r.onresult=function(ev){ var interim='';
       for(var i=ev.resultIndex;i<ev.results.length;i++){ var tx=ev.results[i][0].transcript; if(ev.results[i].isFinal){ finalBuf+=tx+' '; } else { interim+=tx; } }
       transcript=(finalBuf+interim).trim(); };
-    r.onerror=function(ev){ if(ev.error==='no-speech') return;  // keep listening
-      listening=false; wantListen=false; stopMicStream();
-      if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ field.classList.add('show'); setState('idle','Microphone blocked. Type instead.'); }
-      else { setState('idle','Tap to speak'); } };
+    r.onerror=function(ev){
+      if(ev.error==='not-allowed'||ev.error==='service-not-allowed'){ wantListen=false; listening=false; field.classList.add('show'); setState('idle','Microphone blocked. Allow the mic, then tap again.'); }
+      /* no-speech, aborted, network, audio-capture: transient - let onend restart */ };
     r.onend=function(){ listening=false;
-      if(submitOnEnd){ submitOnEnd=false; wantListen=false; stopMicStream(); if(transcript){ ask(transcript); } else { setState('idle','I did not catch that. Tap to try again.'); } return; }
-      if(wantListen){ try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){ wantListen=false; stopMicStream(); setState('idle','Tap to speak'); } } }
-      else { stopMicStream(); if(state==='listening') setState('idle','Tap to speak'); } };
+      if(submitOnEnd){ submitOnEnd=false; wantListen=false; if(transcript){ ask(transcript); } else { setState('idle','I did not catch that. Tap to try again.'); } return; }
+      if(wantListen){ restartT=setTimeout(function(){ if(!wantListen) return; try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){} } },250); }
+    };
     return r;
   }
 
@@ -580,15 +568,15 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
     if(!SR){ field.classList.add('show'); setState('idle','Type your question'); tin.focus(); return; }
     finalBuf=''; transcript=''; submitOnEnd=false; wantListen=true;
     try{ rec=newRec(); }catch(e){ field.classList.add('show'); return; }
-    startMeter();
-    try{ rec.start(); }catch(e){}
+    setState('listening','Listening. Tap again to send.');
+    try{ rec.start(); }catch(e){ try{ rec=newRec(); rec.start(); }catch(e2){} }
   }
-  function stopAndSend(){ submitOnEnd=true; wantListen=false; if(rec){ try{ rec.stop(); }catch(e){} } }
+  function stopAndSend(){ submitOnEnd=true; wantListen=false; if(restartT) clearTimeout(restartT); if(rec){ try{ rec.stop(); }catch(e){} } }
 
   mic.addEventListener('click',function(){
     if(state==='thinking') return;
     if(state==='speaking'){ try{window.speechSynthesis.cancel();}catch(e){} setState('idle','Tap to speak'); return; }
-    if(listening){ stopAndSend(); return; }
+    if(listening||wantListen){ stopAndSend(); return; }
     beginListen();
   });
 
@@ -601,13 +589,13 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
       sources.forEach(function(sc){ if(!sc||!sc.url) return; var a2=document.createElement('a'); a2.href=sc.url; a2.target='_blank'; a2.rel='noopener noreferrer'; a2.textContent=sc.title||sc.url; sd.appendChild(a2); });
       qa.appendChild(sd); } }
   function speak(text){ if(!('speechSynthesis'in window)){ setState('idle','Tap to speak'); return; }
-    try{ window.speechSynthesis.cancel(); var u=new SpeechSynthesisUtterance(text); u.lang='en-CA'; u.rate=1.02; u.pitch=1.0;
+    try{ window.speechSynthesis.cancel(); var u=new SpeechSynthesisUtterance(text); u.lang='en-CA'; u.rate=1.02;
       u.onstart=function(){ setState('speaking','Answering. Tap to stop.'); }; u.onend=function(){ setState('idle','Tap to speak'); };
       window.speechSynthesis.speak(u);
     }catch(e){ setState('idle','Tap to speak'); } }
 
   var busy=false;
-  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true; stopMicStream();
+  function ask(q){ q=(q||'').trim(); if(!q||busy) return; busy=true;
     render(q,'...'); setState('thinking','Thinking');
     fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({q:q})})
     .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
