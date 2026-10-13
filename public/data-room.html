@@ -288,9 +288,7 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <div class="folder rv">
   <div class="folder-h" role="button" tabindex="0" aria-expanded="false"><span class="n">02</span><h3>Overview</h3><span class="fold-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></div>
   <div class="grid">
-   <a class="card" href="challenge.html"><span class="k">The challenge</span><span class="t">The Challenge</span><span class="go">Open &#8599;</span></a>
-   <a class="card" href="challenge-data.html"><span class="k">The challenge, in data</span><span class="t">The Challenge in the Data</span><span class="go">Open &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/start/investor-deck.pdf','The Investor Deck');return false;"><span class="k">The deck</span><span class="t">The Investor Deck <span class="tpg">34 pages</span></span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/start/investor-deck.pdf','The Investor Deck');return false;"><span class="k">The deck</span><span class="t">The Investor Deck</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/roadmap-to-capital.pdf','Roadmap to Capital');return false;"><span class="k">The raise</span><span class="t">Roadmap to Capital</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/start/roadmap-to-revenue.pdf','Roadmap to Revenue');return false;"><span class="k">The revenue</span><span class="t">Roadmap to Revenue</span><span class="go">Open &#8599;</span></a>
   </div>
@@ -336,12 +334,12 @@ body{font-family:var(--sans);color:var(--tx);background:var(--bg);-webkit-font-s
  <div class="folder rv">
   <div class="folder-h" role="button" tabindex="0" aria-expanded="false"><span class="n">05</span><h3>Product &amp; Technology</h3><span class="fold-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></div>
   <div class="grid">
-   <a class="card" href="#" onclick="openPdf('4ormiq-story.html','4ormIQ · The Consumer Demo');return false;"><span class="k">Watch it live · for people</span><span class="t">The Consumer Demo</span><span class="go">Open demo &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/product/consumer-demo-slides.pdf','The Consumer Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Consumer Walkthrough</span><span class="go">Open &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('4ormiq-business.html','4ormIQ · The Business Demo');return false;"><span class="k">Watch it live · for a firm</span><span class="t">The Business Demo</span><span class="go">Open demo &#8599;</span></a>
-   <a class="card" href="#" onclick="openPdf('assets/docs/product/business-demo-slides.pdf','The Business Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Business Walkthrough</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/product/product-roadmap.pdf','Product Roadmap');return false;"><span class="k">The product plan</span><span class="t">Product Roadmap</span><span class="go">Open &#8599;</span></a>
    <a class="card" href="#" onclick="openPdf('assets/docs/product/technical-roadmap.pdf','Technical Roadmap');return false;"><span class="k">The build plan</span><span class="t">Technical Roadmap</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('4ormiq-business.html','4ormIQ · The Business Demo');return false;"><span class="k">Watch it live · for a firm</span><span class="t">The Business Demo</span><span class="go">Open demo &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/business-demo-slides.pdf','The Business Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Business Walkthrough</span><span class="go">Open &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('4ormiq-story.html','4ormIQ · The Consumer Demo');return false;"><span class="k">Watch it live · for people</span><span class="t">The Consumer Demo</span><span class="go">Open demo &#8599;</span></a>
+   <a class="card" href="#" onclick="openPdf('assets/docs/product/consumer-demo-slides.pdf','The Consumer Walkthrough');return false;"><span class="k">The full walkthrough</span><span class="t">The Consumer Walkthrough</span><span class="go">Open &#8599;</span></a>
   </div>
  </div>
 
@@ -499,6 +497,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
 
 <script>
 (function(){
+  function st(k,v){try{v?localStorage.setItem(k,'1'):localStorage.removeItem(k);}catch(e){}}
+  function g_(k){try{return localStorage.getItem(k)==='1';}catch(e){return false;}}
+  function slug(h){var t=h.querySelector('h3');return 'dr_f_'+((t?t.textContent:'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''));}
   var heads=document.querySelectorAll('.folder-h[role="button"]');
   function body(h){return h.parentNode.querySelector('.grid, .trac');}
   function openF(f,g){f.classList.add('open');g.style.maxHeight=g.scrollHeight+'px';
@@ -506,7 +507,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
   function closeF(f,g){g.style.maxHeight=g.scrollHeight+'px';requestAnimationFrame(function(){requestAnimationFrame(function(){f.classList.remove('open');g.style.maxHeight='0px';});});}
   heads.forEach(function(h){
     var f=h.parentNode,g=body(h); if(!g) return;
-    function toggle(){if(f.classList.contains('open')){closeF(f,g);h.setAttribute('aria-expanded','false');}else{openF(f,g);h.setAttribute('aria-expanded','true');}}
+    function toggle(){if(f.classList.contains('open')){closeF(f,g);h.setAttribute('aria-expanded','false');st(slug(h),false);}else{openF(f,g);h.setAttribute('aria-expanded','true');st(slug(h),true);}}
     h.addEventListener('click',toggle);
     h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
   });
@@ -515,10 +516,15 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closePdf();}
   // Everything-else gate
   var gate=document.getElementById('moreGate'), wrap=document.getElementById('moreWrap');
   if(gate&&wrap){
-    function toggleGate(){var open=gate.classList.toggle('open');wrap.classList.toggle('show',open);gate.setAttribute('aria-expanded',open?'true':'false');}
+    function toggleGate(){var open=gate.classList.toggle('open');wrap.classList.toggle('show',open);gate.setAttribute('aria-expanded',open?'true':'false');st('dr_more',open);}
     gate.addEventListener('click',toggleGate);
     gate.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleGate();}});
   }
+
+  // restore saved open state (so returning from a document keeps things open)
+  if(gate&&wrap&&g_('dr_more')){ gate.classList.add('open'); wrap.classList.add('show'); gate.setAttribute('aria-expanded','true'); }
+  heads.forEach(function(h){ var f=h.parentNode,g=body(h); if(!g) return;
+    if(g_(slug(h))){ f.classList.add('open'); g.style.maxHeight='none'; h.setAttribute('aria-expanded','true'); } });
 })();
 </script>
 
